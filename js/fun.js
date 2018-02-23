@@ -44,6 +44,7 @@ function ListMaterias(){
     //agregamos a las listas
     for(i = 0; i < selectMat.length; i++){
         //console.log(i);
+        selectMat[i].options[selectMat[i].options.length] = new Option("Seleccione", i);
             for(x = 0; x < jsonCarrera[inOpt].materias.length; x++){
                 selectMat[i].options[selectMat[i].options.length] = new Option(jsonCarrera[inOpt].materias[x].Asignatura, x);
             }
@@ -89,17 +90,28 @@ function OnChangeMat(ind){
 
     let asig = selectMat.options[selectMat.selectedIndex].text;
 
-    //encontramos el index de la asignatura
-    indAsig = jsonCarrera[inOpt].materias.findIndex(function(item, i){
-        return item.Asignatura === asig
-      });
+    //Materia o seleccione
+    if(asig == "Seleccione"){
 
-    //console.log(jsonCarrera[inOpt].materias[indAsig]);
+        spUC.innerHTML = '';
+        spTAX.innerHTML = '';
+        spVc.innerHTML = '';
 
-    //establecemos datos
-    spUC.innerHTML = jsonCarrera[inOpt].materias[indAsig].UC;
-    spTAX.innerHTML = jsonCarrera[inOpt].materias[indAsig].Tax;
-    spVc.innerHTML = CalculateValueUC(jsonCarrera[inOpt].materias[indAsig].Tax, jsonCarrera[inOpt].materias[indAsig].UC);
+    }else{
+        
+        //encontramos el index de la asignatura
+        indAsig = jsonCarrera[inOpt].materias.findIndex(function(item, i){
+            return item.Asignatura === asig
+        });
+
+        //console.log(jsonCarrera[inOpt].materias[indAsig]);
+
+        //establecemos datos
+        spUC.innerHTML = jsonCarrera[inOpt].materias[indAsig].UC;
+        spTAX.innerHTML = jsonCarrera[inOpt].materias[indAsig].Tax;
+        spVc.innerHTML = CalculateValueUC(jsonCarrera[inOpt].materias[indAsig].Tax, jsonCarrera[inOpt].materias[indAsig].UC);
+    }
+    
 }
 
 // tomado de http://www.yoelprogramador.com/formatear-numeros-con-javascript/

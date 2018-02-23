@@ -1,34 +1,37 @@
 .one{
-    color: yellow;
+    color: #FED201;
 }
 
 .two{
-    color: aqua;
+    color: #34B2E4;
 }
 
 .th{
-    color: green;
+    color: #005F1D;
 }
 
 .container{
     
-    background-color: #374746;
+    background-color: #78c091;
     margin: 2%;
     border-radius: 25px;
     padding: 5px;
 	
 }
+h1{
+    
+}
 
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
-	background-color: #c9ffe2;
+	background-color: white;
     text-align:center;
     align-content: center;
-    color: white;
+    color: #374746;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #374746;
     border-collapse: collapse;
     margin: 0px auto;
 }
