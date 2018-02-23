@@ -9,6 +9,10 @@ jsonCarrera = JSON.parse(dataCarrera);
 let inOpt;
 let ValueUC = 345000.0;
 
+window.onload = function() {
+    document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+}
+
 
 //cargar datos de carrera
 function OnLoadCarrera(){
@@ -98,7 +102,7 @@ function OnChangeMat(ind){
         spVc.innerHTML = '';
 
     }else{
-        
+
         //encontramos el index de la asignatura
         indAsig = jsonCarrera[inOpt].materias.findIndex(function(item, i){
             return item.Asignatura === asig
@@ -172,6 +176,7 @@ function CalculateValueUC(taxo, uc){
 //Totalizacion
 function OnTotal(){
     let sp75 = document.getElementById("der75");
+    let sp752 = document.getElementById("der752");
     let sp60 = document.getElementById("sem60");
     let spMar = document.getElementById("marzo");
     let spAbr = document.getElementById("abril");
@@ -180,6 +185,7 @@ function OnTotal(){
     let spVc = document.getElementsByClassName("valuC");
 
     sp75.innerHTML = formatNumber.new(1.25 * ValueUC, "Bs.F. ");
+    sp752.innerHTML = formatNumber.new(2.75 * ValueUC, "Bs.F. ");
     
     let sum = 0;
     //obtenemos valores

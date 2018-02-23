@@ -11,9 +11,12 @@
 
     <title>UCalculadora</title>
 </head>
+
 <body>
     <div class="container" style="overflow-x:auto;">
         <h1><span class="one">U</span><span class="two">C</span><span class="th">alculadora</span></h1>
+        
+        <strong><p>Valor UC: <span id="ucShow"></span></p></strong>
 
         <div>
             <label>Seleccione carrera: </label> 
@@ -115,45 +118,47 @@
         </div>
 
         <br>
-        <button onclick="OnTotal()">Calcular pagos*</button>
+        <button onclick="OnTotal()">Calcular pagos <span style="color: red">*</span></button>
         <br>
 
         <div class="totalizacion" style="overflow-x:auto;">
            <table id="totales">
                 <tr>
-                    <th>Derecho de inscipcion (75% = 1,25UC)</th>
-                    <th><span id="der75">   </span></th>
+                    <th>Derecho de inscipción (75% - Pago marzo) </th>
+                    <th>Est. regular: <br><span id="der75">   </span></th>
+                    <th>Est. nuevo: <br> <span id="der752">   </span></th>
                 </tr>
                 <tr>
-                    <th>60% semestre a cancerlar marzo-mayo</th>
-                    <th><span id="sem60">   </span></th>
+                    <th>60% semestre a cancelar marzo-mayo </th>
+                    <th colspan="2"><span id="sem60" >   </span></th>
+                    
                 </tr>
                 <tr>
                     <th>Marzo</th>
-                    <th><span id="marzo">   </span></th>
+                    <th colspan="2"><span id="marzo">   </span></th>
                 </tr>
                 <tr>
                     <th>Abril</th>
-                    <th><span id="abril">   </span></th>
+                    <th colspan="2"><span id="abril">   </span></th>
                  </tr>
                 <tr>
                     <th>Mayo</th>
-                    <th><span id="mayo">    </span></th>
+                    <th colspan="2"><span id="mayo">    </span></th>
                 </tr>
            </table>
   
         </div>
 
         <br>
-        <p>Páginas de interes: 
+        <p><strong>Páginas de interés:</strong> 
         <a href="https://goo.gl/kbmDKR">Secretaria</a> -
-        <a href="https://goo.gl/MnGMZh">Circular del ViceRectorado</a> -
+        <a href="https://goo.gl/MnGMZh">Circular del vicerectorado</a> -
         <a href="https://goo.gl/BVe2d4">Pdf explicación del costo UC</a> 
     <br>
-    <span style="color: red">*Montos unicamente para estimaciones</span>
+    <span style="color: red">*Montos únicamente para estimaciones</span>
     </p> 
         <br>
-        <footer> Desarrollado por Madot - 2018 - Aplicacion NO oficial de la UCAB <br> La UCAB ni Madot se hace responsable de daños :)</footer>
+        <footer> Desarrollado por Madot - 2018 - Aplicación NO-Oficial de la UCAB <br> La UCAB ni Madot se hace responsable de daños :)</footer>
     </div>
     
 </body>
