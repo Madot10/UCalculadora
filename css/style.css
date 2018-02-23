@@ -1,0 +1,49 @@
+.one{
+    color: yellow;
+}
+
+.two{
+    color: aqua;
+}
+
+.th{
+    color: green;
+}
+
+.container{
+    
+    background-color: #374746;
+    margin: 2%;
+    border-radius: 25px;
+    padding: 5px;
+	
+}
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #c9ffe2;
+    text-align:center;
+    align-content: center;
+    color: white;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+table{
+    margin-top: 5px;
+    padding: 2px;
+    
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;    
+}
+
+.totalizacion{
+ visibility: hidden;
+}

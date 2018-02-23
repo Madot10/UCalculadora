@@ -1,0 +1,282 @@
+[
+ {
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Comprensión y Producción de Textos Escritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Modelos Educativos para la infancia",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Herramientas para la Educación Inicial",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Neurodidáctica en la Educación Inicial",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Expresión Artística",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Expresión Musical",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Práctica de Observación",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Manejo de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Gestión de la Atención Prenatal",
+   "UC": 5,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Implicaciones Educativas del Desarrollo Social y Emocional del Niño",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Salud y Nutrición desde la Concepción a la Niñez Temprana",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Desarrollo y Evaluación del Niño Maternal",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Didáctica de la Educación Maternal",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Literatura Infantil",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Pedagogìa Social y Aprendizaje en Servicio",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Práctica Etapa Maternal",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Psicomotricidad en la Primera Infancia y la Niñez Temprana",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Lectura y Escritura en Educaciòn Inicial",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Desarrollo y Evaluaciòn del Niño Preescolar",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Didàctica de la Educación Preescolar",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Práctica Etapa Preescolar",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "El Niño y la Matemática",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "El Niño y las Ciencias Sociales",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Didáctica para Primer Grado",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Prevención y atención Integral Temprana de la Discapacidad",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Práctica de Primer Grado",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "El Niño y las Ciencias Naturales",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Investigación Educativa I.",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Prácticas de Ambientes No Convencionales",
+   "UC": 3,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Educación en Valores para la Paz y la Convivivencia",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Estrategias para la Diversidad",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Marco Legal para la Educación Inicial",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Investigación Educativa II",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Gestión de Instituciones Educativas",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Didáctica de los Adultos Significativos",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Proyecto Emprendimiento Educativo",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ }
+]

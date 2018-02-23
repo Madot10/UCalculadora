@@ -1,0 +1,297 @@
+[
+ {
+   "Asignatura": "Geometría Plana y Trigonometría",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Matemática Básica",
+   "UC": 7,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Programación I",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Comprensión y Producción de Textos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Introducción a las Telecomunicaciones",
+   "UC": 3,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Cálculo I",
+   "UC": 9,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Física General",
+   "UC": 6,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Programación II",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": " Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Cálculo II",
+   "UC": 8,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Algebra Lineal",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Programación III",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Física para Telecomunicaciones",
+   "UC": 6,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Física para Telecomunicaciones",
+   "UC": 2,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Cálculo III",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Matemáticas I para Telecomunicaciones",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Campos Electromagnéticos",
+   "UC": 6,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Circuitos Eléctricos",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Circuitos Eléctricos",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Probabilidades Matemáticas II para Telecomunicaciones",
+   "UC": 6,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Electrónica Digital",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Electrónica Digital",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Circuitos y Sistemas Electrónicos",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Proyectos en Circuitos y Sistemas Electrónicos",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Señales y Sistemas Continuos",
+   "UC": 8,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Cálculo Numérico para Telecomunicaciones",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Radiaciones y Ondas Guiadas",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Telemática I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Telemática I",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Sistemas Embebidos",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Comunicaciones I",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Señales y Sistemas Discretos",
+   "UC": 6,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Antenas",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Telemática II",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Laboratorio de Telemática II",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Laboratorio de Proyectos en Telecomunicaciones",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Comunicaciones II",
+   "UC": 7,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Laboratorio de Comunicaciones",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Procesamiento de Señales",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Telemática III",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Contabilidad General",
+   "UC": 4,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Comunicaciones Ópticas",
+   "UC": 4,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Microondas",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Radio Comunicaciones",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Telemática IV",
+   "UC": 4,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Ingeniería Económica",
+   "UC": 4,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Seminario de Trabajo de Grado I",
+   "UC": 2,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Pasantía",
+   "UC": 8,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Etica Profesional",
+   "UC": 3,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Sistemas de Radiodifusión",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Sistemas Móviles",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Gerencia y Legislación",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Seminario de Trabajo de Grado II",
+   "UC": 2,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Trabajo de Grado",
+   "UC": 16,
+   "Tax": "TA‐7"
+ }
+]

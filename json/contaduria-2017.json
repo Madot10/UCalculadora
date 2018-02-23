@@ -1,0 +1,237 @@
+[
+ {
+   "Asignatura": "Comprensión Lectora y Redacción",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Matemáticas I",
+   "UC": 8,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐5"
+ },
+ {
+   "Asignatura": "Lógica",
+   "UC": 3,
+   "Tax": "TA‐5"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Teoría Contable",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Microeconomía I",
+   "UC": 7,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Cálculo",
+   "UC": 6,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Historia Económica Empresarial",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Estadística Aplicada",
+   "UC": 5,
+   "Tax": "TA‐5"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Contabilidad I",
+   "UC": 7,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Macroeconomía I",
+   "UC": 7,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Matemáticas Aplicadas",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Investigación Aplicada",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Gerencia",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Contabilidad II",
+   "UC": 7,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Legislación Mercantil",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Matemáticas Financieras",
+   "UC": 4,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Contabilidad Especializada",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Sistemas Contables",
+   "UC": 4,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Contabilidad III",
+   "UC": 8,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Derecho del Trabajo",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Mercados e Instituciones Financieras",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Auditoria y Aseguramiento I",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Ética Profesional",
+   "UC": 3,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Costos I",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Contabilidad IV",
+   "UC": 8,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Derecho Fiscal",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Responsabilidad Social Empresarial",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Finanzas I",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Auditoría y Aseguramiento II",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Informática Aplicada a los Negocios",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Costos II",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Contabilidad V",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Derecho Tributario",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Planificación Presupuestaria",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Finanzas II",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Auditoría y Aseguramiento III",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Electiva",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Costos III",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Gerencia Tributaria",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Control de Gestión",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Emprendimiento",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Finanzas III",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Auditoría y Aseguramiento IV",
+   "UC": 5,
+   "Tax": "TA‐1"
+ }
+]

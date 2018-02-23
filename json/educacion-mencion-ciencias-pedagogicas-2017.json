@@ -1,0 +1,282 @@
+[
+ {
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Comprensión y Producción de Textos Escritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Lógica",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Historia General de la Educación",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Sociología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Políticas Educativas en Venezuela",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Teorías de la Comunicación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Economía y Educación",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Manejo de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Metodología Didáctica",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Introducción a la Gestión Educativa",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Tecnología Educativa",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Métodos de Investigación I",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Currículum",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Teoría del Cambio Social",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Métodos de Investigación II",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Introducción a la Filosofía",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Administración de Recursos Humanos en Educación",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Administración de Recursos Financieros en Educación",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Planificación Educativa",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Comportamiento Organizacional",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Formación Profesional I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Emprendimiento Social en Educación",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Seminario",
+   "UC": 2,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Evaluación II",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Formación Profesional II",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Prácticas Profesionales I",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Pedagogía Comparada",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Seminario",
+   "UC": 2,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Educación de Adultos",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Gerencia de las Organizaciones",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Educación y Productividad",
+   "UC": 3,
+   "Tax": "TA‐2"
+ },
+ {
+   "Asignatura": "Prácticas Profesionales II",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Integración Socio‐Laboral de la Discapacidad",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Tópico Especial",
+   "UC": 6,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Asignatura": "Gerencia de Proyectos Educativos",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Asignatura": "Prácticas Profesionales III",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Asignatura": "Tópico Especial",
+   "UC": 4,
+   "Tax": "TA‐9"
+ },
+ {
+   "Asignatura": "Tópico Especial",
+   "UC": 4,
+   "Tax": "TA‐9"
+ }
+]
