@@ -51,3 +51,8 @@ th, td {
 .totalizacion{
  visibility: hidden;
 }
+
+.sl_mat{
+    text-overflow: ellipsis;
+    width:80%;
+}

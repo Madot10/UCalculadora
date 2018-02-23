@@ -1,0 +1,1373 @@
+[
+	{
+	"carrera": "educacion-mencion-preescolar-2017",
+	"materias": 
+	[
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Comprensión y Producción de Textos Escritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Modelos Educativos para la infancia",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Herramientas para la Educación Inicial",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Neurodidáctica en la Educación Inicial",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Expresión Artística",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Expresión Musical",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "SEGUNDO  SEMESTRE",
+   "Asignatura": "Práctica de Observación",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Manejo de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Gestión de la Atención Prenatal",
+   "UC": 5,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Implicaciones Educativas del Desarrollo Social y\nEmocional del Niño",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Salud y Nutrición desde la Concepción a la\nNiñez Temprana",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Desarrollo y Evaluación del Niño Maternal",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Didáctica de la Educación Maternal",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Literatura Infantil",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Pedagogìa Social y Aprendizaje en Servicio",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Práctica Etapa Maternal",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "CUARTO  SEMESTRE",
+   "Asignatura": "Psicomotricidad en la Primera Infancia y la\nNiñez Temprana",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Lectura y Escritura en Educaciòn Inicial",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Desarrollo y Evaluaciòn del Niño Preescolar",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Didàctica de la Educación Preescolar",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "Práctica Etapa Preescolar",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "QUINTO  SEMESTRE",
+   "Asignatura": "El Niño y la Matemática",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "El Niño y las Ciencias Sociales",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Didáctica para Primer Grado",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Prevención y atención Integral Temprana de la\nDiscapacidad",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Práctica de Primer Grado",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "El Niño y las Ciencias Naturales",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Investigación Educativa I.",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Prácticas de Ambientes No Convencionales",
+   "UC": 3,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Educación en Valores para la Paz y la\nConvivivencia",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Estrategias para la Diversidad",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO  SEMESTRE",
+   "Asignatura": "Marco Legal para la Educación Inicial",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Investigación Educativa II",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Gestión de Instituciones Educativas",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Didáctica de los Adultos Significativos",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Proyecto Emprendimiento Educativo",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "OCTAVO  SEMESTRE",
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ }
+]
+	},
+	{
+	"carrera": "educacion-mencion-integral-2017",
+	"materias":
+	[
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Comprensión y Producción de Textos Escritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Aritmética I",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Fundamentos de la Cultura Venezolana",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "El Niño y la Actividad Lúdica",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Aritmética II",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Práctica de Observación",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Lengua Española",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Manejo de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Práctica, Enseñanza y Pedagogía",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Educación para la Salud",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Enseñanza de la Lectura y la Escritura I",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Ciencias Naturales I",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Enseñanza de la Lectura y la Escritura II",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Enseñanza de la Lengua I",
+   "UC": 3,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Geometría",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Práctica Unidades de clase",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Pedagogia Social y Aprendizaje Servicio",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Práctica Unidades Integradoras",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Ciencias Naturales II",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Enseñanza de la Lengua II",
+   "UC": 4,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Ciencias Sociales",
+   "UC": 3,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Literatura Infantil y Juvenil",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Práctica Proyecto de Aprendizaje",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Educación para la Ciudadania",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Geografìa de Venezuela I",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Prevención y Atención Temprana de la Discapacidad",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Historia Universal",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Investigación Educativa I.",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Prácticas de Ambientes No Convencionales",
+   "UC": 3,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Historia de Venezuela I",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Geografìa de Venezuela II",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Educación Estética",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Estrategias para la Diversidad",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Investigación Educativa II",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Gestión de Instituciones Educativas",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Historia de Venezuela II",
+   "UC": 5,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Proyecto Emprendimiento Educativo",
+   "UC": 5,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Didactica de los Adultos Significativos",
+   "UC": 4,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ }
+]
+	},
+	{
+	"carrera": "educacion-mencion-fisica-y-matematicas-2017",
+	"materias":
+	[
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Comprensión y Producción de Textos Escritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Geometría Plana y Trigonometría",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Introducción al Cálculo",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Cinemática",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Laboratorio de Cinemática",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Cálculo Diferencial",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Manejo de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Cálculo Integral",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Dinámica",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Laboratorio de Dinámica",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Calor y Fluidos",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Laboratorio de Calor y Fluidos",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Geometría Métrica en el Plano y en el Espacio",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Cálculo Varias Variables",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Álgebra Lineal",
+   "UC": 4,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Práctica Profesional: Didáctica Matemática",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Electricidad",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Laboratorio de Electricidad",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Ecuaciones Diferenciales",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Álgebra Abstracta",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Practica Profesional: Didáctica Física",
+   "UC": 6,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Magnetismo",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Laboratorio de Magnetismo",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Variable Compleja",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Seminario Enseñanza de la Geometría",
+   "UC": 4,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Investigación Educativa I",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Prácticas de Ambientes No Convencionales",
+   "UC": 3,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Métodos Estadísticos",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Ondas, Luz y Óptica",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Laboratorio de Ondas, Luz y Óptica",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Seminario Enseñanza de la Física",
+   "UC": 4,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Investigación Educativa II",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Gestión de Instituciones Educativas",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Física Moderna",
+   "UC": 6,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Laboratorio de Física Moderna",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Historia de las Ciencias Físicas y Matemáticas",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Seminario Enseñanza de la Estadística",
+   "UC": 4,
+   "Tax": "TA‐9"
+ }
+]
+	},
+	{
+	"carrera": "educacion-mencion-filosofia-2017",
+	"materias":
+	[
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Sistema Educativo Venezolano",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Comprensión y Producción de Textos\nEscritos",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Psicología General",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Introducción     Metodológica     a     la\nFilosofía I",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Antigua I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "PRIMER SEMESTRE",
+   "Asignatura": "Lógica",
+   "UC": 3,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Identidad, Liderazgo y Compromiso II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Comprensión de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Desarrollo Humano",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Sociología de la Educación",
+   "UC": 4,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Introducción     Metodológica     a     la\nFilosofía II",
+   "UC": 3,
+   "Tax": "TA‐8"
+ },
+ {
+   "Semestre": "SEGUNDO SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Antigua II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Estadística I",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Producción de Textos en Inglés",
+   "UC": 5,
+   "Tax": "TA‐6"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Teorías y Modelos del Aprendizaje",
+   "UC": 4,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Manejo de medios digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Antropología Filosófica I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Medieval I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Teoría del Conocimiento I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "TERCER SEMESTRE",
+   "Asignatura": "Pensamiento Latinoamericano I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Estadística II",
+   "UC": 5,
+   "Tax": "TA‐4"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Producción de Medios Digitales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Antropología Filosófica II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Medieval II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Teoría del Conocimiento II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "CUARTO SEMESTRE",
+   "Asignatura": "Metafísica I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Gestión de Entornos Virtuales",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Evaluación de los Aprendizajes",
+   "UC": 5,
+   "Tax": "TA‐2"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Practica Profesional I: Didáctica de la\nFilosofía",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Filosofía de la Ciencia I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Filosofía de la Religión",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Moderna I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "QUINTO SEMESTRE",
+   "Asignatura": "Metafísica II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Asesoramiento",
+   "UC": 5,
+   "Tax": "TA‐3"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía de la Educación",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Practica profesional II: Didáctica de la\nFilosofía",
+   "UC": 4,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía de la Ciencia II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Filosofía Moral I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Historia de la Filosofía Moderna II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SEXTO SEMESTRE",
+   "Asignatura": "Electiva",
+   "UC": 3,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Investigación I: Proyecto",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Prácticas       de       Ambientes       No\nConvencionales",
+   "UC": 3,
+   "Tax": "TA‐7"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Ecología, Ambiente y Sustentabilidad",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Historia          de          la          Filosofía\nContemporánea I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Filosofía Moral II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Filosofía del Lenguaje I",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "SÉPTIMO SEMESTRE",
+   "Asignatura": "Filosofía Política I",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Ética",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Investigación Educativa II: Trabajo de\nGrado",
+   "UC": 5,
+   "Tax": "TA‐9"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Gestión de Instituciones Educativas",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Historia          de          la          Filosofía\nContemporánea II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Filosofía del Lenguaje II",
+   "UC": 3,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Filosofía Política II",
+   "UC": 6,
+   "Tax": "TA‐1"
+ },
+ {
+   "Semestre": "OCTAVO SEMESTRE",
+   "Asignatura": "Síntesis Filosófica",
+   "UC": 5,
+   "Tax": "TA‐9"
+ }
+]
+	},
+	{
+	"carrera": "educacion-mencion-filosofia-2017",
+	"materias":
+]

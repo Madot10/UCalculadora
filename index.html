@@ -43,8 +43,8 @@ ga('send', 'pageview');
         <strong><p>Valor UC: <span id="ucShow"></span></p></strong>
 
         <div>
-            <label>Seleccione carrera: </label> 
-            <select id="sl_carrera"> 
+            <label><strong>1.</strong> Seleccione carrera: </label> 
+            <select id="sl_carrera" onchange="OnLoadCarrera()"> 
                 <option value="Administracion-de-Empresas-1">Administración de Empresas</option>
                 <option value="contaduria-2017">Contaduria</option>
                 <option value="derecho-2017">Derecho</option>
@@ -66,10 +66,19 @@ ga('send', 'pageview');
                 <option value="psicologia-2018">Psicologia</option>
                 <option value="relaciones-industriales-2017">Relaciones industriales</option>
                 <option value="comunicacion-social-2017">Comunicacion social</option>
+                <option value="sociologia-2017">Sociologia</option>
             </select> 
-            <button onclick="OnLoadCarrera()">Cargar</button>
+            <!-- <button onclick="OnLoadCarrera()">Cargar</button> -->
         </div>
+<!-- 
+        <div style=" margin-top: 0.75em;">
+            <label><strong>2.</strong> Selecione semestre: </label>
+            <select id="sl_sem">
 
+            </select> 
+        </div>
+-->
+<br>
         <div class="tabM" style="overflow-x:auto;">
             <table>
                     <tr>
@@ -143,7 +152,7 @@ ga('send', 'pageview');
         </div>
 
         <br>
-        <button onclick="OnTotal()">Calcular pagos <span style="color: red">*</span></button>
+        <button onclick="OnTotal()" style=" font-size:  1em">Calcular pagos <span style="color: red">**</span></button>
         <br>
 
         <div class="totalizacion" style="overflow-x:auto;">
@@ -174,7 +183,7 @@ ga('send', 'pageview');
   
         </div>
 
-      <span style="color: red">*Montos únicamente para estimaciones</span>
+      <span style="color: red">**Montos únicamente para estimaciones</span>
               <br>
           <strong>Páginas de interés:</strong> 
         <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
