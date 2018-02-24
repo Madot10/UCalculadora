@@ -49,7 +49,11 @@ th, td {
 }
 
 .totalizacion{
- visibility: hidden;
+    visibility: hidden;
+}
+
+#btTotal{
+    visibility: hidden;
 }
 
 .sl_mat{

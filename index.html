@@ -45,7 +45,8 @@ ga('send', 'pageview');
         <div>
             <label><strong>1.</strong> Seleccione carrera: </label> 
             <select id="sl_carrera" onchange="OnLoadCarrera()"> 
-                <option value="Administracion-de-Empresas-1">Administración de Empresas</option>
+                <option value="null">Seleccione</option>
+                <option value="Administración-de-Empresas-1">Administración de Empresas</option>
                 <option value="contaduria-2017">Contaduria</option>
                 <option value="derecho-2017">Derecho</option>
                 <option value="economia-2017">Economia</option>
@@ -152,7 +153,19 @@ ga('send', 'pageview');
         </div>
 
         <br>
-        <button onclick="OnTotal()" style=" font-size:  1em">Calcular pagos <span style="color: red">**</span></button>
+
+        <div id="sedes">
+            <label><strong>2.</strong> Seleccione sede: </label>
+            <select id="sl_sede" onchange="SedeSelect()">
+                <option value="null">Seleccione</option>
+                <option value="mtb">Montalbán</option>
+                <option value="g">Guayana</option>
+                <option value="tq">Los Teques</option>
+            </select>
+        </div>
+
+        <br>
+        <button onclick="OnTotal()" style=" font-size:  1em" id="btTotal">Calcular pagos <span style="color: red">**</span></button>
         <br>
 
         <div class="totalizacion" style="overflow-x:auto;">
@@ -182,10 +195,14 @@ ga('send', 'pageview');
            </table>
   
         </div>
-
-      <span style="color: red">**Montos únicamente para estimaciones</span>
-              <br>
-          <strong>Páginas de interés:</strong> 
+        <p>
+            <span style="color: red" id="info"></span>
+            <span style="color: red" id="info2"></span>
+            <span style="color: red">**Montos únicamente para estimaciones</span>
+        </p>
+      
+        <br>
+        <strong>Páginas de interés:</strong> 
         <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
         <a href="https://goo.gl/kbmDKR">Secretaria</a> -
         <a href="https://goo.gl/MnGMZh">Circular del vicerectorado</a> -
