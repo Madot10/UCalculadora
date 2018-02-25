@@ -203,7 +203,7 @@ function CalculateValueUC(taxo, uc){
         //sin recargo
             console.log("sin recargo");
 
-            return formatNumber.new(uc * ValueUC);
+            return formatNumber.new(Math.round(uc * ValueUC));
         break;
 
         case "7":
