@@ -12,6 +12,7 @@ let stSede = false;
 
 window.onload = function() {
     document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+    document.getElementById("sl_carrera").selectedIndex = 0;
 }
 
 //Fun retorna jsonData de carrera
