@@ -310,6 +310,17 @@ function OnTotal(){
     spAbr.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
     spMay.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
 
+    //calculamos sum + der. insc.
+    let sp60dR = document.getElementById("sem60dR");
+    let sp60dN = document.getElementById("sem60dN");
+    let spMardR = document.getElementById("semMardR");
+    let spMardN = document.getElementById("semMardN");
+
+    sp60dR.innerHTML = formatNumber.new(Math.round((sum * 0.6) + (1.25 * ValueUC)), "Bs.F. ");
+    sp60dN.innerHTML = formatNumber.new(Math.round((sum * 0.6) + (2.75 * ValueUC)), "Bs.F. ");
+    spMardR.innerHTML = formatNumber.new(Math.round(((sum * 0.6) * 0.5) + (1.25 * ValueUC)), "Bs.F. ");
+    spMardN.innerHTML = formatNumber.new(Math.round(((sum * 0.6) * 0.5) + (2.75 * ValueUC)), "Bs.F. ");
+
     let tbTo = document.getElementById("totales");
     tbTo.style.visibility = "visible";
 }
