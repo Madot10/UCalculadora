@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#4b7f52">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="UCalculadora">
+    <meta name="application-name" content="UCalculadora">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
+    <meta name="theme-color" content="#4b7f52">
+
     <link rel="stylesheet" href="css/style.css">
    <script src="js/fun.js" type="text/javascript"></script>
    <!-- <script src="js/data.js" type="text/javascript"></script> -->
@@ -40,14 +52,19 @@
     
 </head>
 
-<body>
-    <div class="container" style="overflow-x:auto;">
-        <h1><span class="one">U</span><span class="two">C</span><span class="th">alculadora</span></h1>
-        <p>**La página sigue presentando actualizaciónes y mejoras conforme se encuentra errores**</p>
-        <strong><p>Valor UC: <span id="ucShow"></span></p></strong>
+<body style="overflow-x:auto;">
+    <!-- <div class="container" > -->
+        <div class="top">
+                <h1><span class="one">U</span><span class="two">C</span><span class="th">alculadora</span></h1>
 
-        <div>
-            <label><strong>1.</strong> Seleccione carrera: </label> 
+                <!-- <p>**La página sigue presentando actualizaciones y mejoras conforme se encuentran errores**</p> -->
+                <strong><p>Valor UC: <span id="ucShow"></span></p></strong>
+        </div>
+        
+
+        <div class="tituloCont">
+            <label style="text-transform: uppercase;"><strong> <span id="num">1</span>. carrera: </strong></label> 
+            <br>
             <select id="sl_carrera" onchange="OnLoadCarrera()" class="styled-select blue semi-square"> 
                 <option value="null">Seleccione</option>
                 <option value="Administración-de-Empresas-1">Administración de Empresas</option>
@@ -59,7 +76,7 @@
                 <option value="educacion-mencion-ciencias-sociales-2017">Educacion mencion ciencias sociales</option>
                 <option value="educacion-mencion-fisica-y-matematicas-2017">Educacion mencion fisica y matematicas</option>
                 <option value="educacion-mencion-integral-2017">Educacion mencion integral</option>
-                <option value="educacion-mencion-filosofia-2017">educacion mencion filosofia</option>
+                <option value="educacion-mencion-filosofia-2017">Educacion mencion filosofia</option>
                 <option value="educacion-mencion-preescolar-2017">Educacion mencion preescolar</option>
                 <option value="educacion-preslied-2017">Educacion preslied</option>
                 <option value="educacion-tronco-comun-2017">Educacion tronco comun</option>
@@ -85,7 +102,7 @@
         </div>
         -->
         <br>
-        <label><strong>2.</strong> Cargue las materias: </label>
+        <label style="text-transform: uppercase;" class="tituloCont"><strong><span id="num">2</span>. Cargue las materias: </strong></label>
         <br>
         <div class="tabM" style="overflow-x:auto;">
             <table>
@@ -164,8 +181,9 @@
 
         <br>
 
-        <div id="sedes">
-            <label><strong>3.</strong> Seleccione sede: </label>
+        <div id="sedes" class="tituloCont">
+            <label style="text-transform: uppercase;"><strong><span id="num">3</span>. Sede: </strong></label>
+            <br>
             <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0; document.getElementById('totales').style.visibility = 'hidden';" class="styled-select blue semi-square">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
@@ -176,8 +194,9 @@
 
         <br>
 
-        <div id="coop">
-                <label><strong>4.</strong> Seleccione el <strong>%</strong> de coop. económica</label>
+        <div id="coop" class="tituloCont">
+                <label style="text-transform: uppercase;"><strong><span id="num">4</span>. Cooperación económica: </strong></label>
+                <br>
                 <select id="sl_coop" onchange="SedeSelect()" class="styled-select blue semi-square">
                     <option value="null">Seleccione</option>
                     <option value="1">Ninguna</option>
@@ -201,7 +220,7 @@
         <div class="totalizacion" style="overflow-x:auto;">
            <table id="totales">
                 <tr >
-                    <th rowspan="2" id="tt">Derecho de inscipción (75% ~ Pago marzo) </th>
+                    <th rowspan="2" id="tt">Derecho de inscripción (75% ~ Pago marzo) </th>
                     <th colspan="2">Est. regular: <br><span id="der75">   </span></th>
                     
                 </tr>
@@ -209,7 +228,7 @@
                     <th colspan="2">Est. nuevo: <br> <span id="der752">   </span></th>
                 </tr>
                 <tr>
-                    <th colspan="3" style=" background-color: #4b7f52"><span style="color: black">Modalidad pago completo (marzo-mayo):</span> </th>
+                    <th colspan="3" style=" background-color: rgba(254, 210, 1, 0.5)"><span style="color: black">Modalidad pago completo (marzo-mayo):</span> </th>
                 </tr>
                 <tr>
                     <th rowspan="2" id="tt">60% semestre a cancelar</th>
@@ -220,7 +239,7 @@
                     <th>Total nuevo: <br><span id="sem60dN" >   </span></th>
                 </tr>
                 <tr>
-                    <th colspan="3" style=" background-color: #4b7f52"><span style="color: black" >Modalidad pago financiado (marzo-mayo):</span> </th>
+                    <th colspan="3" style=" background-color: rgba(52, 178, 228, 0.4)"><span style="color: black" >Modalidad pago financiado (marzo-mayo):</span> </th>
                 </tr>
                 <tr>
                     <th rowspan="2" id="tt">Marzo</th>
@@ -260,7 +279,7 @@
         <strong>Páginas de interés:</strong> 
         <a href="https://goo.gl/K47LS5">Ig del autor</a> -
         <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
-        <a href="https://goo.gl/kbmDKR">Secretaria</a> -
+        <a href="https://goo.gl/kbmDKR">Secretaría</a> -
         <a href="https://goo.gl/MnGMZh">Circular del vicerectorado</a> -
         <a href="https://goo.gl/BVe2d4">Pdf: Costo UC</a> 
         <br>
@@ -268,7 +287,7 @@
         </p> 
         <br>
         <footer> Desarrollado por Madot - 2018 - Aplicación NO-Oficial de la UCAB <br> La UCAB ni Madot se hace responsable de daños :)</footer>
-    </div>
+    <!-- </div> -->
     
 </body>
 

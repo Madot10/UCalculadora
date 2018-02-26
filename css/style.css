@@ -1,5 +1,5 @@
 .one{
-    color: #FED201;
+    color: #34B2E4;
 }
 
 .two{
@@ -7,7 +7,19 @@
 }
 
 .th{
-    color: #005F1D;
+    color: #4b7f52;
+}
+
+.tituloCont{
+    /*border-bottom: 5px solid #686868;*/
+}
+
+#num{
+	font-size: 1.7em;
+}
+
+.top{
+    background-color: white;
 }
 
 .container{
@@ -19,15 +31,19 @@
 	
 }
 h1{
-    text-shadow: 2px 2px #374746;
+   /*text-shadow: 2px 2px #374746;*/
+    text-transform: uppercase;
+	border-bottom: 5px solid #FED201;
 }
 
 body {
-	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+    /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
+    font-family: "Open Sans", Arial, sans-serif;;
 	background-color: white;
     text-align:center;
     align-content: center;
     color: #374746;
+    font-size: 1.25em;
  
 }
 
@@ -50,7 +66,8 @@ img {
 
 th, td {
     padding: 5px;
-    text-align: center;    
+    text-align: center;
+    width:fit-content;    
 }
 
 .totalizacion{
@@ -66,19 +83,18 @@ th, td {
 }
 
 .sl_mat{
-
+    width:100%;
     padding: 0;
-    /*width:80%;*/
-   max-width: 80%;
-   text-overflow: ellipsis;
-   overflow:hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 button{
     border-radius: 8px;
     background-color: #4b7f52;
     border: none;
     color: white;
-    padding: 2.5% 3.5%;
+    padding: 1% 1%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
