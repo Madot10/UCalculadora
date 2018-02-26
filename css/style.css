@@ -10,6 +10,9 @@
     color: #4b7f52;
 }
 
+a{
+    color: white;
+}
 .tituloCont{
     /*border-bottom: 5px solid #686868;*/
 }
