@@ -184,7 +184,7 @@
         <div id="sedes" class="tituloCont">
             <label style="text-transform: uppercase;"><strong><span id="num">3</span>. Sede: </strong></label>
             <br>
-            <select id="sl_sede" onchange="SedeSelect()" class="styled-select blue semi-square">
+            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="styled-select blue semi-square">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
                 <option value="g">Guayana</option>
@@ -194,8 +194,8 @@
 
         
 
-        <!-- 
-            <br>
+        
+        <br>
         <div id="coop" class="tituloCont">
                 <label style="text-transform: uppercase;"><strong><span id="num">4</span>. Cooperación económica: </strong></label>
                 <br>
@@ -213,7 +213,7 @@
                     <option value="0.1">90%</option>
                     <option value="0">100%</option>
                 </select>
-        </div> -->
+        </div> 
 
         <br>
         <button onclick="OnTotal()" id="btTotal">Calcular pagos <span style="color: red">**</span></button>
@@ -285,7 +285,7 @@
             <br>
             <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
             <a href="https://goo.gl/kbmDKR">Secretaría</a> -
-            <a href="https://goo.gl/MnGMZh">Circular del vicerectorado</a> -
+            <a href="https://goo.gl/MnGMZh">Circular del vicerrectorado</a> -
             <a href="https://goo.gl/BVe2d4">Pdf: Costo UC</a> 
             <br>
             </p> 

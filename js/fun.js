@@ -232,16 +232,19 @@ function CalculateValueUC(taxo, uc){
 function SedeSelect(){
 
     //fue seleccionada la sede?
-    //if(stSede){
+    if(stSede){
         let spinfo2 = document.getElementById("info2").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
-
-    /*
+        //toggle tabla totales
+        
     }else{
         alert("Selecciona la sede!");
     }
-    */
+
+    var x = document.getElementById("tbTotal");
+    x.style.display = "none";
+    
 }
 
 //Totalizacion
@@ -309,11 +312,10 @@ function OnTotal(){
 
     }
 
-/*
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
-*/
+
 /*
 sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
     spMar.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.5), "Bs.F. ");
