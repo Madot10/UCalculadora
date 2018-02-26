@@ -14,7 +14,7 @@ window.onload = function() {
     document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
     document.getElementById("sl_carrera").selectedIndex = 0;
 
-    alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
+    //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
 
 //Fun retorna jsonData de carrera
@@ -51,10 +51,13 @@ function OnLoadCarrera(){
     tb.style.visibility = "visible";
     
     document.getElementById("sl_sede").selectedIndex = 0;
-    document.getElementById("sl_coop").selectedIndex = 0;
+    //document.getElementById("sl_coop").selectedIndex = 0;
 
     let spInfo2 = document.getElementById("info2").innerHTML = "";
     let spInfo = document.getElementById("info").innerHTML = "";
+
+    var x = document.getElementById("tbTotal");
+    x.style.display = "none";
 
     ListMaterias();
 }
@@ -228,13 +231,16 @@ function CalculateValueUC(taxo, uc){
 function SedeSelect(){
 
     //fue seleccionada la sede?
-    if(stSede){
+    //if(stSede){
+        let spinfo2 = document.getElementById("info2").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
+
+    /*
     }else{
         alert("Selecciona la sede!");
     }
-    
+    */
 }
 
 //Totalizacion
@@ -278,7 +284,7 @@ function OnTotal(){
         //es carrera con descuento
         console.log("Carrera con descuento");
         sum = sum * 0.70;
-        let spInfo = document.getElementById("info").innerHTML = "*Aplicado descuento del 30% a la carrera!*";
+        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
 
     }
 
@@ -296,21 +302,27 @@ function OnTotal(){
 
         case "g":
         case "tq":
-            let spInfo2 = document.getElementById("info2").innerHTML = "*Aplicado descuento del 20% de la sede!*";
+            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
             sum = sum * 0.8;
         break;
 
     }
 
-
+/*
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
-
-    sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
+*/
+/*
+sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
     spMar.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.5), "Bs.F. ");
     spAbr.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
     spMay.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
+*/
+    sp60.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
+    spMar.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+    spAbr.innerHTML = formatNumber.new(Math.round((sum) * 0.25), "Bs.F. ");
+    spMay.innerHTML = formatNumber.new(Math.round((sum) * 0.25), "Bs.F. ");
 
     //calculamos sum + der. insc.
     let sp60dR = document.getElementById("sem60dR");
@@ -318,11 +330,15 @@ function OnTotal(){
     let spMardR = document.getElementById("semMardR");
     let spMardN = document.getElementById("semMardN");
 
-    sp60dR.innerHTML = formatNumber.new(Math.round((sum * 0.6) + (1.25 * ValueUC)), "Bs.F. ");
-    sp60dN.innerHTML = formatNumber.new(Math.round((sum * 0.6) + (2.75 * ValueUC)), "Bs.F. ");
-    spMardR.innerHTML = formatNumber.new(Math.round(((sum * 0.6) * 0.5) + (1.25 * ValueUC)), "Bs.F. ");
-    spMardN.innerHTML = formatNumber.new(Math.round(((sum * 0.6) * 0.5) + (2.75 * ValueUC)), "Bs.F. ");
+    sp60dR.innerHTML = formatNumber.new(Math.round((sum) + (1.25 * ValueUC)), "Bs.F. ");
+    sp60dN.innerHTML = formatNumber.new(Math.round((sum) + (2.75 * ValueUC)), "Bs.F. ");
+    spMardR.innerHTML = formatNumber.new(Math.round(((sum) * 0.5) + (1.25 * ValueUC)), "Bs.F. ");
+    spMardN.innerHTML = formatNumber.new(Math.round(((sum) * 0.5) + (2.75 * ValueUC)), "Bs.F. ");
 
     let tbTo = document.getElementById("totales");
     tbTo.style.visibility = "visible";
+
+    //toggle tabla totales
+    var x = document.getElementById("tbTotal");
+    x.style.display = "block";
 }

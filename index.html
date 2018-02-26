@@ -56,7 +56,7 @@
     <!-- <div class="container" > -->
         <div class="top">
                 <h1><span class="one">U</span><span class="two">C</span><span class="th">alculadora</span></h1>
-
+                <p>*MONTOS ACTUALIZADOS*</p>
                 <!-- <p>**La página sigue presentando actualizaciones y mejoras conforme se encuentran errores**</p> -->
                 <strong><p>Valor UC: <span id="ucShow"></span></p></strong>
         </div>
@@ -184,7 +184,7 @@
         <div id="sedes" class="tituloCont">
             <label style="text-transform: uppercase;"><strong><span id="num">3</span>. Sede: </strong></label>
             <br>
-            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0; document.getElementById('totales').style.visibility = 'hidden';" class="styled-select blue semi-square">
+            <select id="sl_sede" onchange="SedeSelect()" class="styled-select blue semi-square">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
                 <option value="g">Guayana</option>
@@ -192,8 +192,10 @@
             </select>
         </div>
 
-        <br>
+        
 
+        <!-- 
+            <br>
         <div id="coop" class="tituloCont">
                 <label style="text-transform: uppercase;"><strong><span id="num">4</span>. Cooperación económica: </strong></label>
                 <br>
@@ -211,13 +213,13 @@
                     <option value="0.1">90%</option>
                     <option value="0">100%</option>
                 </select>
-        </div>
+        </div> -->
 
         <br>
         <button onclick="OnTotal()" id="btTotal">Calcular pagos <span style="color: red">**</span></button>
         <br> 
 
-        <div class="totalizacion" style="overflow-x:auto;">
+        <div id="tbTotal" class="totalizacion" style="overflow-x:auto; display: none;">
            <table id="totales">
                 <tr >
                     <th rowspan="2" id="tt">Derecho de inscripción (75% ~ Pago marzo) </th>
@@ -231,7 +233,7 @@
                     <th colspan="3" style=" background-color: rgba(254, 210, 1, 0.5)"><span style="color: black">Modalidad pago completo (marzo-mayo):</span> </th>
                 </tr>
                 <tr>
-                    <th rowspan="2" id="tt">60% semestre a cancelar</th>
+                    <th rowspan="2" id="tt">Total (Período marzo-mayo)</th>
                     <th colspan="2"><span id="sem60" >   </span>  + 75% Der. Insc.</th>
                 </tr>
                 <tr>
@@ -243,7 +245,7 @@
                 </tr>
                 <tr>
                     <th rowspan="2" id="tt">Marzo</th>
-                    <th colspan="2"><span id="marzo">   </span> + 75% Der. Insc.</th>
+                    <th colspan="2">(50%) <span id="marzo">   </span> + 75% Der. Insc.</th>
                 </tr>
                 <tr>
                     <th>Total regular: <br><span id="semMardR" >   </span></th>
@@ -251,11 +253,11 @@
                 </tr>
                 <tr>
                     <th id="tt">Abril</th>
-                    <th colspan="2"><span id="abril">   </span></th>
+                    <th colspan="2">(25%) <span id="abril">   </span></th>
                  </tr>
                 <tr>
                     <th id="tt">Mayo</th>
-                    <th colspan="2"><span id="mayo">    </span></th>
+                    <th colspan="2">(25%) <span id="mayo">    </span></th>
 
                 </tr>
            </table>
@@ -263,7 +265,9 @@
         </div>
         <p>
             <span style="color: red" id="info"></span>
+            <br>
             <span style="color: red" id="info2"></span>
+            <br>
             <span style="color: red">**Montos únicamente para estimaciones</span>
         </p>
         <br>
@@ -271,7 +275,7 @@
         <div id="tw">
             <blockquote class="twitter-tweet tw-align-center " data-cards="hidden" data-lang="en"><p lang="es" dir="ltr">Conoce el nuevo sistema de inscripción de matrícula por unidades de crédito: <a href="https://t.co/9fxdUsEWik">pic.twitter.com/9fxdUsEWik</a></p>&mdash; UCAB (@lacatolica) <a href="https://twitter.com/lacatolica/status/967746200421257216?ref_src=twsrc%5Etfw">February 25, 2018</a></blockquote>
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            <img src="img/FomaPagoSem.jpeg" alt="Formas de pago - semestre">
+            <!-- <img src="img/FomaPagoSem.jpeg" alt="Formas de pago - semestre"> -->
         </div>
         
         <footer>
