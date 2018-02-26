@@ -13,6 +13,7 @@ let stSede = false;
 window.onload = function() {
     document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
     document.getElementById("sl_carrera").selectedIndex = 0;
+    document.getElementById("sl_sede").selectedIndex = 0;
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
