@@ -169,8 +169,25 @@ function OnChangeMat(ind){
         spUC.innerHTML = jdatasl[indAsig].UC;
         spTAX.innerHTML = jdatasl[indAsig].Tax;
         spVc.innerHTML = CalculateValueUC(jdatasl[indAsig].Tax, jdatasl[indAsig].UC);
+
+        //mandamos las uc al total
+        TotalUC(jdatasl[indAsig].UC);
     }
     
+}
+
+function TotalUC(vuc){
+    let spVuc = document.getElementById("TotalUC");
+    var tvuc = 0;
+    let spUC = document.getElementsByClassName("uc");
+
+    for(i = 0; i < 10; i++){
+        console.log(spUC[i].innerHTML);
+       tvuc += Number(spUC[i].innerHTML);
+       
+    }
+    
+    spVuc.innerHTML = tvuc;
 }
 
 // tomado de http://www.yoelprogramador.com/formatear-numeros-con-javascript/
