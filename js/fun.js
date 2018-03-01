@@ -166,25 +166,46 @@ function OnChangeMat(ind){
         spTAX.innerHTML = jsonCarrera[inOpt].materias[indAsig].Tax;
         spVc.innerHTML = CalculateValueUC(jsonCarrera[inOpt].materias[indAsig].Tax, jsonCarrera[inOpt].materias[indAsig].UC); */
 
-        spUC.innerHTML = jdatasl[indAsig].UC;
+        spUC.innerHTML = FixUC(jdatasl[indAsig].Tax, jdatasl[indAsig].UC);
         spTAX.innerHTML = jdatasl[indAsig].Tax;
         spVc.innerHTML = CalculateValueUC(jdatasl[indAsig].Tax, jdatasl[indAsig].UC);
 
         //mandamos las uc al total
-        TotalUC(jdatasl[indAsig].UC);
+        
     }
+    TotalUC();
+}
+//Arregla uc cambiado en el archivo debido al V y SP
+function FixUC(taxNum, ucnum){
+    //console.log(taxNum);
     
+    if(taxNum){
+        if( taxNum.includes("(V)") || taxNum.includes("(SP)")){
+            //si es una modalida sp y v 
+            //descontamos el 0.72
+            let k = Number(ucnum) * 0.72;
+            //console.log("K2 " + k);
+            return Math.round(k);
+        }else{
+            //console.log(ucnum);
+            return Math.round(Number(ucnum));
+        }
+
+    }
+    return 0;
 }
 
-function TotalUC(vuc){
+function TotalUC(){
     let spVuc = document.getElementById("TotalUC");
     var tvuc = 0;
     let spUC = document.getElementsByClassName("uc");
+    let spTAX = document.getElementsByClassName("tax");
 
+    //recorre todos los uc space
     for(i = 0; i < 10; i++){
-        console.log(spUC[i].innerHTML);
-       tvuc += Number(spUC[i].innerHTML);
-       
+
+        tvuc += Number(spUC[i].innerHTML);
+        //console.log("T " + tvuc); 
     }
     
     spVuc.innerHTML = tvuc;
