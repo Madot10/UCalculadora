@@ -36,7 +36,7 @@ function OnLoadCarrera(){
     let optText = sl.options[sl.selectedIndex].text;
     jdatasl = GetJsonDataCarrera(optText);
     
-    console.log(jdatasl);
+    //console.log(jdatasl);
 
     CleanSpace();
     //console.log(optSl);
@@ -152,7 +152,7 @@ function OnChangeMat(ind){
         //Encontremos ")"
         var n = asig.indexOf(")") + 2;
         var newOpt = asig.substring(n, asig.length);
-        console.log(newOpt);
+        //console.log(newOpt);
 
         //encontramos el index de la asignatura
         indAsig = jdatasl.findIndex(function(item, i){
@@ -213,7 +213,7 @@ var formatNumber = {
 
 //Encargado de calcular valor segun recargos
 function CalculateValueUC(taxo, uc){
-    console.log(taxo.toString());
+    //console.log(taxo.toString());
     var taxN = taxo.replace( /^\D+/g, '');
 
     switch(taxN){
@@ -224,7 +224,7 @@ function CalculateValueUC(taxo, uc){
         case "5":
         case "6":
         //sin recargo
-            console.log("sin recargo");
+            //console.log("sin recargo");
 
             return formatNumber.new(Math.round(uc * ValueUC));
         break;
@@ -233,7 +233,7 @@ function CalculateValueUC(taxo, uc){
         case "8":
         case "9":
         //+ 30%
-            console.log("+ 30%");
+            //console.log("+ 30%");
             var a = uc * 1.3;
             return formatNumber.new(Math.round(a * ValueUC));
 
@@ -291,7 +291,7 @@ function OnTotal(){
         var txt = spVc[y].textContent;
         var txtW = txt.replace(".","");
         var txtWOP = txtW.replace(".","");
-        console.log(txtWOP);
+        //console.log(txtWOP);
 
         var val = Number(txtWOP);
         
@@ -303,7 +303,7 @@ function OnTotal(){
     if(optSl.includes("educacion") || optSl.includes("letras") || optSl.includes("filosofia") ){
 
         //es carrera con descuento
-        console.log("Carrera con descuento");
+        //console.log("Carrera con descuento");
         sum = sum * 0.70;
         let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
 
