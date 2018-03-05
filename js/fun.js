@@ -353,13 +353,15 @@ function OnTotal(){
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    
+    sum = sum * 0.6;
+    /*
+    sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
+        spMar.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.5), "Bs.F. ");
+        spAbr.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
+        spMay.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
+    */
 
-/*
-sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
-    spMar.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.5), "Bs.F. ");
-    spAbr.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
-    spMay.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
-*/
     sp60.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
     spMar.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
     spAbr.innerHTML = formatNumber.new(Math.round((sum) * 0.25), "Bs.F. ");
