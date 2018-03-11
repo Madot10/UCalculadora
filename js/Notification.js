@@ -1,7 +1,7 @@
 window.OneSignal = window.OneSignal || [];
 
 var initOptions = {
-    appId: "5bc53e0e-df54-43b0-9da3-90efd72057ad",
+    appId: "ddecc811-167e-42a9-92ba-955bef5af634",
     autoRegister: false,
     notifyButton: {
       enable: true,
@@ -12,7 +12,6 @@ function changeServiceWorkerFilePath() {
     OneSignal.SERVICE_WORKER_PATH = 'UCalculadora/OneSignalSDKWorker.js';
     OneSignal.SERVICE_UPDATER_WORKER_PATH = 'UCalculadora/OneSignalSDKUpdaterWorker.js';
     OneSignal.SERVICE_WORKER_PARAM = { scope: '/UCalculadora/' };
-    console.log("Load new " + OneSignal);
 };
 
 OneSignal.push(function () {
