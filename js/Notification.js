@@ -5,7 +5,7 @@ function changeServiceWorkerFilePath() {
     OneSignal.SERVICE_WORKER_PATH = 'UCalculadora/OneSignalSDKWorker.js';
     OneSignal.SERVICE_UPDATER_WORKER_PATH = 'UCalculadora/OneSignalSDKUpdaterWorker.js';
     OneSignal.SERVICE_WORKER_PARAM = { scope: '/UCalculadora/' };
-    console.log("Load new");
+    console.log("Load new " + OneSignal);
 };
 
 OneSignal.push(function () {
