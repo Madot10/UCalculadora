@@ -114,6 +114,10 @@ button{
     cursor: pointer;
 }
 
+#btReload{
+    font-size: 0;
+}
+
 /* Separador************************************** */
 
 .styled-select {
@@ -234,3 +238,9 @@ button{
     border-radius: 20px;
     padding-left: 15px;
  }
+
+
+
+#aTouch{
+    color: #4b7f52;
+}
