@@ -9,12 +9,12 @@ var initOptions = {
   };
 
 function changeServiceWorkerFilePath() {
-    OneSignal.SERVICE_WORKER_PATH = 'UCalculadora/OneSignalSDKWorker.js';
-    OneSignal.SERVICE_UPDATER_WORKER_PATH = 'UCalculadora/OneSignalSDKUpdaterWorker.js';
-    OneSignal.SERVICE_WORKER_PARAM = { scope: '/UCalculadora/' };
+    OneSignal.SERVICE_WORKER_PATH = '/OneSignalSDKWorker.js';
+    OneSignal.SERVICE_UPDATER_WORKER_PATH = '/OneSignalSDKUpdaterWorker.js';
+    OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
 };
 
 OneSignal.push(function () {
-    //changeServiceWorkerFilePath();
+    changeServiceWorkerFilePath();
     OneSignal.init(initOptions);
 });
