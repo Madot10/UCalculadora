@@ -1,5 +1,12 @@
 window.OneSignal = window.OneSignal || [];
 
+var initOptions = {
+    appId: "5bc53e0e-df54-43b0-9da3-90efd72057ad",
+    autoRegister: false,
+    notifyButton: {
+      enable: true,
+    },
+  };
 
 function changeServiceWorkerFilePath() {
     OneSignal.SERVICE_WORKER_PATH = 'UCalculadora/OneSignalSDKWorker.js';
@@ -10,11 +17,5 @@ function changeServiceWorkerFilePath() {
 
 OneSignal.push(function () {
     changeServiceWorkerFilePath();
-    OneSignal.init({
-        appId: "5bc53e0e-df54-43b0-9da3-90efd72057ad",
-        autoRegister: false,
-        notifyButton: {
-          enable: true,
-        },
-      });
+    OneSignal.init(initOptions);
 });
