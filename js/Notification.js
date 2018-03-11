@@ -15,6 +15,6 @@ function changeServiceWorkerFilePath() {
 };
 
 OneSignal.push(function () {
-    changeServiceWorkerFilePath();
+    //changeServiceWorkerFilePath();
     OneSignal.init(initOptions);
 });
