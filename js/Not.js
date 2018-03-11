@@ -2,7 +2,7 @@ window.OneSignal = window.OneSignal || [];
 
 var initOptions = {
     appId: "ddecc811-167e-42a9-92ba-955bef5af634",
-    autoRegister: false,
+    autoRegister: true,
     notifyButton: {
       enable: true,
     },
