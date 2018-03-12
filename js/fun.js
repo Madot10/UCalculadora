@@ -53,11 +53,10 @@ function LoadTag(){
      
         OneSignal.sendTag("user_type",tuser);
         OneSignal.sendTag("user_completed","true");
-        alert(tuser);
     });
 
     //retornamos a web
-    location.href="https://madot10.github.io/UCalculadora/";
+    //location.href="https://madot10.github.io/UCalculadora/";
     alert("COMPLETADO!");
 }
 
