@@ -15,14 +15,15 @@ window.onload = function() {
     document.getElementById("sl_carrera").selectedIndex = 0;
     document.getElementById("sl_sede").selectedIndex = 0;
 
+        // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
 
-// Get the modal
-var modal = document.getElementById('myModal');
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
 function LauchModal(){
     modal.style.display = "block";
@@ -52,7 +53,6 @@ function LoadTag(){
     });
 
 }
-
 
 //Fun retorna jsonData de carrera
 function GetJsonDataCarrera(tx){
