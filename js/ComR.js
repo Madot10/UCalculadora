@@ -60,9 +60,10 @@ function getAllUrlParams(url) {
     return obj;
   }
 
-window.onload = function() {
+
+window.addEventListener("load", function(){
     var IsToRes = getAllUrlParams(window.location.href).a;
     if(IsToRes == "y"){
         LauchModal();
     }
-}
+});
