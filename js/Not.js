@@ -17,4 +17,13 @@ function changeServiceWorkerFilePath() {
 OneSignal.push(function () {
     changeServiceWorkerFilePath();
     OneSignal.init(initOptions);
+
+    OneSignal.on('subscriptionChange', function (isSubscribed) {
+        //Change
+        if(isSubscribed){
+            //Esta suscrito
+            console.log("Suscrito");
+            OneSignal.sendTag("user_completed","false");
+        }
+    });
 });
