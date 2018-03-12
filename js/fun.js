@@ -50,9 +50,10 @@ function LoadTag(){
     var tuser = sltag.options[sltag.selectedIndex].value;
 
     OneSignal.push(function () {
-        //OneSignal.sendTag("user_completed","true");
-        alert(tuser);
+     
         OneSignal.sendTag("user_type",tuser);
+        OneSignal.sendTag("user_completed","true");
+        alert(tuser);
     });
 
     //retornamos a web
