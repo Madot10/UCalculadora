@@ -58,6 +58,7 @@ function LoadTag(){
 
     //retornamos a web
     location.href="https://madot10.github.io/UCalculadora/";
+    alert("COMPLETADO!");
 }
 
 //Fun retorna jsonData de carrera
