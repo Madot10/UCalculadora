@@ -51,6 +51,7 @@ function LoadTag(){
 
     OneSignal.push(function () {
         //OneSignal.sendTag("user_completed","true");
+        alert(tuser);
         OneSignal.sendTag("user_type",tuser);
     });
 
