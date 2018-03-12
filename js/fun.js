@@ -52,7 +52,7 @@ function LoadTag(){
     var tuser = sltag.options[sltag.selectedIndex].value;
 
     OneSignal.push(function () {
-        OneSignal.sendTag("user_completed","true");
+        //OneSignal.sendTag("user_completed","true");
         OneSignal.sendTag("user_type",tuser);
     });
 
