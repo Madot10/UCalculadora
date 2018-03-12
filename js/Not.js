@@ -22,9 +22,11 @@ OneSignal.push(function () {
         //Change
         if(isSubscribed){
             //Esta suscrito
-            OneSignal.sendTag("user_completed","false");
+           
             LauchModal();
             console.log("Suscrito");
+            OneSignal.sendTag("user_completed","false");
+            
             
         }
     });

@@ -64,7 +64,7 @@ function getAllUrlParams(url) {
 window.addEventListener("load", function(){
     var IsToRes = getAllUrlParams(window.location.href).a;
     if(IsToRes == "y"){
-        OneSignal.sendTag("user_completed","false");
+        
         LauchModal();
     }
 });
