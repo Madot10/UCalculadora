@@ -17,6 +17,44 @@ window.onload = function() {
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
+//#region MODAL functions
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+function LauchModal(){
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+//Send tag for server push
+function LoadTag(){
+    modal.style.display = "none";
+    var sltag = document.getElementById("carreraRes");
+    var tuser = sltag.options[sltag.selectedIndex].value;
+
+    OneSignal.push(function () {
+        OneSignal.sendTag("user_completed","true");
+        OneSignal.sendTag("user_type",tuser);
+    });
+
+}
+
+//#endregion
 
 //Fun retorna jsonData de carrera
 function GetJsonDataCarrera(tx){
