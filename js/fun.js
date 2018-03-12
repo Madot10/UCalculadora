@@ -23,7 +23,7 @@ window.onload = function() {
 
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
-    
+
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
 
@@ -56,6 +56,8 @@ function LoadTag(){
         OneSignal.sendTag("user_type",tuser);
     });
 
+    //retornamos a web
+    location.href="https://madot10.github.io/UCalculadora/";
 }
 
 //Fun retorna jsonData de carrera
