@@ -25,7 +25,7 @@ OneSignal.push(function () {
            
             LauchModal();
             console.log("Suscrito");
-            OneSignal.sendTag("user_completed","false");
+            
             
             
         }
