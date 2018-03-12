@@ -10,16 +10,20 @@ let jdatasl;
 
 let stSede = false;
 
+var modal;
+var span;
+
 window.onload = function() {
     document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
     document.getElementById("sl_carrera").selectedIndex = 0;
     document.getElementById("sl_sede").selectedIndex = 0;
 
-        // Get the modal
-    var modal = document.getElementById('myModal');
+    // Get the modal
+    modal = document.getElementById('myModal');
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    span = document.getElementsByClassName("close")[0];
+    
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
 
