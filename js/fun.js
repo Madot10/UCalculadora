@@ -17,7 +17,6 @@ window.onload = function() {
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
 }
-//#region MODAL functions
 
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -54,7 +53,6 @@ function LoadTag(){
 
 }
 
-//#endregion
 
 //Fun retorna jsonData de carrera
 function GetJsonDataCarrera(tx){
