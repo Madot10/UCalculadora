@@ -55,12 +55,13 @@ function LoadTag(){
         OneSignal.sendTag("user_completed","true", function(tagsSent){
               //retornamos a web
             location.href="https://madot10.github.io/UCalculadora/";
+            alert("COMPLETADO!");
         });
     });
 
     //retornamos a web
     //location.href="https://madot10.github.io/UCalculadora/";
-    alert("COMPLETADO!");
+    
 }
 
 //Fun retorna jsonData de carrera
