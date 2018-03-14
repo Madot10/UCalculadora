@@ -30,6 +30,14 @@ footer{
     background-color: white;
 }
 
+.container{
+    
+    background-color: #78c091;
+    margin: 1%;
+    border-radius: 25px;
+    padding: 5px;
+	
+}
 h1{
    /*text-shadow: 2px 2px #374746;*/
     text-transform: uppercase;
