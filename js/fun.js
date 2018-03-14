@@ -18,6 +18,7 @@ window.onload = function() {
 
     // Get the modal
     modal = document.getElementById('myModal');
+    moig = document.getElementById('IgModal');
 
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
@@ -26,7 +27,7 @@ window.onload = function() {
 }
 
 
-
+//modal1
 function LauchModal(){
     modal.style.display = "block";
 }
@@ -42,6 +43,25 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
+// Modal IG
+function LauchMo(){
+    moig.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+function closeMo() {
+    moig.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == moig) {
+        moig.style.display = "none";
+    }
+}
+
 
 //Send tag for server push
 function LoadTag(){
