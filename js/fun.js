@@ -24,6 +24,8 @@ window.onload = function() {
     span = document.getElementsByClassName("close")[0];
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
+
+
 }
 
 
