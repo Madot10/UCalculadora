@@ -72,7 +72,7 @@ window.addEventListener("load", function(){
 
   //chequeamos si es ig navegador
   var IsIG = navigator.userAgent.toLowerCase().indexOf("instagram");
-  if(IsIG == -1){
+  if(IsIG != -1){
       alert("Abierto desde IG");
   }
 
