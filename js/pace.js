@@ -934,7 +934,7 @@
 
 }).call(this);
 
-Pace.options = {
+paceOptions = {
   ajax: false, 
   document: false,
   eventLag: false
@@ -944,7 +944,7 @@ Pace.options = {
 Pace.on("start", function(){
  // let all = document.getElementById("container");
   //all.style.display = "none";
-  
+ 
 });
 
 //finished load
@@ -952,3 +952,4 @@ Pace.on("done", function () {
   let all = document.getElementById("container");
   all.style.display = "block";
 });
+
