@@ -935,7 +935,9 @@
 }).call(this);
 
 Pace.options = {
-  ajax: false
+  ajax: false, 
+  document: false,
+  eventLag: false
 }
 
 //started load
