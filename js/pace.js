@@ -934,10 +934,15 @@
 
 }).call(this);
 
+Pace.options = {
+  ajax: false
+}
+
 //started load
 Pace.on("start", function(){
  // let all = document.getElementById("container");
   //all.style.display = "none";
+  
 });
 
 //finished load
