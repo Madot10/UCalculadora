@@ -69,7 +69,7 @@ function AddNewMat(){
     if(ix != -1){
         ArrMat[ix] = true;
         listFila[ix].style.display = "table-row";  
-        console.log(ix);
+        //console.log(ix);
     }else{
         alert("Numero maximo de materias alcanzadas!");
     }  
@@ -443,7 +443,7 @@ function SedeSelect(){
 function RunTotal(){
     switch (Perio) {
         case "0":
-        console.log(0);
+       // console.log(0);
             OnTotal();
             break;
         
