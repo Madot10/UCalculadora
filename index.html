@@ -2,8 +2,8 @@
 <html lang="es">
 
 <head>
-        <link rel="manifest" href="./manifest.json">
-<!-- 
+    <link rel="manifest" href="./manifest.json">
+    <!-- 
         <script src="js/pace.js"></script>
         <link rel="stylesheet" href="css/pace-theme-center-atom.css?2">  -->
 
@@ -18,7 +18,7 @@
         gtag('config', 'UA-33542195-1');
 
     </script>
- 
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,8 +110,6 @@
         </div>
     </div>
 
-
-
     <!-- The Modal IG -->
     <div id="IgModal" class="modal">
         <!-- Modal content -->
@@ -123,77 +121,84 @@
             <div class="modal-body">
                 <p>
                     ¡Abierto con Instagram!
-                    <br>
-                    Algunas funciones están limitadas
-                    <br>
-                    Vamos a solucionarlo:
+                    <br> Algunas funciones están limitadas
+                    <br> Vamos a solucionarlo:
                     <br>
                     <strong>¡Copia el link y pegalo en tu navegador! </strong>
-                    <br>
-                    https://goo.gl/tkPk8m
+                    <br> https://goo.gl/tkPk8m
                 </p>
             </div>
         </div>
     </div>
 
     <!-- style="display:none" -->
-<div id="container"> 
-    <div class="top">
-        <h1>
-            <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span>
-        </h1>
+    <div id="container">
+        <div class="top">
+            <h1>
+                <span class="one">U</span>
+                <span class="two">C</span>
+                <span class="th">alculadora</span>
+            </h1>
 
-        <img src="img/BannerHorizontal.png" width="auto" height="auto">
-        <p>
-            <span id="aTouch">
-                <strong>*Cuando Caja Virtual se habilite estaremos avisando por NOTIFICACIÓN UC+*</strong>
-            </span>
-            <br>
-        </p>
-        <strong>
-            <p>Valor UC:
-                <span id="ucShow"></span>
+            <img src="img/BannerHorizontal.png" width="auto" height="auto">
+            <p>
+                <span id="aTouch">
+                    <strong>*Valor de UC para Junio-Julio SIN PUBLICAR (sólo es un estimado lo mostrado)*</strong>
+                </span>
+                <br>
             </p>
-        </strong>
-    </div>
-    
-
-
-    <div class="tituloCont">
-        <label style="text-transform: uppercase;">
             <strong>
-                <span id="num">1</span>. carrera: </strong>
-        </label>
-        <br>
-        <select id="sl_carrera" onchange="OnLoadCarrera()" class="styled-select blue semi-square">
-            <option value="null">Seleccione</option>
-            <option value="Administración-de-Empresas-1">Administración de Empresas</option>
-            <option value="contaduria-2017">Contaduria</option>
-            <option value="derecho-2017">Derecho</option>
-            <option value="economia-2017">Economia</option>
-            <option value="educacion-mencion-biologia-y-quimica-2017">Educacion mencion biologia y quimica</option>
-            <option value="educacion-mencion-ciencias-pedagogicas-2017">Educacion mencion ciencias pedagogicas</option>
-            <option value="educacion-mencion-ciencias-sociales-2017">Educacion mencion ciencias sociales</option>
-            <option value="educacion-mencion-fisica-y-matematicas-2017">Educacion mencion fisica y matematicas</option>
-            <option value="educacion-mencion-integral-2017">Educacion mencion integral</option>
-            <option value="educacion-mencion-filosofia-2017">Educacion mencion filosofia</option>
-            <option value="educacion-mencion-preescolar-2017">Educacion mencion preescolar</option>
-            <option value="educacion-preslied-2017">Educacion preslied</option>
-            <option value="educacion-tronco-comun-2017">Educacion tronco comun</option>
-            <option value="filosofia-2018">Filosofia</option>
-            <option value="ingenieria-civil-2017">Ingenieria civil</option>
-            <option value="ingenieria-en-telecomunicaciones-2017">Ingenieria en telecomunicaciones</option>
-            <option value="ingenieria-industrial-2017">Ingenieria industrial</option>
-            <option value="ingenieria-informatica-2017">Ingenieria informatica</option>
-            <option value="letras-2018">Letras</option>
-            <option value="psicologia-2018">Psicologia</option>
-            <option value="relaciones-industriales-2017">Relaciones industriales</option>
-            <option value="comunicacion-social-2017">Comunicacion social</option>
-            <option value="sociologia-2017">Sociologia</option>
-        </select>
-        <!-- <button onclick="OnLoadCarrera()">Cargar</button> -->
-    </div>
-    <!-- 
+                <label></label><span id="num">1.</span>PERIODO:</label>
+                <br>
+                <select id="sl_per" class="styled-select blue semi-square" onchange="OnPerSelect()">
+                    <option value="null">Seleccione</option>
+                    <option value="0">Marzo-Mayo (2018)</option>
+                    <option value="1">Junio-Julio (2018)</option>
+                </select>
+
+                <p id="pVUC" style="display: none;">
+                    Valor UC:
+                    <span id="ucShow"></span>
+                </p>
+            </strong>
+        </div>
+<br>
+        <div class="tituloCont">
+            <label style="text-transform: uppercase;">
+                <strong>
+                    <span id="num">2</span>. carrera: </strong>
+            </label>
+            <br>
+            <select id="sl_carrera" onchange="OnLoadCarrera()" class="styled-select blue semi-square">
+                <option value="null">Seleccione</option>
+                <option value="Administración-de-Empresas-1">Administración de Empresas</option>
+                <option value="contaduria-2017">Contaduria</option>
+                <option value="derecho-2017">Derecho</option>
+                <option value="economia-2017">Economia</option>
+                <option value="educacion-mencion-biologia-y-quimica-2017">Educacion mencion biologia y quimica</option>
+                <option value="educacion-mencion-ciencias-pedagogicas-2017">Educacion mencion ciencias pedagogicas</option>
+                <option value="educacion-mencion-ciencias-sociales-2017">Educacion mencion ciencias sociales</option>
+                <option value="educacion-mencion-fisica-y-matematicas-2017">Educacion mencion fisica y matematicas</option>
+                <option value="educacion-mencion-integral-2017">Educacion mencion integral</option>
+                <option value="educacion-mencion-filosofia-2017">Educacion mencion filosofia</option>
+                <option value="educacion-mencion-preescolar-2017">Educacion mencion preescolar</option>
+                <option value="educacion-preslied-2017">Educacion preslied</option>
+                <option value="educacion-tronco-comun-2017">Educacion tronco comun</option>
+                <option value="filosofia-2018">Filosofia</option>
+                <option value="ingenieria-civil-2017">Ingenieria civil</option>
+                <option value="ingenieria-en-telecomunicaciones-2017">Ingenieria en telecomunicaciones</option>
+                <option value="ingenieria-industrial-2017">Ingenieria industrial</option>
+                <option value="ingenieria-informatica-2017">Ingenieria informatica</option>
+                <option value="letras-2018">Letras</option>
+                <option value="psicologia-2018">Psicologia</option>
+                <option value="relaciones-industriales-2017">Relaciones industriales</option>
+                <option value="comunicacion-social-2017">Comunicacion social</option>
+                <option value="sociologia-2017">Sociologia</option>
+            </select>
+
+            <!-- <button onclick="OnLoadCarrera()">Cargar</button> -->
+        </div>
+        <!-- 
         <div style=" margin-top: 0.75em;">
             <label><strong>2.</strong> Selecione semestre: </label>
             <select id="sl_sem">
@@ -201,337 +206,431 @@
             </select> 
         </div>
         -->
-    <br>
-    <label style="text-transform: uppercase;" class="tituloCont">
-        <strong>
-            <span id="num">2</span>. Cargue las materias: </strong>
-    </label>
-    <br>
-    <div class="tabM" style="overflow-x:auto;">
-        <table>
-            <tr style="background-color: #4b7f52; color: white;">
-                <th>Materia</th>
-                <th>UC</th>
-                <th>Tax</th>
-                <th>Valor Bs.F.</th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(0)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(1)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(2)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(3)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(4)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(5)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(6)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(7)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(8)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(9)"></select>
-                </th>
-                <th>
-                    <span class="uc"> </span>
-                </th>
-                <th>
-                    <span class="tax"> </span>
-                </th>
-                <th>
-                    <span class="valuC"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th style="text-align: right;"> Total UC: </th>
-                <th colspan="2">
-                    <span id="TotalUC"></span>
-                </th>
-            </tr>
-        </table>
-
-    </div>
-    <p>
-        <span style="color: red">*</span>Pasantías y trabajo de grado:
-        <span style="color: darkblue;"> sin opción de financiamiento</span>
-        <span style="color: red">*</span>
-    </p>
-
-    <br>
-
-    <div id="sedes" class="tituloCont">
-        <label style="text-transform: uppercase;">
+        <br>
+        <label style="text-transform: uppercase;" class="tituloCont">
             <strong>
-                <span id="num">3</span>. Sede: </strong>
+                <span id="num">3</span>. Cargue las materias: </strong>
         </label>
         <br>
-        <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="styled-select blue semi-square">
-            <option value="null">Seleccione</option>
-            <option value="mtb">Montalbán</option>
-            <option value="g">Guayana</option>
-            <option value="tq">Los Teques</option>
-        </select>
-    </div>
+        <div class="tabM" style="overflow-x:auto;">
+            <table>
+                <tbody>
+                    <tr style="background-color: #4b7f52; color: white;">
+                        <th></th>
+                        <th>Materia</th>
+                        <th>UC</th>
+                        <th>Tax</th>
+                        <th>Valor Bs.F.</th>
+                    </tr>
+                    <tr>
+                        <td id="">
+                            <button id="delMat" onclick="OnDeleteMat(1)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(0)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(2)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(1)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(3)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(2)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(4)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(3)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(5)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(4)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(6)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(5)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(7)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(6)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(8)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(7)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(9)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(8)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
+                    <tr style="display: none;">
+                        <td>
+                            <button id="delMat" onclick="OnDeleteMat(10)">X</button>
+                        </td>
+                        <td>
+                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(9)"></select>
+                        </td>
+                        <td>
+                            <span class="uc"> </span>
+                        </td>
+                        <td>
+                            <span class="tax"> </span>
+                        </td>
+                        <td>
+                            <span class="valuC"> </span>
+                        </td>
+                    </tr>
 
+                    <tr>
+                        <th colspan="5">
+                            <button id="addMat" onclick="AddNewMat()">
+                                <strong>+</strong>
+                            </button>
+                        </th>
 
+                    </tr>
+                    <tr>
+                        <th colspan="2" style="text-align: right;"> Total UC: </th>
+                        <th colspan="2">
+                            <span id="TotalUC"></span>
+                        </th>
+                    </tr>
 
+            </table>
+            </tbody>
+        </div>
+        <p>
+            <span style="color: red">*</span>Pasantías y trabajo de grado:
+            <span style="color: darkblue;"> sin opción de financiamiento</span>
+            <span style="color: red">*</span>
+        </p>
 
-    <br>
-    <div id="coop" class="tituloCont">
-        <label style="text-transform: uppercase;">
-            <strong>
-                <span id="num">4</span>. Cooperación económica: </strong>
-        </label>
         <br>
-        <select id="sl_coop" onchange="SedeSelect()" class="styled-select blue semi-square">
-            <option value="null">Seleccione</option>
-            <option value="1">Ninguna</option>
-            <option value="0.9">10%</option>
-            <option value="0.8">20%</option>
-            <option value="0.7">30%</option>
-            <option value="0.6">40%</option>
-            <option value="0.5">50%</option>
-            <option value="0.4">60%</option>
-            <option value="0.3">70%</option>
-            <option value="0.2">80%</option>
-            <option value="0.1">90%</option>
-            <option value="0">100%</option>
-        </select>
-    </div>
 
-    <br>
-    <button onclick="OnTotal()" id="btTotal">Calcular pagos
-        <span style="color: red">**</span>
-    </button>
-    <br>
+        <div id="sedes" class="tituloCont">
+            <label style="text-transform: uppercase;">
+                <strong>
+                    <span id="num">4</span>. Sede: </strong>
+            </label>
+            <br>
+            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="styled-select blue semi-square">
+                <option value="null">Seleccione</option>
+                <option value="mtb">Montalbán</option>
+                <option value="g">Guayana</option>
+                <option value="tq">Los Teques</option>
+            </select>
+        </div>
 
-    <div id="tbTotal" class="totalizacion" style="overflow-x:auto; display: none;">
-        <table id="totales">
-            <tr>
-                <th rowspan="2" id="tt">Derecho de inscripción (75% ~ Pago marzo) </th>
-                <th colspan="2">Est. regular:
-                    <br>
-                    <span id="der75"> </span>
-                </th>
 
-            </tr>
-            <tr>
-                <th colspan="2">Est. nuevo:
-                    <br>
-                    <span id="der752"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th colspan="3" style=" background-color: rgba(254, 210, 1, 0.5)">
-                    <span style="color: black">Modalidad pago completo (marzo-mayo):</span>
-                </th>
-            </tr>
-            <tr>
-                <th rowspan="2" id="tt">Total (Período marzo-mayo)</th>
-                <th colspan="2">(60%)
-                    <span id="sem60"> </span> + 75% Der. Insc.</th>
-            </tr>
-            <tr>
-                <th>Total regular:
-                    <br>
-                    <span id="sem60dR"> </span>
-                </th>
-                <th>Total nuevo:
-                    <br>
-                    <span id="sem60dN"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th colspan="3" style=" background-color: rgba(52, 178, 228, 0.4)">
-                    <span style="color: black">Modalidad pago financiado (marzo-mayo):</span>
-                </th>
-            </tr>
-            <tr>
-                <th rowspan="2" id="tt">Marzo</th>
-                <th colspan="2">(30%)
-                    <span id="marzo"> </span> + 75% Der. Insc.</th>
-            </tr>
-            <tr>
-                <th>Total regular:
-                    <br>
-                    <span id="semMardR"> </span>
-                </th>
-                <th>Total nuevo:
-                    <br>
-                    <span id="semMardN"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th id="tt">Abril</th>
-                <th colspan="2">(15%)
-                    <span id="abril"> </span>
-                </th>
-            </tr>
-            <tr>
-                <th id="tt">Mayo</th>
-                <th colspan="2">(15%)
-                    <span id="mayo"> </span>
-                </th>
 
-            </tr>
-        </table>
 
-    </div>
-    <p>
-        <span style="color: red" id="info"></span>
         <br>
-        <span style="color: red" id="info2"></span>
-        <br>
-        <span style="color: red">**Montos únicamente para estimaciones</span>
-    </p>
-    <br>
+        <div id="coop" class="tituloCont">
+            <label style="text-transform: uppercase;">
+                <strong>
+                    <span id="num">5</span>. Cooperación económica: </strong>
+            </label>
+            <br>
+            <select id="sl_coop" onchange="SedeSelect()" class="styled-select blue semi-square">
+                <option value="null">Seleccione</option>
+                <option value="1">Ninguna</option>
+                <option value="0.9">10%</option>
+                <option value="0.8">20%</option>
+                <option value="0.7">30%</option>
+                <option value="0.6">40%</option>
+                <option value="0.5">50%</option>
+                <option value="0.4">60%</option>
+                <option value="0.3">70%</option>
+                <option value="0.2">80%</option>
+                <option value="0.1">90%</option>
+                <option value="0">100%</option>
+            </select>
+        </div>
 
-    <div id="tw">
-        <!-- <blockquote class="twitter-tweet tw-align-center " data-cards="hidden" data-lang="en">
+        <br>
+        <button onclick="RunTotal()" id="btTotal">Calcular pagos
+            <span style="color: red">**</span>
+        </button>
+        <br>
+
+        <div id="tbTotal" class="totalizacion" style="overflow-x:auto; display: none;">
+            <table id="totales">
+                <tr>
+                    <th rowspan="2" id="tt">Derecho de inscripción (75% ~ Pago marzo) </th>
+                    <th colspan="2">Est. regular:
+                        <br>
+                        <span id="der75"> </span>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th colspan="2">Est. nuevo:
+                        <br>
+                        <span id="der752"> </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="3" style=" background-color: rgba(254, 210, 1, 0.5)">
+                        <span style="color: black">Modalidad pago completo (marzo-mayo):</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th rowspan="2" id="tt">Total (Período marzo-mayo)</th>
+                    <th colspan="2">(60%)
+                        <span id="sem60"> </span> + 75% Der. Insc.</th>
+                </tr>
+                <tr>
+                    <th>Total regular:
+                        <br>
+                        <span id="sem60dR"> </span>
+                    </th>
+                    <th>Total nuevo:
+                        <br>
+                        <span id="sem60dN"> </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="3" style=" background-color: rgba(52, 178, 228, 0.4)">
+                        <span style="color: black">Modalidad pago financiado (marzo-mayo):</span>
+                    </th>
+                </tr>
+                <tr>
+                    <th rowspan="2" id="tt">Marzo</th>
+                    <th colspan="2">(30%)
+                        <span id="marzo"> </span> + 75% Der. Insc.</th>
+                </tr>
+                <tr>
+                    <th>Total regular:
+                        <br>
+                        <span id="semMardR"> </span>
+                    </th>
+                    <th>Total nuevo:
+                        <br>
+                        <span id="semMardN"> </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="tt">Abril</th>
+                    <th colspan="2">(15%)
+                        <span id="abril"> </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th id="tt">Mayo</th>
+                    <th colspan="2">(15%)
+                        <span id="mayo"> </span>
+                    </th>
+
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="tbTotal2nd" style="overflow-x:auto; display: none;">
+            <table id="Total">
+                    <tr>
+                            <th id="tt">Derecho de inscripción (25% ~ Pago mayo) </th>
+                            <th colspan="2">Estudiantes:
+                                <br>
+                                <span id="der25"> </span>
+                            </th>
+        
+                        </tr>
+                        <tr>
+                            <th colspan="3" style=" background-color: rgba(254, 210, 1, 0.5)">
+                                <span style="color: black">Modalidad pago completo (Junio-Julio):</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" id="tt">Total (junio-julio)</th>
+                            <th colspan="2">(40%)
+                                <span id="sem40"> </span> + 25% Der. Insc.</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Total:
+                                <br>
+                                <span id="sem40d"> </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" style=" background-color: rgba(52, 178, 228, 0.4)">
+                                <span style="color: black">Modalidad pago financiado (junio-julio):</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th id="tt">Mayo</th>
+                            <th colspan="2">*Derecho de inscripción*</th>
+                        </tr>
+                        <tr>
+                            <th id="tt">Junio</th>
+                            <th colspan="2">(20%)
+                                <span id="jn"> </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th id="tt">Julio</th>
+                            <th colspan="2">(20%)
+                                <span id="jl"> </span>
+                            </th>
+        
+                        </tr>
+            </table>
+        </div>
+
+        <p>
+            <span style="color: red" id="info"></span>
+            <br>
+            <span style="color: red" id="info2"></span>
+            <br>
+            <span style="color: red">**Montos únicamente para estimaciones</span>
+        </p>
+        <br>
+
+        <div id="tw">
+            <!-- <blockquote class="twitter-tweet tw-align-center " data-cards="hidden" data-lang="en">
             <p lang="es" dir="ltr">Conoce el nuevo sistema de inscripción de matrícula por unidades de crédito:
                 <a href="https://t.co/9fxdUsEWik">pic.twitter.com/9fxdUsEWik</a>
             </p>&mdash; UCAB (@lacatolica)
             <a href="https://twitter.com/lacatolica/status/967746200421257216?ref_src=twsrc%5Etfw">February 25, 2018</a>
         </blockquote>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-        <img src="img/FomaPagoSem.jpeg" alt="Formas de pago - semestre">
+            <img src="img/FomaPagoSem.jpeg" alt="Formas de pago - semestre">
+        </div>
+
+        <footer>
+            <br>
+            <strong>Páginas de interés:</strong>
+            <br>
+            <br>
+            <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
+            <a href="https://goo.gl/kbmDKR">Secretaría</a> -
+            <a href="https://goo.gl/MnGMZh">Circular del vicerrectorado</a> -
+            <a href="https://goo.gl/BVe2d4">Pdf: Costo UC</a>
+            <br>
+            </p>
+
+            <br>
+            <p>Desarrollado por Madot
+                <a href="https://goo.gl/K47LS5">
+                    <img src="img/color.png" alt="ig autor" width="20">
+                </a>
+                <br> Feb2018 - Aplicación NO-Oficial de la UCAB
+                <br> La UCAB ni Madot se hace responsable de daños :)</p>
+            <br>
+        </footer>
     </div>
-
-    <footer>
-        <br>
-        <strong>Páginas de interés:</strong>
-        <br>
-        <br>
-        <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error</a> -
-        <a href="https://goo.gl/kbmDKR">Secretaría</a> -
-        <a href="https://goo.gl/MnGMZh">Circular del vicerrectorado</a> -
-        <a href="https://goo.gl/BVe2d4">Pdf: Costo UC</a>
-        <br>
-        </p>
-
-        <br>
-        <p>Desarrollado por Madot
-            <a href="https://goo.gl/K47LS5">
-                <img src="img/color.png" alt="ig autor" width="20">
-            </a>
-            <br> Feb2018 - Aplicación NO-Oficial de la UCAB
-            <br> La UCAB ni Madot se hace responsable de daños :)</p>
-        <br>
-    </footer>
-</div>
 
     <script>document.write('<script src="js/ComR.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
 </body>

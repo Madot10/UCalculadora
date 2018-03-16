@@ -2,17 +2,27 @@
 //console.log(jsonCarrera);
 //variables
 let inOpt;
-let ValueUC = 345000.0;
+let ValueUC;
 let optSl;
 let jdatasl;
 
 let stSede = false;
+let stPer = false;
+var Perio;
 
 var modal;
 var span;
 
+//SYSTEM TABLA MATERIA
+//inicia en 1 (0=null)
+var ArrMat = [null,true,false,false,false,false,false,false,false,false,false];
+//inicia en 1
+var listFila;
+
+//SYSTEM uc
+var Auc = [345000, 400000];
+
 window.onload = function() {
-    document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
     document.getElementById("sl_carrera").selectedIndex = 0;
     document.getElementById("sl_sede").selectedIndex = 0;
 
@@ -24,10 +34,74 @@ window.onload = function() {
     span = document.getElementsByClassName("close")[0];
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
-
-
+    listFila = document.getElementsByTagName("tr");
 }
 
+//Periodo Selecionado
+function OnPerSelect(){
+    var slP = document.getElementById("sl_per");
+    Perio = slP.value;
+    ValueUC =  Auc[Perio];
+    stPer = true;
+
+    //volvemos visible
+    var pUC = document.getElementById("pVUC");
+    document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+    pUC.style.display = "block";
+
+    //Hacemos recalculo de todo?
+    for(y = 0; y < 10; y++){
+        OnChangeMat(y);
+    }
+
+    //ocultamos tabla pagos antigua?
+    var x = document.getElementById("tbTotal");
+    x.style.display = "none";
+
+    var x = document.getElementById("tbTotal2nd");
+    x.style.display = "none";
+}
+
+//AddNew Materia
+function AddNewMat(){
+    var ix = ArrMat.indexOf(false);
+
+    if(ix != -1){
+        ArrMat[ix] = true;
+        listFila[ix].style.display = "table-row";  
+        console.log(ix);
+    }else{
+        alert("Numero maximo de materias alcanzadas!");
+    }  
+}
+
+//delete materia
+function OnDeleteMat(iPos){
+    console.log("Delete I: "+ iPos);
+    ArrMat[iPos] = false;
+    listFila[iPos].style.display = "none"; 
+    //limpiamos fila
+    CleanFila(iPos-1);
+    //Recalculamos el total
+    TotalUC();
+}
+
+//limpiar fila
+function CleanFila(pos){
+    //contadores inician en 0
+
+    var sMat = document.getElementsByClassName("sl_mat")[pos];
+    //reset a "seleccione"
+    sMat.selectedIndex = 0;
+
+    var spuc = document.getElementsByClassName("uc")[pos];
+    var sptax = document.getElementsByClassName("tax")[pos];
+    var spvc = document.getElementsByClassName("valuC")[pos];
+
+    spuc.innerHTML = '';
+    sptax.innerHTML = '';
+    spvc.innerHTML = '';
+}
 
 //modal1
 function LauchModal(){
@@ -98,37 +172,46 @@ function GetJsonDataCarrera(tx){
 
 //cargar datos de carrera
 function OnLoadCarrera(){
-    let sl = document.getElementById("sl_carrera");
-    optSl = sl.options[sl.selectedIndex].value;
 
-    let optText = sl.options[sl.selectedIndex].text;
-    jdatasl = GetJsonDataCarrera(optText);
-    
-    //console.log(jdatasl);
+    if(stPer){
+        let sl = document.getElementById("sl_carrera");
+        optSl = sl.options[sl.selectedIndex].value;
 
-    CleanSpace();
-    //console.log(optSl);
+        let optText = sl.options[sl.selectedIndex].text;
+        jdatasl = GetJsonDataCarrera(optText);
+        
+        //console.log(jdatasl);
 
-    /* inOpt = jsonCarrera.findIndex(function(item, i){
-        return item.carrera === optSl
-      });
- */
-    //console.log(inOpt);
-    //console.log(jsonCarrera[inOpt]);
-    
-    var tb = document.getElementsByClassName("tabM")[0];
-    tb.style.visibility = "visible";
-    
-    document.getElementById("sl_sede").selectedIndex = 0;
-    //document.getElementById("sl_coop").selectedIndex = 0;
+        CleanSpace();
+        //console.log(optSl);
 
-    let spInfo2 = document.getElementById("info2").innerHTML = "";
-    let spInfo = document.getElementById("info").innerHTML = "";
+        /* inOpt = jsonCarrera.findIndex(function(item, i){
+            return item.carrera === optSl
+        });
+    */
+        //console.log(inOpt);
+        //console.log(jsonCarrera[inOpt]);
+        
+        var tb = document.getElementsByClassName("tabM")[0];
+        tb.style.visibility = "visible";
+        
+        document.getElementById("sl_sede").selectedIndex = 0;
+        //document.getElementById("sl_coop").selectedIndex = 0;
 
-    var x = document.getElementById("tbTotal");
-    x.style.display = "none";
+        let spInfo2 = document.getElementById("info2").innerHTML = "";
+        let spInfo = document.getElementById("info").innerHTML = "";
 
-    ListMaterias();
+        var x = document.getElementById("tbTotal");
+        x.style.display = "none";
+
+        ListMaterias();
+    }else{
+        //Periodo no selecionada
+        alert("¡Debe seleccionar un periodo para el valor de la UC!");
+        let sl = document.getElementById("sl_carrera");
+        sl.selectedIndex = 0;
+
+    }
 }
 
 //cargar  listas de materias
@@ -176,6 +259,10 @@ function CleanSpace(){
         spTAX[y].innerHTML = '';
         spVc[y].innerHTML = '';
     }
+
+    let spTU = document.getElementById("TotalUC");
+
+    spTU.innerHTML = '';
 
     let sp75 = document.getElementById("der75");
     let sp60 = document.getElementById("sem60");
@@ -353,6 +440,22 @@ function SedeSelect(){
     
 }
 
+function RunTotal(){
+    switch (Perio) {
+        case "0":
+        console.log(0);
+            OnTotal();
+            break;
+        
+        case "1":
+            TwoTotal();
+            break;
+    
+        default:
+            break;
+    }
+
+}
 //Totalizacion
 function OnTotal(){
     let sp75 = document.getElementById("der75");
@@ -451,5 +554,92 @@ function OnTotal(){
 
     //toggle tabla totales
     var x = document.getElementById("tbTotal");
+    x.style.display = "block";
+}
+
+//Totalizar 2nd periodo
+function TwoTotal(){
+    let sp25 = document.getElementById("der25");
+
+    let sp40 = document.getElementById("sem40");
+
+    let spJn = document.getElementById("jn");
+    let spJl = document.getElementById("jl");
+
+    let bt2 = document.getElementById("tbTotal2nd");
+    bt2.style.visibility = "visible";
+
+    let spVc = document.getElementsByClassName("valuC");
+
+    //derecho de inscripcion
+    sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.F. ");
+
+    let sum = 0;
+    //obtenemos valores
+    for(y = 0; y < 10; y++){
+        var txt = spVc[y].textContent;
+        var txtW = txt.replace(".","");
+        var txtWOP = txtW.replace(".","");
+        //console.log(txtWOP);
+
+        var val = Number(txtWOP);
+        
+        sum += val;
+    }
+    //descontamos segun carrera
+    //console.log("Carrera seleccionada: "+ optSl);
+    if(optSl.includes("educacion") || optSl.includes("letras") || optSl.includes("filosofia") ){
+
+        //es carrera con descuento
+        //console.log("Carrera con descuento");
+        sum = sum * 0.70;
+        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
+
+    }
+
+    //chequeamos sedes
+    let slSede = document.getElementById("sl_sede");
+
+    switch(slSede.options[slSede.selectedIndex].value){
+        case "null":
+            sum = 0;
+        break;
+
+        case "mtb":
+            sum = sum;
+        break;
+
+        case "g":
+        case "tq":
+            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
+            sum = sum * 0.8;
+        break;
+
+    }
+
+    //cargamos la ayuda economica
+    let slcoop = document.getElementById("sl_coop");
+    sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    
+    //40%
+    sum = sum * 0.4;
+
+
+    sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
+    spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+    spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+
+    //calculamos sum + der. insc.
+    let sp40d = document.getElementById("sem40d");
+
+
+    sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.F. ");
+
+
+    let tbTol = document.getElementById("Total");
+    tbTol.style.visibility = "visible";
+
+    //toggle tabla totales
+    var x = document.getElementById("tbTotal2nd");
     x.style.display = "block";
 }

@@ -38,6 +38,11 @@ h1{
 h5{
     text-transform: uppercase;
 }
+
+#addMat{
+    width: 100%;
+}
+
 body {
     /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
     font-family: "Open Sans", Arial, sans-serif;;
@@ -97,7 +102,6 @@ button{
     background-color: #4b7f52;
     border: none;
     color: white;
-    padding: 1% 1%;
     text-align: center;
     text-decoration: none;
     display: inline-block;
