@@ -35,6 +35,14 @@ window.onload = function() {
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
     listFila = document.getElementsByTagName("tr");
+
+    //LOAD SYSTEM
+    //divS
+    let allDiv = document.getElementById("container");
+    let loadDiv = document.getElementsByClassName("loader")[0];
+
+    loadDiv.style.display = "none";
+    allDiv.style.display = "block";
 }
 
 //Periodo Selecionado
