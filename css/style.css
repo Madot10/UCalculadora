@@ -31,7 +31,6 @@ footer{
 }
 
 h1{
-   /*text-shadow: 2px 2px #374746;*/
     text-transform: uppercase;
 	border-bottom: 5px solid #FED201;
 }
@@ -45,14 +44,12 @@ h5{
 
 body {
     /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
-    font-family: "Open Sans", Arial, sans-serif;;
+    font-family: "Open Sans", Arial, sans-serif !important; 
 	background-color: white;
     text-align:center;
     align-content: center;
     color: #374746;
     font-size: 1.1em;
-
- 
 }
 
 table, th, td {
@@ -67,6 +64,14 @@ table{
     
 }
 
+.bR{
+    border-right: 0;
+}
+
+.bL{
+    border-left: 0;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -77,6 +82,7 @@ th, td {
     text-align: center;
     width:fit-content;    
 }
+
 
 .totalizacion{
     visibility: hidden;

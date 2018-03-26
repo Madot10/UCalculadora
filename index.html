@@ -27,6 +27,7 @@
     });
     </script>
 
+    
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -222,17 +223,17 @@
             <table>
                 <tbody>
                     <tr style="background-color: #4b7f52; color: white;">
-                        <th></th>
-                        <th>Materia</th>
+                        <th class="bR"></th>
+                        <th class="bL">Materia</th>
                         <th>UC</th>
                         <th>Tax</th>
                         <th>Valor Bs.F.</th>
                     </tr>
                     <tr>
-                        <td id="">
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(1)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(0)"></select>
                         </td>
                         <td>
@@ -246,10 +247,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(2)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(1)"></select>
                         </td>
                         <td>
@@ -263,10 +264,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(3)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(2)"></select>
                         </td>
                         <td>
@@ -280,10 +281,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(4)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(3)"></select>
                         </td>
                         <td>
@@ -297,10 +298,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(5)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(4)"></select>
                         </td>
                         <td>
@@ -314,10 +315,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(6)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(5)"></select>
                         </td>
                         <td>
@@ -331,10 +332,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(7)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(6)"></select>
                         </td>
                         <td>
@@ -348,10 +349,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(8)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(7)"></select>
                         </td>
                         <td>
@@ -365,10 +366,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(9)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(8)"></select>
                         </td>
                         <td>
@@ -382,10 +383,10 @@
                         </td>
                     </tr>
                     <tr style="display: none;">
-                        <td>
+                        <td class="bR">
                             <button id="delMat" onclick="OnDeleteMat(10)">X</button>
                         </td>
-                        <td>
+                        <td class="bL">
                             <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(9)"></select>
                         </td>
                         <td>
@@ -399,7 +400,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                    <tr class="allb">
                         <th colspan="5">
                             <button id="addMat" onclick="AddNewMat()">
                                 <strong>+</strong>
@@ -407,9 +408,9 @@
                         </th>
 
                     </tr>
-                    <tr>
+                    <tr class="allb">
                         <th colspan="2" style="text-align: right;"> Total UC: </th>
-                        <th colspan="2">
+                        <th colspan="2" class="allb">
                             <span id="TotalUC"></span>
                         </th>
                     </tr>
@@ -472,7 +473,7 @@
         <br>
 
         <div id="tbTotal" class="totalizacion" style="overflow-x:auto; display: none;">
-            <table id="totales">
+            <table id="totales" class="allb">
                 <tr>
                     <th rowspan="2" id="tt">Derecho de inscripción (75% ~ Pago marzo) </th>
                     <th colspan="2">Est. regular:
@@ -545,7 +546,7 @@
         </div>
 
         <div id="tbTotal2nd" style="overflow-x:auto; display: none;">
-            <table id="Total">
+            <table id="Total" class="allb">
                     <tr>
                             <th id="tt">Derecho de inscripción (25% ~ Pago mayo) </th>
                             <th colspan="2">Estudiantes:
