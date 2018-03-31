@@ -61,6 +61,8 @@ function getAllUrlParams(url) {
   }
 
 
+
+
 window.addEventListener("load", function(){
 
   //chequeamo url parametro
