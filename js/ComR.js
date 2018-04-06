@@ -69,7 +69,7 @@ window.addEventListener("load", function(){
     var IsToRes = getAllUrlParams(window.location.href).a;
     if(IsToRes == "y"){
         
-        LauchModal();
+        LauchModal("registro");
     }
 
   //chequeamos si es ig navegador
@@ -77,7 +77,7 @@ window.addEventListener("load", function(){
   if(IsIG != -1){
      // alert("Abierto desde IG");
 
-     LauchMo();
+     LauchModal("ig");
   }
 
 

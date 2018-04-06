@@ -111,14 +111,37 @@ function CleanFila(pos){
     spvc.innerHTML = '';
 }
 
-//modal1
-function LauchModal(){
-    modal.style.display = "block";
+//open modals segun string
+function LauchModal(tModal){
+    switch (tModal) {
+        case "registro":
+            modal.style.display = "block";
+            break;
+    
+        case "ig":
+            moig.style.display = "block";
+            break;
+
+        default:
+            break;
+    }
 }
 
 // When the user clicks on <span> (x), close the modal
-function closeModal() {
-    modal.style.display = "none";
+function closeModal(tModal) {
+    switch (tModal) {
+        case "registro":
+            modal.style.display = "none";
+            break;
+    
+        case "ig":
+        moig.style.display = "none";
+            break;
+
+        default:
+            break;
+    }
+    
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -126,17 +149,6 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
-
-
-// Modal IG
-function LauchMo(){
-    moig.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-function closeMo() {
-    moig.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
