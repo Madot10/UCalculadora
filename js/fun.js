@@ -161,7 +161,7 @@ window.onclick = function(event) {
 
 //Send tag for server push
 function LoadTag(){
-    modal.style.display = "none";
+    
     var sltag = document.getElementById("carreraRes");
     var tuser = sltag.options[sltag.selectedIndex].value;
 
@@ -171,7 +171,8 @@ function LoadTag(){
         OneSignal.sendTag("user_completed","true", function(tagsSent){
               //retornamos a web
             location.href="https://madot10.github.io/UCalculadora/";
-            alert("COMPLETADO!");
+            //alert("COMPLETADO!");
+            modal.style.display = "none";
         });
     });
 
