@@ -20,7 +20,8 @@ var ArrMat = [null,true,false,false,false,false,false,false,false,false,false];
 var listFila;
 
 //SYSTEM uc
-var Auc = [345000, 400000];
+var Auc = [345000, 400000, 400] ;
+var isFuerte = true;
 
 window.onload = function() {
     document.getElementById("sl_carrera").selectedIndex = 0;
@@ -43,7 +44,57 @@ window.onload = function() {
 
     loadDiv.style.display = "none";
     allDiv.style.display = "block";
+
+    LoadAgrupacion();
 }
+
+//cargar lista agrupaciones
+function LoadAgrupacion(){
+    var slAgr = document.getElementById("slAgr");
+    var categorias = ["Agrupaciones culturales", "Agrupaciones juveniles", "Modelos y competencias", "Selecciones deportivas", "Voluntariado"];
+    var cateArray = ["AgrupacionesCulturales", "AgrupacionesJuveniles", "ModelosYCompetencias", "SeleccionesDeportivas", "Voluntariado"];
+
+    slAgr.options[0] = new Option("Agregar",0);
+
+    //Por categoria
+    for(i=0; i < categorias.length; i++){
+        var group = document.createElement('optgroup');
+        group.label = categorias[i];
+
+        //Por agrupacion
+         for(j=0; j < agrupaciones[cateArray[i]].length; j++){
+             
+            var option = document.createElement("option");
+            var texto = agrupaciones[cateArray[i]][j].name;
+            //console.log(j + " j en " + texto);
+
+            option.value =  texto;
+            option.innerHTML =  texto;
+
+            group.appendChild(option);
+         }
+
+         slAgr.appendChild(group);
+    }
+}
+
+//Alguna agrupacion select
+function SelectAgrup(slAgr){
+    var ulTag = document.getElementById("listAgr");
+
+    var li = document.createElement('li');
+    var span = document.createElement("span");
+
+    var indexSel = slAgr.selectedIndex;
+    li.innerHTML = slAgr.options[indexSel].value;
+
+    span.id = "tag";
+    span.style = "background-color: #4b7f52;"
+
+    span.appendChild(li);
+    ulTag.appendChild(span);
+}
+
 
 //Periodo Selecionado
 function OnPerSelect(){
@@ -54,8 +105,37 @@ function OnPerSelect(){
 
     //volvemos visible
     var pUC = document.getElementById("pVUC");
-    document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+    //document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
     pUC.style.display = "block";
+    var suBs = document.getElementById("uBS");
+
+    switch (Perio) {
+        case "0":
+            //BS.F
+            isFuerte = true;
+            suBs.innerHTML = "Bs.F";
+            document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+        break;
+
+        case "1":
+            //BS.F
+            isFuerte = true;
+            suBs.innerHTML = "Bs.F";
+            document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
+        break;
+
+        case "2":
+            //BS.S.
+            isFuerte = false;
+            suBs.innerHTML = "Bs.S";
+            document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.S. ");
+        break;
+
+        default:
+            break;
+    }
+
+    
 
     //Hacemos recalculo de todo?
     for(y = 0; y < 10; y++){
@@ -462,18 +542,26 @@ function SedeSelect(){
 }
 
 function RunTotal(){
+    
     switch (Perio) {
         case "0":
-       // console.log(0);
+        console.log(0);
             OnTotal();
-            break;
+        break;
         
         case "1":
+            console.log(1);
             TwoTotal();
-            break;
+        break;
     
+        case "2":
+            console.log(1);
+            TwoTotal();
+        break;   
+
         default:
-            break;
+            console.log(Perio + " default");
+        break;
     }
 
 }
@@ -593,7 +681,12 @@ function TwoTotal(){
     let spVc = document.getElementsByClassName("valuC");
 
     //derecho de inscripcion
-    sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.F. ");
+    if(isFuerte){
+        sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.F. ");
+    }else{
+        sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.S. ");
+    }
+    
 
     let sum = 0;
     //obtenemos valores
@@ -645,16 +738,26 @@ function TwoTotal(){
     //40%
     sum = sum * 0.4;
 
-
-    sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
-    spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
-    spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+    if(isFuerte){
+        sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
+        spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+        spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+    }else{
+        sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.S. ");
+        spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.S. ");
+        spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.S. ");
+    }
+    
 
     //calculamos sum + der. insc.
     let sp40d = document.getElementById("sem40d");
 
-
-    sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.F. ");
+    if(isFuerte){
+        sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.F. ");
+    }else{
+        sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.S. ");
+    }
+    
 
 
     let tbTol = document.getElementById("Total");

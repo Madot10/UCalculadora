@@ -23,12 +23,9 @@ OneSignal.push(function () {
         if(isSubscribed){
             //Esta suscrito
 
-            OneSignal.sendTag("user_completed","false", function(tagsSent){
-                LauchModal();
-                console.log("Suscrito");
-            });
+            OneSignal.sendTag("user_completed","false");
 
-            
+            LauchModal();
             
             
         }

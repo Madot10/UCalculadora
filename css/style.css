@@ -382,5 +382,29 @@ button{
     50% {transform: translate(-100px, -100px)} 
     75% {transform: translate(-100px, 0)} 
   }
-  
-  /***********************/
+/*****************************************/
+img.n{
+    height: 1em;
+    width: auto;
+}
+
+button.n{
+    /*background-color: white;*/
+    height: 1em;
+}
+
+/*******************/
+
+ul li{
+   list-style:none;
+    
+}
+
+ul{
+    padding:0 !important;
+}
+
+span#tag{
+   /* margin: 0.5em;*/
+    background-color: #4b7f52;
+}
