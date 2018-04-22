@@ -34,17 +34,20 @@ OneSignal.push(function () {
 function checkSusc(){
     let state;
 
-    OneSignal.push(["getUserId", function(userId) {
-            console.log('User id: '+userId);
-        
-            if(userId == null){
-                state = false;
-            }else{
-                state = true;
-            }
+    try{
+        OneSignal.push(["getUserId", function(userId) {
+                console.log('User id: '+userId);
 
-        }]);
+                if(userId == null){
+                    state = false;
+                }else{
+                    state = true;
+                }
 
+            }]);
+    }catch(e){
+        console.log('ERROR '+ e);
+    }
     return state;
 }
 
