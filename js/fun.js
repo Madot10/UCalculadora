@@ -78,7 +78,7 @@ function OpenCalculadora(){
 }
 
 //Open div Page
-function OpenDiv(divName){
+async function OpenDiv(divName){
 
     switch (divName) {
         case 'calculadora':
@@ -104,7 +104,7 @@ function OpenDiv(divName){
             menuDiv.style.display = "none";
             
 
-            let valSus = checkSusc();
+            let valSus = await checkSusc();
             //let valSus = false;
 
             // Revisamos estado de suscripcion
