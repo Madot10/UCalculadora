@@ -86,14 +86,13 @@ function lauchPermission(){
 
 //Get Json de tags
 async function getTagsJson(){
-    let tgs = new Promise(resolve =>{
+    return new Promise(resolve =>{
 
         OneSignal.push(function() {
             OneSignal.getTags(function(tags) {
-                tgs = tags;
+                resolve(tags);
               });
         });
     });
 
-    return await tgs;
 }
