@@ -40,8 +40,10 @@ function checkSusc(){
 
                 if(userId == null){
                     state = false;
+                    console.log(null);
                 }else{
                     state = true;
+                    console.log(true);
                 }
                 return state;
             }]);
