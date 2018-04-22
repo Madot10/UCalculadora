@@ -303,16 +303,6 @@ window.onclick = function(event) {
     }
 }
 
-//Send tag for server push
-function LoadTag(){
-    
-    
-
-    //retornamos a web
-    //location.href="https://madot10.github.io/UCalculadora/";
-    
-}
-
 //Send tag for OneSignal
 function LoadTag(tagname, tagval){
 
@@ -324,11 +314,12 @@ function LoadTag(tagname, tagval){
         OneSignal.push(function () {
         
             OneSignal.sendTag("user_type",tuser);
-            OneSignal.sendTag("user_completed","true");
+            OneSignal.sendTag("user_completed","v2");
         });
     }else{
         OneSignal.push(function () {
             OneSignal.sendTag(tagname,tagval);
+            OneSignal.sendTag("user_completed","v2");
         });
     }
     //retornamos a web
