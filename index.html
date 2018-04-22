@@ -3,10 +3,6 @@
 
 <head>
     <link rel="manifest" href="./manifest.json">
-    <!-- 
-        <script src="js/pace.js"></script>
-        <link rel="stylesheet" href="css/pace-theme-center-atom.css?2">  -->
-
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33542195-1"></script>
@@ -19,19 +15,11 @@
 
     </script>
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-3446405731655810",
-            enable_page_level_ads: true
-        });
-    </script>
-
-
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="propeller" content="ae78a397a79b50f1fb29515a03d79f9b">
 
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
@@ -44,9 +32,12 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#4b7f52">
+    <meta name="description" content="Calculadora de matricula UCAB no-oficial para nuevo sistema de matricula por Unidades de Credito. Hecho por Miguel De Olim">
 
-    <link rel="stylesheet" href="css/style.css?2">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css?3">
+    <link rel="stylesheet" href="css/menu.css?1">
+    <link rel="stylesheet" href="css/loader.css?1">
+    <link rel="stylesheet" href="css/modal.css?1">
     
     <script>document.write('<script src="js/fun.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
 
@@ -82,15 +73,12 @@
     <title>UCalculadora</title>
 
     <script>document.write('<script src="js/ComR.js?dev=' + Math.floor(Math.random() * 100) + '"\><\/script>');</script>
+
 </head>
 
 <body style="overflow-x:auto;">
 
-    <div class="loader">
-        <div class="item item-1"></div>
-        <div class="item item-2"></div>
-        <div class="item item-3"></div>
-    </div>
+        <div class="loader"></div>
 
 
     <!-- The Modal -->
@@ -101,9 +89,9 @@
                 <span class="close" onclick="closeModal('registro')">&times;</span>
                 <h2>NOTIFICACIONES+</h2>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="overflow: auto;">
                 <p>¿Cuál es tu rol en la UCAB?</p>
-                <select id="carreraRes" class="styled-select blue semi-square">
+                <select id="carreraRes" class="select-square">
                     <option value="null">Seleccione</option>
                     <option value="prof">Profesor</option>
                     <option value="egresado">Egresado</option>
@@ -124,18 +112,15 @@
                     <option value="comunicacion-social">Comunicacion social</option>
                     <option value="sociologia">Sociologia</option>
                 </select>
-    <!-- 
-                <p>¿De qué quieres recibir notificaciones?</p>
+     
+                <p>¿De qué quieres recibir avisos?</p>
                 <select id="slAgr" class="styled-select blue semi-square" onchange="SelectAgrup(this)">
                 </select>
 
-                <div id="tagsBox">
-                    <ul id="listAgr">
-
-                    </ul>
+                <div class="rounded-list">
+                    <ol id="listAgr">
+                    </ol>
                 </div>
-    -->
-                <br>
             </div>
             <div class="modal-footer">
                 <button onclick="LoadTag()">Guardar</button>
@@ -173,11 +158,78 @@
         </div>
     </div>
 
-    <!-- style="display:none" -->
-    <div id="container" style="display:none">
+    <div id="menu" class="onLoad" style="display: none">
+        <a href="#" class="noUnder">
+            <div class="Dcalc" onclick="OpenDiv('calculadora')">
+                <br>
+                <p>
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                        width="100" height="52" viewBox="0 0 434.000000 227.000000"
+                        preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)"
+                    fill="#FFFFFF" stroke="none">
+                    <path d="M2280 2079 c-268 -24 -456 -211 -525 -519 -22 -99 -32 -543 -16 -698
+                    22 -212 81 -357 192 -476 113 -121 225 -167 409 -167 175 1 291 42 394 141 99
+                    94 160 231 173 387 l6 73 -114 0 -115 0 -11 -82 c-28 -206 -100 -293 -262
+                    -319 -230 -35 -372 78 -428 341 -25 119 -25 653 0 775 52 253 215 383 434 346
+                    125 -22 195 -84 233 -208 11 -35 22 -93 26 -128 l7 -65 115 0 115 0 -6 68
+                    c-17 210 -112 379 -261 467 -89 52 -230 77 -366 64z"/>
+                    <path d="M302 1353 c3 -634 6 -714 21 -766 57 -195 175 -309 363 -353 88 -20
+                    269 -20 349 1 147 38 271 136 330 260 53 114 55 132 55 878 l0 687 -115 0
+                    -114 0 -3 -707 -3 -708 -23 -57 c-40 -100 -107 -149 -231 -169 -83 -14 -189
+                    -1 -251 31 -51 26 -103 89 -126 153 -18 49 -19 95 -22 755 l-3 702 -115 0
+                    -115 0 3 -707z"/>
+                    <path d="M3550 1485 l0 -265 -205 0 -205 0 0 -110 0 -110 205 0 205 0 0 -290
+                    0 -290 110 0 110 0 2 288 3 287 208 3 208 2 -3 108 -3 107 -207 3 -208 2 0
+                    265 0 265 -110 0 -110 0 0 -265z"/>
+                    </g>
+                    </svg>
+                    
+                    <h2>UCALCULADORA+</h2>
+                    Herramienta para cálculo de matrícula con el sistema por unidades de crédito.        
+                </p>
+                <br>
+            </div>
+        </a>
+
+        <a href="#" class="noUnder">
+            <div class="Dnoti" onclick="OpenDiv('notificaciones')">
+                <br>
+                <p>
+                        <svg fill="#FFFFFF" height="80" viewBox="0 0 24 24" width="80" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                            <path d="M10.01 21.01c0 1.1.89 1.99 1.99 1.99s1.99-.89 1.99-1.99h-3.98zm8.87-4.19V11c0-3.25-2.25-5.97-5.29-6.69v-.72C13.59 2.71 12.88 2 12 2s-1.59.71-1.59 1.59v.72C7.37 5.03 5.12 7.75 5.12 11v5.82L3 18.94V20h18v-1.06l-2.12-2.12zM16 13.01h-3v3h-2v-3H8V11h3V8h2v3h3v2.01z"/>
+                        </svg>
+                    <h2>NOTIFICICACIONES</h2>
+                    <strong>¡Conéctate! </strong>
+                    <br> 
+                    Recibe lo más importante sobre la UCAB, eventos y más.
+                    <br>
+                    ¡Todo en un sólo lugar!
+                </p>
+                <br>
+            </div>
+        </a>
+
+        <div class="Dsocial">
+            <br>
+            <h2 class="textYellow">Contacto:</h2>
+            <p class="textYellow">Reportar error: <a class="textYellow" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a> </p>
+            <p class="textYellow">Instagram: <a class="textYellow" href="https://www.instagram.com/miguel_olim">@Miguel_Olim</a></p>
+            <p class="textYellow">Twitter: <a class="textYellow" href="https://twitter.com/Miguel_Olim">@Miguel_Olim</a></p>
+            <p class="textYellow">Correo:  <a class="textYellow" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a></p>
+            <p class="textYellow" >Derechos reservados 2018.</p>
+
+            <br>
+        </div>
+        
+    </div>
+
+    <!-- style="display:none" CALCULADORA -->
+    <div id="container" class="onLoad" style="display:none">
         <div class="top">
             <h1>
-                <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span><button style="display:none" class="n" onclick="LauchModal('registro')"><img class="n" src="img/noti_logo.png"></button>
+                <a href="#" class="noUnder"><span class="greenM" onclick="OpenDiv('menu')">⇦</span></a>    <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span><button style="display:none" class="n" onclick="LauchModal('registro')"><img class="n" src="img/noti_logo.png"></button>
             </h1> 
             <p>
                 <strong style="text-transform: uppercase;">Por: Miguel De Olim</strong>
@@ -189,10 +241,10 @@
                 </a>
             </p>
         
-            <img src="img/BannerHorizontal.png" width="auto" height="auto">
+            <!-- <img src="img/BannerHorizontal.png" width="auto" height="auto">-->
 
             <p>
-                <span id="aTouch">
+                <span class="greenM">
                     <strong>*Valor de UC para Junio-Julio
                         <span style=" color:red"> SIN PUBLICAR </span>(sólo es un estimado lo mostrado)*</strong>
                 </span>
@@ -204,12 +256,11 @@
         <br>
         
         <div class="tituloCont">
-
+            <p>
                 <strong>
-                        <label></label>
                         <span id="num">1.</span>PERIODO:</label>
                         <br>
-                        <select id="sl_per" class="styled-select blue semi-square" onchange="OnPerSelect()">
+                        <select id="sl_per" class="select-square" onchange="OnPerSelect()">
                             <option value="null">Seleccione</option>
                             <option value="0">Marzo-Mayo (2018)</option>
                             <option value="1">Junio-Julio Bs.F(2018)</option>
@@ -220,14 +271,15 @@
                             Valor UC:
                             <span id="ucShow"></span>
                         </p>
-                    </strong>
-                    <br>
-            <label style="text-transform: uppercase;">
-                <strong>
-                    <span id="num">2</span>. carrera: </strong>
-            </label>
-            <br>
-            <select id="sl_carrera" onchange="OnLoadCarrera()" class="styled-select blue semi-square">
+                </strong>
+            </p>
+            
+            <p>
+                <label style="text-transform: uppercase;">
+                    <strong><span id="num">2</span>. carrera: </strong>
+                </label>
+            </p>
+            <select id="sl_carrera" onchange="OnLoadCarrera()" class="select-square">
                 <option value="null">Seleccione</option>
                 <option value="Administración-de-Empresas-1">Administración de Empresas</option>
                 <option value="contaduria-2017">Contaduria</option>
@@ -285,7 +337,7 @@
                             <button id="delMat" onclick="OnDeleteMat(1)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(0)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(0)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -302,7 +354,7 @@
                             <button id="delMat" onclick="OnDeleteMat(2)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(1)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(1)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -319,7 +371,7 @@
                             <button id="delMat" onclick="OnDeleteMat(3)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(2)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(2)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -336,7 +388,7 @@
                             <button id="delMat" onclick="OnDeleteMat(4)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(3)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(3)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -353,7 +405,7 @@
                             <button id="delMat" onclick="OnDeleteMat(5)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(4)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(4)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -370,7 +422,7 @@
                             <button id="delMat" onclick="OnDeleteMat(6)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(5)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(5)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -387,7 +439,7 @@
                             <button id="delMat" onclick="OnDeleteMat(7)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(6)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(6)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -404,7 +456,7 @@
                             <button id="delMat" onclick="OnDeleteMat(8)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(7)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(7)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -421,7 +473,7 @@
                             <button id="delMat" onclick="OnDeleteMat(9)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(8)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(8)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -438,7 +490,7 @@
                             <button id="delMat" onclick="OnDeleteMat(10)">X</button>
                         </td>
                         <td class="bL">
-                            <select class="sl_mat styled-select blue semi-square" onchange="OnChangeMat(9)"></select>
+                            <select class="sl_mat select-square" onchange="OnChangeMat(9)"></select>
                         </td>
                         <td>
                             <span class="uc"> </span>
@@ -483,7 +535,7 @@
                     <span id="num">4</span>. Sede: </strong>
             </label>
             <br>
-            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="styled-select blue semi-square">
+            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="select-square">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
                 <option value="g">Guayana</option>
@@ -501,7 +553,7 @@
                     <span id="num">5</span>. Cooperación económica: </strong>
             </label>
             <br>
-            <select id="sl_coop" onchange="SedeSelect()" class="styled-select blue semi-square">
+            <select id="sl_coop" onchange="SedeSelect()" class="select-square">
                 <option value="null">Seleccione</option>
                 <option value="1">Ninguna</option>
                 <option value="0.9">10%</option>
@@ -655,11 +707,11 @@
             <span style="color: red">**Montos únicamente para estimaciones</span>
         </p>
         <br>
-        <div id="ads">
-            <!-- UC ads -->
+        <!-- <div id="ads">
+            <!-- UC ads 
             <p>Parte de los ingresos generados por publicidad serán donados a la UCAB:</p>
             <div id="SC_TBlock_501947" class="SC_TBlock">loading...</div> 
-        </div>
+        </div> -->
         <!-- 
         <div id="tw">
             <blockquote class="twitter-tweet tw-align-center " data-cards="hidden" data-lang="en">
@@ -671,7 +723,7 @@
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
             <img src="img/FomaPagoSem.jpeg" alt="Formas de pago - semestre">
         </div>
-    -->
+        -->
         <footer>
             <br>
             <strong>Páginas de interés:</strong>
@@ -687,28 +739,110 @@
             <br>
             </p>
 
-            <p>Desarrollado por Miguel De Olim
-                <a href="https://goo.gl/K47LS5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="0.9em" height="0.9em" viewBox="0 0 24 24" style="fill: white;">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                        />
-                    </svg>
-                </a>
-                <br> MADOT
+            <p>
+                MADOT
                 <br>
                 <br> Aplicación NO Oficial de la UCAB
             </p>
             <br>
         </footer>
 
-        <script type="text/javascript">
+       <!--  <script type="text/javascript">
             (sc_adv_out = window.sc_adv_out || []).push({
               id : "501947",
               domain : "n.ads1-adnow.com"
             });
           </script>
-          <script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script>
+          <script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script> -->
           
+    </div>
+
+    <!-- style="display:none" NOTIFICACIONES -->
+    <div id="contNoti" style="display:none">
+        <div class="top">
+                <h1 class="blueM"><a href="#" class="noUnder"><span class="blueM" onclick="OpenDiv('menu')">⇦</span></a> NOTIFICACIONES</h1>
+        </div>
+        
+        <div id="susc" style="display:none">
+            <div class="elementos">
+                <p class="separator"><span class="aleft"><strong>Datos:</strong></span></p>
+                    <br>
+                    <div class="option">
+                            <span class="aleft centerV">¿Cuál es tu rol en la UCAB?</span><select id="carreraRes" class="select-square">
+                                    <option value="null">Seleccione</option>
+                                    <option value="prof">Profesor</option>
+                                    <option value="egresado">Egresado</option>
+                                    <option value="Administración-de-Empresas">Administración de Empresas</option>
+                                    <option value="contaduria">Contaduria</option>
+                                    <option value="derecho">Derecho</option>
+                                    <option value="economia">Economia</option>
+                                    <option value="educacion">Educacion</option>
+                                    <option value="filosofia">Filosofia</option>
+                                    <option value="ingInfo">Ing. Informatica</option>
+                                    <option value="ingTelecom">Ing. Telecomunicaciones</option>
+                                    <option value="ingCivil">Ing. Civil</option>
+                                    <option value="ingIndus">Ing. Industrial</option>
+                                    <option value="letras">Letras</option>
+                                    <option value="psicologia">Psicologia</option>
+                                    <option value="relaciones-industriales">Relaciones industriales</option>
+                                    <option value="comunicacion-social">Comunicacion social</option>
+                                    <option value="sociologia">Sociologia</option>
+                                </select>  
+                    </div>
+
+
+                <p class="separator"><span class="aleft"><strong>Configuración general:</strong></span></p>
+                    <br>
+                    <div class="option">
+                        <span class="aleft centerV">Avisos UCAB</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Eventos UCAB</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Eventos estudiantiles</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Servicio Público</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Promociones/Concursos</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+                    
+                <p class="separator"><span class="aleft"><strong>Intereses:</strong></span></p>
+                <br>
+
+                    <div class="option">
+                            <span class="aleft centerV">Agrupaciones</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Modelos y competencias</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Deportes</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+
+                    <div class="option">
+                            <span class="aleft centerV">Voluntariado</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                    </div>
+            </div>
+        </div>
+        
+        <div id="Nsusc" style="display:none">
+            <div id="accept">
+                <p>accept div</p>
+            </div>
+
+            <div id="negate">
+                <p>negate div</p>
+            </div>
+        </div>
     </div>
 </body>
 

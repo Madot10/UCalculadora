@@ -1,0 +1,43 @@
+/* BoTON MENU */
+
+#menu{
+    /*
+    position: absolute;
+  margin: auto;
+  top: -25%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  */
+}
+
+.Dcalc{
+    background-color: #4b7f52;
+    color: white;
+}
+
+.Dcalc:hover{
+    background-color: white;
+    color: #4b7f52;
+}
+
+.Dnoti{
+    background-color: #34B2E4;
+    color: white;
+}
+
+.Dnoti:hover{
+    background-color: white ;
+    color: #34B2E4;
+}
+
+.Dsocial{
+    background-color: #FED201;
+    color: white;
+}
+
+.Dsocial:hover{
+    background-color: white;
+    color: #FED201;
+}

@@ -1,5 +1,6 @@
 // 22/02/2018 Madot Ucab
 //console.log(jsonCarrera);
+
 //variables
 let inOpt;
 let ValueUC;
@@ -23,6 +24,15 @@ var listFila;
 var Auc = [345000, 400000, 400] ;
 var isFuerte = true;
 
+//DIVs system
+let menuDiv;
+let CalDiv;
+let loadDiv;
+let NotDiv;
+
+let SusDiv;
+let NsusDiv;
+
 window.onload = function() {
     document.getElementById("sl_carrera").selectedIndex = 0;
     document.getElementById("sl_sede").selectedIndex = 0;
@@ -38,14 +48,78 @@ window.onload = function() {
     listFila = document.getElementsByTagName("tr");
 
     //LOAD SYSTEM
-    //divS
-    let allDiv = document.getElementById("container");
-    let loadDiv = document.getElementsByClassName("loader")[0];
+    //divs
+
+    menuDiv = document.getElementById("menu");
+    CalDiv = document.getElementById("container");
+    NotDiv = document.getElementById("contNoti");
+    loadDiv = document.getElementsByClassName("loader")[0];
+
+    SusDiv = document.getElementById("susc");
+    NsusDiv = document.getElementById("Nsusc");
 
     loadDiv.style.display = "none";
-    allDiv.style.display = "block";
+    menuDiv.style.display = "block";
 
     LoadAgrupacion();
+}
+
+//Load Calculadora
+function OpenCalculadora(){
+    let CalDiv = document.getElementById("container");
+    let menuDiv = document.getElementById("menu");
+
+    menuDiv.style.display = "none";
+    CalDiv.style.display = "block";
+}
+
+//Open div Page
+function OpenDiv(divName){
+
+    switch (divName) {
+        case 'calculadora':
+            menuDiv.style.display = "none";
+            NotDiv.style.display = "none";
+            CalDiv.style.display = "block";
+            NsusDiv.style.display = "none";
+            SusDiv.style.display = "none";
+
+            break;
+
+        case 'menu':
+            menuDiv.style.display = "block";
+            NotDiv.style.display = "none";
+            CalDiv.style.display = "none";
+            NsusDiv.style.display = "none";
+            SusDiv.style.display = "none";
+
+            break;
+
+        case 'notificaciones':
+            CalDiv.style.display = "none";
+            menuDiv.style.display = "none";
+            
+
+            let valSus = checkSusc();
+            // Revisamos estado de suscripcion
+            console.log("ValSUS: "+valSus);
+            if(valSus){
+                //esta suscrito
+                SusDiv.style.display = "block";
+                NsusDiv.style.display = "none";
+
+            }else{
+                //no esta
+                SusDiv.style.display = "none";
+                NsusDiv.style.display = "block";
+            }
+
+            NotDiv.style.display = "block";
+            break;
+
+        default:
+            break;
+    }
 }
 
 //cargar lista agrupaciones
@@ -80,21 +154,35 @@ function LoadAgrupacion(){
 
 //Alguna agrupacion select
 function SelectAgrup(slAgr){
-    var ulTag = document.getElementById("listAgr");
-
-    var li = document.createElement('li');
-    var span = document.createElement("span");
-
     var indexSel = slAgr.selectedIndex;
-    li.innerHTML = slAgr.options[indexSel].value;
 
-    span.id = "tag";
-    span.style = "background-color: #4b7f52;"
+    if(indexSel != 0){
+        var ulTag = document.getElementById("listAgr");
 
-    span.appendChild(li);
-    ulTag.appendChild(span);
+        var li = document.createElement('li');
+        var span = document.createElement("span");
+        var a = document.createElement("a");
+        var bt = document.createElement("button");
+       
+        a.innerText = slAgr.options[indexSel].value;
+    
+        bt.setAttribute('onclick','delElement(this)');
+        bt.innerHTML = "X";
+        li.id = "tag";
+        //span.style = "background-color: #4b7f52;"
+        a.appendChild(bt);
+        span.appendChild(a);
+        li.appendChild(span);
+        ulTag.appendChild(li);
+    }
+    
 }
 
+//eliminar elemento
+function delElement(elem){
+    console.log(elem);
+    console.log('Eliminado', elem);
+}
 
 //Periodo Selecionado
 function OnPerSelect(){
