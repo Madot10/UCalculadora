@@ -100,7 +100,7 @@ function OpenDiv(divName){
             menuDiv.style.display = "none";
             
 
-            let valSus = checkSusc();
+            let valSus = await checkSusc();
             // Revisamos estado de suscripcion
             console.log("ValSUS: "+valSus);
             if(valSus){
@@ -112,6 +112,9 @@ function OpenDiv(divName){
                 //no esta
                 SusDiv.style.display = "none";
                 NsusDiv.style.display = "block";
+
+                //Chequeamos si pop fue bloqueado o no
+
             }
 
             NotDiv.style.display = "block";

@@ -32,9 +32,10 @@ OneSignal.push(function () {
 
 //Chequear estado de suscripcion. DEVUELVE BOOLEAN
 function checkSusc(){
-    let state;
 
-    while(state = 'undefined'){
+    return new Promise(resolve =>{
+        let state;
+
         OneSignal.push(["getUserId", function(userId) {
                 console.log('User id: '+userId);
 
@@ -47,8 +48,7 @@ function checkSusc(){
                 }
                 
             }]);
-    }
-    return state;
+    });
 }
 
 //Estado del prop permision DEVUELVE BOOLEAN
