@@ -40,15 +40,15 @@ async function checkSusc(){
     return  new Promise(resolve =>{
 
         OneSignal.push(["getUserId", function(userId) {
-                console.log('User id: '+userId);
+                //console.log('User id: '+userId);
 
                 if(userId == null){
                     state = false;
                     
-                    console.log("Sus: " + null);
+                    //console.log("Sus: " + null);
                 }else{
                     state = true;
-                    console.log("Sus: " + true);
+                    //console.log("Sus: " + true);
                 }
                 
                 resolve(state);

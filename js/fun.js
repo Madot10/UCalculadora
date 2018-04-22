@@ -108,8 +108,8 @@ async function OpenDiv(divName){
             //let valSus = false;
 
             // Revisamos estado de suscripcion
-           console.log("ValSUS: ");
-           console.log(valSus);
+           //console.log("ValSUS: ");
+          //console.log(valSus);
 
             if(valSus == true){
                 //esta suscrito
@@ -155,8 +155,8 @@ async function LoadConfig(){
     let jsonTags = await getTagsJson();
 
         loadDiv.style.display = "none";
-        console.log("Json tag");
-        console.log(jsonTags);
+        //console.log("Json tag");
+        //console.log(jsonTags);
 
         //carrera
         document.getElementById('carreraRes').value = jsonTags.user_type;
