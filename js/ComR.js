@@ -69,7 +69,8 @@ window.addEventListener("load", function(){
     var IsToRes = getAllUrlParams(window.location.href).a;
     if(IsToRes == "y"){
         
-        LauchModal("registro");
+        //LauchModal("registro");
+        OpenDiv('notificaciones');
     }
 
   //chequeamos si es ig navegador

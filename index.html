@@ -78,55 +78,7 @@
 
 <body style="overflow-x:auto;">
 
-        <div class="loader"></div>
-
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal('registro')">&times;</span>
-                <h2>NOTIFICACIONES+</h2>
-            </div>
-            <div class="modal-body" style="overflow: auto;">
-                <p>¿Cuál es tu rol en la UCAB?</p>
-                <select id="carreraRes" class="select-square">
-                    <option value="null">Seleccione</option>
-                    <option value="prof">Profesor</option>
-                    <option value="egresado">Egresado</option>
-                    <option value="otro">Otro</option>
-                    <option value="Administración-de-Empresas">Administración de Empresas</option>
-                    <option value="contaduria">Contaduria</option>
-                    <option value="derecho">Derecho</option>
-                    <option value="economia">Economia</option>
-                    <option value="educacion">Educacion</option>
-                    <option value="filosofia">Filosofia</option>
-                    <option value="ingInfo">Ing. Informatica</option>
-                    <option value="ingTelecom">Ing. Telecomunicaciones</option>
-                    <option value="ingCivil">Ing. Civil</option>
-                    <option value="ingIndus">Ing. Industrial</option>
-                    <option value="letras">Letras</option>
-                    <option value="psicologia">Psicologia</option>
-                    <option value="relaciones-industriales">Relaciones industriales</option>
-                    <option value="comunicacion-social">Comunicacion social</option>
-                    <option value="sociologia">Sociologia</option>
-                </select>
-     
-                <p>¿De qué quieres recibir avisos?</p>
-                <select id="slAgr" class="styled-select blue semi-square" onchange="SelectAgrup(this)">
-                </select>
-
-                <div class="rounded-list">
-                    <ol id="listAgr">
-                    </ol>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button onclick="LoadTag()">Guardar</button>
-            </div>
-        </div>
-    </div>
+    <div class="loader"></div>
 
     <!-- The Modal IG -->
     <div id="IgModal" class="modal">
@@ -768,7 +720,8 @@
                 <p class="separator"><span class="aleft"><strong>Datos:</strong></span></p>
                     <br>
                     <div class="option">
-                            <span class="aleft centerV">¿Cuál es tu rol en la UCAB?</span><select id="carreraRes" class="select-square">
+                            <span class="aleft centerV">¿Cuál es tu rol en la UCAB?</span>
+                            <select id="carreraRes" class="select-square" onchange="LoadTag()">
                                     <option value="null">Seleccione</option>
                                     <option value="prof">Profesor</option>
                                     <option value="egresado">Egresado</option>
@@ -787,60 +740,66 @@
                                     <option value="relaciones-industriales">Relaciones industriales</option>
                                     <option value="comunicacion-social">Comunicacion social</option>
                                     <option value="sociologia">Sociologia</option>
-                                </select>  
+                            </select>  
                     </div>
 
 
                 <p class="separator"><span class="aleft"><strong>Configuración general:</strong></span></p>
                     <br>
                     <div class="option">
-                        <span class="aleft centerV">Avisos UCAB</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                        <span class="aleft centerV">Avisos UCAB</span>  <label class="switch aright"><input id="SavisosUcab" type="checkbox" checked onchange="LoadTag('avisosUcab', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Eventos UCAB</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Eventos UCAB</span>  <label class="switch aright"><input id="SeventosUcab" type="checkbox" checked onchange="LoadTag('eventosUcab', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Eventos estudiantiles</span>  <label class="switch aright"><input type="checkbox" checked><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Eventos estudiantiles</span>  <label class="switch aright"><input id="SeventosEst" type="checkbox" checked onchange="LoadTag('eventosEst', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Servicio Público</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Servicio Público</span> <label class="switch aright"><input type="checkbox" id="SserPublico" onchange="LoadTag('serPublico', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Promociones/Concursos</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Promociones/Concursos</span>  <label class="switch aright"><input type="checkbox" id="Spromo" onchange="LoadTag('promo', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
                     
                 <p class="separator"><span class="aleft"><strong>Intereses:</strong></span></p>
                 <br>
 
                     <div class="option">
-                            <span class="aleft centerV">Agrupaciones</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Agrupaciones</span>  <label class="switch aright"><input type="checkbox" id="Sagrup" onchange="LoadTag('agrup', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Modelos y competencias</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Modelos y competencias</span>  <label class="switch aright"><input type="checkbox" id="Smodels" onchange="LoadTag('models', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Deportes</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Deportes</span>  <label class="switch aright"><input type="checkbox" id="Sdeportes" onchange="LoadTag('deportes', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
 
                     <div class="option">
-                            <span class="aleft centerV">Voluntariado</span>  <label class="switch aright"><input type="checkbox"><span class="slider round"></span> </label>
+                            <span class="aleft centerV">Voluntariado</span>  <label class="switch aright"><input type="checkbox" id="Svoluntariado" onchange="LoadTag('voluntariado', this.checked.toString())"><span class="slider round"></span> </label>
                     </div>
             </div>
         </div>
         
         <div id="Nsusc" style="display:none">
-            <div id="accept">
-                <p>accept div</p>
+            <div id="accept" style="display:none">
+                <p>Disfruta de información, avisos, promociones y más. 
+                    <br>
+                    ¡En un solo lugar! 
+                    <br>
+                    <strong>CONÉCTATE</strong></p>
+                <img src="img/bell.jpg">
             </div>
 
-            <div id="negate">
-                <p>negate div</p>
+            <div id="negate" style="display:none">
+                <p>Se encuentra desactivado los permisos de notificaciones. ¡Habilitalos!</p>
+                <img src="img/chrome-unblock.jpg">
             </div>
         </div>
     </div>

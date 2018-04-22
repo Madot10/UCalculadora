@@ -32,6 +32,8 @@ let NotDiv;
 
 let SusDiv;
 let NsusDiv;
+    let acPdiv;
+    let nePdiv;
 
 window.onload = function() {
     document.getElementById("sl_carrera").selectedIndex = 0;
@@ -60,6 +62,9 @@ window.onload = function() {
 
     loadDiv.style.display = "none";
     menuDiv.style.display = "block";
+
+    acPdiv = document.getElementById("accept");
+    nePdiv = document.getElementById("negate");
 
     LoadAgrupacion();
 }
@@ -101,10 +106,14 @@ function OpenDiv(divName){
             
 
             let valSus = checkSusc();
+            //let valSus = false;
+
             // Revisamos estado de suscripcion
-            console.log("ValSUS: "+valSus);
+           // console.log("ValSUS: "+valSus);
             if(valSus){
                 //esta suscrito
+                LoadConfig();
+
                 SusDiv.style.display = "block";
                 NsusDiv.style.display = "none";
 
@@ -114,6 +123,19 @@ function OpenDiv(divName){
                 NsusDiv.style.display = "block";
 
                 //Chequeamos si pop fue bloqueado o no
+                //statePermission()
+                if(statePermission()){
+                    //aceptada
+                    lauchPermission();
+
+                    acPdiv.style.display = "block";
+                    nePdiv.style.display = "none";
+                }else{
+                    //bloqueada
+
+                    acPdiv.style.display = "none";
+                    nePdiv.style.display = "block";
+                }
 
             }
 
@@ -125,66 +147,26 @@ function OpenDiv(divName){
     }
 }
 
-//cargar lista agrupaciones
-function LoadAgrupacion(){
-    var slAgr = document.getElementById("slAgr");
-    var categorias = ["Agrupaciones culturales", "Agrupaciones juveniles", "Modelos y competencias", "Selecciones deportivas", "Voluntariado"];
-    var cateArray = ["AgrupacionesCulturales", "AgrupacionesJuveniles", "ModelosYCompetencias", "SeleccionesDeportivas", "Voluntariado"];
+//load config notificaciones
+function LoadConfig(){
+    let jsonTags = getTagsJson();
+    console.log(jsonTags);
 
-    slAgr.options[0] = new Option("Agregar",0);
+    //carrera
+    document.getElementById('carreraRes').value = jsonTags.user_type;
 
-    //Por categoria
-    for(i=0; i < categorias.length; i++){
-        var group = document.createElement('optgroup');
-        group.label = categorias[i];
+    //Conf General
+    document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
+    document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
+    document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
+    document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
+    document.getElementById('Spromo').checked = (jsonTags.promo == "true");
 
-        //Por agrupacion
-         for(j=0; j < agrupaciones[cateArray[i]].length; j++){
-             
-            var option = document.createElement("option");
-            var texto = agrupaciones[cateArray[i]][j].name;
-            //console.log(j + " j en " + texto);
-
-            option.value =  texto;
-            option.innerHTML =  texto;
-
-            group.appendChild(option);
-         }
-
-         slAgr.appendChild(group);
-    }
-}
-
-//Alguna agrupacion select
-function SelectAgrup(slAgr){
-    var indexSel = slAgr.selectedIndex;
-
-    if(indexSel != 0){
-        var ulTag = document.getElementById("listAgr");
-
-        var li = document.createElement('li');
-        var span = document.createElement("span");
-        var a = document.createElement("a");
-        var bt = document.createElement("button");
-       
-        a.innerText = slAgr.options[indexSel].value;
-    
-        bt.setAttribute('onclick','delElement(this)');
-        bt.innerHTML = "X";
-        li.id = "tag";
-        //span.style = "background-color: #4b7f52;"
-        a.appendChild(bt);
-        span.appendChild(a);
-        li.appendChild(span);
-        ulTag.appendChild(li);
-    }
-    
-}
-
-//eliminar elemento
-function delElement(elem){
-    console.log(elem);
-    console.log('Eliminado', elem);
+    //Intereses
+    document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
+    document.getElementById('Smodels').checked = (jsonTags.models == "true");
+    document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
+    document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
 }
 
 //Periodo Selecionado
@@ -285,10 +267,6 @@ function CleanFila(pos){
 //open modals segun string
 function LauchModal(tModal){
     switch (tModal) {
-        case "registro":
-            modal.style.display = "block";
-            break;
-    
         case "ig":
             moig.style.display = "block";
             break;
@@ -301,10 +279,6 @@ function LauchModal(tModal){
 // When the user clicks on <span> (x), close the modal
 function closeModal(tModal) {
     switch (tModal) {
-        case "registro":
-            modal.style.display = "none";
-            break;
-    
         case "ig":
         moig.style.display = "none";
             break;
@@ -317,18 +291,10 @@ function closeModal(tModal) {
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
     if (event.target == moig) {
         moig.style.display = "none";
     }
 }
-
 
 //Send tag for server push
 function LoadTag(){
@@ -340,11 +306,22 @@ function LoadTag(){
      
         OneSignal.sendTag("user_type",tuser);
         OneSignal.sendTag("user_completed","true", function(tagsSent){
-              //retornamos a web
+            //retornamos a web
             location.href="https://madot10.github.io/UCalculadora/";
             //alert("COMPLETADO!");
-            modal.style.display = "none";
         });
+    });
+
+    //retornamos a web
+    //location.href="https://madot10.github.io/UCalculadora/";
+    
+}
+
+//Send tag for OneSignal
+function LoadTag(tagname, tagval){
+
+    OneSignal.push(function () {
+        OneSignal.sendTag(tagname,tagval);
     });
 
     //retornamos a web

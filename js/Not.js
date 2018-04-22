@@ -23,6 +23,11 @@ OneSignal.push(function () {
         if(isSubscribed){
             //Esta suscrito
             OneSignal.sendTag("user_completed","false");
+
+            OneSignal.sendTag('avisosUcab',"true");
+            OneSignal.sendTag('eventosUcab',"true");
+            OneSignal.sendTag('eventosEst',"true");
+
            // LauchModal();
             OpenDiv('notificaciones');
             
@@ -52,34 +57,43 @@ async function checkSusc(){
 }
 
 //Estado del prop permision DEVUELVE BOOLEAN
-function statePermission(){
-    let stPer;
+async function statePermission(){
+    let stPer = new Promise(resolve =>{
 
-    OneSignal.push(["getNotificationPermission", function(permission) {
-        //console.log("Site Notification Permission:", permission);
-        // (Output) Site Notification Permission: default
-        if(permission == 'denied'){
-            //negada
-            stPer = false;
-        }else{
-            //aceptada o normal
-            stPer = true;
-        }
-    }]);
-
-    return stPer;
+        OneSignal.push(["getNotificationPermission", function(permission) {
+            //console.log("Site Notification Permission:", permission);
+            // (Output) Site Notification Permission: default
+            if(permission == 'denied'){
+                //negada
+                stPer = false;
+            }else{
+                //aceptada o normal
+                stPer = true;
+            }
+        }]);
+    });
+    return await stPer;
 }
 
+//Lanza prop de permiso
 function lauchPermission(){
-    let IsAcept = statePermission();
 
-    if(IsAcept){
-        //No suscrito y poder mostrar el prop
+    OneSignal.push(function() {
+        OneSignal.registerForPushNotifications();
+    });
+
+}
+
+//Get Json de tags
+async function getTagsJson(){
+    let tgs = new Promise(resolve =>{
+
         OneSignal.push(function() {
-           OneSignal.registerForPushNotifications();
-          });
-    }else{
-        //No suscrito y negado el prop
+            OneSignal.getTags(function(tags) {
+                tgs = tags;
+              });
+        });
+    });
 
-    }
+    return await tgs;
 }
