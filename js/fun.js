@@ -148,9 +148,12 @@ function OpenDiv(divName){
 
 //load config notificaciones
 async function LoadConfig(){
+    loadDiv.style.display = "block";
+
     let jsonTags = await getTagsJson();
 
-        console.log(jsonTags);
+        loadDiv.style.display = "none";
+        //console.log(jsonTags);
 
         //carrera
         document.getElementById('carreraRes').value = jsonTags.user_type;
