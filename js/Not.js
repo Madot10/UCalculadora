@@ -35,7 +35,7 @@ function checkSusc(){
     let state;
 
     OneSignal.push(function(){
-
+        console.log('waiting');
         OneSignal.getUserId(function(userId){
             console.log('User id: '+userId);
             if(userId = null){
