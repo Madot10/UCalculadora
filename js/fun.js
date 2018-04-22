@@ -111,7 +111,7 @@ function OpenDiv(divName){
            console.log("ValSUS: ");
            console.log(valSus);
 
-            if(valSus){
+            if(valSus == true){
                 //esta suscrito
                 loadDiv.style.display = "block";
                 LoadConfig();
@@ -306,18 +306,7 @@ window.onclick = function(event) {
 //Send tag for server push
 function LoadTag(){
     
-    var sltag = document.getElementById("carreraRes");
-    var tuser = sltag.options[sltag.selectedIndex].value;
-
-    OneSignal.push(function () {
-     
-        OneSignal.sendTag("user_type",tuser);
-        OneSignal.sendTag("user_completed","true", function(tagsSent){
-            //retornamos a web
-            location.href="https://madot10.github.io/UCalculadora/";
-            //alert("COMPLETADO!");
-        });
-    });
+    
 
     //retornamos a web
     //location.href="https://madot10.github.io/UCalculadora/";
@@ -327,10 +316,21 @@ function LoadTag(){
 //Send tag for OneSignal
 function LoadTag(tagname, tagval){
 
-    OneSignal.push(function () {
-        OneSignal.sendTag(tagname,tagval);
-    });
 
+    if(tagname == 'user_type'){
+        var sltag = document.getElementById("carreraRes");
+        var tuser = sltag.options[sltag.selectedIndex].value;
+
+        OneSignal.push(function () {
+        
+            OneSignal.sendTag("user_type",tuser);
+            OneSignal.sendTag("user_completed","true");
+        });
+    }else{
+        OneSignal.push(function () {
+            OneSignal.sendTag(tagname,tagval);
+        });
+    }
     //retornamos a web
     //location.href="https://madot10.github.io/UCalculadora/";
     
