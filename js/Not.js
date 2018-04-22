@@ -43,12 +43,12 @@ function checkSusc(){
                 }else{
                     state = true;
                 }
-
+                return state;
             }]);
     }catch(e){
         console.log('ERROR '+ e);
     }
-    return state;
+    
 }
 
 //Estado del prop permision DEVUELVE BOOLEAN
