@@ -74,7 +74,7 @@ function OpenCalculadora(){
 }
 
 //Open div Page
-function OpenDiv(divName){
+async function OpenDiv(divName){
 
     switch (divName) {
         case 'calculadora':

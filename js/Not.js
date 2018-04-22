@@ -31,7 +31,7 @@ OneSignal.push(function () {
 });
 
 //Chequear estado de suscripcion. DEVUELVE BOOLEAN
-async function checkSusc(){
+function checkSusc(){
 
     return new Promise(resolve =>{
         let state;
