@@ -111,6 +111,7 @@ function OpenDiv(divName){
            // console.log("ValSUS: "+valSus);
             if(valSus){
                 //esta suscrito
+                loadDiv.style.display = "block";
                 LoadConfig();
 
                 SusDiv.style.display = "block";
@@ -148,7 +149,6 @@ function OpenDiv(divName){
 
 //load config notificaciones
 async function LoadConfig(){
-    loadDiv.style.display = "block";
 
     let jsonTags = await getTagsJson();
 
