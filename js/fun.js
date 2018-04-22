@@ -147,25 +147,27 @@ function OpenDiv(divName){
 }
 
 //load config notificaciones
-async function LoadConfig(){
-    let jsonTags =  new Promise(resolve =>{ getTagsJson(); });
-    console.log(jsonTags);
+function LoadConfig(){
+    let jsonTags =  getTagsJson().then((r) =>{
 
-    //carrera
-    document.getElementById('carreraRes').value = jsonTags.user_type;
+        console.log(jsonTags);
 
-    //Conf General
-    document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
-    document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
-    document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
-    document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
-    document.getElementById('Spromo').checked = (jsonTags.promo == "true");
+        //carrera
+        document.getElementById('carreraRes').value = jsonTags.user_type;
 
-    //Intereses
-    document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
-    document.getElementById('Smodels').checked = (jsonTags.models == "true");
-    document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
-    document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
+        //Conf General
+        document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
+        document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
+        document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
+        document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
+        document.getElementById('Spromo').checked = (jsonTags.promo == "true");
+
+        //Intereses
+        document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
+        document.getElementById('Smodels').checked = (jsonTags.models == "true");
+        document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
+        document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
+    });
 }
 
 //Periodo Selecionado
