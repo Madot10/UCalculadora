@@ -108,7 +108,9 @@ function OpenDiv(divName){
             //let valSus = false;
 
             // Revisamos estado de suscripcion
-           console.log("ValSUS: "+valSus);
+           console.log("ValSUS: ");
+           console.log(valSus);
+
             if(valSus){
                 //esta suscrito
                 loadDiv.style.display = "block";
@@ -153,7 +155,8 @@ async function LoadConfig(){
     let jsonTags = await getTagsJson();
 
         loadDiv.style.display = "none";
-        //console.log(jsonTags);
+        console.log("Json tag");
+        console.log(jsonTags);
 
         //carrera
         document.getElementById('carreraRes').value = jsonTags.user_type;
