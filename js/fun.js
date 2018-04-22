@@ -147,8 +147,8 @@ function OpenDiv(divName){
 }
 
 //load config notificaciones
-function LoadConfig(){
-    let jsonTags =  getTagsJson().then((r) =>{
+async function LoadConfig(){
+    let jsonTags = await getTagsJson();
 
         console.log(jsonTags);
 
@@ -167,7 +167,7 @@ function LoadConfig(){
         document.getElementById('Smodels').checked = (jsonTags.models == "true");
         document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
         document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
-    });
+    
 }
 
 //Periodo Selecionado
