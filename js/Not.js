@@ -42,12 +42,12 @@ async function checkSusc(){
         OneSignal.push(["getUserId", function(userId) {
                 console.log('User id: '+userId);
 
-                if(userId == 'null'){
+                if(userId == null){
                     state = false;
-                    console.log(null);
+                    console.log("Sus: " + null);
                 }else{
                     state = true;
-                    console.log(true);
+                    console.log("Sus: " + true);
                 }
                 
             }]);
