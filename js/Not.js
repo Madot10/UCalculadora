@@ -34,7 +34,7 @@ OneSignal.push(function () {
 function checkSusc(){
     let state;
 
-    try{
+    while(state = 'undefined'){
         OneSignal.push(["getUserId", function(userId) {
                 console.log('User id: '+userId);
 
@@ -45,12 +45,10 @@ function checkSusc(){
                     state = true;
                     console.log(true);
                 }
-                return state;
+                
             }]);
-    }catch(e){
-        console.log('ERROR '+ e);
     }
-    
+    return state;
 }
 
 //Estado del prop permision DEVUELVE BOOLEAN
