@@ -91,8 +91,6 @@ async function getTagsJson(){
         OneSignal.push(function() {
             OneSignal.getTags(function(tags) {
                 tgs = tags;
-                console.log(tags);
-                console.log(tgs);
               });
         });
     });

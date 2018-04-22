@@ -147,8 +147,8 @@ function OpenDiv(divName){
 }
 
 //load config notificaciones
-function LoadConfig(){
-    let jsonTags = getTagsJson();
+async function LoadConfig(){
+    let jsonTags =  new Promise(resolve =>{ getTagsJson(); });
     console.log(jsonTags);
 
     //carrera
