@@ -108,7 +108,7 @@ function OpenDiv(divName){
             //let valSus = false;
 
             // Revisamos estado de suscripcion
-           // console.log("ValSUS: "+valSus);
+           console.log("ValSUS: "+valSus);
             if(valSus){
                 //esta suscrito
                 loadDiv.style.display = "block";
