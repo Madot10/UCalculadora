@@ -21,7 +21,7 @@ var ArrMat = [null,true,false,false,false,false,false,false,false,false,false];
 var listFila;
 
 //SYSTEM uc
-var Auc = [345000, 600000, 600] ;
+var Auc = [345000, 1400000, 1400] ;
 var isFuerte = true;
 
 //DIVs system
