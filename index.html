@@ -111,6 +111,7 @@
         </div>
     </div>
 
+    <!-- style="display:none" MENU -->
     <div id="menu" class="onLoad" style="display: none">
         <a href="#" class="noUnder">
             <div class="Dcalc" onclick="OpenDiv('calculadora')">
@@ -213,11 +214,15 @@
                         <br>
                         <select id="sl_per" class="select-square" onchange="OnPerSelect()">
                             <option value="null">Seleccione</option>
-                            <optgroup label="Marzo-Julio(2018)">
-                                <option value="0">Marzo-Mayo (2018)</option>
-                                <option value="1">Junio-Julio Bs.F(2018)</option>
-                                <option value="2">Junio-Julio Bs.S(2018)</option>
+                            <optgroup label="(SEM)Marzo-Julio(2018)">
+                                <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (2018)</option>
+                                <option value="1" data-bs='F' data-uc=1400000>Junio-Julio Bs.F(2018)</option>
+                                <option value="2" data-bs='S' data-uc=1400>Junio-Julio Bs.S(2018)</option>
                             </optgroup>  
+                           <!--  <optgroup label="(VERA)Julio-Agosto(2018)">
+                                <option value="3" data-bs='F' data-uc=2800000>Julio-Agosto Bs.F(2018)</option>
+                                <option value="4" data-bs='S' data-uc=2800>Julio-Agosto Bs.S(2018)</option>
+                            </optgroup> -->
                         </select>
         
                         <p id="pVUC" style="display: none;">

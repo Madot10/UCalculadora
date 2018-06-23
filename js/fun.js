@@ -10,6 +10,7 @@ let jdatasl;
 let stSede = false;
 let stPer = false;
 var Perio;
+var Tbs;
 
 var modal;
 var span;
@@ -21,7 +22,7 @@ var ArrMat = [null,true,false,false,false,false,false,false,false,false,false];
 var listFila;
 
 //SYSTEM uc
-var Auc = [345000, 1400000, 1400] ;
+//var Auc = [345000, 1400000, 1400] ;
 var isFuerte = true;
 
 //DIVs system
@@ -180,7 +181,9 @@ async function LoadConfig(){
 function OnPerSelect(){
     var slP = document.getElementById("sl_per");
     Perio = slP.value;
-    ValueUC =  Auc[Perio];
+    Tbs = slP.selectedOptions[0].dataset.bs;
+    //ValueUC =  Auc[Perio];
+    ValueUC =  slP.selectedOptions[0].dataset.uc;
     stPer = true;
 
     //volvemos visible
@@ -189,22 +192,15 @@ function OnPerSelect(){
     pUC.style.display = "block";
     var suBs = document.getElementById("uBS");
 
-    switch (Perio) {
-        case "0":
+    switch (Tbs) {
+        case "F":
             //BS.F
             isFuerte = true;
             suBs.innerHTML = "Bs.F";
             document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
         break;
 
-        case "1":
-            //BS.F
-            isFuerte = true;
-            suBs.innerHTML = "Bs.F";
-            document.getElementById("ucShow").innerHTML = formatNumber.new(ValueUC, "Bs.F. ");
-        break;
-
-        case "2":
+        case "S":
             //BS.S.
             isFuerte = false;
             suBs.innerHTML = "Bs.S";
