@@ -21,9 +21,14 @@ var ArrMat = [null,true,false,false,false,false,false,false,false,false,false];
 //inicia en 1
 var listFila;
 
+//SYSTEM TABLE
+var ColorArray = ['#fed20180','#34b2e466'];
+var ScolorUsed = false;
+
 //SYSTEM uc
 //var Auc = [345000, 1400000, 1400] ;
 var isFuerte = true;
+let sum;
 
 //DIVs system
 let menuDiv;
@@ -219,11 +224,14 @@ function OnPerSelect(){
     }
 
     //ocultamos tabla pagos antigua?
-    var x = document.getElementById("tbTotal");
+   /* var x = document.getElementById("tbTotal");
     x.style.display = "none";
 
     var x = document.getElementById("tbTotal2nd");
-    x.style.display = "none";
+    x.style.display = "none";*/
+
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
 }
 
 //AddNew Materia
@@ -364,8 +372,12 @@ function OnLoadCarrera(){
         let spInfo2 = document.getElementById("info2").innerHTML = "";
         let spInfo = document.getElementById("info").innerHTML = "";
 
+        /*
         var x = document.getElementById("tbTotal");
         x.style.display = "none";
+        */
+        let table = document.getElementById('tablaPago');
+        table.innerHTML ='';
 
         ListMaterias();
     }else{
@@ -386,18 +398,6 @@ function ListMaterias(){
         //console.log(i);
         selectMat[i].options.length = 0;
     }
-
-    //agregamos a las listas
-    /* for(i = 0; i < selectMat.length; i++){
-        //console.log(i);
-        selectMat[i].options[selectMat[i].options.length] = new Option("Seleccione", i);
-            for(x = 0; x < jsonCarrera[inOpt].materias.length; x++){
-                var textToshow = "(" + jsonCarrera[inOpt].materias[x].Semestre + ") " + jsonCarrera[inOpt].materias[x].Asignatura;
-
-                selectMat[i].options[selectMat[i].options.length] = new Option(textToshow, x);
-            }
-        
-    } */
 
     for(i = 0; i < selectMat.length; i++){
         //console.log(i);
@@ -426,24 +426,23 @@ function CleanSpace(){
     let spTU = document.getElementById("TotalUC");
 
     spTU.innerHTML = '';
-
+/*
     let sp75 = document.getElementById("der75");
     let sp60 = document.getElementById("sem60");
     let spMar = document.getElementById("marzo");
     let spAbr = document.getElementById("abril");
     let spMay = document.getElementById("mayo");
 
-    let tbTo = document.getElementById("totales");
-    tbTo.style.visibility = "hidden";
-
-    let bt = document.getElementById("btTotal");  
-    bt.style.visibility = "hidden";
-
+*/
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
+/*
     sp75.innerHTML= '';
     sp60.innerHTML = '';
     spMar.innerHTML = '';
     spAbr.innerHTML = '';
     spMay.innerHTML = '';
+    */
 }
 
 
@@ -477,12 +476,6 @@ function OnChangeMat(ind){
             return item.Asignatura === newOpt
         });
 
-        //console.log(jsonCarrera[inOpt].materias[indAsig]);
-
-        //establecemos datos
-        /* spUC.innerHTML = jsonCarrera[inOpt].materias[indAsig].UC;
-        spTAX.innerHTML = jsonCarrera[inOpt].materias[indAsig].Tax;
-        spVc.innerHTML = CalculateValueUC(jsonCarrera[inOpt].materias[indAsig].Tax, jsonCarrera[inOpt].materias[indAsig].UC); */
 
         spUC.innerHTML = FixUC(jdatasl[indAsig].Tax, jdatasl[indAsig].UC);
         spTAX.innerHTML = jdatasl[indAsig].Tax;
@@ -597,59 +590,51 @@ function SedeSelect(){
     }else{
         alert("Selecciona la sede!");
     }
-
+    /*
     var x = document.getElementById("tbTotal");
     x.style.display = "none";
+    */
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
     
 }
 
 function RunTotal(){
-    
+    //Totalizamos para tener variables disponibles
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
+
+    Totalizacion();
+    let a;
+
     switch (Perio) {
         case "0":
         //console.log(0);
-            OnTotal();
+            //OnTotal();
+            a= Perio;
         break;
         
         case "1":
+        case '2':
             //console.log(1);
-            TwoTotal();
+            //TwoTotal();
+            a = '1';
         break;
-    
-        case "2":
-            //console.log(1);
-            TwoTotal();
-        break;   
-
+   
         default:
             //console.log(Perio + " default");
         break;
     }
+    //console.log(a);
+    GenerarTabla(a);
 
 }
-//Totalizacion
-function OnTotal(){
-    let sp75 = document.getElementById("der75");
-    let sp752 = document.getElementById("der752");
-
-
-    let sp60 = document.getElementById("sem60");
-    let spMar = document.getElementById("marzo");
-    let spAbr = document.getElementById("abril");
-    let spMay = document.getElementById("mayo");
-
-    let bt = document.getElementById("btTotal");
-    bt.style.visibility = "visible";
-
+//Totalizacion en variables
+function Totalizacion(){
     let spVc = document.getElementsByClassName("valuC");
 
-    sp75.innerHTML = formatNumber.new(1.25 * ValueUC, "Bs.F. ");
-    sp752.innerHTML = formatNumber.new(2.75 * ValueUC, "Bs.F. ");
-
-
-    
-    let sum = 0;
-    //obtenemos valores
+    sum = 0;
+    //obtenemos valores Sumatoria bruta UC de tabla
     for(y = 0; y < 10; y++){
         var txt = spVc[y].textContent;
         var txtW = txt.replace(".","");
@@ -672,7 +657,6 @@ function OnTotal(){
 
     }
 
-    //chequeamos sedes
     let slSede = document.getElementById("sl_sede");
 
     switch(slSede.options[slSede.selectedIndex].value){
@@ -695,137 +679,164 @@ function OnTotal(){
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
-    
-    sum = sum * 0.6;
-    /*
-    sp60.innerHTML = formatNumber.new(Math.round(sum * 0.6), "Bs.F. ");
-        spMar.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.5), "Bs.F. ");
-        spAbr.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
-        spMay.innerHTML = formatNumber.new(Math.round((sum * 0.6) * 0.25), "Bs.F. ");
-    */
 
-    sp60.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
-    spMar.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
-    spAbr.innerHTML = formatNumber.new(Math.round((sum) * 0.25), "Bs.F. ");
-    spMay.innerHTML = formatNumber.new(Math.round((sum) * 0.25), "Bs.F. ");
-
-    //calculamos sum + der. insc.
-    let sp60dR = document.getElementById("sem60dR");
-    let sp60dN = document.getElementById("sem60dN");
-    let spMardR = document.getElementById("semMardR");
-    let spMardN = document.getElementById("semMardN");
-
-    sp60dR.innerHTML = formatNumber.new(Math.round((sum) + (1.25 * ValueUC)), "Bs.F. ");
-    sp60dN.innerHTML = formatNumber.new(Math.round((sum) + (2.75 * ValueUC)), "Bs.F. ");
-    spMardR.innerHTML = formatNumber.new(Math.round(((sum) * 0.5) + (1.25 * ValueUC)), "Bs.F. ");
-    spMardN.innerHTML = formatNumber.new(Math.round(((sum) * 0.5) + (2.75 * ValueUC)), "Bs.F. ");
-
-    let tbTo = document.getElementById("totales");
-    tbTo.style.visibility = "visible";
-
-    //toggle tabla totales
-    var x = document.getElementById("tbTotal");
-    x.style.display = "block";
+    sum = Math.round(sum);
+    //****FIN SUM
+   // console.log('SUM TOTAL '+ sum);
 }
 
-//Totalizar 2nd periodo
-function TwoTotal(){
-    let sp25 = document.getElementById("der25");
 
-    let sp40 = document.getElementById("sem40");
-
-    let spJn = document.getElementById("jn");
-    let spJl = document.getElementById("jl");
-
-    let bt2 = document.getElementById("tbTotal2nd");
-    bt2.style.visibility = "visible";
-
-    let spVc = document.getElementsByClassName("valuC");
-
-    //derecho de inscripcion
+//Retorna unidad del bolivar utilizado
+function GetUnitMoney(){
     if(isFuerte){
-        sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.F. ");
-    }else{
-        sp25.innerHTML = formatNumber.new(0.25 * ValueUC, "Bs.S. ");
+        return 'Bs.F. '
     }
+    return 'Bs.S. '
+}
+
+
+function GenerarTabla(periodo){
+    let tabla = tables[periodo];
+    let celmax = tabla[0];
+
+    var divTable = document.getElementById('tablaPago');
+
+    var tableHTML = document.createElement('table');
+    //tableHTML.style = 'overflow-x:auto;'
     
+    //Recorremos para obtener FILAS
+    for(i=1; i < tabla.length; i++){
+        let fila = tabla[i];
+        //console.log('FILA ' + i)
+        let filaHTML;
 
-    let sum = 0;
-    //obtenemos valores
-    for(y = 0; y < 10; y++){
-        var txt = spVc[y].textContent;
-        var txtW = txt.replace(".","");
-        var txtWOP = txtW.replace(".","");
-        //console.log(txtWOP);
+        if (!(Number.isInteger(fila[0]))){
+            //Si no es fila mixta
+            filaHTML = GenColumnas(fila, celmax);
+        }else{
+            //Si es fila mixta
+            let fmix = fila.slice(1,fila.length);
+            let rspan = fila[0];
+           
+            //console.log(fila[0]);
+            filaHTML = GenFilaMix(rspan,fmix,celmax);
+            
+        }
 
-        var val = Number(txtWOP);
+        tableHTML.appendChild(filaHTML);
+    }
+    divTable.appendChild(tableHTML);
+    return divTable;
+};
+
+function GenColumnas(fila, celmax){
+    let filaHTML = document.createElement('tr');
+
+    for(j=0; j < fila.length; j++ ){
+        //Obtenemos cada columna
+        let celda = fila[j];
+        let LongFilAc = fila.length;
+
+        let celdaHTML = document.createElement('th');
+
+        celdaHTML.colSpan = GetColSpan(LongFilAc,celmax,j);
+        SetStyle(celdaHTML,LongFilAc,j);   
+        //let content = document.createTextNode(celda);
+        celdaHTML.innerHTML = evaluar(celda);
+        //celdaHTML.appendChild(content);
         
-        sum += val;
-    }
-    //descontamos segun carrera
-    //console.log("Carrera seleccionada: "+ optSl);
-    if(optSl.includes("educacion") || optSl.includes("letras") || optSl.includes("filosofia") ){
-
-        //es carrera con descuento
-        //console.log("Carrera con descuento");
-        sum = sum * 0.70;
-        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
-
+        filaHTML.appendChild(celdaHTML);
     }
 
-    //chequeamos sedes
-    let slSede = document.getElementById("sl_sede");
+    return filaHTML;
+};
 
-    switch(slSede.options[slSede.selectedIndex].value){
-        case "null":
-            sum = 0;
-        break;
+function GenFilaMix(rowS,fmix, celmax){
 
-        case "mtb":
-            sum = sum;
-        break;
-
-        case "g":
-        case "tq":
-            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
-            sum = sum * 0.8;
-        break;
-
-    }
-
-    //cargamos la ayuda economica
-    let slcoop = document.getElementById("sl_coop");
-    sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    let LongMainf = fmix.length;
+    let divAux = document.createElement('tbody');
+    //console.log(fmix);
     
-    //40%
-    sum = sum * 0.4;
+    for (k=0; k < fmix.length; k++){
+        //Recorremos cada fila mixta
+        let fHTML = document.createElement('tr');
 
-    if(isFuerte){
-        sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.F. ");
-        spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
-        spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.F. ");
+        for(l=0; l < fmix[k].length; l++){
+            //Recorremos cada celda
+            let celdaHTML = document.createElement('th');
+            celdaCont = fmix[k][l];
+
+            if((k==0) && (l==0)){
+                //Si Estamos en el primer elmento de todo
+                celdaHTML.rowSpan = rowS;
+                SetStyle(celdaHTML,LongMainf,0);
+            }
+            celdaHTML.colSpan = GetColSpan(LongMainf,celmax,l);
+            
+            //let content = document.createTextNode(celdaCont);
+            celdaHTML.innerHTML = evaluar(celdaCont);
+            fHTML.appendChild(celdaHTML);
+        }
+
+        divAux.appendChild(fHTML);
+    }
+
+
+    return divAux;
+};
+
+//Retorna el colspan la cantidad de celdas en una fila
+function GetColSpan(LongFila, celmax, index){
+    if(LongFila == 1){
+        //Elemento unico de la columna
+        return celmax;
+    }else if(LongFila == 2){
+        //Solamente dos elementos
+        if(index==0){
+            //Primero sera 1
+            return  1;
+        }else{
+            //El segundo lo que queda
+            return celmax-1;
+        }
     }else{
-        sp40.innerHTML = formatNumber.new(Math.round(sum), "Bs.S. ");
-        spJn.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.S. ");
-        spJl.innerHTML = formatNumber.new(Math.round((sum) * 0.5), "Bs.S. ");
+        //Mas de elementos mayores a las columnas maximas
+        return 1;
     }
-    
+};
 
-    //calculamos sum + der. insc.
-    let sp40d = document.getElementById("sem40d");
-
-    if(isFuerte){
-        sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.F. ");
+function SetStyle(elemt,long,ind){
+    if(long == 1){
+        //Unico elemento
+        let a;
+            if(ScolorUsed){
+                a = 1;
+                ScolorUsed = false;
+            }else{
+                a = 0;
+                ScolorUsed = true;
+            }
+        elemt.style = 'background-color:' + ColorArray[a]+';';
     }else{
-        sp40d.innerHTML = formatNumber.new(Math.round((sum) + (0.25 * ValueUC)), "Bs.S. ");
+        if(ind ==0){
+            //si es el primero de varios
+            elemt.id = 'tt';
+        }
     }
-    
+};
 
+function evaluar(orig){
+    let text = orig;
+    let start = orig.search('eval');
 
-    let tbTol = document.getElementById("Total");
-    tbTol.style.visibility = "visible";
+    if(start != -1){
+        let end = orig.lastIndexOf(')');
+        let toEval = orig.substring(start, end+1);
 
-    //toggle tabla totales
-    var x = document.getElementById("tbTotal2nd");
-    x.style.display = "block";
+        let ftPart = orig.substring(0, start);
+        let scPart = orig.substring(end+1, orig.length);
+
+        text = ftPart + eval(toEval) + scPart + '';
+    }
+    return text
 }
