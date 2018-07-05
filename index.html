@@ -197,15 +197,18 @@
             </p>
         
             <!-- <img src="img/BannerHorizontal.jpg" width="auto" height="auto">-->
-            <!--
+            
             <p>
                 <span class="greenM">
-                    <strong>Valor de UC para Mayo-Julio: 
+                    <strong>Valor de UC para verano Julio-Agosto 2018 
+                       <!-- <br>
+                        <span style="color: red;"> ESPERANDO CONFIRMACIÓN</span>-->
                         <br>
-                    <a class="one" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/05/Costo-Unidad-de-Credito-22-Mayo-2018.pdf">PUBLICADO</a> </strong>
+                        Materias ofertadas: <a class="greenM" href="https://www.ucab.edu.ve/estudios/pregrado/">leer información de tu escuela</a>     
+                    <!--<a class="one" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/05/Costo-Unidad-de-Credito-22-Mayo-2018.pdf">PUBLICADO</a> </strong>-->
                 </span>
             </p>
-            -->
+            
         </div>
         
         <div class="tituloCont">
@@ -215,15 +218,15 @@
                         <br>
                         <select id="sl_per" class="select-square" onchange="OnPerSelect()">
                             <option value="null">Seleccione</option>
+                            <optgroup label="(VERA)Julio-Agosto(2018)">
+                                <option value="3" data-bs='F' data-uc=4200000>Julio-Agosto Bs.F(2018)</option>
+                                <option value="4" data-bs='S' data-uc=4200>Julio-Agosto Bs.S(2018)</option>
+                            </optgroup> 
                             <optgroup label="(SEM)Marzo-Julio(2018)">
                                 <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (2018)</option>
                                 <option value="1" data-bs='F' data-uc=1400000>Junio-Julio Bs.F(2018)</option>
                                 <option value="2" data-bs='S' data-uc=1400>Junio-Julio Bs.S(2018)</option>
                             </optgroup>  
-                           <!--  <optgroup label="(VERA)Julio-Agosto(2018)">
-                                <option value="3" data-bs='F' data-uc=2800000>Julio-Agosto Bs.F(2018)</option>
-                                <option value="4" data-bs='S' data-uc=2800>Julio-Agosto Bs.S(2018)</option>
-                            </optgroup> -->
                         </select>
         
                         <p id="pVUC" style="display: none;">
@@ -494,7 +497,7 @@
                     <span id="num">4</span>. Sede: </strong>
             </label>
             <br>
-            <select id="sl_sede" onchange="stSede = true; document.getElementById('sl_coop').selectedIndex = 0;" class="select-square">
+            <select id="sl_sede" onchange="OnSedeChange()" class="select-square">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
                 <option value="g">Guayana</option>

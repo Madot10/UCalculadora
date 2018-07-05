@@ -577,6 +577,14 @@ function CalculateValueUC(taxo, uc){
     }
 }
 
+function OnSedeChange(){
+    stSede = true;
+    document.getElementById('sl_coop').selectedIndex = 0;
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
+}
+
+
 //Sede selection
 function SedeSelect(){
 
@@ -604,29 +612,42 @@ function RunTotal(){
     let table = document.getElementById('tablaPago');
     table.innerHTML ='';
 
-    Totalizacion();
-    let a;
+    let slcoop = document.getElementById("sl_coop");
 
-    switch (Perio) {
-        case "0":
-        //console.log(0);
-            //OnTotal();
-            a= Perio;
-        break;
-        
-        case "1":
-        case '2':
-            //console.log(1);
-            //TwoTotal();
-            a = '1';
-        break;
-   
-        default:
-            //console.log(Perio + " default");
-        break;
+    if(slcoop.selectedIndex != 0){
+        Totalizacion();
+        let a;
+    
+        switch (Perio) {
+            case "0":
+            //console.log(0);
+                //OnTotal();
+                a= Perio;
+            break;
+            
+            case "1":
+            case '2':
+                //console.log(1);
+                //TwoTotal();
+                a = '1';
+            break;
+    
+            case '3':
+            case '4':
+                a = '2'
+            break;
+       
+            default:
+                //console.log(Perio + " default");
+            break;
+        }
+        //console.log(a);
+        GenerarTabla(a);
+    }else{
+        alert('¡Debes seleccionar cooperacion económica!');
     }
-    //console.log(a);
-    GenerarTabla(a);
+
+    
 
 }
 //Totalizacion en variables

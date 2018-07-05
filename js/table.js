@@ -29,5 +29,10 @@ var tables = {
         ['Mayo','*Derecho de inscripción*'],
         ['Junio','(20%) eval("formatNumber.new(Math.round(sum * 0.20), GetUnitMoney())")'],
         ['Julio','(20%) eval("formatNumber.new(Math.round(sum * 0.20), GetUnitMoney())")']
-    ]
+    ],
+    '2':[
+        3,
+        ['Pago único verano'],
+        ['Total (Julio-Agosto) ', '(100%) eval("formatNumber.new(sum, GetUnitMoney())")']
+        ]
 };
