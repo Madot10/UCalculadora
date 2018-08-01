@@ -90,19 +90,19 @@ async function OpenDiv(divName){
     switch (divName) {
         case 'calculadora':
             menuDiv.style.display = "none";
-            NotDiv.style.display = "none";
+            //NotDiv.style.display = "none";
             CalDiv.style.display = "block";
-            NsusDiv.style.display = "none";
-            SusDiv.style.display = "none";
+            //NsusDiv.style.display = "none";
+            //SusDiv.style.display = "none";
 
             break;
 
         case 'menu':
             menuDiv.style.display = "block";
-            NotDiv.style.display = "none";
+           // NotDiv.style.display = "none";
             CalDiv.style.display = "none";
-            NsusDiv.style.display = "none";
-            SusDiv.style.display = "none";
+            //NsusDiv.style.display = "none";
+            //SusDiv.style.display = "none";
 
             break;
 
@@ -123,13 +123,13 @@ async function OpenDiv(divName){
                 loadDiv.style.display = "block";
                 LoadConfig();
 
-                SusDiv.style.display = "block";
-                NsusDiv.style.display = "none";
+                //SusDiv.style.display = "block";
+               // NsusDiv.style.display = "none";
 
             }else{
                 //no esta
-                SusDiv.style.display = "none";
-                NsusDiv.style.display = "block";
+               // SusDiv.style.display = "none";
+                //NsusDiv.style.display = "block";
 
                 //Chequeamos si pop fue bloqueado o no
                 //statePermission()
@@ -148,7 +148,7 @@ async function OpenDiv(divName){
 
             }
 
-            NotDiv.style.display = "block";
+            //NotDiv.style.display = "block";
             break;
 
         default:
