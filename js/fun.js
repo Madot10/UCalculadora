@@ -29,6 +29,7 @@ var ScolorUsed = false;
 //var Auc = [345000, 1400000, 1400] ;
 var isFuerte = true;
 let sum;
+let ucTotal = 0;
 
 //DIVs system
 let menuDiv;
@@ -519,10 +520,12 @@ function TotalUC(){
         //console.log("T " + tvuc); 
     }
     
+    //ucTotal = tvuc;
     spVuc.innerHTML = tvuc;
 }
 
 // tomado de http://www.yoelprogramador.com/formatear-numeros-con-javascript/
+// Modificado por Madot
 var formatNumber = {
     separador: ".", 
     sepDecimal: ',', 
@@ -537,9 +540,13 @@ var formatNumber = {
     }
     return this.simbol + splitLeft +splitRight;
     },
-    new:function(num, simbol){
+    new:function(num, simbol, IsProc){
     this.simbol = simbol ||'';
-    return this.formatear(num);
+        if((IsProc) && (GetUnitMoney()=="Bs.S. ")){
+            //console.log("Num entrante",num);
+            return this.formatear(parseFloat(num).toFixed(2));
+        }
+    return this.formatear(Math.round(num));
     }
 }
 
@@ -636,6 +643,11 @@ function RunTotal(){
             case '4':
                 a = '2'
             break;
+
+            case '5':
+            case '6':
+                a = '3'
+            break;
        
             default:
                 //console.log(Perio + " default");
@@ -655,6 +667,7 @@ function Totalizacion(){
     let spVc = document.getElementsByClassName("valuC");
 
     sum = 0;
+
     //obtenemos valores Sumatoria bruta UC de tabla
     for(y = 0; y < 10; y++){
         var txt = spVc[y].textContent;
@@ -701,9 +714,22 @@ function Totalizacion(){
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
 
+    ucTotal = sum / ValueUC;
+    //console.log('UcTtal', ucTotal);
     sum = Math.round(sum);
     //****FIN SUM
    // console.log('SUM TOTAL '+ sum);
+}
+
+//Calcula monto segun UC Tarifa
+function GetMontoTarifa(newUc){
+    let nuevo = newUc * ucTotal;
+
+    if(GetUnitMoney() == "Bs.S. "){
+        nuevo = nuevo / 100000;
+    }
+
+    return nuevo;
 }
 
 
@@ -714,7 +740,6 @@ function GetUnitMoney(){
     }
     return 'Bs.S. '
 }
-
 
 function GenerarTabla(periodo){
     let tabla = tables[periodo];
@@ -739,7 +764,7 @@ function GenerarTabla(periodo){
             let fmix = fila.slice(1,fila.length);
             let rspan = fila[0];
            
-            //console.log(fila[0]);
+            //console.log('Fila mix');
             filaHTML = GenFilaMix(rspan,fmix,celmax);
             
         }
@@ -774,7 +799,7 @@ function GenColumnas(fila, celmax){
 
 function GenFilaMix(rowS,fmix, celmax){
 
-    let LongMainf = fmix.length;
+    let LongMainf;
     let divAux = document.createElement('tbody');
     //console.log(fmix);
     
@@ -786,6 +811,8 @@ function GenFilaMix(rowS,fmix, celmax){
             //Recorremos cada celda
             let celdaHTML = document.createElement('th');
             celdaCont = fmix[k][l];
+
+            LongMainf = fmix[k].length;
 
             if((k==0) && (l==0)){
                 //Si Estamos en el primer elmento de todo
@@ -808,6 +835,7 @@ function GenFilaMix(rowS,fmix, celmax){
 
 //Retorna el colspan la cantidad de celdas en una fila
 function GetColSpan(LongFila, celmax, index){
+    //console.log('Long', LongFila);
     if(LongFila == 1){
         //Elemento unico de la columna
         return celmax;
@@ -815,13 +843,16 @@ function GetColSpan(LongFila, celmax, index){
         //Solamente dos elementos
         if(index==0){
             //Primero sera 1
+            //console.log('Primero');
             return  1;
         }else{
             //El segundo lo que queda
+            //console.log("celmax", celmax);
             return celmax-1;
         }
     }else{
         //Mas de elementos mayores a las columnas maximas
+        //console.log("Mayores");
         return 1;
     }
 };

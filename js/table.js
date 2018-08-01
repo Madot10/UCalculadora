@@ -34,5 +34,15 @@ var tables = {
         3,
         ['Pago único verano'],
         ['Total (Julio-Agosto) ', '(100%) eval("formatNumber.new(sum, GetUnitMoney())")']
+    ],
+    '3':[
+        3,
+        ['Derecho de inscripción (75% ~ Pago Sept)', '<span class="greenM">Est. regular: </span><br> eval("formatNumber.new((1.25 * ValueUC), GetUnitMoney())")', '<span class="greenM">Est. nuevo:</span> <br> eval("formatNumber.new((2.75 * ValueUC), GetUnitMoney())")'],
+        ['Modalidad pago de contado (Sep-Nov): <br> (50% del total)'],
+        [2,['Total <br> (Período Sep-Nov)','(50%) eval("formatNumber.new((sum * 0.5), GetUnitMoney(), true)") + 75% Der. Insc.'],['<span class="greenM">Total regular:</span> <br> eval("formatNumber.new(((1.25 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")','<span class="greenM">Total nuevo:</span> <br> eval("formatNumber.new(Math.round((2.75 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")']],
+        ['Modalidad pago financiado (Sep-Nov): <br> (50% del total)'],
+        [2,['Septiembre (25%)','(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(), true)") + 75% Der. Insc.'],['<span class="greenM">Total regular:</span> <br> eval("formatNumber.new(((1.25 * ValueUC) + (sum * 0.25)), GetUnitMoney(), true)")', '<span class="greenM">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * ValueUC) + (sum * 0.25)), GetUnitMoney(), true)")']],
+        [3,['Octubre (12,5%)', '<span class="greenM"> 29SEP - 5OCT: </span> <br> eval("formatNumber.new(Number(GetMontoTarifa(13000000) * 0.125), GetUnitMoney(), true)")'],['<span class="greenM">O</span>'],['<span class="greenM"> 6OCT - 10OCT: </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']],
+        ['Noviembre (12,5%)','<span class="greenM">Hasta el 10NOV:  </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']
         ]
 };
