@@ -66,7 +66,7 @@ function getAllUrlParams(url) {
 window.addEventListener("load", function(){
 
   //chequeamo url parametro
-    var IsToRes = getAllUrlParams(window.location.href).a;
+    var IsToRes = getAllUrlParams(window.location.href).n;
     if(IsToRes == "y"){
         
         //LauchModal("registro");

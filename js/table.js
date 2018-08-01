@@ -46,9 +46,9 @@ var tables = {
         ['Modalidad pago financiado (Sep-Nov): <br> (50% del total)'],
         [2,['Septiembre (25%)','(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(), true)") + 75% Der. Insc.'],['<span class="greenM">Total regular:</span> <br> eval("formatNumber.new(((1.25 * ValueUC) + (sum * 0.25)), GetUnitMoney(), true)")', '<span class="greenM">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * ValueUC) + (sum * 0.25)), GetUnitMoney(), true)")']],
         [3,['Octubre (12,5%) <div class="tooltip"><i class="fa fa-question-circle"></i> <span class="tooltiptext">Valor de UC varía según las fechas, de acuerdo a lo establecido por el Vice-Rectorado Académico (VER EN CRONOGRAMA)</span> </div>', 
-            '<span class="greenM"> 29SEP - 5OCT: </span> <br> eval("formatNumber.new(Number(GetMontoTarifa(13000000) * 0.125), GetUnitMoney(), true)")'],
+            '<span class="greenM"> 29SEP - 5OCT: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 13.000.000BsF Tarifa-1A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new(Number(GetMontoTarifa(13000000) * 0.125), GetUnitMoney(), true)")'],
         ['<span class="greenM">O</span>'],
-        ['<span class="greenM"> 6OCT - 10OCT: </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']],
-        ['Noviembre (12,5%)','<span class="greenM">Hasta el 10NOV:  </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']
+        ['<span class="greenM"> 6OCT - 10OCT: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 16.900.000BsF Tarifa-1B (VER EN CRONOGRAMA)</span> </div> </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']],
+        ['Noviembre (12,5%)','<span class="greenM">Hasta el 10NOV: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 16.900.000BsF Tarifa-1B (VER EN CRONOGRAMA)</span> </div>  </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']
         ]
 };
