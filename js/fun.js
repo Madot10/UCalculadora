@@ -748,7 +748,7 @@ function GenerarTabla(periodo){
     var divTable = document.getElementById('tablaPago');
 
     var tableHTML = document.createElement('table');
-    //tableHTML.style = 'overflow-x:auto;'
+    tableHTML.style = 'overflow-x:auto;'
     
     //Recorremos para obtener FILAS
     for(i=1; i < tabla.length; i++){

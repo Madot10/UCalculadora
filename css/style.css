@@ -308,6 +308,7 @@ button.n{
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+    z-index: 999;
 }
 
 /*******************/
