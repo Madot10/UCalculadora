@@ -39,7 +39,7 @@ var tables = {
         3,
         ['Derecho de inscripción (75% ~ Pago Sept)', '<span class="greenM">Est. regular: </span><br> eval("formatNumber.new((1.25 * ValueUC), GetUnitMoney())")', '<span class="greenM">Est. nuevo:</span> <br> eval("formatNumber.new((2.75 * ValueUC), GetUnitMoney())")'],
         ['Modalidad pago de contado (Sep-Nov): <br> (50% del total)'],
-        [2,['Total <br> (Período Sep-Nov) <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">50% del total de UC inscriptas. El otro 50% será a nueva UC en diciembre (VER EN CRONOGRAMA)</span></div>',
+        [2,['Total <br> (Período Sep-Nov) <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">50% del total de UC inscritas. El otro 50% será a nueva UC en diciembre (VER EN CRONOGRAMA)</span></div>',
             '(50%) eval("formatNumber.new((sum * 0.5), GetUnitMoney(), true)") + 75% Der. Insc.'],
         ['<span class="greenM">Total regular:</span> <br> eval("formatNumber.new(((1.25 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")',
             '<span class="greenM">Total nuevo:</span> <br> eval("formatNumber.new(Math.round((2.75 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")']],
