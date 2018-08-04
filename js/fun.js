@@ -782,19 +782,6 @@ function Totalizacion(){
     //console.log('UcTtal', ucTotal);
     sum = Math.round(sum);
     //****FIN SUM
-
-
-    let ttl = sum;
-    if(GetUnitMoney() == "Bs.S. "){
-        ttl = ttl * 100000;
-    }
-
-    gtag('event', "TotalCal", {
-        'event_category': "UCcaculate",
-        'event_label': "Total Sem BsF",
-        'value': ttl
-      });
-
     
    // console.log('SUM TOTAL '+ sum);
 }
