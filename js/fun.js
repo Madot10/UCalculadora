@@ -95,6 +95,11 @@ async function OpenDiv(divName){
             //NsusDiv.style.display = "none";
             //SusDiv.style.display = "none";
 
+            gtag('event', "OpenCalculadora", {
+                'event_category': "MenuInteraccion",
+                'event_label':"OpenCalculadoraFromMenu"
+            });
+
             break;
 
         case 'menu':
@@ -103,6 +108,11 @@ async function OpenDiv(divName){
             CalDiv.style.display = "none";
             //NsusDiv.style.display = "none";
             //SusDiv.style.display = "none";
+
+            gtag('event', "OpenMenu", {
+                'event_category': "MenuInteraccion",
+                'event_label':"OpenMenu"
+            });
 
             break;
 
@@ -217,7 +227,13 @@ function OnPerSelect(){
             break;
     }
 
-    
+    let vmu = "MoneyUnit: " + Tbs;
+
+    gtag('event', "PeriodoSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': vmu,
+        'value': ValueUC
+      });
 
     //Hacemos recalculo de todo?
     for(y = 0; y < 10; y++){
@@ -354,6 +370,13 @@ function OnLoadCarrera(){
         
         //console.log(jdatasl);
 
+
+        gtag('event', "CarreraSelect", {
+            'event_category': "UCinteraccion",
+            'event_label': optText
+          });
+
+
         CleanSpace();
         //console.log(optSl);
 
@@ -363,6 +386,12 @@ function OnLoadCarrera(){
     */
         //console.log(inOpt);
         //console.log(jsonCarrera[inOpt]);
+
+        gtag('event', "CarreraSelect", {
+            'event_category': "UCinteraccion",
+            'event_label': "<label>",
+            'value': "<value>"
+          });
         
         var tb = document.getElementsByClassName("tabM")[0];
         tb.style.visibility = "visible";
@@ -447,6 +476,22 @@ function CleanSpace(){
 }
 
 
+function GetSemestreFromMat(orig){
+    let text = orig;
+    let start = orig.indexOf("(");
+
+    if(start != -1){
+        let ftPart = orig.substring(1, orig.length);
+        let end = ftPart.indexOf(")");
+
+        let sem = ftPart.substring(0, end);
+
+        return sem
+    }
+    
+    return null
+}
+
 //Cambio de materia
 function OnChangeMat(ind){
     let spUC = document.getElementsByClassName("uc")[ind];
@@ -477,6 +522,12 @@ function OnChangeMat(ind){
             return item.Asignatura === newOpt
         });
 
+        let s = GetSemestreFromMat(asig);
+
+        gtag('event', "MateriaSelect", {
+            'event_category': "UCinteraccion",
+            'event_label': s
+        });
 
         spUC.innerHTML = FixUC(jdatasl[indAsig].Tax, jdatasl[indAsig].UC);
         spTAX.innerHTML = jdatasl[indAsig].Tax;
@@ -710,14 +761,41 @@ function Totalizacion(){
 
     }
 
+    gtag('event', "SedeSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': slSede.options[slSede.selectedIndex].text
+      });
+
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
     sum = sum * slcoop.options[slcoop.selectedIndex].value;
+
+
+    let c = "Coop: " + slcoop.options[slcoop.selectedIndex].text;
+    gtag('event', "CoopSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': c,
+        'value': slcoop.options[slcoop.selectedIndex].value
+      });
 
     ucTotal = sum / ValueUC;
     //console.log('UcTtal', ucTotal);
     sum = Math.round(sum);
     //****FIN SUM
+
+
+    let ttl = sum;
+    if(GetUnitMoney() == "Bs.S. "){
+        ttl = ttl * 100000;
+    }
+
+    gtag('event', "TotalCal", {
+        'event_category': "UCcaculate",
+        'event_label': "Total Sem BsF",
+        'value': ttl
+      });
+
+    
    // console.log('SUM TOTAL '+ sum);
 }
 
