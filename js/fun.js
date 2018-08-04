@@ -370,7 +370,6 @@ function OnLoadCarrera(){
         
         //console.log(jdatasl);
 
-
         gtag('event', "CarreraSelect", {
             'event_category': "UCinteraccion",
             'event_label': optText
@@ -386,12 +385,6 @@ function OnLoadCarrera(){
     */
         //console.log(inOpt);
         //console.log(jsonCarrera[inOpt]);
-
-        gtag('event', "CarreraSelect", {
-            'event_category': "UCinteraccion",
-            'event_label': "<label>",
-            'value': "<value>"
-          });
         
         var tb = document.getElementsByClassName("tabM")[0];
         tb.style.visibility = "visible";
