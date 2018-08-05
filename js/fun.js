@@ -88,15 +88,15 @@ function OpenCalculadora(){
 
 //Google analytics togle
 function setGa(value){
-    
-    let a = "Set: " + !value;
+
+    let a = "Set: " + value;
     gtag('event', "ToggleGA", {
         'event_category': "DevInteraccion",
         'event_label': a
       });
     
     window['ga-disable-UA-33542195-1'] = !value;
-    alert("Establecido ga-disable como: ", !value);
+    alert("Establecido ga-disable como: ", value);
 }
 
 //Open div Page
