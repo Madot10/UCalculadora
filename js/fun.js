@@ -76,12 +76,27 @@ window.onload = function() {
 }
 
 //Load Calculadora
+/*
 function OpenCalculadora(){
     let CalDiv = document.getElementById("container");
     let menuDiv = document.getElementById("menu");
 
     menuDiv.style.display = "none";
     CalDiv.style.display = "block";
+}
+*/
+
+//Google analytics togle
+function setGa(value){
+    
+    let a = "Set: " + !value;
+    gtag('event', "ToggleGA", {
+        'event_category': "DevInteraccion",
+        'event_label': a
+      });
+    
+    window['ga-disable-UA-33542195-1'] = !value;
+    alert("Establecido ga-disable como: ", !value);
 }
 
 //Open div Page
@@ -95,10 +110,12 @@ async function OpenDiv(divName){
             //NsusDiv.style.display = "none";
             //SusDiv.style.display = "none";
 
+            /*
             gtag('event', "OpenCalculadora", {
                 'event_category': "MenuInteraccion",
                 'event_label':"OpenCalculadoraFromMenu"
             });
+            */
 
             break;
 
@@ -109,6 +126,7 @@ async function OpenDiv(divName){
             //NsusDiv.style.display = "none";
             //SusDiv.style.display = "none";
 
+            
             gtag('event', "OpenMenu", {
                 'event_category': "MenuInteraccion",
                 'event_label':"OpenMenu"
@@ -117,7 +135,7 @@ async function OpenDiv(divName){
             break;
 
         case 'notificaciones':
-            CalDiv.style.display = "none";
+          /*  CalDiv.style.display = "none";
             menuDiv.style.display = "none";
             
 
@@ -157,10 +175,10 @@ async function OpenDiv(divName){
                 }
 
             }
-
+            */
             //NotDiv.style.display = "block";
             break;
-
+            
         default:
             break;
     }
