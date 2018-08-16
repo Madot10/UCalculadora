@@ -33,7 +33,7 @@
     <meta name="description" content="Calculadora de matricula UCAB no-oficial, para nuevo sistema de matricula por Unidades de Credito. Hecho por Miguel De Olim">
 
     <link rel="stylesheet" href="css/style.css?3">
-    <link rel="stylesheet" href="css/menu.css?1">
+    <!--<link rel="stylesheet" href="css/menu.css?1">-->
     <link rel="stylesheet" href="css/loader.css?1">
     <link rel="stylesheet" href="css/modal.css?1">
     
@@ -112,93 +112,16 @@
         </div>
     </div>
 
-    <!-- style="display:none" MENU -->
-    <div id="menu" class="onLoad" style="display: none">
-
-        <a href="#" class="noUnder">
-            <div class="Dcalc" onclick="OpenDiv('calculadora')">
-                <br>
-                <p>
-                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                        width="100" height="52" viewBox="0 0 434.000000 227.000000"
-                        preserveAspectRatio="xMidYMid meet">
-                    <g transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)"
-                    fill="#FFFFFF" stroke="none">
-                    <path d="M2280 2079 c-268 -24 -456 -211 -525 -519 -22 -99 -32 -543 -16 -698
-                    22 -212 81 -357 192 -476 113 -121 225 -167 409 -167 175 1 291 42 394 141 99
-                    94 160 231 173 387 l6 73 -114 0 -115 0 -11 -82 c-28 -206 -100 -293 -262
-                    -319 -230 -35 -372 78 -428 341 -25 119 -25 653 0 775 52 253 215 383 434 346
-                    125 -22 195 -84 233 -208 11 -35 22 -93 26 -128 l7 -65 115 0 115 0 -6 68
-                    c-17 210 -112 379 -261 467 -89 52 -230 77 -366 64z"/>
-                    <path d="M302 1353 c3 -634 6 -714 21 -766 57 -195 175 -309 363 -353 88 -20
-                    269 -20 349 1 147 38 271 136 330 260 53 114 55 132 55 878 l0 687 -115 0
-                    -114 0 -3 -707 -3 -708 -23 -57 c-40 -100 -107 -149 -231 -169 -83 -14 -189
-                    -1 -251 31 -51 26 -103 89 -126 153 -18 49 -19 95 -22 755 l-3 702 -115 0
-                    -115 0 3 -707z"/>
-                    <path d="M3550 1485 l0 -265 -205 0 -205 0 0 -110 0 -110 205 0 205 0 0 -290
-                    0 -290 110 0 110 0 2 288 3 287 208 3 208 2 -3 108 -3 107 -207 3 -208 2 0
-                    265 0 265 -110 0 -110 0 0 -265z"/>
-                    </g>
-                    </svg>
-                    
-                    <h2>UCALCULADORA+</h2>
-                    Herramienta para cálculo de matrícula con el sistema por unidades de crédito.        
-                </p>
-                <br>
-            </div>
-        </a>
-        
-        <a href="#" class="noUnder">
-               <!-- onclick="OpenDiv('notificaciones')" -->
-            <div class="Dnoti" >
-                <br>
-                <p>
-                        <svg fill="#FFFFFF" height="80" viewBox="0 0 24 24" width="80" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h24v24H0V0z" fill="none"/>
-                            <path d="M10.01 21.01c0 1.1.89 1.99 1.99 1.99s1.99-.89 1.99-1.99h-3.98zm8.87-4.19V11c0-3.25-2.25-5.97-5.29-6.69v-.72C13.59 2.71 12.88 2 12 2s-1.59.71-1.59 1.59v.72C7.37 5.03 5.12 7.75 5.12 11v5.82L3 18.94V20h18v-1.06l-2.12-2.12zM16 13.01h-3v3h-2v-3H8V11h3V8h2v3h3v2.01z"/>
-                        </svg>
-                    <h2>NOTIFICICACIONES</h2>
-                    <strong>¡Proximamente! </strong>
-                    <br>
-                    Nuevo diseño
-                    <!--<strong>¡Conéctate! </strong>
-                    <br> 
-                    Recibe lo más importante sobre la UCAB, eventos y más.
-                    <br>
-                    ¡Todo en un sólo lugar!-->
-                    <br>
-                </p>
-                <br>
-            </div>
-        </a>
-
-        <div class="Dsocial">
-            <br>
-            <h2 class="textYellow">Contacto:</h2>
-            <p class="textYellow">Reportar error/Sugerencia: <a class="textYellow" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a> </p>
-            <p class="textYellow">Instagram: <a class="textYellow" href="https://www.instagram.com/miguel_olim">@Miguel_Olim</a></p>
-            <p class="textYellow">Twitter: <a class="textYellow" href="https://twitter.com/Miguel_Olim">@Miguel_Olim</a></p>
-            <p class="textYellow">Correo:  <a class="textYellow" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a></p>
-            <p class="textYellow" >Derechos reservados 2018.</p>
-
-            <br>
-        </div>
-        
-    </div>
-
     <!-- style="display:none" CALCULADORA -->
     <div id="container" class="onLoad" style="display:none; overflow-x:auto">
         <div class="top">
             <h1>
-                <a href="#" class="noUnder"><span class="greenM" onclick="OpenDiv('menu')">⇦</span></a>    <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span><button style="display:none" class="n" onclick="LauchModal('registro')"><img class="n" src="img/noti_logo.jpg"></button>
+                <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span>
             </h1> 
             <p>
                 <strong style="text-transform: uppercase;">Por: Miguel De Olim</strong>
-                <a href="https://goo.gl/K47LS5">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="0.9em" height="0.9em" viewBox="0 0 24 24" style="fill: #374746;">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-                        />
-                    </svg>
+                <a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">
+                    <i style="font-size:24px; color: #374746;" class="fa">&#xf16d;</i>
                 </a>
             </p>
         
@@ -208,11 +131,11 @@
                 <span class="greenM">
                     <strong>Valor de UC para semestre Septiembre-Enero 2018
                         <br>
-                        <a class="one" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Circular-Costo-Unidad-de-Cre%CC%81dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos.pdf">PUBLICADO</a>
+                        <a class="one" onClick="OnClickGa('toCircular','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Circular-Costo-Unidad-de-Cre%CC%81dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos.pdf">PUBLICADO</a>
                        <!-- <br>
                         <span style="color: red;"> ESPERANDO CONFIRMACIÓN</span>-->
                         <br>
-                        <a class="one" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma administrativo</a>
+                        <a class="one" onClick="OnClickGa('toCrono','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma administrativo</a>
                         <br>
                         <!--<a class="thum" target="_blank" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">
                             <img class="thum" src="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg" alt="Forest">
@@ -233,17 +156,15 @@
                         <select id="sl_per" class="select-square" onchange="OnPerSelect()">
                             <option value="null">Seleccione</option>
                             <optgroup label="(SEM)Sep-Ene(2018-2019)">
-                                <option value="5" data-bs='F' data-uc=10000000>Sep-Nov Bs.F(2018)</option>
-                                <option value="6" data-bs='S' data-uc=100>Sep-Nov Bs.S(2018)</option>
+                                <option value="3" data-bs='F' data-uc=10000000>Sep-Nov (Bs.F)</option>
+                                <option value="3" data-bs='S' data-uc=100>Sep-Nov (Bs.S)</option>
                             </optgroup>
                             <optgroup label="(VERA)Jul-Ago(2018)">
-                                <option value="3" data-bs='F' data-uc=4200000>Julio-Agosto Bs.F(2018)</option>
-                                <option value="4" data-bs='S' data-uc=42>Julio-Agosto Bs.S(2018)</option>
+                                <option value="2" data-bs='F' data-uc=4200000>Julio-Agosto (Bs.F)</option>
                             </optgroup> 
                             <optgroup label="(SEM)Mar-Jul(2018)">
-                                <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (2018)</option>
-                                <option value="1" data-bs='F' data-uc=1400000>Junio-Julio Bs.F(2018)</option>
-                                <option value="2" data-bs='S' data-uc=14>Junio-Julio Bs.S(2018)</option>
+                                <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (Bs.F)</option>
+                                <option value="1" data-bs='F' data-uc=1400000>Junio-Julio (Bs.F)</option>
                             </optgroup>  
                         </select>
         
@@ -569,21 +490,9 @@
 
         <footer>
             <br>
-            <strong>Páginas de interés:</strong>
-            <br>
-            <br>
-            <a href="https://goo.gl/forms/OHikbscMvAv1LdI62">Reportar error/Sugerencia</a>
-            <br>
-            <a href="https://goo.gl/kbmDKR">Secretaría</a>
-            <br>
-            <a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Circular-Costo-Unidad-de-Cre%CC%81dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos.pdf">Circular del vicerrectorado</a>
-            <!-- <a href="https://goo.gl/MnGMZh">Circular del vicerrectorado</a> 
-            <br>
-            <a href="https://goo.gl/BVe2d4">Pdf: Costo UC (Marzo-Mayo2018)</a>
-            <br>
-            <a href="http://bit.ly/2KNXN6A">Pdf: Costo UC (Mayo-Julio2018)</a>-->
-            <br>
-            </p>
+            <p>Reportar error/Sugerencia: <a onClick="OnClickGa('toForm','Report')" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a> </p>
+            <p>Correo:  <a onClick="OnClickGa('toGmail','Social')" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a></p>
+            <p ><i style="font-size:24px" class="fa">&#xf16d;</i> @<a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">Miguel_Olim</a> <b>/</b> <i style="font-size:24px" class="fa">&#xf081;</i> @<a onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">Miguel_Olim</a> </p>
 
             <p>
                 MADOT
@@ -592,112 +501,8 @@
             </p>
             <br>
         </footer>
-
-       <!--  <script type="text/javascript">
-            (sc_adv_out = window.sc_adv_out || []).push({
-              id : "501947",
-              domain : "n.ads1-adnow.com"
-            });
-          </script>
-          <script type="text/javascript" src="//st-n.ads1-adnow.com/js/adv_out.js"></script> -->
           
     </div>
-
-    <!-- style="display:none" NOTIFICACIONES -->
-   <!-- <div id="contNoti" style="display:none">
-        <div class="top">
-                <h1 class="blueM"><a href="#" class="noUnder"><span class="greenM" onclick="OpenDiv('menu')">⇦</span></a> NOTIFICACIONES</h1>
-        </div>
-        
-        <div id="susc" style="display:none">
-            <div class="elementos">
-                <p class="separator"><span class="aleft"><strong>Datos:</strong></span></p>
-                    <br>
-                    <div class="option">
-                            <span class="aleft centerV">¿Cuál es tu rol en la UCAB?</span>
-                            <select id="carreraRes" class="select-square" onchange="LoadTag('user_type',null)">
-                                    <option value="null">Seleccione</option>
-                                    <option value="prof">Profesor</option>
-                                    <option value="egresado">Egresado</option>
-                                    <option value="representate">Representante</option>
-                                    <option value="Administración-de-Empresas">Administración de Empresas</option>
-                                    <option value="contaduria">Contaduria</option>
-                                    <option value="derecho">Derecho</option>
-                                    <option value="economia">Economia</option>
-                                    <option value="educacion">Educacion</option>
-                                    <option value="filosofia">Filosofia</option>
-                                    <option value="ingInfo">Ing. Informatica</option>
-                                    <option value="ingTelecom">Ing. Telecomunicaciones</option>
-                                    <option value="ingCivil">Ing. Civil</option>
-                                    <option value="ingIndus">Ing. Industrial</option>
-                                    <option value="letras">Letras</option>
-                                    <option value="psicologia">Psicologia</option>
-                                    <option value="relaciones-industriales">Relaciones industriales</option>
-                                    <option value="comunicacion-social">Comunicacion social</option>
-                                    <option value="sociologia">Sociologia</option>
-                            </select>  
-                    </div>
-
-
-                <p class="separator"><span class="aleft"><strong>Configuración general:</strong></span></p>
-                    <br>
-                    <div class="option">
-                        <span class="aleft centerV">Avisos UCAB</span>  <label class="switch aright"><input id="SavisosUcab" type="checkbox" onchange="LoadTag('avisosUcab', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Eventos UCAB</span>  <label class="switch aright"><input id="SeventosUcab" type="checkbox"  onchange="LoadTag('eventosUcab', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Eventos estudiantiles</span>  <label class="switch aright"><input id="SeventosEst" type="checkbox" onchange="LoadTag('eventosEst', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Servicio Público</span> <label class="switch aright"><input type="checkbox" id="SserPublico" onchange="LoadTag('serPublico', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Promociones/Concursos</span>  <label class="switch aright"><input type="checkbox" id="Spromo" onchange="LoadTag('promo', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-                    
-                <p class="separator"><span class="aleft"><strong>Intereses:</strong></span></p>
-                <br>
-
-                    <div class="option">
-                            <span class="aleft centerV">Agrupaciones</span>  <label class="switch aright"><input type="checkbox" id="Sagrup" onchange="LoadTag('agrup', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Modelos y competencias</span>  <label class="switch aright"><input type="checkbox" id="Smodels" onchange="LoadTag('models', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Deportes</span>  <label class="switch aright"><input type="checkbox" id="Sdeportes" onchange="LoadTag('deportes', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-
-                    <div class="option">
-                            <span class="aleft centerV">Voluntariado</span>  <label class="switch aright"><input type="checkbox" id="Svoluntariado" onchange="LoadTag('voluntariado', this.checked.toString())"><span class="slider round"></span> </label>
-                    </div>
-            </div>
-        </div>
-        
-        <div id="Nsusc" style="display:none">
-            <div id="accept" style="display:none">
-                <p>Disfruta de información, avisos, promociones y más. 
-                    <br>
-                    ¡En un solo lugar! 
-                    <br>
-                    <strong>CONÉCTATE</strong></p>
-                <img src="img/bell.jpg">
-            </div>
-
-            <div id="negate" style="display:none">
-                <p>Se encuentra desactivado los permisos de notificaciones. ¡Habilitalos!</p>
-                <img src="img/chrome-unblock.jpg">
-            </div>
-        </div>
-    </div>-->
 
 </body>
 

@@ -24,7 +24,9 @@ var tables = {
         3,
         ['Derecho de inscripción (25% ~ Pago mayo)', 'Estudiantes: <br> eval("formatNumber.new(Math.round(0.25 * ValueUC), GetUnitMoney())")'],
         ['Modalidad pago completo (Junio-Julio):'],
-        [2,['Total (junio-julio)', '(40%) eval("formatNumber.new(Math.round(sum * 0.4), GetUnitMoney())") + 25% Der. Insc.'],['Total: <br> eval("formatNumber.new(Math.round((0.25 * ValueUC) + (sum * 0.4)), GetUnitMoney())")']],
+        [2,['Total (junio-julio)', 
+            '(40%) eval("formatNumber.new(Math.round(sum * 0.4), GetUnitMoney())") + 25% Der. Insc.'],
+            ['Total: <br> eval("formatNumber.new(Math.round((0.25 * ValueUC) + (sum * 0.4)), GetUnitMoney())")']],
         ['Modalidad pago financiado (junio-julio):'],
         ['Mayo','*Derecho de inscripción*'],
         ['Junio','(20%) eval("formatNumber.new(Math.round(sum * 0.20), GetUnitMoney())")'],
@@ -50,5 +52,19 @@ var tables = {
         ['<span class="greenM">O</span>'],
         ['<span class="greenM"> 6OCT - 10OCT: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 16.900.000BsF Tarifa-1B (VER EN CRONOGRAMA)</span> </div> </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']],
         ['Noviembre (12,5%)','<span class="greenM">Hasta el 10NOV: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 16.900.000BsF Tarifa-1B (VER EN CRONOGRAMA)</span> </div>  </span> <br> eval("formatNumber.new((GetMontoTarifa(16900000) * 0.125), GetUnitMoney(), true)")']
-        ]
+    ],
+    '4':[
+        3,
+        ['Derecho de inscripción (25% ~ Pago Nov)', '<span class="greenM">Estudiantes: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">0,25UC</span> </div> </span><br> eval("formatNumber.new((0.25 * ValueUC), GetUnitMoney())")'],
+        ['Modalidad pago de contado (Dic-Ene): <br> (50% restante)'],
+        [2,['Total <br> (Período Dic-Ene) <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">50% restantes del UC inscritas(VER EN CRONOGRAMA)</span></div>',
+            '(50%) eval("formatNumber.new((sum * 0.5), GetUnitMoney(), true)") + 25% Der. Insc.'],
+            ['<span class="greenM">Total: </span> <br> eval("formatNumber.new(Math.round((0.25 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")']],
+        ['Modalidad pago financiado (Dic-Ene):'],
+        [2,['Diciembre', '(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(),true)") + 25% Der. Insc.'],
+            ['<span class="greenM">Total: </span> <br> eval("formatNumber.new((sum * 0.25) + (0.25 * ValueUC), GetUnitMoney(),true)")']],
+        ['Enero (25%) <div class="tooltip"><i class="fa fa-question-circle"></i> <span class="tooltiptext">Valor de UC varía según las fechas(VER EN CRONOGRAMA)</span> </div>', 
+            '<span class="greenM"> 8DIC - 14ENE: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a ******* Tarifa-2A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new((Number(GetMontoTarifa(ValueUC * 1.30)) * 0.25), GetUnitMoney(), true)")'],
+        
+    ]
 };

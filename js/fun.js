@@ -68,7 +68,8 @@ window.onload = function() {
     NsusDiv = document.getElementById("Nsusc");
 
     loadDiv.style.display = "none";
-    menuDiv.style.display = "block";
+    //menuDiv.style.display = "block";
+    CalDiv.style.display = "block";
 
     acPdiv = document.getElementById("accept");
     nePdiv = document.getElementById("negate");
@@ -99,117 +100,136 @@ function setGa(value){
     alert("Establecido ga-disable como: ", value);
 }
 
-//Open div Page
-async function OpenDiv(divName){
-
-    switch (divName) {
-        case 'calculadora':
-            menuDiv.style.display = "none";
-            //NotDiv.style.display = "none";
-            CalDiv.style.display = "block";
-            //NsusDiv.style.display = "none";
-            //SusDiv.style.display = "none";
-
-            /*
-            gtag('event', "OpenCalculadora", {
-                'event_category': "MenuInteraccion",
-                'event_label':"OpenCalculadoraFromMenu"
-            });
-            */
-
-            break;
-
-        case 'menu':
-            menuDiv.style.display = "block";
-           // NotDiv.style.display = "none";
-            CalDiv.style.display = "none";
-            //NsusDiv.style.display = "none";
-            //SusDiv.style.display = "none";
-
-            
-            gtag('event', "OpenMenu", {
-                'event_category': "MenuInteraccion",
-                'event_label':"OpenMenu"
-            });
-
-            break;
-
-        case 'notificaciones':
-          /*  CalDiv.style.display = "none";
-            menuDiv.style.display = "none";
-            
-
-            let valSus = await checkSusc();
-            //let valSus = false;
-
-            // Revisamos estado de suscripcion
-           //console.log("ValSUS: ");
-          //console.log(valSus);
-
-            if(valSus == true){
-                //esta suscrito
-                loadDiv.style.display = "block";
-                LoadConfig();
-
-                //SusDiv.style.display = "block";
-               // NsusDiv.style.display = "none";
-
-            }else{
-                //no esta
-               // SusDiv.style.display = "none";
-                //NsusDiv.style.display = "block";
-
-                //Chequeamos si pop fue bloqueado o no
-                //statePermission()
-                if(statePermission()){
-                    //aceptada
-                    lauchPermission();
-
-                    acPdiv.style.display = "block";
-                    nePdiv.style.display = "none";
-                }else{
-                    //bloqueada
-
-                    acPdiv.style.display = "none";
-                    nePdiv.style.display = "block";
-                }
-
-            }
-            */
-            //NotDiv.style.display = "block";
-            break;
-            
-        default:
-            break;
+function OnClickGa(act, typeInter , lb){
+    //si existe etiqueta hacer:
+    console.log('LB', lb)
+    if(lb){
+        console.log('enter');
+        gtag('event', act, {
+            'event_category': typeInter + "Interaccion",
+            'event_label': lb
+          });
+    }else{
+        console.log('not enter');
+        gtag('event', act, {
+            'event_category': typeInter + "Interaccion"
+          });
     }
-}
-
-//load config notificaciones
-async function LoadConfig(){
-
-    let jsonTags = await getTagsJson();
-
-        loadDiv.style.display = "none";
-        //console.log("Json tag");
-        //console.log(jsonTags);
-
-        //carrera
-        document.getElementById('carreraRes').value = jsonTags.user_type;
-
-        //Conf General
-        document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
-        document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
-        document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
-        document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
-        document.getElementById('Spromo').checked = (jsonTags.promo == "true");
-
-        //Intereses
-        document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
-        document.getElementById('Smodels').checked = (jsonTags.models == "true");
-        document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
-        document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
     
 }
+
+
+// //Open div Page
+// async function OpenDiv(divName){
+
+//     switch (divName) {
+//         case 'calculadora':
+//             menuDiv.style.display = "none";
+//             //NotDiv.style.display = "none";
+//             CalDiv.style.display = "block";
+//             //NsusDiv.style.display = "none";
+//             //SusDiv.style.display = "none";
+
+//             /*
+//             gtag('event', "OpenCalculadora", {
+//                 'event_category': "MenuInteraccion",
+//                 'event_label':"OpenCalculadoraFromMenu"
+//             });
+//             */
+
+//             break;
+
+//         case 'menu':
+//             menuDiv.style.display = "block";
+//            // NotDiv.style.display = "none";
+//             CalDiv.style.display = "none";
+//             //NsusDiv.style.display = "none";
+//             //SusDiv.style.display = "none";
+
+            
+//             gtag('event', "OpenMenu", {
+//                 'event_category': "MenuInteraccion",
+//                 'event_label':"OpenMenu"
+//             });
+
+//             break;
+
+//         case 'notificaciones':
+//           /*  CalDiv.style.display = "none";
+//             menuDiv.style.display = "none";
+            
+
+//             let valSus = await checkSusc();
+//             //let valSus = false;
+
+//             // Revisamos estado de suscripcion
+//            //console.log("ValSUS: ");
+//           //console.log(valSus);
+
+//             if(valSus == true){
+//                 //esta suscrito
+//                 loadDiv.style.display = "block";
+//                 LoadConfig();
+
+//                 //SusDiv.style.display = "block";
+//                // NsusDiv.style.display = "none";
+
+//             }else{
+//                 //no esta
+//                // SusDiv.style.display = "none";
+//                 //NsusDiv.style.display = "block";
+
+//                 //Chequeamos si pop fue bloqueado o no
+//                 //statePermission()
+//                 if(statePermission()){
+//                     //aceptada
+//                     lauchPermission();
+
+//                     acPdiv.style.display = "block";
+//                     nePdiv.style.display = "none";
+//                 }else{
+//                     //bloqueada
+
+//                     acPdiv.style.display = "none";
+//                     nePdiv.style.display = "block";
+//                 }
+
+//             }
+//             */
+//             //NotDiv.style.display = "block";
+//             break;
+            
+//         default:
+//             break;
+//     }
+// } 
+
+// //load config notificaciones
+// async function LoadConfig(){
+
+//     let jsonTags = await getTagsJson();
+
+//         loadDiv.style.display = "none";
+//         //console.log("Json tag");
+//         //console.log(jsonTags);
+
+//         //carrera
+//         document.getElementById('carreraRes').value = jsonTags.user_type;
+
+//         //Conf General
+//         document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
+//         document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
+//         document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
+//         document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
+//         document.getElementById('Spromo').checked = (jsonTags.promo == "true");
+
+//         //Intereses
+//         document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
+//         document.getElementById('Smodels').checked = (jsonTags.models == "true");
+//         document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
+//         document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
+    
+// }
 
 //Periodo Selecionado
 function OnPerSelect(){
@@ -249,8 +269,7 @@ function OnPerSelect(){
 
     gtag('event', "PeriodoSelect", {
         'event_category': "UCinteraccion",
-        'event_label': vmu,
-        'value': ValueUC
+        'event_label': vmu
       });
 
     //Hacemos recalculo de todo?
@@ -685,38 +704,34 @@ function RunTotal(){
 
     if(slcoop.selectedIndex != 0){
         Totalizacion();
+
+        /*
         let a;
-    
         switch (Perio) {
             case "0":
-            //console.log(0);
-                //OnTotal();
                 a= Perio;
             break;
             
             case "1":
-            case '2':
-                //console.log(1);
-                //TwoTotal();
                 a = '1';
             break;
     
-            case '3':
-            case '4':
+            case '2':
                 a = '2'
             break;
 
-            case '5':
-            case '6':
+            case '3':
                 a = '3'
             break;
        
             default:
                 //console.log(Perio + " default");
+                alert("ERROR INESPERADO: Recarga la pagina!");
             break;
-        }
+        }*/
         //console.log(a);
-        GenerarTabla(a);
+
+        GenerarTabla(Perio);
     }else{
         alert('¡Debes seleccionar cooperacion económica!');
     }
@@ -800,8 +815,9 @@ function Totalizacion(){
 //Calcula monto segun UC Tarifa
 function GetMontoTarifa(newUc){
     let nuevo = newUc * ucTotal;
-
-    if(GetUnitMoney() == "Bs.S. "){
+    console.log('Nuevo',nuevo);
+    //add condicion postPerio (no hacer lo de adentro)
+    if((GetUnitMoney() == "Bs.S. ") && (Perio < 4)){
         nuevo = nuevo / 100000;
     }
 

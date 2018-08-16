@@ -66,13 +66,14 @@ function getAllUrlParams(url) {
 window.addEventListener("load", function(){
 
   //chequeamo url parametro
+  /*
     var IsToRes = getAllUrlParams(window.location.href).n;
     if(IsToRes == "y"){
         
         //LauchModal("registro");
         OpenDiv('notificaciones');
     }
-
+  */
   //chequeamos si es ig navegador
   var IsIG = navigator.userAgent.toLowerCase().indexOf("instagram");
   if(IsIG != -1){

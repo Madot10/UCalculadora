@@ -7,6 +7,8 @@
     left: 0;
     right: 0;
     margin: auto;
+    background-image:url();
+    background-size: contain;
   }
 
   .loader {
