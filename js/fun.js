@@ -102,15 +102,15 @@ function setGa(value){
 
 function OnClickGa(act, typeInter , lb){
     //si existe etiqueta hacer:
-    console.log('LB', lb)
+    //console.log('LB', lb)
     if(lb){
-        console.log('enter');
+        //console.log('enter');
         gtag('event', act, {
             'event_category': typeInter + "Interaccion",
             'event_label': lb
           });
     }else{
-        console.log('not enter');
+        //console.log('not enter');
         gtag('event', act, {
             'event_category': typeInter + "Interaccion"
           });
@@ -303,7 +303,7 @@ function AddNewMat(){
 
 //delete materia
 function OnDeleteMat(iPos){
-    console.log("Delete I: "+ iPos);
+    //console.log("Delete I: "+ iPos);
     ArrMat[iPos] = false;
     listFila[iPos].style.display = "none"; 
     //limpiamos fila
@@ -660,7 +660,8 @@ function CalculateValueUC(taxo, uc){
         break;
         
         default:
-            console.log("error");
+            //console.log("error");
+            //alert('ERROR INESPERADO: #01');
         break;
     }
 }
@@ -815,7 +816,7 @@ function Totalizacion(){
 //Calcula monto segun UC Tarifa
 function GetMontoTarifa(newUc){
     let nuevo = newUc * ucTotal;
-    console.log('Nuevo',nuevo);
+    //console.log('Nuevo',nuevo);
     //add condicion postPerio (no hacer lo de adentro)
     if((GetUnitMoney() == "Bs.S. ") && (Perio < 4)){
         nuevo = nuevo / 100000;
