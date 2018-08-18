@@ -305,7 +305,12 @@ function AddNewMat(){
 function OnDeleteMat(iPos){
     //console.log("Delete I: "+ iPos);
     ArrMat[iPos] = false;
-    listFila[iPos].style.display = "none"; 
+    listFila[iPos].style.display = "none";
+
+    //ocultamos tabla
+    let table = document.getElementById('tablaPago');
+    table.innerHTML ='';
+    
     //limpiamos fila
     CleanFila(iPos-1);
     //Recalculamos el total
@@ -394,6 +399,13 @@ function GetJsonDataCarrera(tx){
    return tx = window[tx];
 }
 
+function ClearOptGro(){
+    let sl = document.getElementsByClassName("sl_mat");
+    for(k=0; k < sl.length; k++){
+        sl[k].innerHTML = '';
+    }
+    
+}
 
 //cargar datos de carrera
 function OnLoadCarrera(){
@@ -412,7 +424,7 @@ function OnLoadCarrera(){
             'event_label': optText
           });
 
-
+        ClearOptGro();
         CleanSpace();
         //console.log(optSl);
 
@@ -459,13 +471,34 @@ function ListMaterias(){
         selectMat[i].options.length = 0;
     }
 
+    //Recorremos cada select de materias
     for(i = 0; i < selectMat.length; i++){
         //console.log(i);
+
+        let semAnt = null;
+        let semAct = null;
+
+        let optGroup;
+        //Primer elemento un "seleccione"
         selectMat[i].options[selectMat[i].options.length] = new Option("Seleccione", i);
             for(x = 0; x < jdatasl.length; x++){
-                var textToshow = "(" + jdatasl[x].Semestre + ") " + jdatasl[x].Asignatura;
+                semAct = jdatasl[x].Semestre;
+                
+                if(semAct != semAnt){
+                    //Al ser diferente crear un nuevo optGroup
+                    optGroup = document.createElement('optgroup');
+                    optGroup.label = semAct;
 
-                selectMat[i].options[selectMat[i].options.length] = new Option(textToshow, x);
+                    semAnt = semAct;
+                }
+                
+                //var textToshow = "(" + jdatasl[x].Semestre + ") " + jdatasl[x].Asignatura;
+                var textToshow = jdatasl[x].Asignatura;
+
+                //selectMat[i].options[selectMat[i].options.length] = new Option(textToshow, x);
+                let opti = new Option(textToshow, x);
+                optGroup.appendChild(opti);
+                selectMat[i].appendChild(optGroup);
             }
         
     }
@@ -506,20 +539,10 @@ function CleanSpace(){
 }
 
 
-function GetSemestreFromMat(orig){
-    let text = orig;
-    let start = orig.indexOf("(");
-
-    if(start != -1){
-        let ftPart = orig.substring(1, orig.length);
-        let end = ftPart.indexOf(")");
-
-        let sem = ftPart.substring(0, end);
-
-        return sem
-    }
-    
-    return null
+function GetSemestreFromMat(selectObj,indAsig){
+    //console.log('Select', selectObj);
+    //console.log('Ind', indAsig);
+    return selectObj.options[indAsig+1].parentNode.label;
 }
 
 //Cambio de materia
@@ -543,16 +566,18 @@ function OnChangeMat(ind){
         //eliminamos el semestre de la opcion a buscar
         //( = 0
         //Encontremos ")"
-        var n = asig.indexOf(")") + 2;
-        var newOpt = asig.substring(n, asig.length);
+        //var n = asig.indexOf(")") + 2;
+        //var newOpt = asig.substring(n, asig.length);
         //console.log(newOpt);
 
         //encontramos el index de la asignatura
         indAsig = jdatasl.findIndex(function(item, i){
-            return item.Asignatura === newOpt
+            //return item.Asignatura === newOpt
+            return item.Asignatura === asig
         });
 
-        let s = GetSemestreFromMat(asig);
+        let s = GetSemestreFromMat(selectMat,indAsig);
+        //console.log('return', s);
 
         gtag('event', "MateriaSelect", {
             'event_category': "UCinteraccion",
