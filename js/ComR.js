@@ -78,8 +78,7 @@ window.addEventListener("load", function(){
   var IsIG = navigator.userAgent.toLowerCase().indexOf("instagram");
   if(IsIG != -1){
      // alert("Abierto desde IG");
-
-     LauchModal("ig");
+     //LauchModal("ig");
   }
 
 
@@ -88,7 +87,6 @@ window.addEventListener("load", function(){
   var IsIG = navigator.userAgent.toLowerCase().indexOf("instagram");
   if(IsIG != -1){
      // alert("Abierto desde IG");
-
-     LauchModal("ig");
+     //LauchModal("ig");
   }
 
