@@ -48,7 +48,7 @@ window.onload = function() {
 
     // Get the modal
     modal = document.getElementById('myModal');
-    moig = document.getElementById('IgModal');
+    //moig = document.getElementById('IgModal');
 
     // Get the <span> element that closes the modal
     span = document.getElementsByClassName("close")[0];
@@ -338,7 +338,7 @@ function CleanFila(pos){
 function LauchModal(tModal){
     switch (tModal) {
         case "ig":
-            moig.style.display = "block";
+            //moig.style.display = "block";
             break;
 
         default:
@@ -350,7 +350,7 @@ function LauchModal(tModal){
 function closeModal(tModal) {
     switch (tModal) {
         case "ig":
-        moig.style.display = "none";
+        //moig.style.display = "none";
             break;
 
         default:
@@ -359,12 +359,12 @@ function closeModal(tModal) {
     
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == moig) {
-        moig.style.display = "none";
-    }
-}
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == moig) {
+//         moig.style.display = "none";
+//     }
+// }
 
 //Send tag for OneSignal
 function LoadTag(tagname, tagval){
