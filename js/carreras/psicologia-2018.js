@@ -102,7 +102,7 @@ var psicologia=[{
 },
 {
 	"Semestre": "TERCER SEMESTRE",
-	"Asignatura": "Investigación Cualitativa",
+	"Asignatura": "Psicología de la Memoria",
 	"UC": 5,
 	"Tax": "TA‐1"
 },
@@ -126,7 +126,7 @@ var psicologia=[{
 },
 {
 	"Semestre": "CUARTO SEMESTRE",
-	"Asignatura": "Psicología de la Memoria",
+	"Asignatura": "Investigación Cualitativa",
 	"UC": 5,
 	"Tax": "TA‐1"
 },
@@ -163,8 +163,8 @@ var psicologia=[{
 {
 	"Semestre": "QUINTO SEMESTRE",
 	"Asignatura": "Psicología de la Inteligencia",
-	"UC": 7,
-	"Tax": "(V) TA‐1"
+	"UC": 5,
+	"Tax": "TA‐1"
 },
 {
 	"Semestre": "QUINTO SEMESTRE",
