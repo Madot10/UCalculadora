@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="/manifest.json">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33542195-1"></script>
@@ -14,7 +14,7 @@
         gtag('config', 'UA-33542195-1');
 
     </script>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -36,12 +36,12 @@
     <!--<link rel="stylesheet" href="css/menu.css?1">-->
     <link rel="stylesheet" href="css/loader.css?1">
     <link rel="stylesheet" href="css/modal.css?1">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="js/table.js?dev=1"></script>
     <script src="js/fun.js?dev=2"></script>
-    
+
     <!-- <script src="js/n/agrupaciones.js"></script> -->
     <script src="js/carreras/Administración-de-Empresas-1.js?dev=3" type="text/javascript"></script>
     <script src="js/carreras/comunicacion-social-2017.js?dev=3" type="text/javascript"></script>
@@ -112,35 +112,61 @@
         </div>
     </div>
 
+    <!-- Modal NOTIFICAIONES -->
+    <div id="nplus" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('nplus')">&times;</span>
+                <h2>Notificaciones<b>+</b></h2>
+            </div>
+            <div class="modal-body">
+                <p>¡Avisos e información sobre
+                    <br> todo el proceso administrativo y más!</p>
+                <b>
+                    <p>Recibe directamente a tu smartphone o computadora
+                        <br> las notificaciones gratuitamente</p>
+                </b>
+                <p>Tan sólo debes ingresar a:
+                    <br>
+                    <button onclick="window.open('https://madot10.github.io/notificaciones','_blank'); OnClickGa('toNplu','social','bannerClick')">
+                        <b>N+</b>
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
     <!-- style="display:none" CALCULADORA -->
     <div id="container" class="onLoad" style="display:none; overflow-x:auto">
         <div class="top">
             <h1>
                 <span class="one">U</span><span class="two">C</span><span class="th">alculadora</span>
-            </h1> 
+            </h1>
             <p>
                 <strong style="text-transform: uppercase;">Por: Miguel De Olim</strong>
                 <a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">
                     <i style="font-size:24px; color: #374746;" class="fa">&#xf16d;</i>
                 </a>
             </p>
-        
+
             <!-- <img src="img/BannerHorizontal.jpg" width="auto" height="auto">-->
-            
+
+            <p>
+                Recibe directamente toda la información que quieras de la UCAB
+                <br>
+                <button style="width: 100%" onclick="window.open('https://madot10.github.io/notificaciones','_blank'); OnClickGa('toNplu','social','linkClick')">
+                    <b>Suscribete a N+</b>
+                </button>
+            </p>
             <p>
                 <span class="greenM">
-                     <b>
-                        <span style="color: red;">*En espera ante nuevos anuncios económicos*</span>
-                        <br>
-                    </b> 
-                        Valor de UC para semestre Septiembre-Enero 2018
-                        <br>
+                    Valor de UC para semestre Septiembre-Enero 2018
+                    <br>
                     <b>
                         <a class="one" onClick="OnClickGa('toCircular','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Circular-Costo-Unidad-de-Cre%CC%81dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos.pdf">PUBLICADO</a>
-                       <!-- <br>
+                        <!-- <br>
                         <span style="color: red;"> ESPERANDO CONFIRMACIÓN</span>-->
-                        <br>
-                        <a class="one" onClick="OnClickGa('toCrono','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma administrativo</a>
+                        --
+                        <a class="one" onClick="OnClickGa('toCrono','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma</a>
                         <br>
                         <!--<a class="thum" target="_blank" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">
                             <img class="thum" src="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg" alt="Forest">
@@ -150,39 +176,40 @@
                     <!---->
                 </span>
             </p>
-            
+
         </div>
-        
+
         <div class="tituloCont">
             <p>
                 <strong>
-                        <span id="num">1.</span>PERIODO:</label>
-                        <br>
-                        <select id="sl_per" class="select-square" onchange="OnPerSelect()">
-                            <option value="null">Seleccione</option>
-                            <optgroup label="(SEM)Sep-Ene(2018-2019)">
-                                <option value="3" data-bs='F' data-uc=10000000>Sep-Nov (Bs.F)</option>
-                                <option value="3" data-bs='S' data-uc=100>Sep-Nov (Bs.S)</option>
-                            </optgroup>
-                            <optgroup label="(VERA)Jul-Ago(2018)">
-                                <option value="2" data-bs='F' data-uc=4200000>Julio-Agosto (Bs.F)</option>
-                            </optgroup> 
-                            <optgroup label="(SEM)Mar-Jul(2018)">
-                                <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (Bs.F)</option>
-                                <option value="1" data-bs='F' data-uc=1400000>Junio-Julio (Bs.F)</option>
-                            </optgroup>  
-                        </select>
-        
-                        <p id="pVUC" style="display: none;">
-                            Valor UC:
-                            <span id="ucShow"></span>
-                        </p>
+                    <span id="num">1.</span>PERIODO:</label>
+                    <br>
+                    <select id="sl_per" class="select-square" onchange="OnPerSelect()">
+                        <option value="null">Seleccione</option>
+                        <optgroup label="(SEM)Sep-Ene(2018-2019)">
+                            <option value="3" data-bs='F' data-uc=10000000>Sep-Nov (Bs.F)</option>
+                            <option value="3" data-bs='S' data-uc=100>Sep-Nov (Bs.S)</option>
+                        </optgroup>
+                        <optgroup label="(VERA)Jul-Ago(2018)">
+                            <option value="2" data-bs='F' data-uc=4200000>Julio-Agosto (Bs.F)</option>
+                        </optgroup>
+                        <optgroup label="(SEM)Mar-Jul(2018)">
+                            <option value="0" data-bs='F' data-uc=345000>Marzo-Mayo (Bs.F)</option>
+                            <option value="1" data-bs='F' data-uc=1400000>Junio-Julio (Bs.F)</option>
+                        </optgroup>
+                    </select>
+
+                    <p id="pVUC" style="display: none;">
+                        Valor UC:
+                        <span id="ucShow"></span>
+                    </p>
                 </strong>
             </p>
-            
+
             <p>
                 <label style="text-transform: uppercase;">
-                    <strong><span id="num">2.</span> carrera: </strong>
+                    <strong>
+                        <span id="num">2.</span> carrera: </strong>
                 </label>
             </p>
             <select id="sl_carrera" onchange="OnLoadCarrera()" class="select-square">
@@ -192,7 +219,7 @@
                     <option value="contaduria-2017">Contaduria</option>
                     <option value="economia-2017">Economia</option>
                     <option value="sociologia-2017">Sociologia</option>
-                    <option value="relaciones-industriales-2017">Relaciones industriales</option>         
+                    <option value="relaciones-industriales-2017">Relaciones industriales</option>
                 </optgroup>
                 <optgroup label="Facultad de Derecho">
                     <option value="derecho-2017">Derecho</option>
@@ -217,7 +244,7 @@
                     <option value="educacion-mencion-integral-2017">Educacion mencion integral</option>
                     <option value="educacion-mencion-filosofia-2017">Educacion mencion filosofia</option>
                     <option value="educacion-mencion-preescolar-2017">Educacion mencion preescolar</option>
-                </optgroup>   
+                </optgroup>
             </select>
             <!-- <button onclick="OnLoadCarrera()">Cargar</button> -->
         </div>
@@ -243,7 +270,9 @@
                         <th class="bL">Materia</th>
                         <th>UC</th>
                         <th>Tax</th>
-                        <th>Valor <span id="uBS"></span></th>
+                        <th>Valor
+                            <span id="uBS"></span>
+                        </th>
                     </tr>
                     <tr>
                         <td class="bR">
@@ -488,8 +517,9 @@
         </button>
         <br>
 
-        <div id='tablaPago' > <!--style="overflow-x:auto;" -->
-        </div>   
+        <div id='tablaPago'>
+            <!--style="overflow-x:auto;" -->
+        </div>
 
         <p>
             <span style="color: red" id="info"></span>
@@ -502,9 +532,19 @@
 
         <footer>
             <br>
-            <p>Reportar error/Sugerencia: <a onClick="OnClickGa('toForm','Report')" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a> </p>
-            <p>Correo:  <a onClick="OnClickGa('toGmail','Social')" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a></p>
-            <p ><i style="font-size:24px" class="fa">&#xf16d;</i> @<a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">Miguel_Olim</a> <b>/</b> <i style="font-size:24px" class="fa">&#xf081;</i> @<a onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">Miguel_Olim</a> </p>
+            <p>Reportar error/Sugerencia:
+                <a onClick="OnClickGa('toForm','Report')" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a>
+            </p>
+            <p>Correo:
+                <a onClick="OnClickGa('toGmail','Social')" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a>
+            </p>
+            <p>
+                <i style="font-size:24px" class="fa">&#xf16d;</i> @
+                <a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">Miguel_Olim</a>
+                <b>/</b>
+                <i style="font-size:24px" class="fa">&#xf081;</i> @
+                <a onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">Miguel_Olim</a>
+            </p>
 
             <p>
                 MADOT
@@ -513,7 +553,7 @@
             </p>
             <br>
         </footer>
-          
+
     </div>
 
 </body>

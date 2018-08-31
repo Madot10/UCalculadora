@@ -12,8 +12,9 @@ let stPer = false;
 var Perio;
 var Tbs;
 
-var modal;
-var span;
+//var modal;
+//var span;
+var moNplus;
 
 //SYSTEM TABLA MATERIA
 //inicia en 1 (0=null)
@@ -47,11 +48,12 @@ window.onload = function() {
     document.getElementById("sl_sede").selectedIndex = 0;
 
     // Get the modal
-    modal = document.getElementById('myModal');
+    //modal = document.getElementById('myModal');
     //moig = document.getElementById('IgModal');
+    moNplus = document.getElementById('nplus');
 
     // Get the <span> element that closes the modal
-    span = document.getElementsByClassName("close")[0];
+    //span = document.getElementsByClassName("close")[0];
 
     //alert("Realizando cambios con respeto a MONTO A PAGAR en este primer periodo. Intente más tarde!");
     listFila = document.getElementsByTagName("tr");
@@ -59,13 +61,13 @@ window.onload = function() {
     //LOAD SYSTEM
     //divs
 
-    menuDiv = document.getElementById("menu");
+    //menuDiv = document.getElementById("menu");
     CalDiv = document.getElementById("container");
-    NotDiv = document.getElementById("contNoti");
+    //NotDiv = document.getElementById("contNoti");
     loadDiv = document.getElementsByClassName("loader")[0];
 
-    SusDiv = document.getElementById("susc");
-    NsusDiv = document.getElementById("Nsusc");
+   //SusDiv = document.getElementById("susc");
+    //NsusDiv = document.getElementById("Nsusc");
 
     loadDiv.style.display = "none";
     //menuDiv.style.display = "block";
@@ -73,6 +75,8 @@ window.onload = function() {
 
     acPdiv = document.getElementById("accept");
     nePdiv = document.getElementById("negate");
+
+    LauchModal('nplus');
 
 }
 
@@ -340,6 +344,9 @@ function LauchModal(tModal){
         case "ig":
             //moig.style.display = "block";
             break;
+        case 'nplus':
+            moNplus.style.display = 'block';
+        break;
 
         default:
             break;
@@ -352,6 +359,10 @@ function closeModal(tModal) {
         case "ig":
         //moig.style.display = "none";
             break;
+
+        case 'nplus':
+            moNplus.style.display = 'none';
+        break;
 
         default:
             break;
