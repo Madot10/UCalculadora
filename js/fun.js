@@ -851,13 +851,15 @@ function Totalizacion(){
 
 //Calcula monto segun UC Tarifa
 function GetMontoTarifa(newUc){
+    console.log("NewUC", newUc);
     let nuevo = newUc * ucTotal;
+    console.log("nuevo", nuevo);
     //console.log('Nuevo',nuevo);
     //add condicion postPerio (no hacer lo de adentro)
-    if((GetUnitMoney() == "Bs.S. ") && (Perio < 4)){
-        nuevo = nuevo / 100000;
-    }
-
+    // if((GetUnitMoney() == "Bs.S. ") && (Perio < 3)){
+    //     nuevo = nuevo / 100000;
+    // }
+    console.log("nuevo2", nuevo);
     return nuevo;
 }
 
