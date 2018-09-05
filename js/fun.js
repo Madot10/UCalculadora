@@ -80,17 +80,6 @@ window.onload = function() {
 
 }
 
-//Load Calculadora
-/*
-function OpenCalculadora(){
-    let CalDiv = document.getElementById("container");
-    let menuDiv = document.getElementById("menu");
-
-    menuDiv.style.display = "none";
-    CalDiv.style.display = "block";
-}
-*/
-
 //Google analytics togle
 function setGa(value){
 
@@ -121,119 +110,6 @@ function OnClickGa(act, typeInter , lb){
     }
     
 }
-
-
-// //Open div Page
-// async function OpenDiv(divName){
-
-//     switch (divName) {
-//         case 'calculadora':
-//             menuDiv.style.display = "none";
-//             //NotDiv.style.display = "none";
-//             CalDiv.style.display = "block";
-//             //NsusDiv.style.display = "none";
-//             //SusDiv.style.display = "none";
-
-//             /*
-//             gtag('event', "OpenCalculadora", {
-//                 'event_category': "MenuInteraccion",
-//                 'event_label':"OpenCalculadoraFromMenu"
-//             });
-//             */
-
-//             break;
-
-//         case 'menu':
-//             menuDiv.style.display = "block";
-//            // NotDiv.style.display = "none";
-//             CalDiv.style.display = "none";
-//             //NsusDiv.style.display = "none";
-//             //SusDiv.style.display = "none";
-
-            
-//             gtag('event', "OpenMenu", {
-//                 'event_category': "MenuInteraccion",
-//                 'event_label':"OpenMenu"
-//             });
-
-//             break;
-
-//         case 'notificaciones':
-//           /*  CalDiv.style.display = "none";
-//             menuDiv.style.display = "none";
-            
-
-//             let valSus = await checkSusc();
-//             //let valSus = false;
-
-//             // Revisamos estado de suscripcion
-//            //console.log("ValSUS: ");
-//           //console.log(valSus);
-
-//             if(valSus == true){
-//                 //esta suscrito
-//                 loadDiv.style.display = "block";
-//                 LoadConfig();
-
-//                 //SusDiv.style.display = "block";
-//                // NsusDiv.style.display = "none";
-
-//             }else{
-//                 //no esta
-//                // SusDiv.style.display = "none";
-//                 //NsusDiv.style.display = "block";
-
-//                 //Chequeamos si pop fue bloqueado o no
-//                 //statePermission()
-//                 if(statePermission()){
-//                     //aceptada
-//                     lauchPermission();
-
-//                     acPdiv.style.display = "block";
-//                     nePdiv.style.display = "none";
-//                 }else{
-//                     //bloqueada
-
-//                     acPdiv.style.display = "none";
-//                     nePdiv.style.display = "block";
-//                 }
-
-//             }
-//             */
-//             //NotDiv.style.display = "block";
-//             break;
-            
-//         default:
-//             break;
-//     }
-// } 
-
-// //load config notificaciones
-// async function LoadConfig(){
-
-//     let jsonTags = await getTagsJson();
-
-//         loadDiv.style.display = "none";
-//         //console.log("Json tag");
-//         //console.log(jsonTags);
-
-//         //carrera
-//         document.getElementById('carreraRes').value = jsonTags.user_type;
-
-//         //Conf General
-//         document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
-//         document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
-//         document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
-//         document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
-//         document.getElementById('Spromo').checked = (jsonTags.promo == "true");
-
-//         //Intereses
-//         document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
-//         document.getElementById('Smodels').checked = (jsonTags.models == "true");
-//         document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
-//         document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
-    
-// }
 
 //Periodo Selecionado
 function OnPerSelect(){
@@ -370,13 +246,6 @@ function closeModal(tModal) {
     
 }
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == moig) {
-//         moig.style.display = "none";
-//     }
-// }
-
 //Send tag for OneSignal
 function LoadTag(tagname, tagval){
 
@@ -452,8 +321,9 @@ function OnLoadCarrera(){
         document.getElementById("sl_sede").selectedIndex = 0;
         //document.getElementById("sl_coop").selectedIndex = 0;
 
-        let spInfo2 = document.getElementById("info2").innerHTML = "";
-        let spInfo = document.getElementById("info").innerHTML = "";
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
+        document.getElementById("info3").innerHTML = "";
 
         /*
         var x = document.getElementById("tbTotal");
@@ -715,7 +585,7 @@ function SedeSelect(){
 
     //fue seleccionada la sede?
     if(stSede){
-        let spinfo2 = document.getElementById("info2").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
         //toggle tabla totales
@@ -801,7 +671,7 @@ function Totalizacion(){
         //es carrera con descuento
         //console.log("Carrera con descuento");
         sum = sum * 0.70;
-        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
+        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!* <br>";
 
     }
 
@@ -818,7 +688,7 @@ function Totalizacion(){
 
         case "g":
         case "tq":
-            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
+            document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
             sum = sum * 0.8;
         break;
 
@@ -831,8 +701,25 @@ function Totalizacion(){
 
     //cargamos la ayuda economica
     let slcoop = document.getElementById("sl_coop");
-    sum = sum * slcoop.options[slcoop.selectedIndex].value;
 
+    //console.log("ante des", (sum / ValueUC));
+
+    //NUEVO SISTEMA DE COOPERACION
+    if((sum / ValueUC)>=27){
+        //Si tiene inscriptas +27uc
+        //aplicar descuento sobre estas y lo restante dejar igual
+        //console.log("+27");
+        sum = sum - (27 * ValueUC);
+        sum = sum + (27 * ValueUC * slcoop.options[slcoop.selectedIndex].value);
+    }else{
+        //si hay menos de 27uc aplicar descuento a totalidad
+        sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    }
+    //sum = sum * slcoop.options[slcoop.selectedIndex].value;
+
+    if(slcoop.options[slcoop.selectedIndex].value != 1){
+        document.getElementById("info3").innerHTML = "*¡Aplicado ayuda económica sólo a primeras 27UC!* <br>";
+    }
 
     let c = "Coop: " + slcoop.options[slcoop.selectedIndex].text;
     gtag('event', "CoopSelect", {
@@ -840,10 +727,14 @@ function Totalizacion(){
         'event_label': c,
         'value': slcoop.options[slcoop.selectedIndex].value
       });
-
+    
+    //Dividimos montoBS / valor = UC reales post-descuentos
+        //console.log("sum sin round", sum);
     ucTotal = sum / ValueUC;
-    //console.log('UcTtal', ucTotal);
+        //console.log("ucTotal", ucTotal);
+        //console.log('UcTtal', ucTotal);
     sum = Math.round(sum);
+        //console.log("sum round", sum);
     //****FIN SUM
     
    // console.log('SUM TOTAL '+ sum);
