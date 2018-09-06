@@ -452,8 +452,9 @@ function OnLoadCarrera(){
         document.getElementById("sl_sede").selectedIndex = 0;
         //document.getElementById("sl_coop").selectedIndex = 0;
 
-        let spInfo2 = document.getElementById("info2").innerHTML = "";
-        let spInfo = document.getElementById("info").innerHTML = "";
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
+        document.getElementById("info3").innerHTML = "";
 
         /*
         var x = document.getElementById("tbTotal");
@@ -715,7 +716,7 @@ function SedeSelect(){
 
     //fue seleccionada la sede?
     if(stSede){
-        let spinfo2 = document.getElementById("info2").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
         //toggle tabla totales
@@ -801,7 +802,7 @@ function Totalizacion(){
         //es carrera con descuento
         //console.log("Carrera con descuento");
         sum = sum * 0.70;
-        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
+        document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!* <br>";
 
     }
 
@@ -818,7 +819,7 @@ function Totalizacion(){
 
         case "g":
         case "tq":
-            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
+            document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
             sum = sum * 0.8;
         break;
 
@@ -830,8 +831,24 @@ function Totalizacion(){
       });
 
     //cargamos la ayuda economica
+
+    //NUEVO SISTEMA 27UC
     let slcoop = document.getElementById("sl_coop");
-    sum = sum * slcoop.options[slcoop.selectedIndex].value;
+
+    if((slcoop.options[slcoop.selectedIndex].value != 1)&& (slcoop.options[slcoop.selectedIndex].text != "BecaTrabajo") && ((sum / ValueUC)> 27)){
+        //si tiene mas de 27
+        sum = sum - (27 * ValueUC);
+        let ucFuera = sum / ValueUC;
+        console.log("UCfuera",ucFuera);
+        sum = sum + (27 * slcoop.options[slcoop.selectedIndex].value * ValueUC);
+
+        document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+    }else{
+        //menos de 27uc inscriptas
+        sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    }
+    
+    
 
 
     let c = "Coop: " + slcoop.options[slcoop.selectedIndex].text;
