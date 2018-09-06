@@ -31,6 +31,7 @@ var ScolorUsed = false;
 var isFuerte = true;
 let sum;
 let ucTotal = 0;
+var tvuc = 0;
 
 //DIVs system
 let menuDiv;
@@ -627,10 +628,9 @@ function FixUC(taxNum, ucnum){
 
 function TotalUC(){
     let spVuc = document.getElementById("TotalUC");
-    var tvuc = 0;
     let spUC = document.getElementsByClassName("uc");
     let spTAX = document.getElementsByClassName("tax");
-
+    tvuc = 0;
     //recorre todos los uc space
     for(i = 0; i < 10; i++){
 
@@ -717,6 +717,7 @@ function SedeSelect(){
     //fue seleccionada la sede?
     if(stSede){
         document.getElementById("info2").innerHTML = "";
+        document.getElementById("info3").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
         //toggle tabla totales
@@ -835,16 +836,25 @@ function Totalizacion(){
     //NUEVO SISTEMA 27UC
     let slcoop = document.getElementById("sl_coop");
 
-    if((slcoop.options[slcoop.selectedIndex].value != 1)&& (slcoop.options[slcoop.selectedIndex].text != "BecaTrabajo") && ((sum / ValueUC)> 27)){
-        //si tiene mas de 27
-        sum = sum - (27 * ValueUC);
+    //&& ((sum / ValueUC)> 27)
+    if((slcoop.options[slcoop.selectedIndex].value != 1)&& (slcoop.options[slcoop.selectedIndex].text != "BecaTrabajo") ){
+        //si tiene cooperacion
+        //tvuc uc sin adicionales
+        console.log("ucSInADD",tvuc);
+        sum = sum - (tvuc * ValueUC);
         let ucFuera = sum / ValueUC;
         console.log("UCfuera",ucFuera);
-        sum = sum + (27 * slcoop.options[slcoop.selectedIndex].value * ValueUC);
-
-        document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
-    }else{
+        sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
+        if(((sum / ValueUC)> 27)){
+            //aviso para mayor 27uc
+            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+        }else{
+            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+        }
+        
+    }else if(slcoop.options[slcoop.selectedIndex].text == "BecaTrabajo"){
         //menos de 27uc inscriptas
+        //si es becatrabajo
         sum = sum * slcoop.options[slcoop.selectedIndex].value;
     }
     
