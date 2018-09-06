@@ -31,6 +31,7 @@ var ScolorUsed = false;
 var isFuerte = true;
 let sum;
 let ucTotal = 0;
+var tvuc = 0;
 
 //DIVs system
 let menuDiv;
@@ -452,8 +453,9 @@ function OnLoadCarrera(){
         document.getElementById("sl_sede").selectedIndex = 0;
         //document.getElementById("sl_coop").selectedIndex = 0;
 
-        let spInfo2 = document.getElementById("info2").innerHTML = "";
-        let spInfo = document.getElementById("info").innerHTML = "";
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
+        document.getElementById("info3").innerHTML = "";
 
         /*
         var x = document.getElementById("tbTotal");
@@ -626,10 +628,9 @@ function FixUC(taxNum, ucnum){
 
 function TotalUC(){
     let spVuc = document.getElementById("TotalUC");
-    var tvuc = 0;
     let spUC = document.getElementsByClassName("uc");
     let spTAX = document.getElementsByClassName("tax");
-
+    tvuc = 0;
     //recorre todos los uc space
     for(i = 0; i < 10; i++){
 
@@ -715,7 +716,8 @@ function SedeSelect(){
 
     //fue seleccionada la sede?
     if(stSede){
-        let spinfo2 = document.getElementById("info2").innerHTML = "";
+        document.getElementById("info2").innerHTML = "";
+        document.getElementById("info3").innerHTML = "";
         let bt = document.getElementById("btTotal");
         bt.style.visibility = "visible";
         //toggle tabla totales
@@ -801,7 +803,7 @@ function Totalizacion(){
         //es carrera con descuento
         //console.log("Carrera con descuento");
         sum = sum * 0.70;
-        let spInfo = document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!*";
+        document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!* <br>";
 
     }
 
@@ -818,7 +820,7 @@ function Totalizacion(){
 
         case "g":
         case "tq":
-            let spInfo2 = document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!*";
+            document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
             sum = sum * 0.8;
         break;
 
@@ -830,8 +832,33 @@ function Totalizacion(){
       });
 
     //cargamos la ayuda economica
+
+    //NUEVO SISTEMA 27UC
     let slcoop = document.getElementById("sl_coop");
-    sum = sum * slcoop.options[slcoop.selectedIndex].value;
+
+    //&& ((sum / ValueUC)> 27)
+    if((slcoop.options[slcoop.selectedIndex].value != 1)&& (slcoop.options[slcoop.selectedIndex].text != "BecaTrabajo") ){
+        //si tiene cooperacion
+        //tvuc uc sin adicionales
+        console.log("ucSInADD",tvuc);
+        sum = sum - (tvuc * ValueUC);
+        let ucFuera = sum / ValueUC;
+        console.log("UCfuera",ucFuera);
+        sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
+        if(((sum / ValueUC)> 27)){
+            //aviso para mayor 27uc
+            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+        }else{
+            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+        }
+        
+    }else if(slcoop.options[slcoop.selectedIndex].text == "BecaTrabajo"){
+        //menos de 27uc inscriptas
+        //si es becatrabajo
+        sum = sum * slcoop.options[slcoop.selectedIndex].value;
+    }
+    
+    
 
 
     let c = "Coop: " + slcoop.options[slcoop.selectedIndex].text;
