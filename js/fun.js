@@ -124,118 +124,6 @@ function OnClickGa(act, typeInter , lb){
 }
 
 
-// //Open div Page
-// async function OpenDiv(divName){
-
-//     switch (divName) {
-//         case 'calculadora':
-//             menuDiv.style.display = "none";
-//             //NotDiv.style.display = "none";
-//             CalDiv.style.display = "block";
-//             //NsusDiv.style.display = "none";
-//             //SusDiv.style.display = "none";
-
-//             /*
-//             gtag('event', "OpenCalculadora", {
-//                 'event_category': "MenuInteraccion",
-//                 'event_label':"OpenCalculadoraFromMenu"
-//             });
-//             */
-
-//             break;
-
-//         case 'menu':
-//             menuDiv.style.display = "block";
-//            // NotDiv.style.display = "none";
-//             CalDiv.style.display = "none";
-//             //NsusDiv.style.display = "none";
-//             //SusDiv.style.display = "none";
-
-            
-//             gtag('event', "OpenMenu", {
-//                 'event_category': "MenuInteraccion",
-//                 'event_label':"OpenMenu"
-//             });
-
-//             break;
-
-//         case 'notificaciones':
-//           /*  CalDiv.style.display = "none";
-//             menuDiv.style.display = "none";
-            
-
-//             let valSus = await checkSusc();
-//             //let valSus = false;
-
-//             // Revisamos estado de suscripcion
-//            //console.log("ValSUS: ");
-//           //console.log(valSus);
-
-//             if(valSus == true){
-//                 //esta suscrito
-//                 loadDiv.style.display = "block";
-//                 LoadConfig();
-
-//                 //SusDiv.style.display = "block";
-//                // NsusDiv.style.display = "none";
-
-//             }else{
-//                 //no esta
-//                // SusDiv.style.display = "none";
-//                 //NsusDiv.style.display = "block";
-
-//                 //Chequeamos si pop fue bloqueado o no
-//                 //statePermission()
-//                 if(statePermission()){
-//                     //aceptada
-//                     lauchPermission();
-
-//                     acPdiv.style.display = "block";
-//                     nePdiv.style.display = "none";
-//                 }else{
-//                     //bloqueada
-
-//                     acPdiv.style.display = "none";
-//                     nePdiv.style.display = "block";
-//                 }
-
-//             }
-//             */
-//             //NotDiv.style.display = "block";
-//             break;
-            
-//         default:
-//             break;
-//     }
-// } 
-
-// //load config notificaciones
-// async function LoadConfig(){
-
-//     let jsonTags = await getTagsJson();
-
-//         loadDiv.style.display = "none";
-//         //console.log("Json tag");
-//         //console.log(jsonTags);
-
-//         //carrera
-//         document.getElementById('carreraRes').value = jsonTags.user_type;
-
-//         //Conf General
-//         document.getElementById('SavisosUcab').checked = (jsonTags.avisosUcab == "true");
-//         document.getElementById('SeventosUcab').checked = (jsonTags.eventosUcab == "true");
-//         document.getElementById('SeventosEst').checked = (jsonTags.eventosEst == "true");
-//         document.getElementById('SserPublico').checked = (jsonTags.serPublico == "true");
-//         document.getElementById('Spromo').checked = (jsonTags.promo == "true");
-
-//         //Intereses
-//         document.getElementById('Sagrup').checked = (jsonTags.agrup == "true");
-//         document.getElementById('Smodels').checked = (jsonTags.models == "true");
-//         document.getElementById('Sdeportes').checked = (jsonTags.deportes == "true");
-//         document.getElementById('Svoluntariado').checked = (jsonTags.voluntariado == "true");
-    
-// }
-
 //Periodo Selecionado
 function OnPerSelect(){
     var slP = document.getElementById("sl_per");
@@ -371,36 +259,6 @@ function closeModal(tModal) {
     
 }
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == moig) {
-//         moig.style.display = "none";
-//     }
-// }
-
-//Send tag for OneSignal
-function LoadTag(tagname, tagval){
-
-
-    if(tagname == 'user_type'){
-        var sltag = document.getElementById("carreraRes");
-        var tuser = sltag.options[sltag.selectedIndex].value;
-
-        OneSignal.push(function () {
-        
-            OneSignal.sendTag("user_type",tuser);
-            OneSignal.sendTag("user_completed","v2");
-        });
-    }else{
-        OneSignal.push(function () {
-            OneSignal.sendTag(tagname,tagval);
-            OneSignal.sendTag("user_completed","v2");
-        });
-    }
-    //retornamos a web
-    //location.href="https://madot10.github.io/UCalculadora/";
-    
-}
 
 //Fun retorna jsonData de carrera
 function GetJsonDataCarrera(tx){
@@ -782,6 +640,9 @@ function RunTotal(){
 function Totalizacion(){
     let spVc = document.getElementsByClassName("valuC");
 
+    let limitBeca = 27;
+    let limitTrabajo = 30;
+    tvuc = Number(document.getElementById("TotalUC").innerText);
     sum = 0;
 
     //obtenemos valores Sumatoria bruta UC de tabla
@@ -803,6 +664,9 @@ function Totalizacion(){
         //es carrera con descuento
         //console.log("Carrera con descuento");
         sum = sum * 0.70;
+        limitBeca = limitBeca * 0.70;
+        limitTrabajo = limitTrabajo * 0.70;
+        tvuc = tvuc * 0.70;
         document.getElementById("info").innerHTML = "*¡Aplicado descuento del 30% a la carrera!* <br>";
 
     }
@@ -822,6 +686,9 @@ function Totalizacion(){
         case "tq":
             document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
             sum = sum * 0.8;
+            limitBeca = limitBeca * 0.8;
+            limitTrabajo = limitTrabajo * 0.8;
+            tvuc = tvuc * 0.8;
         break;
 
     }
@@ -837,26 +704,60 @@ function Totalizacion(){
     let slcoop = document.getElementById("sl_coop");
 
     //&& ((sum / ValueUC)> 27)
-    if((slcoop.options[slcoop.selectedIndex].value != 1)&& (slcoop.options[slcoop.selectedIndex].text != "BecaTrabajo") ){
+    if((slcoop.options[slcoop.selectedIndex].value != 1)){
         //si tiene cooperacion
-        //tvuc uc sin adicionales
-        console.log("ucSInADD",tvuc);
-        sum = sum - (tvuc * ValueUC);
-        let ucFuera = sum / ValueUC;
-        console.log("UCfuera",ucFuera);
-        sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
-        if(((sum / ValueUC)> 27)){
-            //aviso para mayor 27uc
-            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+        let ucFuera = 0;
+
+        if(slcoop.options[slcoop.selectedIndex].text == "BecaTrabajo"){
+            //si es becatrabajo
+            //sum = sum * slcoop.options[slcoop.selectedIndex].value;
+            if(((sum / ValueUC)> limitTrabajo)){
+                //aviso para mayor 27uc(proporcional)
+                //Retiramos lo que cubre la beca
+                    //console.log("+27 Trabajo")
+                sum = sum - (limitTrabajo * ValueUC);
+                ucFuera = sum / ValueUC;
+                //aplicamos la beca sobre lo que cubre
+                sum = sum + (limitTrabajo * ValueUC * slcoop.options[slcoop.selectedIndex].value);
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 30UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+            }else{
+                //tvuc uc sin adicionales
+                //console.log("menos27 Trabajo");
+                sum = sum - (tvuc * ValueUC);
+                ucFuera = sum / ValueUC;
+                sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+            }
         }else{
-            document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+            //no es becatra
+            if(((sum / ValueUC)> limitBeca)){
+                //aviso para mayor 27uc(proporcional)
+                //console.log("+27 Beca")
+                //Retiramos lo que cubre la beca
+                    //.log('limitBeca',limitBeca);
+                    //console.log('sum',sum);
+                sum = sum - (limitBeca * ValueUC);
+                    //console.log('sum',sum);
+                ucFuera = sum / ValueUC;
+                //aplicamos la beca sobre lo que cubre
+                sum = sum + (limitBeca * ValueUC * slcoop.options[slcoop.selectedIndex].value);
+                    //console.log('sum',sum);
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+            }else{
+                //tvuc uc sin adicionales
+                //console.log("menos27 Beca")
+                   // console.log('tvuc',tvuc);
+                    //console.log('Uc reales',sum / ValueUC);
+                    //console.log('sum',sum);
+                sum = sum - (tvuc * ValueUC);
+                    //console.log('sum',sum);
+                ucFuera = sum / ValueUC;
+                sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
+                   // console.log('sum',sum);
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+            }
         }
-        
-    }else if(slcoop.options[slcoop.selectedIndex].text == "BecaTrabajo"){
-        //menos de 27uc inscriptas
-        //si es becatrabajo
-        sum = sum * slcoop.options[slcoop.selectedIndex].value;
-    }
+    } 
     
     
 
