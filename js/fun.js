@@ -77,7 +77,7 @@ window.onload = function() {
     acPdiv = document.getElementById("accept");
     nePdiv = document.getElementById("negate");
 
-    //LauchModal('nplus');
+    LauchModal('nplus');
 
 }
 
