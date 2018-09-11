@@ -77,7 +77,7 @@ window.onload = function() {
     acPdiv = document.getElementById("accept");
     nePdiv = document.getElementById("negate");
 
-    LauchModal('nplus');
+    //LauchModal('nplus');
 
 }
 
@@ -719,14 +719,14 @@ function Totalizacion(){
                 ucFuera = sum / ValueUC;
                 //aplicamos la beca sobre lo que cubre
                 sum = sum + (limitTrabajo * ValueUC * slcoop.options[slcoop.selectedIndex].value);
-                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 30UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 30UC base!* <br> <b>" + Number(ucFuera).toFixed(2) + "UC fuera de financiamiento </b><br>";
             }else{
                 //tvuc uc sin adicionales
                 //console.log("menos27 Trabajo");
                 sum = sum - (tvuc * ValueUC);
                 ucFuera = sum / ValueUC;
                 sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
-                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + Number(ucFuera).toFixed(2) + "UC fuera de financiamiento </b><br>";
             }
         }else{
             //no es becatra
@@ -742,7 +742,7 @@ function Totalizacion(){
                 //aplicamos la beca sobre lo que cubre
                 sum = sum + (limitBeca * ValueUC * slcoop.options[slcoop.selectedIndex].value);
                     //console.log('sum',sum);
-                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a primeras 27UC base!* <br> <b>" + Number(ucFuera).toFixed(2) + "UC fuera de financiamiento </b><br>";
             }else{
                 //tvuc uc sin adicionales
                 //console.log("menos27 Beca")
@@ -754,7 +754,7 @@ function Totalizacion(){
                 ucFuera = sum / ValueUC;
                 sum = sum + (tvuc * slcoop.options[slcoop.selectedIndex].value * ValueUC);
                    // console.log('sum',sum);
-                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + ucFuera + "UC fuera de financiamiento </b><br>";
+                document.getElementById("info3").innerHTML = "*¡Aplicada cooperación económica a UC base!* <br> <b>" + Number(ucFuera).toFixed(2) + "UC fuera de financiamiento </b><br>";
             }
         }
     } 
