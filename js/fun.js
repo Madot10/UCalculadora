@@ -11,6 +11,9 @@ let stSede = false;
 let stPer = false;
 var Perio;
 var Tbs;
+let textPerio, textSem;
+let png = 'png';
+let pdf = 'pdf';
 
 //var modal;
 //var span;
@@ -78,7 +81,7 @@ window.onload = function() {
     acPdiv = document.getElementById("accept");
     nePdiv = document.getElementById("negate");
 
-    LauchModal('nplus');
+    //LauchModal('nplus');
 
 }
 
@@ -96,7 +99,7 @@ function DiasPasados() {
   
     let dif = fFecha2 - fFecha1;
     let dias = Math.floor(dif / (1000 * 60 * 60 * 24));
-    console.log(dias);
+    //console.log(dias);
     document.getElementById('days').innerHTML = dias;
   }
   
@@ -148,6 +151,8 @@ function OnClickGa(act, typeInter , lb){
 function OnPerSelect(){
     var slP = document.getElementById("sl_per");
     Perio = slP.value;
+    textPerio = slP.selectedOptions[0].text;
+    textSem = slP.selectedOptions[0].parentElement.label;
     Tbs = slP.selectedOptions[0].dataset.bs;
     //ValueUC =  Auc[Perio];
     ValueUC =  slP.selectedOptions[0].dataset.uc;
@@ -825,7 +830,7 @@ function GenerarTabla(periodo){
     let celmax = tabla[0];
 
     var divTable = document.getElementById('tablaPago');
-
+    divTable.innerHTML = "<p data-html2canvas-ignore>Guardar como:<br><button onclick='saveTABLE(png)'>Imagen PNG</button><button onclick='saveTABLE(pdf)'>Archivo PDF</button></p>"
     var tableHTML = document.createElement('table');
     tableHTML.style = 'overflow-x:auto;'
     
@@ -970,4 +975,56 @@ function evaluar(orig){
         text = ftPart + eval(toEval) + scPart + '';
     }
     return text
+}
+
+function saveTABLE(mode){
+    html2canvas(document.getElementById('tablaPago'),{scale: '1.5',windowWidth: '768px'})
+    .then((canvas)=>{
+        
+
+        let newCanva = document.createElement('canvas');
+        newCanva.height = canvas.height + 150;
+        newCanva.width = canvas.width;
+        
+        let ctx = newCanva.getContext("2d");
+        //UCALCULADORA
+        ctx.font = '45px Roboto';
+        ctx.fillStyle = '#34B2E4'; //azul
+        ctx.fillText("UC", 10, 45);
+        ctx.fillStyle = '#4b7f52'; //verde
+        ctx.fillText("alculadora", 63, 45);
+
+        //Semestre
+        ctx.font = '30px Roboto';
+        ctx.fillText(textSem, 10, 82.5);
+        //Periodo
+        ctx.font = '30px Roboto';
+        ctx.fillStyle = '#34B2E4'; //azul
+        ctx.fillText('Periodo: ', 10, 120);
+        ctx.fillStyle = '#4b7f52'; //verde
+        ctx.fillText(textPerio, 120, 120);
+        //Por madot
+        //ctx.font = '20px Roboto';
+        //ctx.fillText("MADOT", 10, 105);
+
+        ctx.drawImage(canvas,0,143);
+
+        //document.body.appendChild(newCanva);
+        let dataUrl = newCanva.toDataURL();
+
+        if(mode == 'pdf'){
+            OnClickGa('sharePDF','Social');
+            let doc = new jsPDF('l', 'cm', [(newCanva.height+150)/38,(newCanva.width)/38]);
+            doc.addImage(dataUrl, 'PNG', 1, 1);
+            doc.save('TablaPago-UCALCULADORA.pdf');
+
+        }else if(mode == 'png'){
+            OnClickGa('sharePNG','Social');
+            let linkDownload = document.createElement('a');
+            linkDownload.download = 'TablaPago-UCALCULADORA.png';
+            linkDownload.href = dataUrl;
+            linkDownload.click();
+        }
+
+    })
 }
