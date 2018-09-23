@@ -327,8 +327,33 @@ button.n{
 #bannerBt{
     width: 50%;
 }
+
 @media only screen and (max-width: 768px){
     #bannerBt{
         width: 100%
     }
+}
+
+/*BUTTON GROUP*/
+.btn-group button {
+    padding: 5px 12px; /* Some padding */
+}
+
+/*Link style button*/
+a.bta{
+    background-color: #4b7f52; /* Green background */
+    /*padding: 14px 25px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    border-radius: 5px;
+    padding: 2px;
+	padding-left: 6px;
+	padding-right: 6px;
+    background-color: #4b7f52;
+    border: none;
+    font-size: 1.2em;
+    margin: 4px 2px;
+    cursor: pointer;
 }
