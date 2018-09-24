@@ -978,7 +978,7 @@ function evaluar(orig){
 }
 
 function saveTABLE(mode){
-    html2canvas(document.getElementById('tablaPago'),{scale: '1.5',windowWidth: '768px'})
+    html2canvas(document.getElementById('tablaPago'),{scale: '1.5',windowWidth: '768px', backgroundColor: '#ffffff', logging: 'false'})
     .then((canvas)=>{
         
 
@@ -986,23 +986,30 @@ function saveTABLE(mode){
         newCanva.height = canvas.height + 150;
         newCanva.width = canvas.width;
         
-        let ctx = newCanva.getContext("2d");
+        let ctx = newCanva.getContext("2d", { alpha: false });
+
+        //fondo
+        ctx.beginPath();
+        ctx.rect(0, 0, newCanva.width, newCanva.height);
+        ctx.fillStyle = "white";
+        ctx.fill();
         //UCALCULADORA
+        // x,y
         ctx.font = '45px Roboto';
         ctx.fillStyle = '#34B2E4'; //azul
         ctx.fillText("UC", 10, 45);
         ctx.fillStyle = '#4b7f52'; //verde
-        ctx.fillText("alculadora", 63, 45);
+        ctx.fillText("alculadora", 10+ctx.measureText('UC').width, 45);
 
         //Semestre
         ctx.font = '30px Roboto';
-        ctx.fillText(textSem, 10, 82.5);
+        ctx.fillText(textSem, 10, 82);
         //Periodo
         ctx.font = '30px Roboto';
         ctx.fillStyle = '#34B2E4'; //azul
         ctx.fillText('Periodo: ', 10, 120);
         ctx.fillStyle = '#4b7f52'; //verde
-        ctx.fillText(textPerio, 120, 120);
+        ctx.fillText(textPerio, 10+ctx.measureText('Periodo: ').width, 120);
         //Por madot
         //ctx.font = '20px Roboto';
         //ctx.fillText("MADOT", 10, 105);
