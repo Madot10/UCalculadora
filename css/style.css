@@ -328,9 +328,16 @@ button.n{
     width: 50%;
 }
 
+.respon{
+    width: 45%
+}
+
 @media only screen and (max-width: 768px){
     #bannerBt{
-        width: 100%
+        width: 90%
+    }
+    .respon{
+        width: 80%
     }
 }
 

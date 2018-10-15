@@ -153,8 +153,20 @@
                 Ayudando a los ucabistas por más de <b><span id='days'></span> días</b>
                 <br>
 
-            </p>
+            <!-- </p>
 
+            <p> -->
+                <span class="greenM">
+                    Valor de UC para 1er parte: Septiembre-Noviembre 2018
+                    <br>
+                    <b>
+                        <a class="one" onClick="OnClickGa('toCircular','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/09/Circular-Costo-Unidad-de-Cr%C3%A9dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos-Septiembre-Final-2-1.pdf">PUBLICADO</a>
+                        --
+                        <a class="one" onClick="OnClickGa('toCrono','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma</a>
+                        <br>
+                    </b>
+                </span>
+            </p>
             <!-- <img src="img/BannerHorizontal.jpg" width="auto" height="auto">-->
 
             <p>
@@ -165,27 +177,7 @@
                 </button> -->
                 <a class="bta" id="bannerBt" onclick="OnClickGa('toNplu','Social','linkClick')" href="https://madot10.github.io/notificaciones/"><b>Suscribete a N+</b></a>
             </p>
-            <p>
-                <span class="greenM">
-                    Última actualización: 23/09/18 6:00pm
-                    <br>
-                    Valor de UC para semestre Septiembre-Enero 2018
-                    <br>
-                    <b>
-                        <a class="one" onClick="OnClickGa('toCircular','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/09/Circular-Costo-Unidad-de-Cr%C3%A9dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos-Septiembre-Final-2-1.pdf">PUBLICADO</a>
-                        <!-- <br>
-                        <span style="color: red;"> ESPERANDO CONFIRMACIÓN</span>-->
-                        --
-                        <a class="one" onClick="OnClickGa('toCrono','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">Cronograma</a>
-                        <br>
-                        <!--<a class="thum" target="_blank" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg">
-                            <img class="thum" src="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/Cronograma-Administrativo-P1.jpg" alt="Forest">
-                        </a>
-                        !---->
-                    </b>
-                    <!---->
-                </span>
-            </p>
+            
 
         </div>
 
@@ -194,10 +186,9 @@
                 <strong>
                     <span id="num">1.</span>PERIODO:</label>
                     <br>
-                    <select id="sl_per" class="select-square" onchange="OnPerSelect()">
+                    <select id="sl_per" class="select-square respon" onchange="OnPerSelect()">
                         <option value="null">Seleccione</option>
                         <optgroup label="(SEM)Sep-Ene(2018-2019)">
-                            <option value="3" data-bs='F' data-uc=23000000>Sep-Nov (Bs.F)</option>
                             <option value="3" data-bs='S' data-uc=230>Sep-Nov (Bs.S)</option>
                         </optgroup>
                         <optgroup label="(VERA)Jul-Ago(2018)">
@@ -222,7 +213,7 @@
                         <span id="num">2.</span> carrera: </strong>
                 </label>
             </p>
-            <select id="sl_carrera" onchange="OnLoadCarrera()" class="select-square">
+            <select id="sl_carrera" onchange="OnLoadCarrera()" class="select-square respon">
                 <option value="null">Seleccione</option>
                 <optgroup label="Facultad de Ciencias Económicas y Sociales">
                     <option value="Administración-de-Empresas-1">Administración de Empresas</option>
@@ -474,13 +465,14 @@
             </tbody>
         </div>
         <p>
-            <span style="color: red">*</span>Pasantías y trabajo de grado:<span style="color: darkblue;"> sin opción de financiamiento</span><span style="color: red">*</span>
-            <br>
+            <!-- <span style="color: red">*</span>Pasantías y trabajo de grado:<span style="color: darkblue;"> sin opción de financiamiento</span><span style="color: red">*</span>
+            <br> -->
             <b>
-                Nuevas políticas de Cooperación Econónomica:
+                Nuevas políticas de Cooperación Económica:
                 <br>
                 AYUDAS PROPORCIONALES (27UC) Y BECAS-TRABAJO (30UC)
             </b>
+            
         </p>
 
         <br>
@@ -491,16 +483,13 @@
                     <span id="num">4.</span> Sede: </strong>
             </label>
             <br>
-            <select id="sl_sede" onchange="OnSedeChange()" class="select-square">
+            <select id="sl_sede" onchange="OnSedeChange()" class="select-square respon">
                 <option value="null">Seleccione</option>
                 <option value="mtb">Montalbán</option>
                 <option value="g">Guayana</option>
                 <option value="tq">Los Teques</option>
             </select>
         </div>
-
-
-
 
         <br>
         <div id="coop" class="tituloCont">
@@ -509,7 +498,7 @@
                     <span id="num">5.</span> Cooperación económica: </strong>
             </label>
             <br>
-            <select id="sl_coop" onchange="SedeSelect()" class="select-square">
+            <select id="sl_coop" onchange="SedeSelect()" class="select-square respon">
                 <option value="null">Seleccione</option>
                 <option value="1">Ninguna</option>
                 <option value="0">BecaTrabajo</option>
@@ -554,11 +543,9 @@
                 <a onClick="OnClickGa('toGmail','Social')" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a>
             </p>
             <p>
-                <i style="font-size:24px" class="fa">&#xf16d;</i> @
-                <a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">Miguel_Olim</a>
-                <b>/</b>
-                <i style="font-size:24px" class="fa">&#xf081;</i> @
-                <a onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">Miguel_Olim</a>
+                <i style="font-size:24px" class="fa">&#xf16d;</i> @<a onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">Miguel_Olim</a>
+                <!-- <b>/</b>
+                <i style="font-size:24px" class="fa">&#xf081;</i> @<a onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">Miguel_Olim</a> -->
             </p>
 
             <p>
