@@ -6,6 +6,7 @@ let inOpt;
 let ValueUC;
 let optSl;
 let jdatasl;
+let isInBrowser = "";
 
 let stSede = false;
 let stPer = false;
@@ -85,6 +86,7 @@ window.onload = function() {
 
 }
 
+
 function DiasPasados() {
     f1 = '28/02/2018';
   
@@ -120,7 +122,7 @@ function setGa(value){
 
     let a = "Set: " + value;
     gtag('event', "ToggleGA", {
-        'event_category': "DevInteraccion",
+        'event_category': "DevInteraccion" + isInBrowser,
         'event_label': a
       });
     
@@ -134,13 +136,13 @@ function OnClickGa(act, typeInter , lb){
     if(lb){
         //console.log('enter');
         gtag('event', act, {
-            'event_category': typeInter + "Interaccion",
+            'event_category': typeInter + "Interaccion" + isInBrowser,
             'event_label': lb
           });
     }else{
         //console.log('not enter');
         gtag('event', act, {
-            'event_category': typeInter + "Interaccion"
+            'event_category': typeInter + "Interaccion" + isInBrowser
           });
     }
     
@@ -186,7 +188,7 @@ function OnPerSelect(){
     let vmu = "MoneyUnit: " + Tbs;
 
     gtag('event', "PeriodoSelect", {
-        'event_category': "UCinteraccion",
+        'event_category': "UCinteraccion" + isInBrowser,
         'event_label': vmu
       });
 
@@ -315,7 +317,7 @@ function OnLoadCarrera(){
         //console.log(jdatasl);
 
         gtag('event', "CarreraSelect", {
-            'event_category': "UCinteraccion",
+            'event_category': "UCinteraccion" + isInBrowser,
             'event_label': optText
           });
 
@@ -476,7 +478,7 @@ function OnChangeMat(ind){
         //console.log('return', s);
 
         gtag('event', "MateriaSelect", {
-            'event_category': "UCinteraccion",
+            'event_category': "UCinteraccion" + isInBrowser,
             'event_label': s
         });
 
@@ -719,7 +721,7 @@ function Totalizacion(){
     }
 
     gtag('event', "SedeSelect", {
-        'event_category': "UCinteraccion",
+        'event_category': "UCinteraccion" + isInBrowser,
         'event_label': slSede.options[slSede.selectedIndex].text
       });
 
@@ -789,7 +791,7 @@ function Totalizacion(){
 
     let c = "Coop: " + slcoop.options[slcoop.selectedIndex].text;
     gtag('event', "CoopSelect", {
-        'event_category': "UCinteraccion",
+        'event_category': "UCinteraccion" + isInBrowser,
         'event_label': c,
         'value': slcoop.options[slcoop.selectedIndex].value
       });
@@ -831,7 +833,6 @@ function GenerarTabla(periodo){
 
     var divTable = document.getElementById('tablaPago');
     divTable.innerHTML = "<div data-html2canvas-ignore><p>Guardar como:<br><div class='btn-group'><button onclick='saveTABLE(png)'>Imagen PNG <i class='fa fa-file-image-o'></i></button><button onclick='saveTABLE(pdf)'>Archivo PDF <i class='fa fa-file-pdf-o'></i></button></div></p></div>"
-    //divTable.innerHTML = "<div data-html2canvas-ignore><p>Guardar como:<br><div class='btn-group'><button onclick='saveTABLE(png)'>Imagen PNG <i class='fa fa-file-image-o'></i></button></div></p></div>"
     var tableHTML = document.createElement('table');
     tableHTML.style = 'overflow-x:auto;'
     
@@ -979,7 +980,7 @@ function evaluar(orig){
 }
 
 function saveTABLE(mode){
-    html2canvas(document.getElementById('tablaPago'),{scale: 1.5,windowWidth: 768, backgroundColor: '#ffffff', logging: false})
+    html2canvas(document.getElementById('tablaPago'),{scale: 1.5 ,windowWidth: 768, backgroundColor: '#ffffff', logging: true})
     .then((canvas)=>{
         
 
@@ -1022,8 +1023,10 @@ function saveTABLE(mode){
 
         if(mode == 'pdf'){
             OnClickGa('sharePDF','Social');
-            let doc = new jsPDF('l', 'cm', [(newCanva.height+150)/38,(newCanva.width)/38]);
-            doc.addImage(dataUrl, 'PNG', 1, 1);
+            let k = 2.645833;
+            console.log([(newCanva.width/100)*k, (newCanva.height/100)*k]);
+            let doc = new jsPDF('p', 'cm',[(newCanva.width/85)*k, (newCanva.height/100)*k]); //,[(newCanva.width/100)*k, (newCanva.height/100)*k]
+            doc.addImage(dataUrl, 'PNG', 1,1,(newCanva.width/100)*k, (newCanva.height/100)*k);
             doc.save('TablaPago-UCALCULADORA.pdf');
 
         }else if(mode == 'png'){

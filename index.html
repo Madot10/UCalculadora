@@ -16,6 +16,10 @@
 
         gtag('config', 'UA-33542195-1');
 
+         gtag('config', 'UA-33542195-1', {
+            'custom_map': {'dimension1': 'Online'}
+            });
+
     </script>
 
 
@@ -37,12 +41,16 @@
     <link rel="stylesheet" href="css/loader.css?1">
     <link rel="stylesheet" href="css/modal.css?1">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script> -->
 
     <script src="js/table.js?dev=2"></script>
     <script src="js/fun.js?dev=3"></script>
+    <script src="js/pwa.js?dev=1"></script>
     <script src="js/html2canvas.min.js"></script>
+
+    <script src="js/jspdf.min.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <!-- <script src="js/n/agrupaciones.js"></script> -->
     <script src="js/carreras/Administración-de-Empresas-1.js?dev=3" type="text/javascript"></script>
@@ -157,7 +165,7 @@
 
             <p> -->
                 <span class="greenM">
-                    Valor de UC para 1er parte: Septiembre-Noviembre 2018
+                    Septiembre-Noviembre 2018
                     <br>
                     <b>
                         <a class="one" onClick="OnClickGa('toCircular','Info')" href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/09/Circular-Costo-Unidad-de-Cr%C3%A9dito-Primer-Semestre-2018-2019-Bs-Fuertes-y-Soberanos-Septiembre-Final-2-1.pdf">PUBLICADO</a>
@@ -169,14 +177,14 @@
             </p>
             <!-- <img src="img/BannerHorizontal.jpg" width="auto" height="auto">-->
 
-            <p>
+            <!-- <p>
                 Recibe directamente toda la información que quieras de la UCAB
                 <br>
                 <!-- <button id="bannerBt" onclick="window.open('https://madot10.github.io/notificaciones','_blank'); OnClickGa('toNplu','Social','linkClick')">
                     <b>Suscribete a N+</b>
                 </button> -->
-                <a class="bta" id="bannerBt" onclick="OnClickGa('toNplu','Social','linkClick')" href="https://madot10.github.io/notificaciones/"><b>Suscribete a N+</b></a>
-            </p>
+                 <!-- <a class="bta" id="bannerBt" onclick="OnClickGa('toNplu','Social','linkClick')" href="https://madot10.github.io/notificaciones/"><b>Suscribete a N+</b></a>
+            </p> -->
             
 
         </div>
@@ -189,6 +197,7 @@
                     <select id="sl_per" class="select-square respon" onchange="OnPerSelect()">
                         <option value="null">Seleccione</option>
                         <optgroup label="(SEM)Sep-Ene(2018-2019)">
+                            <!-- <option value="3" data-bs='S' data-uc=230>Nov-Ene (Bs.S)</option> -->
                             <option value="3" data-bs='S' data-uc=230>Sep-Nov (Bs.S)</option>
                         </optgroup>
                         <optgroup label="(VERA)Jul-Ago(2018)">

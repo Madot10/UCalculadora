@@ -61,8 +61,8 @@ var tables = {
             '(50%) eval("formatNumber.new((sum * 0.5), GetUnitMoney(), true)") + 25% Der. Insc.'],
             ['<span class="greenM">Total: </span> <br> eval("formatNumber.new(Math.round((0.25 * ValueUC) + (sum * 0.5)), GetUnitMoney(), true)")']],
         ['Modalidad pago financiado (Dic-Ene):'],
-        [2,['Diciembre', '(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(),true)") + 25% Der. Insc.'],
-            ['<span class="greenM">Total: </span> <br> eval("formatNumber.new((sum * 0.25) + (0.25 * ValueUC), GetUnitMoney(),true)")']],
+        [2,['Noviembre / Diciembre (25%)', '(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(),true)") + 25% Der. Insc.'],
+            ['<span class="greenM">Total (26NOV - 7DIC): </span> <br> eval("formatNumber.new((sum * 0.25) + (0.25 * ValueUC), GetUnitMoney(),true)")']],
         ['Enero (25%) <div class="tooltip"><i class="fa fa-question-circle"></i> <span class="tooltiptext">Valor de UC varía según las fechas(VER EN CRONOGRAMA)</span> </div>', 
             '<span class="greenM"> 8DIC - 14ENE: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a ******* Tarifa-2A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new((Number(GetMontoTarifa(ValueUC * 1.30)) * 0.25), GetUnitMoney(), true)")'],
         
