@@ -64,7 +64,7 @@ var tables = {
         [2,['Noviembre / Diciembre (25%)', '(25%) eval("formatNumber.new((sum * 0.25), GetUnitMoney(),true)") + 25% Der. Insc.'],
             ['<span class="greenM">Total (26NOV - 7DIC): </span> <br> eval("formatNumber.new((sum * 0.25) + (0.25 * ValueUC), GetUnitMoney(),true)")']],
         ['Enero (25%) <div class="tooltip"><i class="fa fa-question-circle"></i> <span class="tooltiptext">Valor de UC varía según las fechas(VER EN CRONOGRAMA)</span> </div>', 
-            '<span class="greenM"> 8DIC - 14ENE: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 2327BS Tarifa-2A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new((Number(GetMontoTarifa(ValueUC * 1.30)) * 0.25), GetUnitMoney(), true)")'],
+            '<span class="greenM"> 8DIC - 14ENE: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 2685Bs Tarifa-2A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new((Number(GetMontoTarifa(ValueUC * 1.50)) * 0.25), GetUnitMoney(), true)")'],
         
     ]
 };
