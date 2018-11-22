@@ -835,6 +835,7 @@ function GenerarTabla(periodo){
     divTable.innerHTML = "<div data-html2canvas-ignore><p>Guardar como:<br><div class='btn-group'><button onclick='saveTABLE(png)'>Imagen PNG <i class='fa fa-file-image-o'></i></button><button onclick='saveTABLE(pdf)'>Archivo PDF <i class='fa fa-file-pdf-o'></i></button></div></p></div>"
     var tableHTML = document.createElement('table');
     tableHTML.style = 'overflow-x:auto;'
+    tableHTML.id += "tP";
     
     //Recorremos para obtener FILAS
     for(i=1; i < tabla.length; i++){
@@ -980,7 +981,7 @@ function evaluar(orig){
 }
 
 function saveTABLE(mode){
-    html2canvas(document.getElementById('tablaPago'),{scale: 1.5 ,windowWidth: 768, backgroundColor: '#ffffff', logging: true})
+    html2canvas(document.getElementById('tablaPago'),{scale: 1.5 ,windowWidth: 768, backgroundColor: '#ffffff', logging: false})
     .then((canvas)=>{
         
 
@@ -1025,7 +1026,10 @@ function saveTABLE(mode){
             OnClickGa('sharePDF','Social');
             let k = 2.645833;
             console.log([(newCanva.width/100)*k, (newCanva.height/100)*k]);
-            let doc = new jsPDF('p', 'cm',[(newCanva.width/85)*k, (newCanva.height/100)*k]); //,[(newCanva.width/100)*k, (newCanva.height/100)*k]
+            let mode = "p";
+                if(screen.width < 768)
+                    mode = "l";
+            let doc = new jsPDF(mode, 'cm',[(newCanva.width/95)*k, (newCanva.height/110)*k*1.5]); //,[(newCanva.width/100)*k, (newCanva.height/100)*k]
             doc.addImage(dataUrl, 'PNG', 1,1,(newCanva.width/100)*k, (newCanva.height/100)*k);
             doc.save('TablaPago-UCALCULADORA.pdf');
 
