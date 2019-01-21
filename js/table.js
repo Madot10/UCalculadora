@@ -66,5 +66,10 @@ var tables = {
         ['Enero (25%) <div class="tooltip"><i class="fa fa-question-circle"></i> <span class="tooltiptext">Valor de UC varía según las fechas(VER EN CRONOGRAMA)</span> </div>', 
             '<span class="greenM"> 8DIC - 14ENE: <div class="tooltip"><i class="fa fa-question-circle"></i><span class="tooltiptext">UC a 2685Bs Tarifa-2A (VER EN CRONOGRAMA)</span> </div></span> <br> eval("formatNumber.new((Number(GetMontoTarifa(ValueUC * 1.50)) * 0.25), GetUnitMoney(), true)")'],
         
+    ],
+    '5':[
+        3,
+        ['Pago único verano'],
+        ['Total (Febrero-Marzo) ', '(100%) eval("formatNumber.new(sum, GetUnitMoney())")']
     ]
 };
