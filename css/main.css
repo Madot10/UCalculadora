@@ -4,6 +4,11 @@
     --blue: #34B2E4;
 }
 
-.gUcab{
-    color: var(--green) !important;
+#gUcab{
+    color: #4b7f52 !important;
+}
+
+h1{
+    text-transform: uppercase;
+	border-bottom: 5px solid #FED201;
 }

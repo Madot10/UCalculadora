@@ -5348,7 +5348,6 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
   content: '';
   display: table-cell;
   position: relative;
-  top: 50%;
   width: 50%;
   background-repeat: no-repeat;
 }
@@ -40302,3 +40301,12 @@ body.pushable > .pusher {
 /*******************************
          Site Overrides
 *******************************/
+
+.gUcab{
+  color: #4b7f52 !important;
+}
+
+.titulo{
+  text-transform: uppercase !important;
+  border-bottom: 5px solid #FED201 !important;
+}
