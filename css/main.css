@@ -1,0 +1,9 @@
+:root{
+    --green: #4b7f52;
+    --yelow: #FED201;
+    --blue: #34B2E4;
+}
+
+.gUcab{
+    color: var(--green) !important;
+}
