@@ -1,0 +1,104 @@
+:root{
+    --green: #4b7f52;
+    --blue: #34B2E4;
+    --yellow: #FED201;
+    --gray: #374746;
+}
+
+body{
+    margin: 0;
+    /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
+    font-family: 'Roboto', sans-serif !important; 
+
+    background-color: white;
+    text-align:center;
+    align-content: center;
+    color: var(--green);
+    font-size: 1.1em !important;
+    text-align: center;
+}
+
+header h1{
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+/* DIVIDER */
+.divider{
+    width: 100%; 
+    height: 10px;
+    border-bottom: 2px solid var(--yellow); 
+    text-align: center;
+}
+
+#ucvalue{
+    font-size: 1.1em; 
+    color: var(--green);
+    background-color: white; 
+    padding: 0 10px;
+}
+
+/* END DIVIDER */
+
+/* ICONS*/
+button.ubtn .svg-inline--fa{
+    height: auto !important;
+    width: 2em !important;
+    vertical-align: middle;
+   /* float: left;*/
+}
+
+/*FELCHA ICON*/
+button.ubtn .fa-angle-right{
+    height: auto !important;
+    width: 1.1em !important;
+    vertical-align: middle;
+    float: right;
+}
+
+button.ubtn{
+    line-height: 50px;
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 768px){
+    button.ubtn{
+        width: 80%;
+    }
+}
+
+button{
+    border-radius: 10px;
+    clear: both;
+    background-color: var(--green);
+    width: 50%;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /*display: inline-block;*/
+    font-size: 1.125em;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 0.2em 0.6em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button:hover{
+    background-color: #3f6a45;
+}
+
+button:focus{
+    background-color: #3f6a45;
+}
+
+
+.ublue{
+    color: var(--blue);
+}
+
+.ugreen{
+    color: var(--green);
+}
