@@ -40301,12 +40301,18 @@ body.pushable > .pusher {
 /*******************************
          Site Overrides
 *******************************/
-
-.gUcab{
-  color: #4b7f52 !important;
+:root{
+  --green: #4b7f52;
+  --yellow: #FED201;
+  --blue: #34B2E4;
 }
 
-.titulo{
-  text-transform: uppercase !important;
-  border-bottom: 5px solid #FED201 !important;
+.gUcab{
+  color: var(--green) !important;
+}
+
+.divider:after, .divider:before{
+  outline: 3px solid var(--yellow) !important;
+  outline-offset: -0.6em !important;
+  background-image: none !important;
 }
