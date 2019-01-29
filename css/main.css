@@ -66,7 +66,11 @@ button.ubtn{
     button.ubtn{
         width: 80%;
     }
+    button.cbtn{
+        width: 80%;
+    }
 }
+
 
 button{
     border-radius: 10px;
@@ -82,7 +86,7 @@ button{
     font-weight: bold;
     margin: 4px 2px;
     cursor: pointer;
-    padding: 0.2em 0.6em;
+    padding: 0.3em 0.8em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -94,6 +98,66 @@ button:focus{
     background-color: #3f6a45;
 }
 
+
+
+/* TABLAA */
+.tabla{
+    width: 80%;
+	display: inline-block;
+    align-content: center;
+}
+
+.headTable{
+    border-bottom: 0.125em solid var(--green);
+    text-align: left;
+    font-weight: 300;
+
+}
+
+.headTable .head{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.mat{
+    padding-left: 1em;
+    width: 55%;  
+}
+
+.tax{
+    width: 18%;
+}
+
+.uc{
+    width: 15%;
+}
+
+.tbtn{
+    /*Same width of table*/
+    width: 80%;
+}
+
+#textTable{
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    color: var(--gray);
+}
+
+button.cbtn{
+    width: 80%;
+}
+/* END TABLA */
+
+footer{
+    background-color: #374746;
+    color: white;
+    margin: 0;
+}
+
+footer a{
+    color: white;
+}
 
 .ublue{
     color: var(--blue);
