@@ -18,7 +18,8 @@
 /* Modal Header */
 .modal-header {
     padding: 2px 16px;
-    background-color: #4b7f52;
+    background-color: var(--green);
+    font-weight: bold;
     color: white;
 }
 
@@ -29,7 +30,7 @@
 .modal-footer {
     padding: 2px 16px;
     background-color: white;
-    color: white;
+    color: var(--green);
 }
 
 /* Modal Content */
@@ -71,3 +72,81 @@
     cursor: pointer;
 }
 
+.tFacultad{
+    text-align: left;
+	padding-left: 0.5em;
+	border-bottom: 2px solid;
+}
+
+.modal-body button{
+    /*line-height: 35px;*/
+    width: 90%;
+    font-weight: normal;
+   /* text-transform: uppercase;*/
+    vertical-align: middle;
+    /*text-align: right;*/
+}
+
+#sedeModal .modal-body button, #coopModal .modal-body button{
+    font-weight: bold;
+}
+
+.modal-body button .svg-inline--fa{
+    height: auto !important;
+    width: 1.5em !important;
+    vertical-align: middle;
+   /* float: left;*/
+}
+
+/* RANGE CUSTOM IN MODAL**/
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    border-radius: 5px;   
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: var(--green);
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--green);
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px){
+    .slider {
+        width: 95%;
+    }
+  }
+  /* END RANGE CUSTOM IN MODAL**/
+
+/* MATERIA MODAL */
+.labelSemestre{
+    text-align: left;
+	padding-left: 0.5em;
+	border-bottom: 2px solid;
+}
+
+/* END MATERIA MODAL */
