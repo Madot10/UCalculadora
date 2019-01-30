@@ -17,17 +17,17 @@ function openModal(nameModal){
             break;
 
         case 'carModal':
-            if(!sede){
+           /* if(!sede){
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA SEDE!");
-            }
+            }*/
             break;
 
         case 'matModal':
-            if(!carrera){
+           /* if(!carrera){
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA CARRERA!");
-            }
+            }*/
             break;
 
         default:
@@ -86,6 +86,7 @@ function sedeSelect(cod){
 function carreraSelect(elem){
     //limpiamos texto
     let content = elem.textContent.replace(/\n/g,'');
+    content = elem.textContent.replace(/[.]/g,'');
     content = content.trim();
     content = content.toUpperCase();
 
@@ -98,20 +99,86 @@ function carreraSelect(elem){
     //Ocultamos flecha
     parentElem.children[2].style.display = 'none';
 
+    materias = GetJsonDataMaterias(carrera);
+    console.log(carrera, materias);
+
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;
 
+    genMateriaList()
     closeModal();
 }
 /* END CARRERA MODAL */
 
 /* MATERIA MODAL */
+function toggleActiveChbox(elem){
+    let parentElem = elem.parentElement;
+    parentElem.classList.toggle("actChbox");
+    materiaSelect(elem);
+}
+
+function genMateriaList(){
+    let main = document.getElementById("matList");
+    main.innerHTML = '';
+    let divBtn;
+    let divCont;
+
+    let semI = null;
+    let semAct = null;
+    console.log("run out");
+    //Reccorremos cada materia
+    for (let i = 0; i < materias.length; i++) {
+        console.log("run");
+        semI = materias[i].Semestre;
+
+        //Nuevo semestre >> nueva seccion
+        if(semI != semAct){ 
+            semAct = semI;
+            if(divBtn && divCont){
+                main.appendChild(divBtn);
+                main.appendChild(divCont);
+            }
+            //Creamos
+            divBtn = document.createElement("div");
+            divCont = document.createElement("div");
+
+            //Formato
+            divBtn.innerHTML = `<div class="collapsible" onclick="toggleList(this)"> ${semAct}</div>`;
+            divCont.innerHTML = `<div class="content"></div>`;
+
+            divBtn = divBtn.firstElementChild;
+            divCont = divCont.firstElementChild;
+        }
+
+        //Creamos materia
+        let div = document.createElement('div');
+            let inp = document.createElement('input');
+            inp.setAttribute("id", i);
+            inp.setAttribute("type", "checkbox");
+            inp.setAttribute("class", "chbox");
+            inp.setAttribute("oninput", "toggleActiveChbox(this)");
+
+        div.appendChild(inp);
+
+            let lb = document.createElement("label");
+            lb.setAttribute("for", i);
+            lb.setAttribute("class", "materia");
+            lb.innerText = materias[i].Asignatura;
+        
+        div.appendChild(lb);
+
+        divCont.appendChild(div);
+
+    }
+    main.appendChild(divBtn);
+    main.appendChild(divCont);
+}
+
 
 /* END MATERIA MODAL */
 
 
 /* COOP MODAL */
-
 function changeCoop(event){
     document.getElementById('scobertura').innerHTML = event.value + '%';
 }
@@ -121,4 +188,16 @@ function resetCoopModal(){
     document.getElementById('btnRgo').style.display = "none";
 }
 
+function selectCobertura(tipo){
+    //ocultamos opciones de coop y mostramos rango
+    document.getElementById('btnCoop').style.display = "none";
+
+    document.getElementById('tipoAyuda').innerHTML = tipo.toUpperCase();
+    document.getElementById('btnRgo').style.display = "block";
+    
+}
+
+function coopSelect(tipo){
+    
+}
 /* END COOP MODAL */

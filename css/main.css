@@ -59,7 +59,7 @@ button.ubtn .fa-angle-right{
 button.ubtn{
     line-height: 50px;
     text-align: left;
-    
+
     white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis; 
@@ -72,7 +72,6 @@ button.ubtn{
     }
 
 }
-
 
 button{
     border-radius: 10px;
@@ -112,13 +111,20 @@ button:focus{
 .headTable{
     border-bottom: 0.125em solid var(--green);
     text-align: left;
-    font-weight: 300;
+    font-weight: 400;
 
 }
 
 .headTable .head{
 	display: inline-block;
 	vertical-align: top;
+}
+
+.tabla .foot{
+    border-top: 0.125em solid var(--green);
+    margin-top: 0.2em;
+    text-align: right;
+    font-weight: 400;
 }
 
 .mat{
@@ -154,6 +160,43 @@ button.cbtn{
 button.cbtn .svg-inline--fa {
     height: auto !important;
     width: 1.5em !important;
+}
+
+div.line {
+    display:table;
+    width:100%;
+    
+}
+div.line span {
+    display:table-cell;
+    text-align:center;
+}
+
+table{
+    /*border: 1px solid black;*/
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td{
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.nMat{
+    font-weight: bold;
+    width: 60%;
+}
+
+.container{
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    margin-top: 1em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
 }
 /* END TABLA */
 
