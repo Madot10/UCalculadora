@@ -59,6 +59,10 @@ button.ubtn .fa-angle-right{
 button.ubtn{
     line-height: 50px;
     text-align: left;
+    
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 

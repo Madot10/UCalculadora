@@ -1,3 +1,20 @@
+/* SISTEMA GENERAL */
+let valorUC;
+let sede;
+let carrera;
+
+//FUNCIONES
+//Retorna jsonData de carrera
+function GetJsonDataMaterias(tx){
+    tx = tx.replace(/\s/g,'');
+    tx = tx.replace(/\n/g,'');
+    tx = tx.toLowerCase();
+
+    //console.log("TX " + tx);
+   return tx = window[tx];
+}
+
+/* END SISTEMA GENERAL */
 
 /* SISTEMA DE COOPERACION */
 function selectCobertura(tipo){

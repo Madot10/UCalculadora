@@ -17,6 +17,30 @@
     <script src="js/main.js"></script>
     <script src="js/modals.js"></script>
 
+    <script src="js/carreras/Administración-de-Empresas-1.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/comunicacion-social-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/contaduria-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/derecho-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/economia-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-biologia-y-quimica-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-ciencias-pedagogicas-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-ciencias-sociales-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-filosofia-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-fisica-y-matematicas-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-integral-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-mencion-preescolar-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-preslied-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/educacion-tronco-comun-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/filosofia-2018.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/ingenieria-civil-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/ingenieria-en-telecomunicaciones-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/ingenieria-industrial-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/ingenieria-informatica-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/letras-2018.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/psicologia-2018.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/relaciones-industriales-2017.js?dev=3" type="text/javascript"></script>
+    <script src="js/carreras/sociologia-2017.js?dev=3" type="text/javascript"></script>
+
     <title>UCALCULADORA</title>
 </head>
 
@@ -31,13 +55,13 @@
                 <h2>SEDE</h2>
             </div>
             <div class="modal-body">
-                <button>
+                <button onclick="sedeSelect('mtb')">
                     <i class="fas fa-university"></i>
                     <br> MONTALBÁN </button>
-                <button>
+                <button onclick="sedeSelect('g')">
                     <i class="fas fa-university"></i>
                     <br> GUAYANA </button>
-                <button>
+                <button onclick="sedeSelect('tq')">
                     <i class="fas fa-university"></i>
                     <br> LOS TEQUES </button>
             </div>
@@ -55,57 +79,57 @@
             </div>
             <div class="modal-body">
                 <p class="tFacultad">Facultad de Ciencias Económicas y Sociales</p>
-                <button value="Administración-de-Empresas-1">
+                <button value="Administración-de-Empresas-1" onclick="carreraSelect(this)">
                     <i class="fas fa-building"></i> Administración de Empresas</button>
-                <button value="contaduria-2017">
+                <button value="contaduria-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-coins"></i> Contaduria</button>
-                <button value="economia-2017">
+                <button value="economia-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-chart-line"></i> Economia</button>
-                <button value="sociologia-2017">
+                <button value="sociologia-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-users"></i> Sociologia</button>
-                <button value="relaciones-industriales-2017">
+                <button value="relaciones-industriales-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-user-tie"></i> Relaciones industriales</button>
 
                 <p class="tFacultad">Facultad de Derecho</p>
-                <button value="derecho-2017">
+                <button value="derecho-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-gavel"></i> Derecho</button>
 
                 <p class="tFacultad">Facultad de Ingeniería</p>
-                <button value="ingenieria-civil-2017">
+                <button value="ingenieria-civil-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-cogs"></i> Ing. Civil</button>
-                <button value="ingenieria-industrial-2017">
+                <button value="ingenieria-industrial-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-cogs"></i> Ing. Industrial</button>
-                <button value="ingenieria-informatica-2017">
+                <button value="ingenieria-informatica-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-cogs"></i> Ing. Informatica</button>
-                <button value="ingenieria-en-telecomunicaciones-2017">
+                <button value="ingenieria-en-telecomunicaciones-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-cogs"></i> Ing. en Telecomunicaciones</button>
 
                 <p class="tFacultad"> Facultad de Humanidades y Educación</p>
-                <button value="comunicacion-social-2017">
+                <button value="comunicacion-social-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-comments"></i> Comunicacion social</button>
-                <button value="filosofia-2018">
+                <button value="filosofia-2018" onclick="carreraSelect(this)">
                     <i class="fas fa-book-reader"></i> Filosofia</button>
-                <button value="letras-2018">
+                <button value="letras-2018" onclick="carreraSelect(this)">
                     <i class="fas fa-pen"></i> Letras</button>
-                <button value="psicologia-2018">
+                <button value="psicologia-2018" onclick="carreraSelect(this)">
                     <i class="fas fa-brain"></i> Psicologia</button>
-                <button value="educacion-tronco-comun-2017">
+                <button value="educacion-tronco-comun-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion tronco comun</button>
-                <button value="educacion-preslied-2017">
+                <button value="educacion-preslied-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion preslied</button>
-                <button value="educacion-mencion-biologia-y-quimica-2017">
+                <button value="educacion-mencion-biologia-y-quimica-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion biologia y quimica</button>
-                <button value="educacion-mencion-ciencias-pedagogicas-2017">
+                <button value="educacion-mencion-ciencias-pedagogicas-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion ciencias pedagogicas</button>
-                <button value="educacion-mencion-ciencias-sociales-2017">
+                <button value="educacion-mencion-ciencias-sociales-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion ciencias sociales</button>
-                <button value="educacion-mencion-fisica-y-matematicas-2017">
+                <button value="educacion-mencion-fisica-y-matematicas-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion fisica y matematicas</button>
-                <button value="educacion-mencion-integral-2017">
+                <button value="educacion-mencion-integral-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion integral</button>
-                <button value="educacion-mencion-filosofia-2017">
+                <button value="educacion-mencion-filosofia-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion filosofia</button>
-                <button value="educacion-mencion-preescolar-2017">
+                <button value="educacion-mencion-preescolar-2017" onclick="carreraSelect(this)">
                     <i class="fas fa-book"></i> Educacion mencion preescolar</button>
 
             </div>
@@ -120,7 +144,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <h2>SEDE</h2>
+                <h2>COOPERACIÓN</h2>
             </div>
             <div id="btnCoop" class="modal-body" >
                 <button> NINGUNA </button>
@@ -163,13 +187,13 @@
         </div>
     </div>
 
-     <!-- SEDE MODAL -->
-    <div id="sedeModal" class="modal">
+     <!-- MATERIAS MODAL -->
+    <div id="matModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
              <div class="modal-header">
                 <span class="close" onclick="closeModal()">&times;</span>
-                <h2>SEDE</h2>
+                <h2>MATERIAS</h2>
             </div>
             <div class="modal-body">
                 <!-- ESTRUCTURA BASE-->
@@ -179,27 +203,6 @@
         </div>
     </div>
         
-        <div id="sedeModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <h2>SEDE</h2>
-                </div>
-                <div class="modal-body">
-                    <button>
-                        <i class="fas fa-university"></i>
-                        <br> MONTALBÁN </button>
-                    <button>
-                        <i class="fas fa-university"></i>
-                        <br> GUAYANA </button>
-                    <button>
-                        <i class="fas fa-university"></i>
-                        <br> LOS TEQUES </button>
-                </div>
-                <br>
-            </div>
-        </div>
 
     <!-- UCALCULADORA -->
     <div class="ucalculadora">
@@ -221,14 +224,15 @@
 
         <!--SEDE-->
         <button class="ubtn" onclick="openModal('sedeModal')">
-            <i class="fas fa-university"></i> SEDE
+            <i class="fas fa-university"></i> <span id="sName">SEDE</span> 
             <i class="fas fa-angle-right"></i>
         </button>
+
         <br>
         <br>
         <!--CARRERA-->
         <button class="ubtn" onclick="openModal('carModal')">
-            <i class="fas fa-graduation-cap"></i> CARRERA
+            <i class="fas fa-graduation-cap"></i> <span id="sCarrera">CARRERA</span>
             <i class="fas fa-angle-right"></i>
         </button>
         <br>
@@ -246,10 +250,11 @@
             </div>
 
             <p id="textTable">Pulsa para agregar una materia</p>
-            <button class="tbtn">+</button>
+            <button class="tbtn" onclick="openModal('matModal')">+</button>
         </div>
         <br>
         <br>
+
         <!--COOPERACION-->
         <button class="ubtn" onclick="openModal('coopModal')">
             <i class="fas fa-handshake"></i> COOPERACIÓN
