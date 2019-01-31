@@ -105,7 +105,13 @@ function carreraSelect(elem){
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;
 
-    genMateriaList()
+    //limpiamos tabla de materias 
+    document.getElementsByClassName('materias')[0].innerHTML = '';
+    ucbase = 0;
+    uctotal = 0;
+    actualizarTotalUC();
+
+    genMateriaList();
     closeModal();
 }
 /* END CARRERA MODAL */
@@ -115,6 +121,18 @@ function toggleActiveChbox(elem){
     let parentElem = elem.parentElement;
     parentElem.classList.toggle("actChbox");
     materiaSelect(elem);
+}
+
+function desCheckMatList(id){
+    let elem = document.getElementById(id);
+    
+    if(elem.checked){
+        elem.checked = false;
+    }
+
+    toggleActiveChbox(elem);
+
+        
 }
 
 function genMateriaList(){
@@ -191,13 +209,21 @@ function resetCoopModal(){
 function selectCobertura(tipo){
     //ocultamos opciones de coop y mostramos rango
     document.getElementById('btnCoop').style.display = "none";
+    coop = tipo;
 
     document.getElementById('tipoAyuda').innerHTML = tipo.toUpperCase();
     document.getElementById('btnRgo').style.display = "block";
     
 }
 
-function coopSelect(tipo){
-    
+function coopSelect(tipo, cob){
+    if(cob == -1){
+        cober = document.getElementById('coopRange').value;
+    }else{
+        coop = tipo;
+        cober = cob;
+    }
+    document.getElementById('sCoop').innerHTML = `${coop.toUpperCase()} ${cober}%`;
+    closeModal();
 }
 /* END COOP MODAL */

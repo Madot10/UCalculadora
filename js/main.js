@@ -1,7 +1,10 @@
 /* SISTEMA GENERAL */
-let valorUC;
+let valorUC = 12082.5;
+let vrealUC = valorUC;
 let ucbase = 0;
 let uctotal = 0;
+let ucpagar = 0;
+let totalbs;
 
 let sede;
 let carrera;
@@ -84,6 +87,78 @@ function UCrecargo(uc, tax){
     
 }
 
+function totalizacion(){
+    vrealUC = valorUC;
+    let cobertura = 1 - (cober/100);
+    let ucfuera = 0;
+
+    //descuentos segun carrera
+    if(carrera.includes("educacion") || carrera.includes("letras") || carrera.includes("filosofia") ){
+        //Aplicamos 30% de descuento >> 
+       vrealUC = valorUC * 0.7;
+    }
+
+    //descuento por sede
+    switch(sede){
+        case "g":
+        case "tq":
+            //Guayana  /Los teques 20% descuento
+            //document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
+            vrealUC *= 0.8;
+        
+        break;
+    }
+
+    //descuento por cooperacion
+    if(coop != 'fab' && coop != 'ninguna'){
+        //Beca o Prop
+        let limit = limitBeca;
+        if(coop != 'beca'){
+            limit = limitProp;
+        }
+
+        //Recargo
+        let ucre = uctotal - ucbase;
+
+        if(ucbase <= limit){
+            console.log("menor");
+            //por debajo de coobertura
+            //aplicamos %  a lo que queda
+            ucfuera = ucre;
+            ucpagar = (ucbase * cobertura) + ucre; 
+
+        }else if(ucbase > limit){
+            console.log("mayor");
+            //por encima de cobertura
+            ucfuera = (ucbase - limit) + ucre;
+            ucpagar = (ucbase - limit) + ucre + (limit * cobertura);
+        }
+
+    }else if(coop != 'ninguna'){
+        //FAB
+        if(uctotal <= limitFab){
+            console.log("menor fab");
+            //Por debajo
+            ucpagar = uctotal * cobertura;
+        }else{
+            console.log("mayor fab");
+            //Por encima
+            ucfuera = (uctotal - limitFab);
+            ucpagar = (uctotal - limitFab) + (limitFab * cobertura);
+        }
+    }else{
+        //ninguna cooperacion
+        ucpagar = uctotal;
+    }
+
+    console.log("FINAL: ");
+    console.log("Cobertura: ", cobertura);
+    console.log("Recargos: ", uctotal - ucbase);
+    console.log("UC fuera cobertura: ", ucfuera);
+    console.log("UCpagar: ", ucpagar);
+    console.log("Valor real UC: ", vrealUC);
+    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
+}
 /* END SISTEMA GENERAL */
 
 /* SISTEMA DE MATERIAS */
@@ -121,7 +196,7 @@ function addMateriaList(id){
 
     let divC = document.createElement("div");
     divC.classList.add("container", id);
-    divC.setAttribute("onclick", `deleteMateriaList(${id})`)
+    divC.setAttribute("onclick", `desCheckMatList(${id});`)
 
     divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${data.Asignatura}</td><td> ${FixUC(data.Tax, data.UC)} UC</td></tr><tr><td>${data.Semestre}</td><td> ${data.Tax}</td></tr></table>`;
 
@@ -137,41 +212,17 @@ function deleteMateriaList(id){
     let elem = document.getElementsByClassName(id)[0];
     elem.parentNode.removeChild(elem);
 
+    //
+
     let data = materias[id];
     ucbase -= FixUC(data.Tax, data.UC);
     uctotal -= UCrecargo(data.UC, data.Tax);
 
     actualizarTotalUC();
 }
-/*
-window.onload = function() {
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-        console.log("run");
-      coll[i].addEventListener("click", 
-      function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-}*/
 
 /* END SISTEMA DE MATERIAS */
 
 /* SISTEMA DE COOPERACION */
-function selectCobertura(tipo){
-    //ocultamos opciones de coop y mostramos rango
-    document.getElementById('btnCoop').style.display = "none";
 
-    document.getElementById('tipoAyuda').innerHTML = tipo.toUpperCase();
-    document.getElementById('btnRgo').style.display = "block";
-    
-}
 /* END SISTEMA DE COOPERACION */
