@@ -17,17 +17,17 @@ function openModal(nameModal){
             break;
 
         case 'carModal':
-           /* if(!sede){
+           if(!sede){
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA SEDE!");
-            }*/
+            }
             break;
 
         case 'matModal':
-           /* if(!carrera){
+           if(!carrera){
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA CARRERA!");
-            }*/
+            }
             break;
 
         default:
@@ -50,6 +50,11 @@ window.onclick = function(event) {
     }
   }
 
+
+function msgAlert(msg){
+    document.getElementById('alertmsg').innerHTML = msg;
+    document.getElementById('alertmsg').style.display = 'block';
+}
 
 
 /* SEDE MODAL */
@@ -78,6 +83,7 @@ function sedeSelect(cod){
     //Ocultamos flecha
     parentElem.children[2].style.display = 'none';
 
+    cleanTabla();
     closeModal();
 }
 /* END SEDE MODAL */
@@ -112,6 +118,7 @@ function carreraSelect(elem){
     actualizarTotalUC();
 
     genMateriaList();
+    cleanTabla();
     closeModal();
 }
 /* END CARRERA MODAL */
@@ -214,6 +221,7 @@ function selectCobertura(tipo){
     document.getElementById('tipoAyuda').innerHTML = tipo.toUpperCase();
     document.getElementById('btnRgo').style.display = "block";
     
+    
 }
 
 function coopSelect(tipo, cob){
@@ -225,5 +233,6 @@ function coopSelect(tipo, cob){
     }
     document.getElementById('sCoop').innerHTML = `${coop.toUpperCase()} ${cober}%`;
     closeModal();
+    cleanTabla();
 }
 /* END COOP MODAL */

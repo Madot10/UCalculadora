@@ -24,7 +24,7 @@ a{
 }
 
 /*Green color*/
-.greenM{
+.ugreen{
     color: #4b7f52;
 }
 
@@ -109,10 +109,11 @@ footer{
 }
 
 table, th, td {
-    border: 1px solid #374746;
-    border-collapse: collapse;
+  /*  border: 1px solid #374746;
+    border-collapse: collapse;*/
     margin: 0px auto;
 }
+
 
 table{
     margin-top: 4px;

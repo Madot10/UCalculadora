@@ -1,6 +1,7 @@
 /* SISTEMA GENERAL */
-let valorUC = 12082.5;
+let valorUC = 0;
 let vrealUC = valorUC;
+let visualUC = 0;
 let ucbase = 0;
 let uctotal = 0;
 let ucpagar = 0;
@@ -17,6 +18,78 @@ let limitBeca = 30;
 let limitFab = 30;
 
 //FUNCIONES
+window.onload = () => {
+    //Cargamos UC visual
+    document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
+}
+
+/* SISTEMA GENERAL */
+function cleanTabla(){
+    document.getElementById('pagos').innerHTML = '';
+    document.getElementById('alertmsg').style.display = 'none';
+}
+
+function calcular(){
+    if(sede && carrera && coop){
+        document.getElementById('alertmsg').style.display = 'none';
+        totalizacion();
+    }else{
+        alert("Debes seleccionar una sede, carrera y ayuda economica!");
+    }
+}
+
+let formatNumber = {
+    separador: ".", 
+    sepDecimal: ',', 
+    formatear:function (num){
+    num +='';
+    var splitStr = num.split('.');
+    var splitLeft = splitStr[0];
+    var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+    var regx = /(\d+)(\d{3})/;
+    while (regx.test(splitLeft)) {
+    splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+    }
+    return this.simbol + splitLeft +splitRight;
+    },
+    new:function(num, simbol, IsProc){
+    this.simbol = simbol ||'';
+        if((IsProc)){
+            console.log("Num entrante",num);
+            return this.formatear(parseFloat(num).toFixed(2));
+        }
+    return this.formatear(num);
+    }
+}
+
+function LoadUC(){
+    let dataux = periodo[perioact];
+    let uc = dataux.base;
+    valorUC = uc;
+    let today = new Date();
+    //Recorremos si existe lista de variacion
+    /*
+        if(dataux.variacion){
+            let timecmp;
+            for (let i = 0; i < dataux.variacion.length; i++) {
+                timecmp = new Date(dataux.variacion[i][0]);
+                    if(today.getTime() > timecmp.getTime()){
+                        //Hoy es mayor que una fecha de variacion
+                        //aplicar sobre base
+                        uc = uc * (1+(dataux.variacion[i][1]/100));
+                    }else{
+                        //si variacion es mayor
+                        //aun no ha llegado esa fecha
+                        break;
+                    }
+            }
+    }*/
+    uc = getUCfecha(today);
+    console.log(uc);
+    visualUC = uc;
+    return uc;
+}
+
 //Retorna jsonData de carrera
 function GetJsonDataMaterias(tx){
     tx = tx.replace(/\s/g,'');
@@ -151,6 +224,10 @@ function totalizacion(){
         ucpagar = uctotal;
     }
 
+    if(ucfuera > 0){
+        msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
+    }
+
     console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("Recargos: ", uctotal - ucbase);
@@ -158,7 +235,37 @@ function totalizacion(){
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
     console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
+    totalbs = Number(ucpagar*vrealUC).toFixed(2);
+    GenerarTabla();
 }
+
+function getUCfecha(fecha){
+    let f = new Date(fecha);
+    let dataux = periodo[perioact];
+    let uc = dataux.base;
+
+    if(dataux.variacion){
+        let timecmp;
+        for (let i = 0; i < dataux.variacion.length; i++) {
+            timecmp = new Date(dataux.variacion[i][0]);
+                if(f.getTime() > timecmp.getTime()){
+                    //Hoy es mayor que una fecha de variacion
+                    //aplicar sobre base
+                    uc = uc * (1+(dataux.variacion[i][1]/100));
+                }else{
+                    //si variacion es mayor
+                    //aun no ha llegado esa fecha
+                    break;
+                }
+        }
+    }
+    return uc;
+}
+
+function GetMontoTarifa(fecha){
+    return  getUCfecha(fecha) * ucpagar;
+}
+
 /* END SISTEMA GENERAL */
 
 /* SISTEMA DE MATERIAS */
@@ -223,6 +330,162 @@ function deleteMateriaList(id){
 
 /* END SISTEMA DE MATERIAS */
 
-/* SISTEMA DE COOPERACION */
+/* SISTEMA TABLA */
+//SYSTEM TABLE
+var ColorArray = ['#fed20180','#34b2e466'];
+var ScolorUsed = false;
 
-/* END SISTEMA DE COOPERACION */
+function GenerarTabla(){
+    let tabla = tables[perioact];
+    let celmax = tabla[0];
+
+    var divTable = document.getElementById('pagos');
+    divTable.innerHTML = '';
+   // divTable.innerHTML = "<div data-html2canvas-ignore><p>Guardar como:<br><div class='btn-group'><button onclick='saveTABLE(png)'>Imagen PNG <i class='fa fa-file-image-o'></i></button><button onclick='saveTABLE(pdf)'>Archivo PDF <i class='fa fa-file-pdf-o'></i></button></div></p></div>"
+    var tableHTML = document.createElement('table');
+    tableHTML.style = 'overflow-x:auto;'
+    tableHTML.id += "tablaPagos";
+    
+    //Recorremos para obtener FILAS
+    for(i=1; i < tabla.length; i++){
+        let fila = tabla[i];
+        //console.log('FILA ' + i)
+        let filaHTML;
+
+        if (!(Number.isInteger(fila[0]))){
+            //Si no es fila mixta
+            filaHTML = GenColumnas(fila, celmax);
+        }else{
+            //Si es fila mixta
+            let fmix = fila.slice(1,fila.length);
+            let rspan = fila[0];
+           
+            //console.log('Fila mix');
+            filaHTML = GenFilaMix(rspan,fmix,celmax);
+            
+        }
+
+        tableHTML.appendChild(filaHTML);
+    }
+    divTable.appendChild(tableHTML);
+    return divTable;
+};
+
+function GenColumnas(fila, celmax){
+    let filaHTML = document.createElement('tr');
+
+    for(j=0; j < fila.length; j++ ){
+        //Obtenemos cada columna
+        let celda = fila[j];
+        let LongFilAc = fila.length;
+
+        let celdaHTML = document.createElement('th');
+
+        celdaHTML.colSpan = GetColSpan(LongFilAc,celmax,j);
+        SetStyle(celdaHTML,LongFilAc,j);   
+        //let content = document.createTextNode(celda);
+        celdaHTML.innerHTML = evaluar(celda);
+        //celdaHTML.appendChild(content);
+        
+        filaHTML.appendChild(celdaHTML);
+    }
+
+    return filaHTML;
+};
+
+function GetColSpan(LongFila, celmax, index){
+    //console.log('Long', LongFila);
+    if(LongFila == 1){
+        //Elemento unico de la columna
+        return celmax;
+    }else if(LongFila == 2){
+        //Solamente dos elementos
+        if(index==0){
+            //Primero sera 1
+            //console.log('Primero');
+            return  1;
+        }else{
+            //El segundo lo que queda
+            //console.log("celmax", celmax);
+            return celmax-1;
+        }
+    }else{
+        //Mas de elementos mayores a las columnas maximas
+        //console.log("Mayores");
+        return 1;
+    }
+};
+
+function GenFilaMix(rowS,fmix, celmax){
+
+    let LongMainf;
+    let divAux = document.createElement('tbody');
+    //console.log(fmix);
+    
+    for (k=0; k < fmix.length; k++){
+        //Recorremos cada fila mixta
+        let fHTML = document.createElement('tr');
+
+        for(l=0; l < fmix[k].length; l++){
+            //Recorremos cada celda
+            let celdaHTML = document.createElement('th');
+            celdaCont = fmix[k][l];
+
+            LongMainf = fmix[k].length;
+
+            if((k==0) && (l==0)){
+                //Si Estamos en el primer elmento de todo
+                celdaHTML.rowSpan = rowS;
+                SetStyle(celdaHTML,LongMainf,0);
+            }
+            celdaHTML.colSpan = GetColSpan(LongMainf,celmax,l);
+            
+            //let content = document.createTextNode(celdaCont);
+            celdaHTML.innerHTML = evaluar(celdaCont);
+            fHTML.appendChild(celdaHTML);
+        }
+
+        divAux.appendChild(fHTML);
+    }
+
+
+    return divAux;
+};
+
+function evaluar(orig){
+    let text = orig;
+    let start = orig.search('eval');
+
+    if(start != -1){
+        let end = orig.lastIndexOf(')');
+        let toEval = orig.substring(start, end+1);
+
+        let ftPart = orig.substring(0, start);
+        let scPart = orig.substring(end+1, orig.length);
+
+        text = ftPart + eval(toEval) + scPart + '';
+    }
+    return text
+}
+
+function SetStyle(elemt,long,ind){
+    if(long == 1){
+        //Unico elemento
+        let a;
+            if(ScolorUsed){
+                a = 1;
+                ScolorUsed = false;
+            }else{
+                a = 0;
+                ScolorUsed = true;
+            }
+        elemt.style = 'background-color:' + ColorArray[a]+';';
+    }else{
+        if(ind ==0){
+            //si es el primero de varios
+            elemt.id = 'tt';
+        }
+    }
+};
+
+/* END TABLA */

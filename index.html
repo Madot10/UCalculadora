@@ -16,6 +16,7 @@
 
     <script src="js/main.js"></script>
     <script src="js/modals.js"></script>
+    <script src="js/data.js"></script>
 
     <script src="js/carreras/Administración-de-Empresas-1.js?dev=3" type="text/javascript"></script>
     <script src="js/carreras/comunicacion-social-2017.js?dev=3" type="text/javascript"></script>
@@ -228,7 +229,7 @@
 
         <div class="divider">
             <b>
-                <span id="ucvalue">12.085 Bs.S</span>
+                <span id="ucvalue"></span>
             </b>
         </div>
 
@@ -283,13 +284,22 @@
         <br>
 
         <br>
-        <br>
         <!--CALCULAR-->
-        <button class="cbtn">
+        <button class="cbtn" onclick="calcular()">
             <i class="fas fa-calculator"></i>
-            <br>CALCULAR</button>
+            <br>CALCULAR
+        </button>
+
         <br>
-        <div class="pagos"></div>
+        <br>
+
+        <div class="alert" id="alertmsg" style="display: none">
+        </div>
+
+        <br>
+        <br>
+        <div id="pagos">
+        </div>
         <br>
         <br>
 
