@@ -21,6 +21,7 @@ let limitFab = 30;
 window.onload = () => {
     //Cargamos UC visual
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
+    UC = visualUC;
 }
 
 /* SISTEMA GENERAL */

@@ -1,0 +1,151 @@
+  input[type=textfield] {
+      width: 75%;
+      padding: 16px 32px;
+      font-size: 16px;
+      margin: 8px 0;
+      border: 1px solid silver;
+      border-radius: 1px;
+      text-align: left;
+      color: #333;
+      background: #ccc;
+  }
+
+  input[type=button], input[type=submit], input[type=reset] {
+      background-color: var(--green);
+      border: none;
+      color: white;
+      padding: 1em 0.2em;
+      min-width: 21%;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+
+      font-weight: 600;
+      font-size: 16px;
+  }
+  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: #333;
+  }
+
+.tool .container {
+    border: none;
+    text-align: center;
+	max-width: 80%;
+	text-align: center;
+    margin: auto;
+    
+    /*padding: 1em;*/
+    display: grid;
+    grid-column-gap: 0.1em;
+	grid-row-gap: 0.2em;
+    grid-template-areas:
+      "a a b b"
+      "c d e f"
+      "g h i j"
+      "k l m n"
+      "o p q n";
+  }
+
+  @media only screen and (max-width: 768px){
+    .container{
+        max-width: 90%;
+    }
+
+}
+
+.panel{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 80%;
+    margin: auto;
+    text-align: right;
+}
+
+.cal{
+    height: 2em;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0.2em 0.5em 0; 
+
+    color: var(--gray);
+}
+
+.result{
+    min-height: 1em;
+    color: #959595;
+    padding: 0.2em 0.5em; 
+}
+
+#result{
+    font-size: 20px;
+}
+
+
+/* TECLADO */
+.punt{
+      grid-area: o;
+      font-weight: 900;
+  }
+
+.cero{
+    grid-area: p;
+}
+
+.ig{
+    grid-area: q;
+}
+
+.uuc{
+    grid-area: n;
+}
+
+.uno{
+    grid-area: k;
+}
+
+.dos{
+    grid-area: l;
+}
+
+.tres{
+    grid-area: m;
+}
+
+.cuatro{
+    grid-area: g;
+}
+
+.cinco{
+    grid-area: h;
+}
+
+.seis{
+    grid-area: i;
+}
+
+.sum{
+    grid-area: j;
+}
+
+.siete{
+    grid-area: c;
+}
+
+.ocho{
+    grid-area: d;
+}
+
+.nueve{
+    grid-area: e;
+}
+
+.por{
+    grid-area: f;
+}
+
+.bo{
+    grid-area: a;
+}
+
+.lim{
+    grid-area: b;
+}
