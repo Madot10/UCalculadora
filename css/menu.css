@@ -12,28 +12,53 @@
   */
 }
 
+header svg.svg-inline--fa.fa-w-14{
+    width: 0.7em !important;
+}
+
+.bback{
+    cursor: pointer;
+}
+
+.textYellow{
+    /*text-shadow: 2px 2px 20px black;*/
+    color: #374746;
+}
+
+a.menu {
+    text-decoration: none;
+}
+
 .Dcalc{
-    background-color: #4b7f52;
+    background-color: var(--green);
     color: white;
 }
 
 .Dcalc:hover{
     background-color: white;
-    color: #4b7f52;
+    color: var(--green);
+}
+
+.Dcalc:hover svg g{
+    fill: var(--green);
 }
 
 .Dnoti{
-    background-color: #34B2E4;
+    background-color: var(--blue);
     color: white;
 }
 
 .Dnoti:hover{
     background-color: white ;
-    color: #34B2E4;
+    color: var(--blue);
+}
+
+.Dnoti:hover svg {
+    fill: var(--blue);
 }
 
 .Dsocial{
-    background-color: #FED201;
+    background-color: var(--yellow);
     color: white;
 }
 

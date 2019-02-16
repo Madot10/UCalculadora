@@ -24,6 +24,34 @@ window.onload = () => {
     UC = visualUC;
 }
 
+/* SISTEMA MENU */
+function OpenDiv(name){
+    let elems_menu = document.getElementsByClassName("emenu");
+    //ocultamos todos
+    for (let elem of elems_menu) {
+        elem.style.display = "none";
+    }
+
+    switch(name){
+        case "menu":
+            document.getElementById("menu").style.display = "block";
+        break;
+
+        case "ucalculadora":
+            document.getElementsByTagName("header")[0].style.display = "block";
+            document.getElementsByClassName("ucalculadora")[0].style.display = "block";
+        break;
+
+        case "tool":
+            document.getElementsByTagName("header")[0].style.display = "block";
+            document.getElementsByClassName("tool")[0].style.display = "block";
+        break;
+    }
+}
+
+/* END SISTEMA MENU*/
+
+
 /* SISTEMA GENERAL */
 function cleanTabla(){
     document.getElementById('pagos').innerHTML = '';
