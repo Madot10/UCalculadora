@@ -24,8 +24,13 @@
       font-size: 16px;
   }
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-    background-color: #333;
+    background-color: var(--gray);
   }
+
+.tool{
+    margin: auto;
+    width: 70%;
+}
 
 .tool .container {
     border: none;
@@ -50,6 +55,9 @@
     .container{
         max-width: 90%;
     }
+    .tool{
+        width: 100%;
+    }
 
 }
 
@@ -67,6 +75,9 @@
     padding: 0.2em 0.5em 0; 
 
     color: var(--gray);
+
+    overflow-wrap: break-word;
+	overflow: auto;
 }
 
 .result{
