@@ -17,13 +17,12 @@ let limitProp = 27;
 let limitBeca = 30;
 let limitFab = 30;
 
-setGa(false);
 //FUNCIONES
 window.onload = () => {
     //Cargamos UC visual
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
-    setGa(false);
+
 }
 
 /* SISTEMA MENU */
