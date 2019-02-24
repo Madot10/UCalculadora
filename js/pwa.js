@@ -12,24 +12,15 @@ if (navigator.serviceWorker.controller) {
     });
   }
   
-  // reemplazar 'standalone' por 'fullscreen' o 'minimal-ui' según el manifest de la app
-if (matchMedia('(display-mode: standalone)').matches) {
-    // iOS 11.3+ y Android
-    isInBrowser = "Pwa";
-  } else if ('standalone' in navigator) {
-    // para iOS &lt; 11.3
-    isInBrowser = "Pwa";
-  }
-  
 /*EVENTS */
   window.addEventListener('beforeinstallprompt', function(e) {
     gtag('event', "PopInstall?", {
-        'event_category': "PwaInteraccion" + isInBrowser
+        'event_category': "PwaInteraccion"
       });
 
     e.userChoice.then(function(choiceResult) {
      gtag('event', "AnswerPop", {
-        'event_category': "PwaInteraccion" + isInBrowser,
+        'event_category': "PwaInteraccion",
         'event_label': choiceResult.outcome
       });
     });

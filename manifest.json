@@ -1,7 +1,7 @@
 {
   "name": "UCalculadora",
-  "short_name": "UC+",
-  "lang": "es-ES",
+  "short_name": "UC",
+  "lang": "Spanish; Castilian",
   "icons": [
     {
         "src": "icons/favicon-16x16.png?v=69402JgNA9",

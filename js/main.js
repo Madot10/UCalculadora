@@ -17,11 +17,13 @@ let limitProp = 27;
 let limitBeca = 30;
 let limitFab = 30;
 
+setGa(false);
 //FUNCIONES
 window.onload = () => {
     //Cargamos UC visual
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
+    setGa(false);
 }
 
 /* SISTEMA MENU */
@@ -35,14 +37,17 @@ function OpenDiv(name){
     switch(name){
         case "menu":
             document.getElementById("menu").style.display = "block";
+            OnClickGa('backMenu', 'Menu');
         break;
 
         case "ucalculadora":
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("ucalculadora")[0].style.display = "block";
+            OnClickGa('openUC', 'Menu');
         break;
 
         case "tool":
+            OnClickGa('openTool', 'Menu');
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("tool")[0].style.display = "block";
         break;
@@ -53,12 +58,44 @@ function OpenDiv(name){
 
 
 /* SISTEMA GENERAL */
+
+//Google analytics togle
+function setGa(value){
+
+    let a = "Set: " + value;
+    gtag('event', "ToggleGA", {
+        'event_category': "DevInteraccion",
+        'event_label': a
+      });
+    
+    window['ga-disable-UA-33542195-1'] = !value;
+    console.log("Establecido ga-disable como: ", value);
+}
+
+function OnClickGa(act, typeInter , lb){
+    //si existe etiqueta hacer:
+    //console.log('LB', lb)
+    if(lb){
+        //console.log('enter');
+        gtag('event', act, {
+            'event_category': typeInter + "Interaccion",
+            'event_label': lb
+          });
+    }else{
+        //console.log('not enter');
+        gtag('event', act, {
+            'event_category': typeInter + "Interaccion"
+          });
+    }
+    
+}
+
 function cleanTabla(){
     document.getElementById('pagos').innerHTML = '';
     document.getElementById('alertmsg').style.display = 'none';
 }
 
-function calcular(){
+function calcularMatricula(){
     if(sede && carrera && coop){
         document.getElementById('alertmsg').style.display = 'none';
         totalizacion();
@@ -84,7 +121,7 @@ let formatNumber = {
     new:function(num, simbol, IsProc){
     this.simbol = simbol ||'';
         if((IsProc)){
-            console.log("Num entrante",num);
+            //console.log("Num entrante",num);
             return this.formatear(parseFloat(num).toFixed(2));
         }
     return this.formatear(num);
@@ -277,7 +314,7 @@ function getUCfecha(fecha){
         let timecmp;
         for (let i = 0; i < dataux.variacion.length; i++) {
             timecmp = new Date(dataux.variacion[i][0]);
-                if(f.getTime() > timecmp.getTime()){
+                if(f.getTime() >= timecmp.getTime()){
                     //Hoy es mayor que una fecha de variacion
                     //aplicar sobre base
                     uc = uc * (1+(dataux.variacion[i][1]/100));
@@ -338,6 +375,11 @@ function addMateriaList(id){
 
     main.appendChild(divC);
 
+    gtag('event', "MateriaSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': data.Asignatura
+    });
+
     ucbase += FixUC(data.Tax, data.UC);
     uctotal += UCrecargo(data.UC, data.Tax);
 
@@ -361,8 +403,8 @@ function deleteMateriaList(id){
 
 /* SISTEMA TABLA */
 //SYSTEM TABLE
-var ColorArray = ['#fed20180','#34b2e466'];
-var ScolorUsed = false;
+let ColorArray = ['#fed20180','#34b2e466'];
+let ScolorUsed = false;
 
 function GenerarTabla(){
     let tabla = tables[perioact];

@@ -62,18 +62,22 @@ function sedeSelect(cod){
     sede = cod;
     let span = document.getElementById('sName');
     let parentElem = span.parentElement;
+    let name;
 
     switch (cod) {
         case "mtb":
             span.innerHTML = "MONTALBÁN";
+            name = "MONTALBÁN";
             break;
 
         case "g":
             span.innerHTML = "GUAYANA";
+            name = "GUAYANA";
             break;
 
         case "tq":
             span.innerHTML = "LOS TEQUES";
+            name = "LOS TEQUES";
             break;   
 
         default:
@@ -82,6 +86,11 @@ function sedeSelect(cod){
 
     //Ocultamos flecha
     parentElem.children[2].style.display = 'none';
+
+    gtag('event', "SedeSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': name
+      });
 
     cleanTabla();
     closeModal();
@@ -116,6 +125,11 @@ function carreraSelect(elem){
     ucbase = 0;
     uctotal = 0;
     actualizarTotalUC();
+
+    gtag('event', "CarreraSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': carrera
+      });
 
     genMateriaList();
     cleanTabla();
@@ -232,6 +246,13 @@ function coopSelect(tipo, cob){
         cober = cob;
     }
     document.getElementById('sCoop').innerHTML = `${coop.toUpperCase()} ${cober}%`;
+
+    gtag('event', "CoopSelect", {
+        'event_category': "UCinteraccion",
+        'event_label': `Coop: ${coop}`,
+        'value': cober
+      });
+
     closeModal();
     cleanTabla();
 }
