@@ -1,4 +1,4 @@
-let perioact = 2018191;
+let perioact = 119;
 
 //periodo guia
 // 2018191 inicia en 2018 y termina en 2019 primera mitad
