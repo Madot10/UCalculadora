@@ -10,7 +10,7 @@
       background: #ccc;
   }
 
-  input[type=button], input[type=submit], input[type=reset] {
+  input[type=button], input[type=submit], input[type=reset], button[type=button] {
       background-color: var(--green);
       border: none;
       color: white;
@@ -19,11 +19,12 @@
       text-decoration: none;
       margin: 4px 2px;
       cursor: pointer;
-
+      width: 100%;
       font-weight: 600;
       font-size: 16px;
+      border-radius: 0;
   }
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, button[type=button]:hover {
     background-color: var(--gray);
   }
 
@@ -38,6 +39,7 @@
 	max-width: 80%;
 	text-align: center;
     margin: auto;
+    cursor: auto;
     
     /*padding: 1em;*/
     display: grid;
