@@ -1,4 +1,4 @@
-let perioact = 119;
+let perioact = 2019191;
 
 //periodo guia
 // 2018191 inicia en 2018 y termina en 2019 primera mitad
@@ -24,6 +24,15 @@ let periodo = {
     },
     119:{
         'base': 12082.5
+    },
+    2019191:{
+        'base': 50000,
+        'variacion':[
+            ['04/1/19', 100],
+            ['04/12/19', 50],
+            ['05/1/19', 75],
+            ['5/15/19', 50]
+        ]
     }
 };
 
@@ -61,5 +70,20 @@ let tables = {
         3,
         ['Pago único verano'],
         ['Total (Febrero-Marzo) ', '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")']
+    ],
+    2019191:[
+        3,
+        ['Derecho de inscripción <br> (75% ~ Pago Marzo)', '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")', '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")'],
+        ['Modalidad pago de contado (Marzo-Mayo): <br> (50% del total)'],
+        ['Total <br> (Período Marzo-Mayo)',
+            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
+        ['Modalidad pago financiado (Marzo-Mayo): <br> (50% del total)'],
+        ['Marzo <br> (25%)',
+            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")', 
+            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")'],
+        ['Abril <br> (12,5%)', 'eval("formatNumber.new(Number(GetMontoTarifa(`4/1/19`) * 0.125), `Bs.S `, true)")'],
+        ['Mayo <br> (12,5%)','eval("formatNumber.new((GetMontoTarifa(`5/1/19`) * 0.125), `Bs.S `, true)")']
+    
     ]
 }
