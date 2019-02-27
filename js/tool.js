@@ -34,6 +34,6 @@ function cleanAll(){
 }
 
 function calcular(){
-    console.log(document.getElementsByClassName("cal")[0].textContent);
+    //console.log(document.getElementsByClassName("cal")[0].textContent);
     document.getElementById('result').innerHTML = formatNumber.new(eval(document.getElementsByClassName("cal")[0].textContent));
 }

@@ -115,7 +115,7 @@ function carreraSelect(elem){
     parentElem.children[2].style.display = 'none';
 
     materias = GetJsonDataMaterias(carrera);
-    console.log(carrera, materias);
+    //console.log(carrera, materias);
 
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;
@@ -164,10 +164,10 @@ function genMateriaList(){
 
     let semI = null;
     let semAct = null;
-    console.log("run out");
+    //console.log("run out");
     //Reccorremos cada materia
     for (let i = 0; i < materias.length; i++) {
-        console.log("run");
+        //console.log("run");
         semI = materias[i].Semestre;
 
         //Nuevo semestre >> nueva seccion
