@@ -5,6 +5,10 @@
     --gray: #374746;
 }
 
+html {
+    touch-action: manipulation;
+  }
+
 body{
     margin: 0;
     /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
