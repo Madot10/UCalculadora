@@ -389,8 +389,6 @@ function deleteMateriaList(id){
     let elem = document.getElementsByClassName(id)[0];
     elem.parentNode.removeChild(elem);
 
-    //
-
     let data = materias[id];
     ucbase -= FixUC(data.Tax, data.UC);
     uctotal -= UCrecargo(data.UC, data.Tax);

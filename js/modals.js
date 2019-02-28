@@ -192,12 +192,13 @@ function genMateriaList(){
         //Creamos materia
         let div = document.createElement('div');
         div.setAttribute("class", "divMat");
-        
+
             let inp = document.createElement('input');
             inp.setAttribute("id", i);
             inp.setAttribute("type", "checkbox");
             inp.setAttribute("class", "chbox");
-            inp.setAttribute("oninput", "toggleActiveChbox(this)");
+            //oninput
+            inp.setAttribute("onclick", "toggleActiveChbox(this)");
 
         div.appendChild(inp);
 
