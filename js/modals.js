@@ -56,6 +56,16 @@ function msgAlert(msg){
     document.getElementById('alertmsg').style.display = 'block';
 }
 
+function genMsgUc(fuc){
+    //let html = `<i class="fas fa-question-circle" onclick="alert('dfd')"></i>`;
+    return `UC a ${formatNumber.new(getUCfecha(fuc), 'Bs.S ')}`;
+    //return html;
+}
+
+function modalInfoOpen(msg){
+    document.getElementById("info").innerHTML = msg;
+    document.getElementById("infoModal").style.display = "block";
+}
 
 /* SEDE MODAL */
 function sedeSelect(cod){

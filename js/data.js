@@ -73,7 +73,9 @@ let tables = {
     ],
     2019191:[
         3,
-        ['Derecho de inscripción <br> (75% ~ Pago Marzo)', '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")', '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")'],
+        ['Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1.25 UC - Estudiantes regulares <br> 2.75 UC - Estudiantes nuevos`)"></i>', 
+            '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")', 
+            '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")'],
         ['Modalidad pago de contado (Marzo-Mayo): <br> (50% del total)'],
         ['Total <br> (Período Marzo-Mayo)',
             '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
@@ -82,8 +84,10 @@ let tables = {
         ['Marzo <br> (25%)',
             '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")', 
             '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")'],
-        ['Abril <br> (12,5%)', 'eval("formatNumber.new(Number(GetMontoTarifa(`4/1/19`) * 0.125), `Bs.S `, true)")'],
-        ['Mayo <br> (12,5%)','eval("formatNumber.new((GetMontoTarifa(`5/1/19`) * 0.125), `Bs.S `, true)")']
+        ['Abril <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`4/1/19`))"></i><br> (12,5%)', 
+            'eval("formatNumber.new(Number(GetMontoTarifa(`4/1/19`) * 0.125), `Bs.S `, true)")'],
+        ['Mayo <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`5/1/19`))"></i><br> (12,5%)',
+            'eval("formatNumber.new((GetMontoTarifa(`5/1/19`) * 0.125), `Bs.S `, true)")']
     
     ]
 }

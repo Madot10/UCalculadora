@@ -207,6 +207,11 @@ td{
 
 
 /* TABLA PAGOS */
+.svg-inline--fa.fa-question-circle{
+    cursor: pointer;
+    width: 1em !important;
+}
+
 table#tablaPagos{
     table-layout: auto;
     width: 70%;
