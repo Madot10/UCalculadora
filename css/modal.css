@@ -156,8 +156,8 @@
 }
 
 input[type="checkbox"]{
-    position: absolute;
-    left: -9999px;
+    /*position: absolute;
+    left: -9999px;*/
 }
 
 input[type="checkbox"]:checked + label {
@@ -168,6 +168,10 @@ input[type="checkbox"]:checked + label {
 .actChbox{
     background-color: var(--green);
     color: white;
+}
+
+.divMat{
+    display: flex;
 }
 
 input:checked + label::before {

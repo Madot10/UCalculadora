@@ -191,6 +191,8 @@ function genMateriaList(){
 
         //Creamos materia
         let div = document.createElement('div');
+        div.setAttribute("class", "divMat");
+        
             let inp = document.createElement('input');
             inp.setAttribute("id", i);
             inp.setAttribute("type", "checkbox");
