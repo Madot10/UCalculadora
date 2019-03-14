@@ -84,8 +84,9 @@ let tables = {
         ['Marzo <br> (25%)',
             '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")', 
             '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")'],
-        ['Abril <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`4/1/19`))"></i><br> (12,5%)', 
-            'eval("formatNumber.new(Number(GetMontoTarifa(`4/1/19`) * 0.125), `Bs.S `, true)")'],
+        ['Abril <i class="fas fa-question-circle" onclick="modalInfoOpen(`1ero de abril ${genMsgUc(`4/1/19`)}. <br> Apartir del 4 de abril ${genMsgUc(`4/4/19`)}`)"></i><br> (12,5%)', 
+            '<span class="ugreen">Desde 1ero Abril</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(`4/1/19`) * 0.125), `Bs.S `, true)")',
+            '<span class="ugreen">Desde 4 de Abril</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(`4/4/19`) * 0.125), `Bs.S `, true)")'],
         ['Mayo <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`5/1/19`))"></i><br> (12,5%)',
             'eval("formatNumber.new((GetMontoTarifa(`5/1/19`) * 0.125), `Bs.S `, true)")']
     
