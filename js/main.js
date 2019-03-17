@@ -5,7 +5,7 @@ let visualUC = 0;
 let ucbase = 0;
 let uctotal = 0;
 let ucpagar = 0;
-let totalbs;
+let totalbs  = 0;
 
 let sede;
 let carrera;
@@ -292,12 +292,12 @@ function totalizacion(){
         msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
     }
 
-   // console.log("FINAL: ");
-   // console.log("Cobertura: ", cobertura);
+    //console.log("FINAL: ");
+    //console.log("Cobertura: ", cobertura);
     //console.log("Recargos: ", uctotal - ucbase);
-   // console.log("UC fuera cobertura: ", ucfuera);
-   // console.log("UCpagar: ", ucpagar);
-   // console.log("Valor real UC: ", vrealUC);
+    //console.log("UC fuera cobertura: ", ucfuera);
+    //console.log("UCpagar: ", ucpagar);
+    //console.log("Valor real UC: ", vrealUC);
     //console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
     totalbs = Number(ucpagar*vrealUC).toFixed(2);
     GenerarTabla();
