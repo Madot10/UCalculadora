@@ -218,6 +218,7 @@ function UCrecargo(uc, tax){
             default:
                 //console.log("error UC RECARGO");
                 //alert('ERROR INESPERADO: #01');
+                return 0;
             break;
         }
     }
