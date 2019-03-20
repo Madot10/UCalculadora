@@ -47,10 +47,11 @@
 	grid-row-gap: 0.2em;
     grid-template-areas:
       "a a b b"
+      "u u u u"
       "c d e f"
       "g h i j"
       "k l m n"
-      "o p q n";
+      "o p q r";
   }
 
   @media only screen and (max-width: 768px){
@@ -108,7 +109,7 @@
 }
 
 .uuc{
-    grid-area: n;
+    grid-area: u;
 }
 
 .uno{
@@ -136,7 +137,7 @@
 }
 
 .sum{
-    grid-area: j;
+    grid-area: f;
 }
 
 .siete{
@@ -152,7 +153,7 @@
 }
 
 .por{
-    grid-area: f;
+    grid-area: n;
 }
 
 .bo{
@@ -161,4 +162,12 @@
 
 .lim{
     grid-area: b;
+}
+
+.menos{
+    grid-area: j;
+}
+
+.div{
+    grid-area: r;
 }
