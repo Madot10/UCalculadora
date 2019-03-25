@@ -292,8 +292,8 @@ function totalizacion(){
     if(ucfuera > 0){
         msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
     }
-/*
-    console.log("FINAL: ");
+
+    /*console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
     console.log("ucbase: ", ucbase);
