@@ -247,6 +247,8 @@ function totalizacion(){
         break;
     }
 
+    //Recargo
+    let ucre = uctotal - ucbase;
     //descuento por cooperacion
     if(coop != 'fab' && coop != 'ninguna'){
         //Beca o Prop
@@ -254,9 +256,6 @@ function totalizacion(){
         if(coop != 'beca'){
             limit = limitProp;
         }
-
-        //Recargo
-        let ucre = uctotal - ucbase;
 
         if(ucbase <= limit){
            // console.log("menor");
@@ -274,15 +273,16 @@ function totalizacion(){
 
     }else if(coop != 'ninguna'){
         //FAB
-        if(uctotal <= limitFab){
+        if(ucbase <= limitFab){
            // console.log("menor fab");
             //Por debajo
-            ucpagar = uctotal * cobertura;
+            ucfuera = ucre;
+            ucpagar = (ucbase * cobertura) + ucre;
         }else{
             //console.log("mayor fab");
             //Por encima
-            ucfuera = (uctotal - limitFab);
-            ucpagar = (uctotal - limitFab) + (limitFab * cobertura);
+            ucfuera = (ucbase - limitFab) + ucre;
+            ucpagar = (ucbase - limitFab) + ucre + (limitFab * cobertura);
         }
     }else{
         //ninguna cooperacion
@@ -292,14 +292,16 @@ function totalizacion(){
     if(ucfuera > 0){
         msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
     }
-
-    //console.log("FINAL: ");
-    //console.log("Cobertura: ", cobertura);
-    //console.log("Recargos: ", uctotal - ucbase);
-    //console.log("UC fuera cobertura: ", ucfuera);
-    //console.log("UCpagar: ", ucpagar);
-    //console.log("Valor real UC: ", vrealUC);
-    //console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
+/*
+    console.log("FINAL: ");
+    console.log("Cobertura: ", cobertura);
+    console.log("uctotal: ", uctotal);
+    console.log("ucbase: ", ucbase);
+    console.log("Recargos: ", uctotal - ucbase);
+    console.log("UC fuera cobertura: ", ucfuera);
+    console.log("UCpagar: ", ucpagar);
+    console.log("Valor real UC: ", vrealUC);
+    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));*/
     totalbs = Number(ucpagar*vrealUC).toFixed(2);
     GenerarTabla();
 }
