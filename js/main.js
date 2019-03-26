@@ -17,7 +17,7 @@ let limitProp = 27;
 let limitBeca = 30;
 let limitFab = 30;
 
-let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> <b>Estudiantes de Com. Social:</b> En Caja se están cobrando materias con nueva cantidad de UC y Tax según nuevo pensum. <br>No deberia ser asi, se mantiene vigente hasta 2023 el viejo pensum. <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
+let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> <b>Estudiantes de Com. Social:</b> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
 window.onload = () => {
     //Cargamos UC visual
