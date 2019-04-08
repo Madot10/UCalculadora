@@ -66,3 +66,9 @@ a.menu {
     background-color: white;
     color: #FED201;
 }
+
+@media (min-height: 740px){
+    .Dnoti, .Dcalc, .Dsocial{
+        height: 33.33vh;
+    }
+}
