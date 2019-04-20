@@ -67,8 +67,18 @@ a.menu {
     color: #FED201;
 }
 
+.Dfab{
+    background-color: var(--green);
+    color: white;
+}
+
+.Dfab:hover{
+    background-color: white;
+    color: var(--green);
+}
+
 @media (min-height: 740px){
-    .Dnoti, .Dcalc, .Dsocial{
+    .Dnoti, .Dcalc, .Dsocial, .Dfab{
         height: 33.33vh;
     }
 }

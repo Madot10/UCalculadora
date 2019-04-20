@@ -8,6 +8,7 @@ function closeModal(){
     }
 }
 
+//Abre modal en ucal
 function openModal(nameModal){
     isOpen = 1;
 

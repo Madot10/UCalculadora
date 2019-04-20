@@ -23,6 +23,8 @@ window.onload = () => {
     //Cargamos UC visual
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
+
+    setGa(false);
 }
 
 /* SISTEMA MENU */
@@ -49,6 +51,12 @@ function OpenDiv(name){
             OnClickGa('openTool', 'Menu');
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("tool")[0].style.display = "block";
+        break;
+
+        case "fab":
+            OnClickGa('openFab', 'Menu');
+            document.getElementsByTagName("header")[0].style.display = "block";
+            document.getElementsByClassName("fab")[0].style.display = "block";
         break;
     }
 }

@@ -80,6 +80,7 @@ button.ubtn{
 
 button{
     border-radius: 10px;
+    transition: 0.4s;
     clear: both;
     background-color: var(--green);
     width: 50%;
@@ -100,9 +101,9 @@ button:hover{
     background-color: #3f6a45;
 }
 
-button:focus{
+/* button:focus{
     background-color: #3f6a45;
-}
+} */
 
 
 
