@@ -116,8 +116,16 @@ function carreraSelect(elem){
     content = content.trim();
     content = content.toUpperCase();
 
-    let span = document.getElementById("sCarrera");
-    let parentElem = span.parentElement;
+    let span;
+    let parentElem;
+
+    if(mode == 'UC'){
+        span = document.getElementById("sCarrera");
+        parentElem = span.parentElement;
+    }else{
+        span = document.getElementById("sCarreraFab");
+        parentElem = span.parentElement;
+    }
 
     //guardamos
     carrera = content.replace(/\s/g,'').toLowerCase();
@@ -137,10 +145,18 @@ function carreraSelect(elem){
     uctotal = 0;
     actualizarTotalUC();
 
-    gtag('event', "CarreraSelect", {
-        'event_category': "UCinteraccion",
-        'event_label': carrera
-      });
+    if(mode == 'UC'){
+        gtag('event', "CarreraSelect", {
+            'event_category': "UCinteraccion",
+            'event_label': carrera
+        });
+    }else{
+        gtag('event', "CarreraSelectFAB", {
+            'event_category': "FABinteraccion",
+            'event_label': carrera
+        });
+    }
+        
 
     genMateriaList();
     cleanTabla();
@@ -200,28 +216,29 @@ function genMateriaList(){
             divCont = divCont.firstElementChild;
         }
 
-        //Creamos materia
-        let div = document.createElement('div');
-        div.setAttribute("class", "divMat");
+        if(mode == "UC"){
+            //Creamos materia
+            let div = document.createElement('div');
+            div.setAttribute("class", "divMat");
 
-            let inp = document.createElement('input');
-            inp.setAttribute("id", i);
-            inp.setAttribute("type", "checkbox");
-            inp.setAttribute("class", "chbox");
-            //oninput
-            inp.setAttribute("onclick", "toggleActiveChbox(this)");
+                let inp = document.createElement('input');
+                inp.setAttribute("id", i);
+                inp.setAttribute("type", "checkbox");
+                inp.setAttribute("class", "chbox");
+                //oninput
+                inp.setAttribute("onclick", "toggleActiveChbox(this)");
 
-        div.appendChild(inp);
+            div.appendChild(inp);
 
-            let lb = document.createElement("label");
-            lb.setAttribute("for", i);
-            lb.setAttribute("class", "materia");
-            lb.innerText = materias[i].Asignatura;
-        
-        div.appendChild(lb);
+                let lb = document.createElement("label");
+                lb.setAttribute("for", i);
+                lb.setAttribute("class", "materia");
+                lb.innerText = materias[i].Asignatura;
+            
+            div.appendChild(lb);
 
-        divCont.appendChild(div);
-
+            divCont.appendChild(div);
+        }
     }
     main.appendChild(divBtn);
     main.appendChild(divCont);

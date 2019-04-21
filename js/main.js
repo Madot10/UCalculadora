@@ -17,6 +17,8 @@ let limitProp = 27;
 let limitBeca = 30;
 let limitFab = 30;
 
+let mode = 'UC';
+
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
 window.onload = () => {
@@ -25,6 +27,8 @@ window.onload = () => {
     UC = visualUC;
 
     setGa(false);
+
+    initAccordion();
 }
 
 /* SISTEMA MENU */
@@ -55,6 +59,7 @@ function OpenDiv(name){
 
         case "fab":
             OnClickGa('openFab', 'Menu');
+            initVar();
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("fab")[0].style.display = "block";
         break;
@@ -346,7 +351,8 @@ function GetMontoTarifa(fecha){
 
 /* SISTEMA DE MATERIAS */
 function toggleList(elem){
-    elem.classList.toggle("active");
+    if(mode == "UC"){
+        elem.classList.toggle("active");
         var content = elem.nextElementSibling;
 
         if (content.style.display === "block") {
@@ -354,6 +360,14 @@ function toggleList(elem){
         } else {
           content.style.display = "block";
         }
+    }else{
+        //actua como seleccionador de semestre en FAB mode
+        //console.log(elem.innerHTML.trim());
+        sem = elem.innerHTML.trim();
+        document.getElementById("sSem").innerHTML = sem;
+        closeModal();
+    }
+    
 }
 
 function actualizarTotalUC(){

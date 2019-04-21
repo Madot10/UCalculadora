@@ -1,3 +1,27 @@
+/* LOGO */
+svg.fablogo{
+  width: 4em !important;
+	height: auto;
+}
+
+
+/*Cantindad de alumnos input*/
+input.cantAlum{
+  width: 50%;
+	border: 1px solid var(--green);
+	text-align: right;
+	padding: 2px;
+	font-size: 1em;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px){
+  input.cantAlum{
+      width: 80%;
+  }
+}
+
 /* Style the buttons that are used to open and close the accordion panel */
 .accordion {
     background-color: var(--green);
@@ -63,6 +87,7 @@
     margin-left: 5px;
   }
   
+  /*
   .active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
-  }
+    content: "\2796"; /* Unicode character for "minus" sign (-) 
+  }*/

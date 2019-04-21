@@ -1,5 +1,33 @@
-window.onload = () => {
+let sem;
 
+function initVar(){
+    LoadUC();
+
+    valorUC = 0;
+    vrealUC = valorUC;
+    visualUC = 0;
+    ucbase = 0;
+    uctotal = 0;
+    ucpagar = 0;
+    totalbs  = 0;
+
+    sede = '';
+    carrera = '';
+    materias = '';
+    coop = '';
+    cober = '';
+
+    limitProp = 27;
+    limitBeca = 30;
+    limitFab = 30;
+
+    mode = 'FAB';
+
+    sedeSelect('mtb');
+    console.log("inicializando FAB");
+}
+
+function initAccordion(){
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -23,4 +51,21 @@ window.onload = () => {
           } 
     });
     }
+}
+
+function openCarrera(){
+    document.getElementById('carModal').style.display = "block";
+}
+
+function openSem(){
+    if(carrera != ''){
+        document.getElementById('matModal').style.display = "block";
+    }else{
+        alert("¡Debe seleccionar una carrera!");
+    }
+    
+}
+
+function updateTextPorcentaje(elem){
+    document.getElementById("spcoop").innerHTML = elem.value + "%";
 }
