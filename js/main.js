@@ -365,6 +365,9 @@ function toggleList(elem){
         //console.log(elem.innerHTML.trim());
         sem = elem.innerHTML.trim();
         document.getElementById("sSem").innerHTML = sem;
+        
+        delAllMaterias();
+        addAllMaterias();
         closeModal();
     }
     

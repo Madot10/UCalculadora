@@ -69,3 +69,29 @@ function openSem(){
 function updateTextPorcentaje(elem){
     document.getElementById("spcoop").innerHTML = elem.value + "%";
 }
+
+function addAllMaterias(){
+    let found = false;
+    for (let i = 0; i < materias.length; i++) {
+            if(materias[i].Semestre == sem){
+                //Es de semestre buscado
+                addMateriaList(i);
+                found = true;
+            }else if(found){
+                //break al pasar todos los debidos
+                break;
+            }
+    }
+}
+
+function delAllMaterias(){
+    let i = 0;
+    let matElem = document.getElementsByClassName(i);
+    console.log('mat while', matElem);
+    while(matElem.length > 0){
+        console.log('run while');
+        deleteMateriaList(i);
+        i++;
+        matElem  = document.getElementsByClassName(i);
+    }
+}

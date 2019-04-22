@@ -216,7 +216,7 @@ function genMateriaList(){
             divCont = divCont.firstElementChild;
         }
 
-        if(mode == "UC"){
+        //if(mode == "UC"){
             //Creamos materia
             let div = document.createElement('div');
             div.setAttribute("class", "divMat");
@@ -238,7 +238,7 @@ function genMateriaList(){
             div.appendChild(lb);
 
             divCont.appendChild(div);
-        }
+        //}
     }
     main.appendChild(divBtn);
     main.appendChild(divCont);
