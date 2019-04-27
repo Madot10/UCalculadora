@@ -71,6 +71,14 @@ function delAllMaterias(){
 }
 
 function generarDonacionCal(){
-    document.getElementById('montoT').innerHTML = formatNumber.new(totalbs, 'Bs.S', true);
+    //Capturamos cobertura del range
+    cober = document.getElementById("coopRangeFab").value;
+
+    totalizacion();
+
+    //Cantidad de estudiantes
+    let cantEst = document.getElementById('cantAlum').value;
+
+    document.getElementById('montoT').innerHTML = formatNumber.new(totalbs * cantEst * 0.5, 'Bs.S ', true);
     document.getElementsByClassName("totalizacion")[0].style.display = 'block';
 }

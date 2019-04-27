@@ -24,7 +24,7 @@ let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modali
 
 function initVar(md){
     LoadUC();
-    
+
     vrealUC = valorUC;
     visualUC = 0;
     ucbase = 0;
@@ -52,8 +52,8 @@ function initVar(md){
         //sede
         sedeSelect('mtb');
         //coop
-        coop = 'ninguna';
-        cober = 0;
+        coop = 'fab';
+        cober = 10; //min
 
 
         console.log("inicializando FAB");
@@ -369,8 +369,6 @@ function totalizacion(){
 
     if(mode == 'UC'){
         GenerarTabla();
-    }else{
-        generarDonacionCal();
     }
         
 }
