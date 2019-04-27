@@ -79,6 +79,6 @@ a.menu {
 
 @media (min-height: 740px){
     .Dnoti, .Dcalc, .Dsocial, .Dfab{
-        height: 33.33vh;
+        /*height: 33.33vh;*/
     }
 }

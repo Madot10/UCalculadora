@@ -123,6 +123,7 @@ function carreraSelect(elem){
         span = document.getElementById("sCarrera");
         parentElem = span.parentElement;
     }else{
+        document.getElementById("sSem").innerHTML = "SEMESTRE <i class='fas fa-angle-right'></i>";
         span = document.getElementById("sCarreraFab");
         parentElem = span.parentElement;
     }

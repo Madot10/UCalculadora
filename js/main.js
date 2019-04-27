@@ -21,6 +21,54 @@ let mode = 'UC';
 
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
+
+function initVar(md){
+    LoadUC();
+    
+    vrealUC = valorUC;
+    visualUC = 0;
+    ucbase = 0;
+    uctotal = 0;
+    ucpagar = 0;
+    totalbs  = 0;
+
+    sede = '';
+    carrera = '';
+    materias = '';
+    coop = '';
+    cober = '';
+
+    limitProp = 27;
+    limitBeca = 30;
+    limitFab = 30;
+
+    cleanTabla();
+    cleanTableMat();
+    actualizarTotalUC();
+
+    if(md == 'FAB'){
+        mode = 'FAB';
+
+        //sede
+        sedeSelect('mtb');
+        //coop
+        coop = 'ninguna';
+        cober = 0;
+
+
+        console.log("inicializando FAB");
+    }else{
+        mode = 'UC';
+        //Volvemos sede text a la normalidad
+        let span = document.getElementById('sName');
+        let parentElem = span.parentElement;
+        span.innerHTML = "SEDE";
+        parentElem.children[2].style.display = 'block';
+        console.log("inicializando UC");
+    }
+    
+}
+
 window.onload = () => {
     //Cargamos UC visual
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
@@ -48,6 +96,7 @@ function OpenDiv(name){
         case "ucalculadora":
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("ucalculadora")[0].style.display = "block";
+            initVar('UC');
             OnClickGa('openUC', 'Menu');
         break;
 
@@ -59,7 +108,7 @@ function OpenDiv(name){
 
         case "fab":
             OnClickGa('openFab', 'Menu');
-            initVar();
+            initVar('FAB');
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("fab")[0].style.display = "block";
         break;
@@ -307,7 +356,7 @@ function totalizacion(){
         msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
     }
 
-    /*console.log("FINAL: ");
+    console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
     console.log("ucbase: ", ucbase);
@@ -315,9 +364,15 @@ function totalizacion(){
     console.log("UC fuera cobertura: ", ucfuera);
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
-    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));*/
+    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
     totalbs = Number(ucpagar*vrealUC).toFixed(2);
-    GenerarTabla();
+
+    if(mode == 'UC'){
+        GenerarTabla();
+    }else{
+        generarDonacionCal();
+    }
+        
 }
 
 function getUCfecha(fecha){
@@ -424,6 +479,10 @@ function deleteMateriaList(id){
     actualizarTotalUC();
 }
 
+
+function cleanTableMat(){
+    document.getElementsByClassName("materias")[0].innerHTML = "";
+}
 /* END SISTEMA DE MATERIAS */
 
 /* SISTEMA TABLA */

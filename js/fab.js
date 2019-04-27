@@ -1,32 +1,5 @@
 let sem;
 
-function initVar(){
-    LoadUC();
-
-    valorUC = 0;
-    vrealUC = valorUC;
-    visualUC = 0;
-    ucbase = 0;
-    uctotal = 0;
-    ucpagar = 0;
-    totalbs  = 0;
-
-    sede = '';
-    carrera = '';
-    materias = '';
-    coop = '';
-    cober = '';
-
-    limitProp = 27;
-    limitBeca = 30;
-    limitFab = 30;
-
-    mode = 'FAB';
-
-    sedeSelect('mtb');
-    console.log("inicializando FAB");
-}
-
 function initAccordion(){
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -70,11 +43,14 @@ function updateTextPorcentaje(elem){
     document.getElementById("spcoop").innerHTML = elem.value + "%";
 }
 
+let indiceFinal = 0;
+
 function addAllMaterias(){
     let found = false;
     for (let i = 0; i < materias.length; i++) {
             if(materias[i].Semestre == sem){
                 //Es de semestre buscado
+                indiceFinal = i;
                 addMateriaList(i);
                 found = true;
             }else if(found){
@@ -85,13 +61,16 @@ function addAllMaterias(){
 }
 
 function delAllMaterias(){
-    let i = 0;
+    let i = indiceFinal;
     let matElem = document.getElementsByClassName(i);
-    console.log('mat while', matElem);
     while(matElem.length > 0){
-        console.log('run while');
         deleteMateriaList(i);
-        i++;
+        i--;
         matElem  = document.getElementsByClassName(i);
     }
+}
+
+function generarDonacionCal(){
+    document.getElementById('montoT').innerHTML = formatNumber.new(totalbs, 'Bs.S', true);
+    document.getElementsByClassName("totalizacion")[0].style.display = 'block';
 }
