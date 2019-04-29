@@ -537,13 +537,37 @@
             <!-- RECARGOS -->
             <button class="accordion recargos">RECARGOS</button>
             <div class="panelInf">
-                <p>Lorem ipsum...</p>
+                <p>
+                    <b>Recargos por taxonomía de las materias:</b><br>
+                    <b>Materias TA 7 a TA 9:</b> Recargo de 30% sobre la tarifa base de la UC. <br>
+                    <b>Cátedras en línea o semi-presenciales:</b> Recargo del 40% sobre el valor de la UC.
+                    <br> <br>
+                    <b>(El alumno debe pagarlo)</b><span id="spRecarg"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo">
+                </p>
             </div>
 
             <!-- DERECHO DE INSCRIPCION -->
             <button class="accordion derIn">DER. INSCRIPCIÓN</button>
             <div class="panelInf">
-                <p>Lorem ipsum...</p>
+                <p>
+                    <b>Derecho de inscripción</b><br>
+                    <br> <br>
+                    <b>(El alumno debe pagarlo)</b><span id="spDI"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI">
+                </p>
+            </div>
+
+            <!-- FUERA DE COBERTURA -->
+            <button class="accordion outCober">FUERA DE COBERTURA</button>
+            <div class="panelInf">
+                <p> 
+                    <b>Recargo por fuera de cobertura</b><br>
+                    La beca solo cubre las primeras 30UC base.
+                    <br> <br>
+                    <b>(El alumno debe pagarlo)</b><span id="spOut"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut">
+                </p>
             </div>
 
             <br>
@@ -558,7 +582,8 @@
                 </table>
             </div>
         </div>
-        
+        <br>
+        <br>
     </div>
 </body>
 
