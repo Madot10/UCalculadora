@@ -392,7 +392,6 @@ function totalizacion(){
     if(mode == 'UC'){
         GenerarTabla();
     }else{
-        console.log("Re y fuera TOTAL: ",ucrec ,ucfuera);
         loadMontosAcordion(ucrec, ucfuera);
     }
         

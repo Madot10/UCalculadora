@@ -78,8 +78,6 @@ function loadMontosAcordion(recar, ocober){
 
     recargo = recar * cantEst * 0.5;
     outCober = ocober * cantEst* 0.5;
-
-    console.log("Re y fuera LOAD: ",recargo , outCober);
     
     let spRecargo = document.getElementById("spRecarg");
         spRecargo.innerHTML = formatNumber.new(recar * vrealUC * cantEst * 0.5, 'Bs.S ', true);
@@ -90,17 +88,21 @@ function loadMontosAcordion(recar, ocober){
 }
 
 function generarDonacionCal(){
-    //Capturamos cobertura del range
-    cober = document.getElementById("coopRangeFab").value;
+    if(!sem){
+        alert("¡Debe seleccionar un semestre!");
+    }else{
+        //Capturamos cobertura del range
+        cober = document.getElementById("coopRangeFab").value;
 
-    totalizacion();
+        totalizacion();
 
-    //Cantidad de estudiantes
-    let cantEst = document.getElementById('cantAlum').value;
+        //Cantidad de estudiantes
+        let cantEst = document.getElementById('cantAlum').value;
 
-    //document.getElementById('montoT').innerHTML = formatNumber.new(totalbs * cantEst * 0.5, 'Bs.S ', true);
-    totalizarDonacion();
-    document.getElementsByClassName("totalizacion")[0].style.display = 'block';
+        //document.getElementById('montoT').innerHTML = formatNumber.new(totalbs * cantEst * 0.5, 'Bs.S ', true);
+        totalizarDonacion();
+        document.getElementsByClassName("totalizacion")[0].style.display = 'block';
+    }
 }
 
 function totalizarDonacion(){
