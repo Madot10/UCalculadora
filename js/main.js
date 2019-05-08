@@ -79,6 +79,11 @@ window.onload = () => {
     setGa(false);
 
     initAccordion();
+
+    //ocultamos loader
+    document.getElementsByClassName("loader")[0].style.display = "none";
+    //Mostramos menu
+    document.getElementById("menu").style.display = "block";
 }
 
 /* SISTEMA MENU */
@@ -318,7 +323,6 @@ function totalizacion(){
 
     //Recargo por taxonomia
     let ucre = uctotal - ucbase;
-    console.log("UC Recargo TAX: ", ucre);
     //descuento por cooperacion
     if(coop != 'fab' && coop != 'ninguna'){
         //Beca o Prop
@@ -376,7 +380,7 @@ function totalizacion(){
     if(ucfuera > 0){
         msgAlert(`<b> ¡${Number(ucfuera).toFixed(2)} UC fuera de financiamiento! </b>`)
     }
-
+/*
     console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
@@ -386,7 +390,7 @@ function totalizacion(){
     console.log("UC Recargo: ", ucrec);
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
-    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));
+    console.log("Total 1pago: ", Number(ucpagar*vrealUC).toFixed(2));*/
     totalbs = Number(ucpagar*vrealUC).toFixed(2);
 
     if(mode == 'UC'){
