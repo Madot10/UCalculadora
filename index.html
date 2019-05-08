@@ -542,8 +542,9 @@
                     <b>Materias TA 7 a TA 9:</b> Recargo de 30% sobre la tarifa base de la UC. <br>
                     <b>Cátedras en línea o semi-presenciales:</b> Recargo del 40% sobre el valor de la UC.
                     <br> <br>
-                    <b>(El alumno debe pagarlo)</b><span id="spRecarg"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo">
+                    <b>(El alumno debe pagarlo)</b><br>
+                        <span id="spRecarg"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo" onchange="totalizarDonacion()">
                 </p>
             </div>
 
@@ -552,9 +553,10 @@
             <div class="panelInf">
                 <p>
                     <b>Derecho de inscripción</b><br>
-                    <br> <br>
-                    <b>(El alumno debe pagarlo)</b><span id="spDI"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI">
+                    <br>
+                    <b>(El alumno debe pagarlo)</b><br>
+                        <span id="spDI"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI" onchange="totalizarDonacion()">
                 </p>
             </div>
 
@@ -565,23 +567,26 @@
                     <b>Recargo por fuera de cobertura</b><br>
                     La beca solo cubre las primeras 30UC base.
                     <br> <br>
-                    <b>(El alumno debe pagarlo)</b><span id="spOut"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut">
+                    <b>(El alumno debe pagarlo)</b> <br>
+                    <span id="spOut"></span> <br>
+                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut" onchange="totalizarDonacion()">
                 </p>
             </div>
 
             <br>
+            <br>
             <div class="tableTotal">
                 <table>
                     <tr>
-                        <th>TOTAL</th>
+                        <th>TOTAL - DONACIÓN</th>
                     </tr>
                     <tr>
-                        <td><span id="montoT"></span> Bs.S</td>
+                        <td><h2><span id="montoT"></span></h2></td>
                     </tr>
                 </table>
             </div>
         </div>
+        <br>
         <br>
         <br>
     </div>

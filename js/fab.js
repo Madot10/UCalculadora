@@ -1,4 +1,6 @@
 let sem;
+let recargo = 0;
+let outCober = 0;
 
 function initAccordion(){
     var acc = document.getElementsByClassName("accordion");
@@ -70,6 +72,23 @@ function delAllMaterias(){
     }
 }
 
+function loadMontosAcordion(recar, ocober){
+    //Cantidad de estudiantes
+    let cantEst = document.getElementById('cantAlum').value;
+
+    recargo = recar * cantEst * 0.5;
+    outCober = ocober * cantEst* 0.5;
+
+    console.log("Re y fuera LOAD: ",recargo , outCober);
+    
+    let spRecargo = document.getElementById("spRecarg");
+        spRecargo.innerHTML = formatNumber.new(recar * vrealUC * cantEst * 0.5, 'Bs.S ', true);
+    let spDerIns = document.getElementById("spDI");
+        spDerIns.innerHTML = formatNumber.new(periodo[perioact].di * vrealUC * cantEst, 'Bs.S ', true);
+    let spOutCober = document.getElementById("spOut");
+        spOutCober.innerHTML =  formatNumber.new(vrealUC * ocober * cantEst * 0.5, 'Bs.S ', true);
+}
+
 function generarDonacionCal(){
     //Capturamos cobertura del range
     cober = document.getElementById("coopRangeFab").value;
@@ -79,6 +98,29 @@ function generarDonacionCal(){
     //Cantidad de estudiantes
     let cantEst = document.getElementById('cantAlum').value;
 
-    document.getElementById('montoT').innerHTML = formatNumber.new(totalbs * cantEst * 0.5, 'Bs.S ', true);
+    //document.getElementById('montoT').innerHTML = formatNumber.new(totalbs * cantEst * 0.5, 'Bs.S ', true);
+    totalizarDonacion();
     document.getElementsByClassName("totalizacion")[0].style.display = 'block';
+}
+
+function totalizarDonacion(){
+    //Cantidad de estudiantes
+    let cantEst = document.getElementById('cantAlum').value;
+    let adicional = 0;
+
+    if(document.getElementById("includeDI").checked){
+        //Si incluir
+        adicional += periodo[perioact].di * cantEst;
+    }
+
+    if(document.getElementById("includeOut").checked){
+        //Si incluir
+        adicional += outCober;
+    }else if(document.getElementById("includeRecargo").checked){
+        //Si incluir
+        adicional += recargo;
+    }
+
+    console.log(adicional, adicional * vrealUC);
+    document.getElementById('montoT').innerHTML = formatNumber.new( ((totalbs * 0.5) + (adicional * vrealUC)) , 'Bs.S ', true);
 }

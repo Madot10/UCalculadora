@@ -316,8 +316,9 @@ function totalizacion(){
         break;
     }
 
-    //Recargo
+    //Recargo por taxonomia
     let ucre = uctotal - ucbase;
+    console.log("UC Recargo TAX: ", ucre);
     //descuento por cooperacion
     if(coop != 'fab' && coop != 'ninguna'){
         //Beca o Prop
@@ -390,6 +391,9 @@ function totalizacion(){
 
     if(mode == 'UC'){
         GenerarTabla();
+    }else{
+        console.log("Re y fuera TOTAL: ",ucrec ,ucfuera);
+        loadMontosAcordion(ucrec, ucfuera);
     }
         
 }
