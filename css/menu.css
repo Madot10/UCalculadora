@@ -16,6 +16,10 @@ header svg.svg-inline--fa.fa-w-14{
     width: 0.7em !important;
 }
 
+p.infoMenu{
+    margin: 0 10px;
+}
+
 .bback{
     cursor: pointer;
 }
