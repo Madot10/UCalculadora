@@ -76,7 +76,7 @@ window.onload = () => {
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    //setGa(false);
+    setGa(false);
 
     initAccordion();
 
@@ -97,12 +97,14 @@ function OpenDiv(name){
     switch(name){
         case "menu":
             document.getElementById("menu").style.display = "block";
+            document.title = "UCalculadora";
             OnClickGa('backMenu', 'Menu');
         break;
 
         case "ucalculadora":
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("ucalculadora")[0].style.display = "block";
+            document.title = "UCalculadora - Matrícula";
             initVar('UC');
             OnClickGa('openUC', 'Menu');
         break;
@@ -115,6 +117,7 @@ function OpenDiv(name){
 
         case "fab":
             OnClickGa('openFab', 'Menu');
+            document.title = "UCalculadora - FAB";
             initVar('FAB');
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("fab")[0].style.display = "block";

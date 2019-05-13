@@ -34,17 +34,17 @@ a.menu {
 }
 
 .Dcalc{
-    background-color: var(--green);
+    background-color: var(--yellow);
     color: white;
 }
 
 .Dcalc:hover{
     background-color: white;
-    color: var(--green);
+    color: var(--yellow);
 }
 
 .Dcalc:hover svg g{
-    fill: var(--green);
+    fill: var(--yellow);
 }
 
 .Dnoti{
@@ -62,13 +62,13 @@ a.menu {
 }
 
 .Dsocial{
-    background-color: var(--yellow);
-    color: white;
+    background-color :white;
+    /*color: white;*/
 }
 
 .Dsocial:hover{
-    background-color: white;
-    color: #FED201;
+  /*  background-color: white;
+    color: #FED201;*/
 }
 
 .Dfab{
@@ -79,6 +79,10 @@ a.menu {
 .Dfab:hover{
     background-color: white;
     color: var(--green);
+}
+
+.Dfab:hover svg g{
+    fill: var(--green);
 }
 
 @media (min-height: 740px){

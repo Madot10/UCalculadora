@@ -43,6 +43,7 @@ function openSem(){
 
 function updateTextPorcentaje(elem){
     document.getElementById("spcoop").innerHTML = elem.value + "%";
+    hideDonacion();
 }
 
 let indiceFinal = 0;
@@ -87,6 +88,10 @@ function loadMontosAcordion(recar, ocober){
         spOutCober.innerHTML =  formatNumber.new(vrealUC * ocober * cantEst * 0.5, 'Bs.S ', true);
 }
 
+function hideDonacion(){
+    document.getElementsByClassName("totalizacion")[0].style.display = 'none';
+}
+
 function generarDonacionCal(){
     if(!sem){
         alert("¡Debe seleccionar un semestre!");
@@ -123,6 +128,6 @@ function totalizarDonacion(){
         adicional += recargo;
     }
 
-    console.log(adicional, adicional * vrealUC);
-    document.getElementById('montoT').innerHTML = formatNumber.new( ((totalbs * 0.5) + (adicional * vrealUC)) , 'Bs.S ', true);
+    //console.log(adicional, adicional * vrealUC);
+    document.getElementById('montoT').innerHTML = formatNumber.new( ((totalbs * 0.5 * cantEst) + (adicional * vrealUC)) , 'Bs.S ', true);
 }
