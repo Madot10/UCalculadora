@@ -49,13 +49,16 @@ function initVar(md){
     actualizarTotalUC();
 
     if(md == 'FAB'){
+        //Codigo desactivado por autoridades
         mode = 'FAB';
 
         //sede
-        sedeSelect('mtb');
+        //sedeSelect('mtb');
+        totalizarDonacion();
+        document.getElementById("mesActual").innerHTML = loadMes();
         //coop
-        coop = 'fab';
-        cober = 10; //min
+        //coop = 'fab';
+        //cober = 10; //min
 
 
         console.log("inicializando FAB");
@@ -76,7 +79,7 @@ window.onload = () => {
     document.getElementById('ucvalue').innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    //setGa(false);
+    setGa(false);
 
     initAccordion();
 

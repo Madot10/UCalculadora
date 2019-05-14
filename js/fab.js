@@ -2,6 +2,62 @@ let sem;
 let recargo = 0;
 let outCober = 0;
 
+
+function totalizarDonacion(){
+    //Cobertura
+    let cober = document.getElementById("coopRangeFab").value;
+    let cobertura = cober/100;
+
+    //Cantidad de estudiantes
+    let cantEst = document.getElementById('cantAlum').value;
+
+    document.getElementById('montoT').innerHTML = formatNumber.new( ((5 * cantEst * vrealUC) * cobertura) , 'Bs.S ', true);
+}
+
+function loadMes(){
+    let m = new Date().getMonth() + 1;
+    switch (m) {
+        case 1:
+            return "Enero";
+
+        case 2:
+            return "Febrero";
+
+        case 3:
+            return "Marzo";
+
+        case 4:
+            return "Abril";
+
+        case 5:
+            return "Mayo";
+
+        case 6:
+            return "Junio";
+
+        case 7:
+            return "Julio";
+
+        case 8:
+            return "Agosto";
+
+        case 9:
+            return "Septiembre";
+    
+        case 10: 
+            return "Octubre";
+        
+        case 11:
+            return "Noviembre";
+        
+        case 12:
+            return "Diciembre";
+
+        default:
+            break;
+    }
+}
+
 function initAccordion(){
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -43,7 +99,8 @@ function openSem(){
 
 function updateTextPorcentaje(elem){
     document.getElementById("spcoop").innerHTML = elem.value + "%";
-    hideDonacion();
+    //hideDonacion();
+    totalizarDonacion();
 }
 
 let indiceFinal = 0;
@@ -91,7 +148,7 @@ function loadMontosAcordion(recar, ocober){
 function hideDonacion(){
     document.getElementsByClassName("totalizacion")[0].style.display = 'none';
 }
-
+/*
 function generarDonacionCal(){
     if(!sem){
         alert("¡Debe seleccionar un semestre!");
@@ -108,8 +165,9 @@ function generarDonacionCal(){
         totalizarDonacion();
         document.getElementsByClassName("totalizacion")[0].style.display = 'block';
     }
-}
+}*/
 
+/*
 function totalizarDonacion(){
     //Cantidad de estudiantes
     let cantEst = document.getElementById('cantAlum').value;
@@ -130,4 +188,4 @@ function totalizarDonacion(){
 
     //console.log(adicional, adicional * vrealUC);
     document.getElementById('montoT').innerHTML = formatNumber.new( ((totalbs * 0.5 * cantEst) + (adicional * vrealUC)) , 'Bs.S ', true);
-}
+}*/

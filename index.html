@@ -331,6 +331,7 @@
                     
                     <h2>MATRÍCULA</h2>
                 <p class="infoMenu">
+                    <b>ESTIMACIÓN HABILITADA JUN-JUL</b> <br>
                     Cálculo de matrícula con el sistema por unidades de crédito.        
                 </p>
                 <br>
@@ -506,24 +507,25 @@
     <!-- DONACIONES CALCULADORA - FAB -->
     <div class="fab emenu" style="display: none">
 
-        <!--CARRERA-->
+        <!--CARRERA
         <button class="ubtn" onclick="openCarrera()">
             <i class="fas fa-graduation-cap"></i>
             <span id="sCarreraFab">CARRERA</span>
             <i class="fas fa-angle-right"></i>
-        </button>
+        </button>-->
 
-        <!-- SEMESTRE -->
+        <!-- SEMESTRE 
         <button class="ubtn" onclick="openSem()">
                 <i class="fas fa-book"></i>
                 <span id="sSem">SEMESTRE <i class="fas fa-angle-right"></i></span>
                
-        </button>
+        </button>-->
 
-        <br>
+        <p class="pInfo">El <b> Programa Andrés Bello (PAB)</b> se consolida como un proyecto social para atender integralmente al grupo de jóvenes beneficiados con una cobertura económica de la matrícula en su carrera cursada</p>
+
         <!-- CANTIDAD DE ALUMNOS -->
         <h3>CANTIDAD DE ALUMNOS:</h3>
-        <input type="number" min="1" class="cantAlum" id="cantAlum" value="1" onchange="hideDonacion()">
+        <input type="number" min="1" class="cantAlum" id="cantAlum" value="1" onchange="totalizarDonacion()">
         <br>
 
         <!-- COOPERACION -->
@@ -534,16 +536,16 @@
 
         <br>
 
-        <!--CALCULAR-->
+        <!--CALCULAR
         <button class="cbtn" onclick=" generarDonacionCal()">
             <i class="fas fa-calculator"></i>
             <br>CALCULAR
-        </button>
+        </button>-->
         <br>
 
-        <div class="totalizacion" style="display: none;">
-            <br>
-            <!-- RECARGOS -->
+        <div class="totalizacion">
+           
+            <!-- RECARGOS 
             <button class="accordion recargos">RECARGOS</button>
             <div class="panelInf">
                 <p>
@@ -555,9 +557,9 @@
                         <span id="spRecarg"></span> <br>
                       <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo" onchange="totalizarDonacion()">
                 </p>
-            </div>
+            </div>-->
 
-            <!-- DERECHO DE INSCRIPCION -->
+            <!-- DERECHO DE INSCRIPCION 
             <button class="accordion derIn">DER. INSCRIPCIÓN</button>
             <div class="panelInf">
                 <p>
@@ -567,9 +569,9 @@
                         <span id="spDI"></span> <br>
                       <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI" onchange="totalizarDonacion()">
                 </p>
-            </div>
+            </div>-->
 
-            <!-- FUERA DE COBERTURA -->
+            <!-- FUERA DE COBERTURA
             <button class="accordion outCober">FUERA DE COBERTURA</button>
             <div class="panelInf">
                 <p> 
@@ -580,23 +582,22 @@
                     <span id="spOut"></span> <br>
                       <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut" onchange="totalizarDonacion()">
                 </p>
-            </div>
+            </div> -->
 
-            <br>
-            <br>
+        
             <div class="tableTotal">
                 <table>
                     <tr>
-                        <th>TOTAL - DONACIÓN</th>
+                        <th>DONACIÓN <br> <span class="lowword">ESTIMACIÓN MENSUAL - <span id="mesActual"></span></span></th>
                     </tr>
                     <tr>
                         <td><h2><span id="montoT"></span></h2></td>
                     </tr>
                 </table>
+
+                <p class="pInfo">Estimación de <b>5UC</b> mesuales con el valor de la UC actual. <br> La Unidad de Crédito está sujeta a cambios mensuales según circular de Vicerrectorado.</p>
             </div>
         </div>
-        <br>
-        <br>
         <br>
     </div>
 </body>
