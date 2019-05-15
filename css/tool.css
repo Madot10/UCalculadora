@@ -28,6 +28,17 @@
     background-color: var(--gray);
   }
 
+button.wborder{
+    border: 2px solid var(--green);
+	background: none;
+    color: var(--green);
+}
+
+button.bo, button.lim{
+   
+    padding: 0.5em 0.2em;
+  }
+
 .tool{
     margin: auto;
     width: 70%;
@@ -51,7 +62,7 @@
       "c d e f"
       "g h i j"
       "k l m n"
-      "o p q r";
+      "o p q q";
   }
 
   @media only screen and (max-width: 768px){
@@ -92,6 +103,8 @@
 #result{
     font-size: 20px;
 }
+
+
 
 
 /* TECLADO */
