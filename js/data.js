@@ -35,7 +35,10 @@ let periodo = {
         ]
     },
     2019192: {
-        'base': 262500
+        'base': 200000,
+        'variacion':[
+            ['6/07/19', 31.25]
+        ]
     }
 };
 
@@ -100,11 +103,9 @@ let tables = {
         ['Modalidad pago de contado (Jun-Jul): <br> (50% restante)'],
         ['Total <br> (Período Junio-Julio)',
             '<span class="ugreen">Total: </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
-        ['Modalidad pago financiado <br> (ESPERANDO CRONOGRAMA)']
-        /*,
-        ['Noviembre / Diciembre (25%)', '<span class="ugreen">Total <br> (26NOV - 7DIC): </span> <br> eval("formatNumber.new((totalbs * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
-        ['Enero (25%)', 
-            '<span class="ugreen"> 8DIC - 14ENE: </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(`12/09/2018`)) * 0.25), `Bs.S `, true)")']
-        */
+        ['Modalidad pago financiado <br> (50% restante) '],
+        ['Junio (25%)', '<span class="ugreen">Total: </span> <br> eval("formatNumber.new((totalbs * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
+        ['Julio (25%)', 'eval("formatNumber.new((Number(GetMontoTarifa(`07/01/2019`)) * 0.25), `Bs.S `, true)")']
+        
     ]
 }

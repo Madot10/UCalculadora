@@ -264,8 +264,9 @@ function UCrecargo(uc, tax){
 
     if( tax.includes("(V)") || tax.includes("(SP)")){
         //ya DB incluye recargo pro virtual 
-        //+40%
-        return uc;
+        //+40% =>> 30%
+        //BADDDDD >:(
+        return Math.round(uc * 0.7143) * 1.3;
 
     }else{
         let taxN = tax.replace( /^\D+/g, '');
@@ -285,9 +286,9 @@ function UCrecargo(uc, tax){
             case "7":
             case "8":
             case "9":
-            //+ 30%
-                //console.log("+ 30%");
-                return uc * 1.3;
+            //+ 30% => 20%
+                //console.log("+ 30% 20%");
+                return uc * 1.2;
     
             break;
             
