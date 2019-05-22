@@ -104,8 +104,9 @@ let tables = {
         ['Total <br> (Período Junio-Julio)',
             '<span class="ugreen">Total: </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
         ['Modalidad pago financiado <br> (50% restante) '],
-        ['Junio (25%)', '<span class="ugreen">Total: </span> <br> eval("formatNumber.new((totalbs * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
-        ['Julio (25%)', 'eval("formatNumber.new((Number(GetMontoTarifa(`07/01/2019`)) * 0.25), `Bs.S `, true)")']
+        ['Junio (25%)', '<span class="ugreen">Desde 27 de Mayo: </span> <br> eval("formatNumber.new((totalbs * 0.25) + (0.25 * valorUC), `Bs.S `,true)")',
+        '<span class="ugreen">Desde 7 de Junio: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`7/1/19`))"></i> </span> <br> eval("formatNumber.new(Number(GetMontoTarifa(`6/7/19`) * 0.25) + (0.25 * valorUC), `Bs.S `, true)")'],
+        ['Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`7/1/19`))"></i>', 'eval("formatNumber.new((Number(GetMontoTarifa(`07/01/2019`)) * 0.25), `Bs.S `, true)")']
         
     ]
 }
