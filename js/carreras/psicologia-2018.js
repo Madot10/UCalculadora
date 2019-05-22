@@ -511,6 +511,6 @@ var psicologia=[{
 {
 	"Semestre": "QUINTO AÑO",
 	"Asignatura": "trabajo de grado",
-	"UC": 5,
+	"UC": 4,
 	"Tax": "TA‐1"
 }]
