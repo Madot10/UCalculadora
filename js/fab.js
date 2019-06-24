@@ -11,7 +11,15 @@ function totalizarDonacion(){
     //Cantidad de estudiantes
     let cantEst = document.getElementById('cantAlum').value;
 
-    document.getElementById('montoT').innerHTML = formatNumber.new( ((5 * cantEst * vrealUC) * cobertura) , 'Bs.S ', true);
+    
+    document.getElementById('montoT').innerHTML = formatNumber.new( ((5 * cantEst * getUCfecha( getFistDayThisMonth()) * cobertura)) , 'Bs.S ', true);
+}
+
+function getFistDayThisMonth(){
+    let day = new Date();
+    let fbase = `${day.getMonth() + 1}/1/${day.getFullYear()}`;
+
+    return fbase;
 }
 
 function loadMes(){

@@ -58,6 +58,10 @@ input.cantAlum{
     }
 }
 
+p.pInfo.descrp{	
+  text-align: justify;
+}
+
 @media only screen and (max-width: 768px){
     .slider#coopRangeFab {
         width: 80%;

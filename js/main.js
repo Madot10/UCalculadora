@@ -55,7 +55,7 @@ function initVar(md){
         //sede
         //sedeSelect('mtb');
         totalizarDonacion();
-        document.getElementById("mesActual").innerHTML = loadMes();
+        document.getElementById("mesActual").innerHTML = `${loadMes()} <br> UC: ${formatNumber.new(getUCfecha( getFistDayThisMonth()), 'Bs.S ', true)}`;
         //coop
         //coop = 'fab';
         //cober = 10; //min
