@@ -39,6 +39,9 @@ let periodo = {
         'variacion':[
             ['6/12/19', 31.25]
         ]
+    },
+    219:{
+        'base': 393750
     }
 };
 
@@ -108,5 +111,10 @@ let tables = {
         '<span class="ugreen">Desde 12 de Junio (+DI): <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`7/1/19`))"></i> </span> <br> eval("formatNumber.new(Number(GetMontoTarifa(`6/7/19`) * 0.25) + (0.25 * valorUC), `Bs.S `, true)")'],
         ['Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`7/1/19`))"></i>', 'eval("formatNumber.new((Number(GetMontoTarifa(`07/01/2019`)) * 0.25), `Bs.S `, true)")']
         
-    ]
+    ],
+    219: [
+        3,
+        ['Pago único verano'],
+        ['Total (Julio-Agosto) ', '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")']
+    ],
 }
