@@ -1001,7 +1001,7 @@ function saveTABLE(mode){
         ctx.font = '45px Roboto';
         ctx.fillStyle = '#34B2E4'; //azul
         ctx.fillText("UC", 10, 45);
-        ctx.fillStyle = '#4b7f52'; //verde
+        ctx.fillStyle = '#0C5426'; //verde
         ctx.fillText("alculadora", 10+ctx.measureText('UC').width, 45);
 
         //Semestre
@@ -1011,7 +1011,7 @@ function saveTABLE(mode){
         ctx.font = '30px Roboto';
         ctx.fillStyle = '#34B2E4'; //azul
         ctx.fillText('Periodo: ', 10, 120);
-        ctx.fillStyle = '#4b7f52'; //verde
+        ctx.fillStyle = '#0C5426'; //verde
         ctx.fillText(textPerio, 10+ctx.measureText('Periodo: ').width, 120);
         //Por madot
         //ctx.font = '20px Roboto';

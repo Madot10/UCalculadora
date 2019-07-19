@@ -11,7 +11,7 @@ body{
 }
 
 .th{
-    color: #4b7f52;
+    color: #0C5426;
 }
 
 a{
@@ -25,7 +25,7 @@ a{
 
 /*Green color*/
 .ugreen{
-    color: #4b7f52;
+    color: #0C5426;
 }
 
 .separator{
@@ -146,7 +146,7 @@ th, td {
 }
 
 #tt{
-    background-color: #4b7f52; 
+    background-color: #0C5426; 
     color: white;
 }
 #btTotal{
@@ -162,7 +162,7 @@ th, td {
 }
 button{
     border-radius: 8px;
-    background-color: #4b7f52;
+    background-color: #0C5426;
     border: none;
     color: white;
     text-align: center;
@@ -185,14 +185,14 @@ button{
 
 .select-square{
     background-color: white;
-    color: #4b7f52 ;
-    border: 2px solid #4b7f52;
+    color: #0C5426 ;
+    border: 2px solid #0C5426;
     min-height: 2.5em;
 	font-size: 0.8em;
 }
 /*
 .select-square:hover{
-    background-color: #4b7f52;
+    background-color: #0C5426;
     color: white ;
 }
 */
@@ -246,11 +246,11 @@ button.n{
   }
   
   input:checked + .slider {
-    background-color: #4b7f52;
+    background-color: #0C5426;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #4b7f52;
+    box-shadow: 0 0 1px #0C5426;
   }
   
   input:checked + .slider:before {
@@ -353,7 +353,7 @@ button.n{
 
 /*Link style button*/
 a.bta{
-    background-color: #4b7f52; /* Green background */
+    background-color: #0C5426; /* Green background */
     /*padding: 14px 25px;*/
     text-align: center;
     text-decoration: none;
@@ -363,7 +363,7 @@ a.bta{
     padding: 2px;
 	padding-left: 6px;
 	padding-right: 6px;
-    background-color: #4b7f52;
+    background-color: #0C5426;
     border: none;
     font-size: 1.2em;
     margin: 4px 2px;

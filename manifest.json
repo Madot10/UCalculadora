@@ -4,27 +4,22 @@
   "lang": "Spanish; Castilian",
   "icons": [
     {
-        "src": "icons/favicon-16x16.png?v=69402JgNA9",
+        "src": "icons/favicon-16x16.png?v=QEJvoAgyeq",
         "sizes": "16x16",
         "type": "image/png"
     },
     {
-        "src": "icons/favicon-32x32.png?v=69402JgNA9",
+        "src": "icons/favicon-32x32.png?v=QEJvoAgyeq",
         "sizes": "32x32",
         "type": "image/png"
     },
       {
-          "src": "icons/android-chrome-192x192.png?v=69402JgNA9",
+          "src": "icons/android-chrome-192x192.png?v=QEJvoAgyeq",
           "sizes": "192x192",
-          "type": "image/png"
-      },
-      {
-          "src": "icons/android-chrome-512x512.png?v=69402JgNA9",
-          "sizes": "512x512",
           "type": "image/png"
       }
   ],
-  "theme_color": "#4b7f52",
+  "theme_color": "#0C5426",
   "background_color": "#ffffff",
   "scope": "/UCalculadora/",
   "display": "standalone",
