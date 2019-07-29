@@ -1,4 +1,4 @@
-let perioact = 219;
+let perioact = 2019201;
 
 //periodo guia
 // 2018191 inicia en 2018 y termina en 2019 primera mitad
@@ -42,6 +42,13 @@ let periodo = {
     },
     219:{
         'base': 393750
+    },
+    2019201:{
+        'base':483840,
+        'variacion':[
+            ['9/24/19', 28],
+            ['10/1/19', 28]
+        ]
     }
 };
 
@@ -117,4 +124,22 @@ let tables = {
         ['Pago único verano'],
         ['Total (Julio-Agosto) ', '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")']
     ],
+    2019201:[
+        3,
+        ['*CRONOGRAMA DE FECHAS NO ANUNCIADO (Puede variar)'],
+        ['Derecho de inscripción <br> (75% ~ Pago Sept)', '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")', '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")'],
+        ['Modalidad pago de contado (Sep-Nov): <br> (50% del total)'],
+        ['Total <br> (Período Sep-Nov)',
+            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
+        ['Modalidad pago financiado (Sep-Nov): <br> (50% del total)'],
+        ['Septiembre <br> (25%)',
+            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")', 
+            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")'],
+        ['Octubre <br> (12,5%)', 
+            '<span class="ugreen">Desde el 1 Oct*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`10/1/19`))"></i> </span> <br> eval("formatNumber.new(Number(GetMontoTarifa(`10/1/19`) * 0.125), `Bs.S `, true)")'],
+        ['Noviembre <br> (12,5%)',
+            '<span class="ugreen">Desde el 1 Nov*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`11/1/19`))"></i></span> <br> eval("formatNumber.new((GetMontoTarifa(`11/1/2019`) * 0.125), `Bs.S `, true)")']
+    
+    ]
 }
