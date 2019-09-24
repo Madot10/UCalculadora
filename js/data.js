@@ -46,7 +46,7 @@ let periodo = {
     2019201:{
         'base':483840,
         'variacion':[
-            ['9/24/19', 28],
+            ['9/26/19', 28],
             ['11/1/19', 28]
         ]
     }
@@ -126,7 +126,6 @@ let tables = {
     ],
     2019201:[
         3,
-        ['*CRONOGRAMA DE FECHAS NO ANUNCIADO (Puede variar)'],
         ['Derecho de inscripción <br> (75% ~ Pago Sept)', '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")', '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")'],
         ['Modalidad pago de contado (Sep-Nov): <br> (50% del total)'],
         ['Total <br> (Período Sep-Nov)',
