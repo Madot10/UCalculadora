@@ -428,7 +428,7 @@ function getUCfecha(fecha){
                 }
         }
     }
-    return Math.floor(uc);
+    return Number(uc).toFixed(2);
 }
 
 function GetMontoTarifa(fecha){
