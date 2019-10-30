@@ -1,4 +1,4 @@
-let perioact = 2019201;
+let perioact = 2019202;
 
 //periodo guia
 // 2018191 inicia en 2018 y termina en 2019 primera mitad
@@ -47,7 +47,13 @@ let periodo = {
         'base':483840,
         'variacion':[
             ['9/26/19', 27.99995866402116],
-            ['11/1/19', 27.9999677062561]
+            ['1/7/20', 27.9999677062561]
+        ]
+    },
+    2019202:{
+        'base': 619315,
+        'variacion':[
+            ['1/7/20', 27.9999677062561]
         ]
     }
 };
@@ -140,5 +146,17 @@ let tables = {
         ['Noviembre <br> (12,5%)',
             '<span class="ugreen">Desde el 1 Nov*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`11/1/19`))"></i></span> <br> eval("formatNumber.new((GetMontoTarifa(`11/1/2019`) * 0.125), `Bs.S `, true)")']
     
-    ]
+    ],
+    2019202: [
+        3,
+        ['*CRONOGRAMA DE FECHAS NO ANUNCIADO'],
+        ['Derecho de inscripción <br> (25% ~ Pago Nov)', '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((0.25 * valorUC), `Bs.S `)")'],
+        ['Modalidad pago de contado (Dic-Ene): <br> (50% restante)'],
+        ['Total <br> (Período Dic-Ene)',
+            '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
+        ['Modalidad pago financiado <br> (50% restante) '],
+       ['Noviembre / Diciembre (25%)', '<span class="ugreen">Total (+DI)*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`11/1/19`))"></i> </span></span>  <br> eval("formatNumber.new((GetMontoTarifa(`11/1/19`) * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
+        ['Enero (25%)', 
+            '<span class="ugreen"> <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`1/7/20`))"></i> </span> eval("formatNumber.new((Number(GetMontoTarifa(`1/7/20`)) * 0.25), `Bs.S `, true)")']
+    ],
 }
