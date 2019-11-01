@@ -155,7 +155,7 @@ let tables = {
         ['Total <br> (Período Dic-Ene)',
             '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")'],
         ['Modalidad pago financiado <br> (50% restante) '],
-       ['Noviembre / Diciembre (25%)', '<span class="ugreen">Total (+DI)*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`11/1/19`))"></i> </span></span>  <br> eval("formatNumber.new((GetMontoTarifa(`11/1/19`) * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
+        ['Diciembre (25%)', '<span class="ugreen">Total (+DI)*: <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`11/1/19`))"></i> </span></span>  <br> eval("formatNumber.new((GetMontoTarifa(`11/1/19`) * 0.25) + (0.25 * valorUC), `Bs.S `,true)")'],
         ['Enero (25%)', 
             '<span class="ugreen"> <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(`1/7/20`))"></i> </span> eval("formatNumber.new((Number(GetMontoTarifa(`1/7/20`)) * 0.25), `Bs.S `, true)")']
     ],
