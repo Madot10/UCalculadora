@@ -149,7 +149,6 @@ let tables = {
     ],
     2019202: [
         3,
-        ['*CRONOGRAMA DE FECHAS NO ANUNCIADO'],
         ['Derecho de inscripción <br> (25% ~ Pago Nov)', '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((0.25 * valorUC), `Bs.S `)")'],
         ['Modalidad pago de contado (Dic-Ene): <br> (50% restante)'],
         ['Total <br> (Período Dic-Ene)',
