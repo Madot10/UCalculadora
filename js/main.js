@@ -80,6 +80,7 @@ window.onload = () => {
     //Cargamos UC visual
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
+    setGa(false); //DEV
 
     //setGa(false);
 
@@ -387,7 +388,7 @@ function totalizacion() {
             )} UC fuera de financiamiento! </b> <br> (Incluido en el total)`
         );
     }
-    /*
+    /**/
     console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
@@ -397,7 +398,7 @@ function totalizacion() {
     console.log("UC Recargo: ", ucrec);
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
-    console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));*/
+    console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
 
     if (mode == "UC") {
