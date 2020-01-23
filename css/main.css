@@ -349,16 +349,30 @@ footer a {
 }
 
 .btn-group button {
-    color: white;
-    /* White text */
-    padding: 10px 24px;
-    /* Some padding */
-    cursor: pointer;
-    /* Pointer/hand icon */
+    background-color: white;
+    border: 2px solid black;
+    border-color: var(--green);
+    color: var(--green);
+    /*padding: 10px 24px;*/
     float: left;
-    /* Float the buttons side by side */
     margin: 0;
     border-radius: 0;
+}
+
+.btn-group button.active {
+    background-color: var(--green);
+    color: white;
+}
+
+.btn-group button[disabled] {
+    border-color: #888888;
+    color: #888888;
+    cursor: default;
+}
+
+.btn-group button:hover:not([disabled]) {
+    background-color: var(--green);
+    color: white;
 }
 
 .btn-group button:not(:last-child) {
@@ -374,13 +388,20 @@ footer a {
     display: table;
 }
 
-button.w33 {
-    width: 33.3%;
+button.w25 {
+    width: 25%;
 }
 
+/*
 @media only screen and (max-width: 768px) {
-    button.w33 {
+    button.w25 {
         border-radius: 10px !important;
         width: 98%;
     }
+}*/
+
+/****** SISTEMA DE PERIODO *******/
+
+#per1, #per2 {
+    display: none;
 }
