@@ -85,12 +85,13 @@ function initVar(md) {
 
 window.onload = () => {
     //Cargamos UC visual
+    InicializarPeriodoSys();
+
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
     setGa(false);
 
-    InicializarPeriodoSys();
     initAccordion();
 
     //ocultamos loader
@@ -116,16 +117,22 @@ function InicializarPeriodoSys() {
     }
 
     let botones = document.getElementById(`per${perActivo}`).children;
+    let lastI = 0;
     for (i = 0; i < botones.length; i++) {
         let idBTN = `p${perActivo}b${i + 1}`;
         let codeGen = genPeriodoCode(perActivo, i);
 
         //Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
         if (periodo[codeGen]) {
+            perioact = codeGen;
+            lastI = i;
             botones[i].disabled = false;
             botones[i].addEventListener("click", () => changePeriodo(idBTN, codeGen));
         }
     }
+
+    botones[lastI].classList.add("active");
+    perBtnActivo = botones[lastI].id;
 }
 
 function showPeriodo() {
@@ -143,6 +150,11 @@ function changePeriodo(idElem, newPeriodo) {
     if (perBtnActivo != "") document.getElementById(perBtnActivo).classList.remove("active");
     perBtnActivo = idElem;
     document.getElementById(idElem).classList.add("active");
+
+    //CAMBIO
+    perioact = newPeriodo;
+    LoadUC();
+    calcularMatricula();
 
     console.info("#Periodo cambiado: ", newPeriodo);
 }
@@ -263,6 +275,7 @@ function calcularMatricula() {
     if (sede && carrera && coop) {
         document.getElementById("alertmsg").style.display = "none";
         totalizacion();
+        showPeriodo();
     } else {
         alert("Debes seleccionar una sede, carrera y ayuda economica!");
     }
@@ -296,7 +309,6 @@ function LoadUC() {
     let dataux = periodo[perioact];
     let uc = dataux.base;
     valorUC = uc;
-    let today = new Date();
     //Recorremos si existe lista de variacion
     /*
         if(dataux.variacion){
@@ -314,7 +326,7 @@ function LoadUC() {
                     }
             }
     }*/
-    uc = getUCfecha(today);
+    uc = getUCfecha(hoy);
     console.log(uc);
     visualUC = uc;
     return uc;
