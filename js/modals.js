@@ -1,7 +1,7 @@
 /* COMPORTAMIENTO MODALS */
 let isOpen = 0;
 
-function closeModal(){
+function closeModal() {
     isOpen = 0;
     for (const modal of document.getElementsByClassName("modal")) {
         modal.style.display = "none";
@@ -9,23 +9,23 @@ function closeModal(){
 }
 
 //Abre modal en ucal
-function openModal(nameModal){
+function openModal(nameModal) {
     isOpen = 1;
 
     switch (nameModal) {
-        case 'coopModal':
+        case "coopModal":
             resetCoopModal();
             break;
 
-        case 'carModal':
-           if(!sede){
+        case "carModal":
+            if (!sede) {
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA SEDE!");
             }
             break;
 
-        case 'matModal':
-           if(!carrera){
+        case "matModal":
+            if (!carrera) {
                 isOpen = 0;
                 alert("¡DEBE SELECCIONAR UNA CARRERA!");
             }
@@ -35,43 +35,42 @@ function openModal(nameModal){
             break;
     }
 
-    if(isOpen){
+    if (isOpen) {
         //abrir
         document.getElementById(nameModal).style.display = "block";
-    }else{
+    } else {
         document.getElementById(nameModal).style.display = "none";
     }
 }
 
 window.onclick = function(event) {
-   // alert("run");
-    if (isOpen && event.target.className == 'modal') {
+    // alert("run");
+    if (isOpen && event.target.className == "modal") {
         //Si hay algun modal abierto >> cerrar
         closeModal();
     }
-  }
+};
 
-
-function msgAlert(msg){
-    document.getElementById('alertmsg').innerHTML = msg;
-    document.getElementById('alertmsg').style.display = 'block';
+function msgAlert(msg) {
+    document.getElementById("alertmsg").innerHTML = msg;
+    document.getElementById("alertmsg").style.display = "block";
 }
 
-function genMsgUc(fuc){
+function genMsgUc(fuc) {
     //let html = `<i class="fas fa-question-circle" onclick="alert('dfd')"></i>`;
-    return `UC a ${formatNumber.new(getUCfecha(fuc), 'Bs.S ')}`;
+    return `UC a ${formatNumber.new(getUCfecha(fuc), "Bs.S ")}`;
     //return html;
 }
 
-function modalInfoOpen(msg){
+function modalInfoOpen(msg) {
     document.getElementById("info").innerHTML = msg;
     document.getElementById("infoModal").style.display = "block";
 }
 
 /* SEDE MODAL */
-function sedeSelect(cod){
+function sedeSelect(cod) {
     sede = cod;
-    let span = document.getElementById('sName');
+    let span = document.getElementById("sName");
     let parentElem = span.parentElement;
     let name;
 
@@ -89,19 +88,19 @@ function sedeSelect(cod){
         case "tq":
             span.innerHTML = "LOS TEQUES";
             name = "LOS TEQUES";
-            break;   
+            break;
 
         default:
             break;
     }
 
     //Ocultamos flecha
-    parentElem.children[2].style.display = 'none';
+    parentElem.children[2].style.display = "none";
 
-    gtag('event', "SedeSelect", {
-        'event_category': "UCinteraccion",
-        'event_label': name
-      });
+    gtag("event", "SedeSelect", {
+        event_category: "UCinteraccion",
+        event_label: name,
+    });
 
     cleanTabla();
     closeModal();
@@ -109,30 +108,31 @@ function sedeSelect(cod){
 /* END SEDE MODAL */
 
 /* CARRERA MODAL */
-function carreraSelect(elem){
+function carreraSelect(elem) {
     //limpiamos texto
-    let content = elem.textContent.replace(/\n/g,'');
-    content = elem.textContent.replace(/[.]/g,'');
+    let content = elem.textContent.replace(/\n/g, "");
+    content = elem.textContent.replace(/[.]/g, "");
     content = content.trim();
     content = content.toUpperCase();
 
     let span;
     let parentElem;
 
-    if(mode == 'UC'){
+    if (mode == "UC") {
         span = document.getElementById("sCarrera");
         parentElem = span.parentElement;
-    }else{
+    } else {
         document.getElementById("sSem").innerHTML = "SEMESTRE <i class='fas fa-angle-right'></i>";
         span = document.getElementById("sCarreraFab");
         parentElem = span.parentElement;
     }
 
     //guardamos
-    carrera = content.replace(/\s/g,'').toLowerCase();
+    carrera = content.replace(/\s/g, "").toLowerCase();
+    //console.log(carrera);
 
     //Ocultamos flecha
-    parentElem.children[2].style.display = 'none';
+    parentElem.children[2].style.display = "none";
 
     materias = GetJsonDataMaterias(carrera);
     //console.log(carrera, materias);
@@ -140,24 +140,23 @@ function carreraSelect(elem){
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;
 
-    //limpiamos tabla de materias 
-    document.getElementsByClassName('materias')[0].innerHTML = '';
+    //limpiamos tabla de materias
+    document.getElementsByClassName("materias")[0].innerHTML = "";
     ucbase = 0;
     uctotal = 0;
     actualizarTotalUC();
 
-    if(mode == 'UC'){
-        gtag('event', "CarreraSelect", {
-            'event_category': "UCinteraccion",
-            'event_label': carrera
+    if (mode == "UC") {
+        gtag("event", "CarreraSelect", {
+            event_category: "UCinteraccion",
+            event_label: carrera,
         });
-    }else{
-        gtag('event', "CarreraSelectFAB", {
-            'event_category': "FABinteraccion",
-            'event_label': carrera
+    } else {
+        gtag("event", "CarreraSelectFAB", {
+            event_category: "FABinteraccion",
+            event_label: carrera,
         });
     }
-        
 
     genMateriaList();
     cleanTabla();
@@ -166,27 +165,25 @@ function carreraSelect(elem){
 /* END CARRERA MODAL */
 
 /* MATERIA MODAL */
-function toggleActiveChbox(elem){
+function toggleActiveChbox(elem) {
     let parentElem = elem.parentElement;
     parentElem.classList.toggle("actChbox");
     materiaSelect(elem);
 }
 
-function desCheckMatList(id){
+function desCheckMatList(id) {
     let elem = document.getElementById(id);
-    
-    if(elem.checked){
+
+    if (elem.checked) {
         elem.checked = false;
     }
 
     toggleActiveChbox(elem);
-
-        
 }
 
-function genMateriaList(){
+function genMateriaList() {
     let main = document.getElementById("matList");
-    main.innerHTML = '';
+    main.innerHTML = "";
     let divBtn;
     let divCont;
 
@@ -199,9 +196,9 @@ function genMateriaList(){
         semI = materias[i].Semestre;
 
         //Nuevo semestre >> nueva seccion
-        if(semI != semAct){ 
+        if (semI != semAct) {
             semAct = semI;
-            if(divBtn && divCont){
+            if (divBtn && divCont) {
                 main.appendChild(divBtn);
                 main.appendChild(divCont);
             }
@@ -218,72 +215,68 @@ function genMateriaList(){
         }
 
         //if(mode == "UC"){
-            //Creamos materia
-            let div = document.createElement('div');
-            div.setAttribute("class", "divMat");
+        //Creamos materia
+        let div = document.createElement("div");
+        div.setAttribute("class", "divMat");
 
-                let inp = document.createElement('input');
-                inp.setAttribute("id", i);
-                inp.setAttribute("type", "checkbox");
-                inp.setAttribute("class", "chbox");
-                //oninput
-                inp.setAttribute("onclick", "toggleActiveChbox(this)");
+        let inp = document.createElement("input");
+        inp.setAttribute("id", i);
+        inp.setAttribute("type", "checkbox");
+        inp.setAttribute("class", "chbox");
+        //oninput
+        inp.setAttribute("onclick", "toggleActiveChbox(this)");
 
-            div.appendChild(inp);
+        div.appendChild(inp);
 
-                let lb = document.createElement("label");
-                lb.setAttribute("for", i);
-                lb.setAttribute("class", "materia");
-                lb.innerText = materias[i].Asignatura;
-            
-            div.appendChild(lb);
+        let lb = document.createElement("label");
+        lb.setAttribute("for", i);
+        lb.setAttribute("class", "materia");
+        lb.innerText = materias[i].Asignatura;
 
-            divCont.appendChild(div);
+        div.appendChild(lb);
+
+        divCont.appendChild(div);
         //}
     }
     main.appendChild(divBtn);
     main.appendChild(divCont);
 }
 
-
 /* END MATERIA MODAL */
 
-
 /* COOP MODAL */
-function changeCoop(event){
-    document.getElementById('scobertura').innerHTML = event.value + '%';
+function changeCoop(event) {
+    document.getElementById("scobertura").innerHTML = event.value + "%";
 }
 
-function resetCoopModal(){
-    document.getElementById('btnCoop').style.display = "block";
-    document.getElementById('btnRgo').style.display = "none";
+function resetCoopModal() {
+    document.getElementById("btnCoop").style.display = "block";
+    document.getElementById("btnRgo").style.display = "none";
 }
 
-function selectCobertura(tipo){
+function selectCobertura(tipo) {
     //ocultamos opciones de coop y mostramos rango
-    document.getElementById('btnCoop').style.display = "none";
+    document.getElementById("btnCoop").style.display = "none";
     coop = tipo;
 
-    document.getElementById('tipoAyuda').innerHTML = tipo.toUpperCase();
-    document.getElementById('btnRgo').style.display = "block";
-    
-    
+    document.getElementById("tipoAyuda").innerHTML = tipo.toUpperCase();
+    document.getElementById("btnRgo").style.display = "block";
 }
 
-function coopSelect(tipo, cob){
-    if(cob == -1){
-        cober = document.getElementById('coopRange').value;
-    }else{
+function coopSelect(tipo, cob) {
+    if (cob == -1) {
+        cober = document.getElementById("coopRange").value;
+    } else {
         coop = tipo;
         cober = cob;
     }
-    document.getElementById('sCoop').innerHTML = `${coop.toUpperCase()} ${cober}%`;
+    document.getElementById("sCoop").innerHTML = `${coop.toUpperCase()} ${cober}%`;
 
-    gtag('event', "CoopSelect", {
-        'event_category': "UCinteraccion",
-        'event_label': `Coop: ${coop}`,
-        'value': cober
-      });
+    gtag("event", "CoopSelect", {
+        event_category: "UCinteraccion",
+        event_label: `Coop: ${coop}`,
+        value: cober,
+    });
 
     closeModal();
     cleanTabla();
