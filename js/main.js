@@ -221,6 +221,13 @@ function OpenDiv(name) {
             OnClickGa("openUC", "Menu");
             break;
 
+        case "historico":
+            OnClickGa("openHistorico", "Menu");
+            document.getElementsByTagName("header")[0].style.display = "block";
+            document.getElementsByClassName("historico")[0].style.display = "block";
+            document.getElementsByClassName("ct-chart")[0].__chartist__.update();
+            break;
+
         case "tool":
             OnClickGa("openTool", "Menu");
             document.getElementsByTagName("header")[0].style.display = "block";

@@ -274,8 +274,8 @@ let templateTabla = {
         ],
         ["Modalidad pago financiado <br> (50% restante) "],
         [
-            'Junio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i> </span>',
-            '<span class="ugreen">Desde 1 de Junio (+DI): eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 0.25) + (0.25 * valorUC), `Bs.S `, true)")',
+            'Junio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+            '<span class="ugreen">Desde 1 de Junio (+DI): </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 0.25) + (0.25 * valorUC), `Bs.S `, true)")',
         ],
         [
             'Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
