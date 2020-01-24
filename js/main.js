@@ -92,7 +92,7 @@ window.onload = () => {
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    setGa(false);
+    //setGa(false);
 
     initAccordion();
 
