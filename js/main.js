@@ -27,6 +27,8 @@ let mesAct = hoy.getMonth() + 1;
 let perBtnActivo = "";
 let perActivo = 0;
 
+let templateSelect = "";
+
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
 
@@ -108,11 +110,11 @@ function InicializarPeriodoSys() {
         (mesAct == 8 && diaAct <= 15)
     ) {
         //PERIODO 1
-        console.warn("PERIODO 1");
+        //console.warn("PERIODO 1");
         perActivo = 1;
     } else {
         //PERIODO 2
-        console.warn("PERIODO 2");
+        //console.warn("PERIODO 2");
         perActivo = 2;
     }
 
@@ -125,6 +127,7 @@ function InicializarPeriodoSys() {
         //Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
         if (periodo[codeGen]) {
             perioact = codeGen;
+            templateSelect = botones[i].dataset.table;
             lastI = i;
             botones[i].disabled = false;
             botones[i].addEventListener("click", () => changePeriodo(idBTN, codeGen));
@@ -153,10 +156,11 @@ function changePeriodo(idElem, newPeriodo) {
 
     //CAMBIO
     perioact = newPeriodo;
+    templateSelect = document.getElementById(idElem).dataset.table;
     LoadUC();
     calcularMatricula();
 
-    console.info("#Periodo cambiado: ", newPeriodo);
+    //console.info("#Periodo cambiado: ", newPeriodo);
 }
 
 function genPeriodoCode(Nper, Nbtn) {
@@ -173,7 +177,7 @@ function genPeriodoCode(Nper, Nbtn) {
         //PERIODO 2 ~ Cambio de year ~ Enero condicion
         // variable de modo
         let Kyear = 0;
-        if (hoy.getMonth() + 1 <= 2) {
+        if (hoy.getMonth() < 2) {
             Kyear = -1;
         }
 
@@ -344,7 +348,7 @@ function GetJsonDataMaterias(tx) {
 
 //Arregla uc cambiado en el archivo debido al V y SP
 function FixUC(taxNum, ucnum) {
-    console.log(taxNum);
+    //console.log(taxNum);
 
     if (taxNum) {
         if (taxNum.includes("(V)") || taxNum.includes("(SP)")) {
@@ -490,7 +494,7 @@ function totalizacion() {
             )} UC fuera de financiamiento! </b> <br> (Incluido en el total)`
         );
     }
-    /**/
+    /*
     console.log("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
@@ -500,7 +504,8 @@ function totalizacion() {
     console.log("UC Recargo: ", ucrec);
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
-    console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));
+    console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));*/
+
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
 
     if (mode == "UC") {
@@ -535,6 +540,21 @@ function getUCfecha(fecha) {
 
 function GetMontoTarifa(fecha) {
     return getUCfecha(fecha) * ucpagar;
+}
+
+function getFechaAnoActual(dia, mes) {
+    //MM DD AAAA
+    //Enero/Febrero caso borde
+    let Kyear = 0;
+    //Mes partida ano pasado y Mes destino next => +1
+    //Mes partida next y Mes destino pasado => -1
+    if (hoy.getMonth() >= 2 && mes <= 2) {
+        Kyear = 1;
+    } else if (hoy.getMonth() < 2 && mes > 2) {
+        Kyear = -1;
+    }
+
+    return `${mes}/${dia}/${hoy.getFullYear() + Kyear}`;
 }
 
 /* END SISTEMA GENERAL */
@@ -626,7 +646,8 @@ let ColorArray = ["#fed20180", "#34b2e466"];
 let ScolorUsed = false;
 
 function GenerarTabla() {
-    let tabla = tables[perioact];
+    //let tabla = tables[perioact];
+    let tabla = templateTabla[templateSelect];
     let celmax = tabla[0];
 
     var divTable = document.getElementById("pagos");
