@@ -8,7 +8,7 @@ let perioact = 120;
 // 2019191 inicia en 2019 y termina en 2019
 let periodo = {
     2018191: {
-        base: 230.0,
+        base: 130.0,
         variacion: [
             ["9/29/18", 30],
             ["10/6/18", 30] /* Porcentaje de aumento */,

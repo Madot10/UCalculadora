@@ -98,8 +98,9 @@ window.onload = () => {
 
     //ocultamos loader
     document.getElementsByClassName("loader")[0].style.display = "none";
-    //Mostramos menu
+    //Mostramos menu y footer
     document.getElementById("menu").style.display = "block";
+    document.getElementsByTagName("footer")[0].style.display = "block";
 };
 
 /* SISTEMA PERIODO TABLA*/

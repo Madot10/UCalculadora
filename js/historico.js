@@ -63,9 +63,9 @@ new Chartist.Line(
         ],
         series: [
             [
-                230,
-                388.7,
-                583,
+                100,
+                169,
+                253.5,
                 1790,
                 4027,
                 12082,
@@ -77,9 +77,9 @@ new Chartist.Line(
                 393750,
                 483840,
                 619267,
-                792600,
-                792600,
-                792600,
+                619267,
+                619267,
+                792723,
                 1600000,
             ],
         ],
@@ -89,7 +89,7 @@ new Chartist.Line(
             right: 20,
         },
         axisY: {
-            offset: 60,
+            offset: 50,
             labelInterpolationFnc: function(value) {
                 return value / 1000 + "mil";
             },
