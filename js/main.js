@@ -18,7 +18,16 @@ let limitProp = 27;
 let limitBeca = 30;
 let limitFab = 30;
 
+let hoy = new Date();
 let mode = "UC";
+
+//PERIODOS TABLA SYSTEM
+let diaAct = hoy.getDate();
+let mesAct = hoy.getMonth() + 1;
+let perBtnActivo = "";
+let perActivo = 0;
+
+let templateSelect = "";
 
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
@@ -78,6 +87,8 @@ function initVar(md) {
 
 window.onload = () => {
     //Cargamos UC visual
+    InicializarPeriodoSys();
+
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
@@ -87,9 +98,106 @@ window.onload = () => {
 
     //ocultamos loader
     document.getElementsByClassName("loader")[0].style.display = "none";
-    //Mostramos menu
+    //Mostramos menu y footer
     document.getElementById("menu").style.display = "block";
+    document.getElementsByTagName("footer")[0].style.display = "block";
 };
+
+/* SISTEMA PERIODO TABLA*/
+function InicializarPeriodoSys() {
+    if (
+        (mesAct > 2 && mesAct < 8) ||
+        (mesAct == 2 && diaAct >= 15) ||
+        (mesAct == 8 && diaAct <= 15)
+    ) {
+        //PERIODO 1
+        //console.warn("PERIODO 1");
+        perActivo = 1;
+    } else {
+        //PERIODO 2
+        //console.warn("PERIODO 2");
+        perActivo = 2;
+    }
+
+    let botones = document.getElementById(`per${perActivo}`).children;
+    let lastI = 0;
+    for (i = 0; i < botones.length; i++) {
+        let idBTN = `p${perActivo}b${i + 1}`;
+        let codeGen = genPeriodoCode(perActivo, i);
+
+        //Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
+        if (periodo[codeGen]) {
+            perioact = codeGen;
+            templateSelect = botones[i].dataset.table;
+            lastI = i;
+            botones[i].disabled = false;
+            botones[i].addEventListener("click", () => changePeriodo(idBTN, codeGen));
+        }
+    }
+
+    botones[lastI].classList.add("active");
+    perBtnActivo = botones[lastI].id;
+}
+
+function showPeriodo() {
+    if (perActivo == 1) {
+        //PERIODO 1
+        document.getElementById("per1").style.display = "block";
+    } else {
+        //PERIODO 2
+        document.getElementById("per2").style.display = "block";
+    }
+}
+
+function changePeriodo(idElem, newPeriodo) {
+    //Activamos boton
+    if (perBtnActivo != "") document.getElementById(perBtnActivo).classList.remove("active");
+    perBtnActivo = idElem;
+    document.getElementById(idElem).classList.add("active");
+
+    //CAMBIO
+    perioact = newPeriodo;
+    templateSelect = document.getElementById(idElem).dataset.table;
+    LoadUC();
+    calcularMatricula();
+
+    //console.info("#Periodo cambiado: ", newPeriodo);
+}
+
+function genPeriodoCode(Nper, Nbtn) {
+    if (Nper == 1) {
+        //PERIODO 1
+        //Verano (cada 4 btn)Per1
+        if (Nbtn % 3 == 0) {
+            return `${Nbtn / 3 + 1}${hoy.getFullYear() % 100}`;
+        } else {
+            //Sem 1 = Part 1 y 2
+            return `${hoy.getFullYear()}${hoy.getFullYear() % 100}${Nbtn}`;
+        }
+    } else {
+        //PERIODO 2 ~ Cambio de year ~ Enero condicion
+        // variable de modo
+        let Kyear = 0;
+        if (hoy.getMonth() < 2) {
+            Kyear = -1;
+        }
+
+        //Verano (cada 4 btn)Per1
+        if (Nbtn % 3 == 0) {
+            if (Nbtn == 0) {
+                //Ver anterior
+                return `2${(hoy.getFullYear() + Kyear) % 100}`;
+            } else {
+                //Ver next year
+                return `1${(hoy.getFullYear() + (1 + Kyear)) % 100}`;
+            }
+        } else {
+            //Sem 1 = Part 1 y 2
+            return `${hoy.getFullYear() + Kyear}${((hoy.getFullYear() + Kyear) % 100) + 1}${Nbtn}`;
+        }
+    }
+}
+/* END SISTEMA PERIODO TABLA*/
 
 /* SISTEMA MENU */
 function OpenDiv(name) {
@@ -112,6 +220,13 @@ function OpenDiv(name) {
             document.title = "UCalculadora - Matrícula";
             initVar("UC");
             OnClickGa("openUC", "Menu");
+            break;
+
+        case "historico":
+            OnClickGa("openHistorico", "Menu");
+            document.getElementsByTagName("header")[0].style.display = "block";
+            document.getElementsByClassName("historico")[0].style.display = "block";
+            document.getElementsByClassName("ct-chart")[0].__chartist__.update();
             break;
 
         case "tool":
@@ -172,6 +287,7 @@ function calcularMatricula() {
     if (sede && carrera && coop) {
         document.getElementById("alertmsg").style.display = "none";
         totalizacion();
+        showPeriodo();
     } else {
         alert("Debes seleccionar una sede, carrera y ayuda economica!");
     }
@@ -205,7 +321,6 @@ function LoadUC() {
     let dataux = periodo[perioact];
     let uc = dataux.base;
     valorUC = uc;
-    let today = new Date();
     //Recorremos si existe lista de variacion
     /*
         if(dataux.variacion){
@@ -223,7 +338,7 @@ function LoadUC() {
                     }
             }
     }*/
-    uc = getUCfecha(today);
+    uc = getUCfecha(hoy);
     console.log(uc);
     visualUC = uc;
     return uc;
@@ -241,7 +356,7 @@ function GetJsonDataMaterias(tx) {
 
 //Arregla uc cambiado en el archivo debido al V y SP
 function FixUC(taxNum, ucnum) {
-    console.log(taxNum);
+    //console.log(taxNum);
 
     if (taxNum) {
         if (taxNum.includes("(V)") || taxNum.includes("(SP)")) {
@@ -398,6 +513,7 @@ function totalizacion() {
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC: ", vrealUC);
     console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));*/
+
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
 
     if (mode == "UC") {
@@ -432,6 +548,21 @@ function getUCfecha(fecha) {
 
 function GetMontoTarifa(fecha) {
     return getUCfecha(fecha) * ucpagar;
+}
+
+function getFechaAnoActual(dia, mes) {
+    //MM DD AAAA
+    //Enero/Febrero caso borde
+    let Kyear = 0;
+    //Mes partida ano pasado y Mes destino next => +1
+    //Mes partida next y Mes destino pasado => -1
+    if (hoy.getMonth() >= 2 && mes <= 2) {
+        Kyear = 1;
+    } else if (hoy.getMonth() < 2 && mes > 2) {
+        Kyear = -1;
+    }
+
+    return `${mes}/${dia}/${hoy.getFullYear() + Kyear}`;
 }
 
 /* END SISTEMA GENERAL */
@@ -523,7 +654,8 @@ let ColorArray = ["#fed20180", "#34b2e466"];
 let ScolorUsed = false;
 
 function GenerarTabla() {
-    let tabla = tables[perioact];
+    //let tabla = tables[perioact];
+    let tabla = templateTabla[templateSelect];
     let celmax = tabla[0];
 
     var divTable = document.getElementById("pagos");
