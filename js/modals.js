@@ -129,6 +129,7 @@ function carreraSelect(elem) {
 
     //guardamos
     carrera = content.replace(/\s/g, "").toLowerCase();
+    //console.log(carrera);
 
     //Ocultamos flecha
     parentElem.children[2].style.display = "none";
