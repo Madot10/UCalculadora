@@ -190,6 +190,9 @@ function genMateriaList() {
     let semI = null;
     let semAct = null;
     //console.log("run out");
+    //Insertamos minors
+    //materias = materias.concat(minors);
+
     //Reccorremos cada materia
     for (let i = 0; i < materias.length; i++) {
         //console.log("run");
