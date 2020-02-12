@@ -56,7 +56,7 @@ var psicologianuevopensum = [
     {
         Semestre: "SEGUNDO SEMESTRE",
         Asignatura: "Teorías y Sistemas en Psicología",
-        UC: 8,
+        UC: 5,
         Tax: "TA‐1",
     },
     {
