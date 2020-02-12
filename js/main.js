@@ -383,16 +383,18 @@ function FixUC(taxNum, ucnum) {
 }
 
 function UCrecargo(uc, tax) {
+    let taxN = tax.replace(/^\D+/g, "");
+
     if (tax.includes("(V)") || tax.includes("(SP)")) {
+        if (taxN == "7" || taxN == "8" || taxN == "9") {
+            //Recargo 20%
+            return uc * 1.2;
+        }
         //ya DB incluye recargo pro virtual
         //+40% =>> 30%
-        //BADDDDD >:(
-        //return Math.round(uc * 0.7143) * 1.3;
         //BAJ +30% => +20%
         return uc * 1.2;
     } else {
-        let taxN = tax.replace(/^\D+/g, "");
-
         switch (taxN) {
             case "1":
             case "2":
@@ -407,12 +409,15 @@ function UCrecargo(uc, tax) {
 
             case "7":
             case "8":
-            case "9":
                 //+ 30% => 20%
                 //console.log("+ 30% 20%");
                 //BAJA +20% => 10%
                 return uc * 1.1;
 
+                break;
+
+            case "9":
+                return uc * 1.15;
                 break;
 
             default:
