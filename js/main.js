@@ -96,7 +96,7 @@ window.onload = () => {
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    //setGa(false);
+    setGa(false);
 
     initAccordion();
 
@@ -231,6 +231,7 @@ function OpenDiv(name) {
 
         case "historico":
             OnClickGa("openHistorico", "Menu");
+            document.title = "UCalculadora - Histórico";
             document.getElementsByTagName("header")[0].style.display = "block";
             document.getElementsByClassName("historico")[0].style.display = "block";
             document.getElementsByClassName("ct-chart")[0].__chartist__.update();
@@ -456,7 +457,7 @@ function totalizacion() {
     //Recargo por taxonomia
     let ucre = uctotal - ucbase;
     //descuento por cooperacion
-    if (coop != "fab" && coop != "ninguna") {
+    if (coop != "fab" && coop != "ninguna" && coop != "baup") {
         //Beca o Prop
         let limit = limitBeca;
         if (coop != "beca") {
@@ -475,7 +476,7 @@ function totalizacion() {
             ucfuera = ucbase - limit + ucre;
             ucpagar = ucbase - limit + ucre + limit * cobertura;
         }
-    } else if (coop != "ninguna") {
+    } else if (coop != "ninguna" && coop != "baup") {
         //FAB
         if (ucbase <= limitFab) {
             // console.log("menor fab");
@@ -500,6 +501,9 @@ function totalizacion() {
                 ucpagar = limitFab * cobertura; //Solamente lo dentro del limite
             }
         }
+    } else if (coop == "baup") {
+        //Beca a Un Pana
+        ucpagar = uctotal * cobertura;
     } else {
         //ninguna cooperacion
         ucpagar = uctotal;
@@ -515,7 +519,7 @@ function totalizacion() {
 
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
-    /*
+
     console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
@@ -528,7 +532,7 @@ function totalizacion() {
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC (BASE): ", vrealUC);
     console.log("Total totalbs*3: ", totalbs * 3);
-    console.log("Total Minors bs*3: ", totalbsMinor * 3);*/
+    console.log("Total Minors bs*3: ", totalbsMinor * 3);
 
     if (mode == "UC") {
         GenerarTabla();
