@@ -386,10 +386,10 @@ function UCrecargo(uc, tax) {
     let taxN = tax.replace(/^\D+/g, "");
 
     if (tax.includes("(V)") || tax.includes("(SP)")) {
-        if (taxN == "7" || taxN == "8" || taxN == "9") {
-            //Recargo 20%
-            return uc * 1.2;
-        }
+        //if (taxN == "7" || taxN == "8" || taxN == "9") {
+        //Recargo 20%
+        //return uc * 1.2;
+        //}
         //ya DB incluye recargo pro virtual
         //+40% =>> 30%
         //BAJ +30% => +20%
