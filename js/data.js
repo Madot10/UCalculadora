@@ -268,29 +268,22 @@ let templateTabla = {
     ],
     "1erPar": [
         3,
-        ["*EN ESPERA DE CIRCULAR OFICIAL PARA DERECHO DE INSCRIPCIÓN"],
-        /*[
-            'Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1.25 UC - Estudiantes regulares <br> 2.75 UC - Estudiantes nuevos`)"></i>',
-            '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")',
-            '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")',
-        ],*/
-        /*["Modalidad pago de contado (Marzo-Mayo): "],
         [
-            "Total <br> (Período Marzo-Mayo)",
-            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
-            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
-        ], SIN DERECHO DE INSCRIPCION*/
+            'Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`7.5 UC - Estudiantes regulares <br> 5 UC - Estudiantes nuevos`)"></i>',
+            '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
+            '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
+        ],
         ["Modalidad pago de contado (Marzo-Mayo): "],
         [
             "Total <br> (Período Marzo-Mayo)",
-            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new((totalbs * 3), `Bs.S `, true)")',
-            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new((totalbs * 3), `Bs.S `, true)")',
+            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
         ["Modalidad pago financiado (Marzo-Mayo): "],
         [
             "Marzo",
-            '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new((totalbs * 1), `Bs.S `, true)")',
-            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(( totalbs * 1), `Bs.S `, true)")',
+            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
         ],
         [
             'Abril <i class="fas fa-question-circle" onclick="modalInfoOpen(`1ero de abril ${genMsgUc(getFechaAnoActual(1,4))}.`)"></i>',
