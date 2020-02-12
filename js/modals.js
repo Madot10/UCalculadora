@@ -108,7 +108,7 @@ function sedeSelect(cod) {
 /* END SEDE MODAL */
 
 /* CARRERA MODAL */
-function carreraSelect(elem) {
+function carreraSelect(elem, isMinor = false) {
     //limpiamos texto
     let content = elem.textContent.replace(/\n/g, "");
     content = elem.textContent.replace(/[.]/g, "");
@@ -128,14 +128,25 @@ function carreraSelect(elem) {
     }
 
     //guardamos
-    carrera = content.replace(/\s/g, "").toLowerCase();
+    if (isMinor) {
+        carrera = "Minor";
+    } else {
+        carrera = content.replace(/\s/g, "").toLowerCase();
+    }
     //console.log(carrera);
 
     //Ocultamos flecha
     parentElem.children[2].style.display = "none";
 
-    materias = GetJsonDataMaterias(carrera);
+    if (isMinor) {
+        materias = minors;
+    } else {
+        materias = GetJsonDataMaterias(carrera);
+    }
+
     //console.log(carrera, materias);
+
+    console.warn(carrera);
 
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;
@@ -143,7 +154,9 @@ function carreraSelect(elem) {
     //limpiamos tabla de materias
     document.getElementsByClassName("materias")[0].innerHTML = "";
     ucbase = 0;
+    ucbaseMinor = 0;
     uctotal = 0;
+    uctotalMinor = 0;
     actualizarTotalUC();
 
     if (mode == "UC") {
@@ -181,7 +194,7 @@ function desCheckMatList(id, isMinor = false) {
     toggleActiveChbox(elem, isMinor);
 }
 
-function genMateriaList() {
+function genMateriaList(isMinor = false) {
     let main = document.getElementById("matList");
     main.innerHTML = "";
     let divBtn;
@@ -191,9 +204,11 @@ function genMateriaList() {
     let semAct = null;
     //console.log("run out");
     //Insertamos minors
-    materias = materias.concat(minors);
+    if (!isMinor) {
+        materias = materias.concat(minors);
+    }
 
-    let isMinor = -1;
+    let isMinorSEM = -1;
     //Reccorremos cada materia
     for (let i = 0; i < materias.length; i++) {
         //console.log("run");
@@ -201,7 +216,7 @@ function genMateriaList() {
 
         //Nuevo semestre >> nueva seccion
         if (semI != semAct) {
-            isMinor = semI.indexOf("(MINOR)");
+            isMinorSEM = semI.indexOf("(MINOR)");
 
             semAct = semI;
             if (divBtn && divCont) {
@@ -230,7 +245,7 @@ function genMateriaList() {
         inp.setAttribute("type", "checkbox");
         inp.setAttribute("class", "chbox");
         //oninput segun normal o minor
-        if (isMinor > -1) {
+        if (isMinorSEM > -1) {
             //MINORS
             //console.log("Es minor ", semI);
             inp.setAttribute("onclick", "toggleActiveChbox(this, true)");
