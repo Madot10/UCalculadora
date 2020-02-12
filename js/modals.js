@@ -146,7 +146,7 @@ function carreraSelect(elem, isMinor = false) {
 
     //console.log(carrera, materias);
 
-    console.warn(carrera);
+    //console.warn(carrera);
 
     //mostramos nombre de carrera en boton exterior
     span.innerHTML = content;

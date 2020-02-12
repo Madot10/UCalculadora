@@ -96,7 +96,7 @@ window.onload = () => {
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    setGa(false);
+    //setGa(false);
 
     initAccordion();
 
@@ -347,7 +347,7 @@ function LoadUC() {
             }
     }*/
     uc = getUCfecha(hoy);
-    console.log(uc);
+    //console.log(uc);
     visualUC = uc;
     return uc;
 }
@@ -515,7 +515,7 @@ function totalizacion() {
 
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
-
+    /*
     console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
@@ -528,7 +528,7 @@ function totalizacion() {
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC (BASE): ", vrealUC);
     console.log("Total totalbs*3: ", totalbs * 3);
-    console.log("Total Minors bs*3: ", totalbsMinor * 3);
+    console.log("Total Minors bs*3: ", totalbsMinor * 3);*/
 
     if (mode == "UC") {
         GenerarTabla();
@@ -635,7 +635,7 @@ function addMateriaList(id, isMinor) {
 
     gtag("event", "MateriaSelect", {
         event_category: "UCinteraccion",
-        event_label: data.Asignatura,
+        event_label: isMinor ? "(MINOR) " + data.Asignatura : data.Asignatura,
     });
 
     //ucbase += FixUC(data.Tax, data.UC);
@@ -679,7 +679,7 @@ let ScolorUsed = false;
 
 function GenerarTabla(isMinor = false) {
     //let tabla = tables[perioact];
-    console.warn("isMinor? ", isMinor);
+    //console.warn("isMinor? ", isMinor);
     if (uctotal > 0 || isMinor) {
         let tabla;
         let celmax;
@@ -696,6 +696,7 @@ function GenerarTabla(isMinor = false) {
             celmax = tabla[0];
 
             divTable = document.getElementById("pagos");
+            document.getElementById("pagoMinor").innerHTML = "";
         }
 
         divTable.innerHTML = "";
