@@ -165,20 +165,20 @@ function carreraSelect(elem) {
 /* END CARRERA MODAL */
 
 /* MATERIA MODAL */
-function toggleActiveChbox(elem) {
+function toggleActiveChbox(elem, isMinor = false) {
     let parentElem = elem.parentElement;
     parentElem.classList.toggle("actChbox");
-    materiaSelect(elem);
+    materiaSelect(elem, isMinor);
 }
 
-function desCheckMatList(id) {
+function desCheckMatList(id, isMinor = false) {
     let elem = document.getElementById(id);
 
     if (elem.checked) {
         elem.checked = false;
     }
 
-    toggleActiveChbox(elem);
+    toggleActiveChbox(elem, isMinor);
 }
 
 function genMateriaList() {
@@ -191,8 +191,9 @@ function genMateriaList() {
     let semAct = null;
     //console.log("run out");
     //Insertamos minors
-    //materias = materias.concat(minors);
+    materias = materias.concat(minors);
 
+    let isMinor = -1;
     //Reccorremos cada materia
     for (let i = 0; i < materias.length; i++) {
         //console.log("run");
@@ -200,6 +201,8 @@ function genMateriaList() {
 
         //Nuevo semestre >> nueva seccion
         if (semI != semAct) {
+            isMinor = semI.indexOf("(MINOR)");
+
             semAct = semI;
             if (divBtn && divCont) {
                 main.appendChild(divBtn);
@@ -226,8 +229,15 @@ function genMateriaList() {
         inp.setAttribute("id", i);
         inp.setAttribute("type", "checkbox");
         inp.setAttribute("class", "chbox");
-        //oninput
-        inp.setAttribute("onclick", "toggleActiveChbox(this)");
+        //oninput segun normal o minor
+        if (isMinor > -1) {
+            //MINORS
+            //console.log("Es minor ", semI);
+            inp.setAttribute("onclick", "toggleActiveChbox(this, true)");
+        } else {
+            //NO MINORS
+            inp.setAttribute("onclick", "toggleActiveChbox(this)");
+        }
 
         div.appendChild(inp);
 

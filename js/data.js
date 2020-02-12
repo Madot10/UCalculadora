@@ -1,4 +1,4 @@
-let perioact = 120;
+let perioact = 0;
 
 //periodo guia
 // 2018191 inicia en 2018 y termina en 2019 primera mitad
@@ -63,7 +63,7 @@ let periodo = {
         ],
     },
 };
-
+/*
 let tables = {
     2018191: [
         3,
@@ -237,9 +237,34 @@ let tables = {
         ["Pago único verano"],
         ["Total (Febrero-Marzo) ", '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")'],
     ],
-};
+};*/
 
 let templateTabla = {
+    "1erMinor": [
+        3,
+        ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
+        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `Bs.S `) ")'],
+        ["Si eres pago de contado"],
+        [
+            "Total <br> (1er Parte + Minor)",
+            'eval(" formatNumber.new(((totalbsMinor * 3) +(totalbs * 3)), `Bs.S `) ")',
+        ],
+        ["Si eres pago financiado"],
+        [
+            "Total <br> (1er Couta + Minor)",
+            'eval(" formatNumber.new(((totalbsMinor * 3) +(totalbs * 1)), `Bs.S `) ")',
+        ],
+    ],
+    "2doMinor": [
+        3,
+        ["MINOR - Modalidad pago de contado <br> (2da Parte)"],
+        ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `Bs.S `) ")'],
+    ],
+    verMinor: [
+        3,
+        ["MINOR - Pago único"],
+        ["Total <br> (100%)", 'eval(" formatNumber.new(totalbsMinor, `Bs.S `) ")'],
+    ],
     "1erPar": [
         3,
         ["*EN ESPERA DE CIRCULAR OFICIAL PARA DERECHO DE INSCRIPCIÓN"],

@@ -3,9 +3,12 @@ let valorUC = 0;
 let vrealUC = valorUC;
 let visualUC = 0;
 let ucbase = 0;
+let ucbaseMinor = 0;
 let uctotal = 0;
+let uctotalMinor = 0;
 let ucpagar = 0;
 let totalbs = 0;
+let totalbsMinor = 0;
 let ucrec = 0;
 
 let sede;
@@ -28,6 +31,7 @@ let perBtnActivo = "";
 let perActivo = 0;
 
 let templateSelect = "";
+let templateSelectMinor = "";
 
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
 //FUNCIONES
@@ -92,7 +96,7 @@ window.onload = () => {
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
 
-    //setGa(false);
+    setGa(false);
 
     initAccordion();
 
@@ -129,6 +133,7 @@ function InicializarPeriodoSys() {
         if (periodo[codeGen]) {
             perioact = codeGen;
             templateSelect = botones[i].dataset.table;
+            templateSelectMinor = botones[i].dataset.minor;
             lastI = i;
             botones[i].disabled = false;
             botones[i].addEventListener("click", () => changePeriodo(idBTN, codeGen));
@@ -158,6 +163,8 @@ function changePeriodo(idElem, newPeriodo) {
     //CAMBIO
     perioact = newPeriodo;
     templateSelect = document.getElementById(idElem).dataset.table;
+    templateSelectMinor = document.getElementById(idElem).dataset.minor;
+
     LoadUC();
     calcularMatricula();
 
@@ -280,6 +287,7 @@ function OnClickGa(act, typeInter, lb) {
 
 function cleanTabla() {
     document.getElementById("pagos").innerHTML = "";
+    document.getElementById("pagoMinor").innerHTML = "";
     document.getElementById("alertmsg").style.display = "none";
 }
 
@@ -504,19 +512,23 @@ function totalizacion() {
             )} UC fuera de financiamiento! </b> <br> (Incluido en el total)`
         );
     }
-    /*
-    console.log("FINAL: ");
+
+    totalbs = Number(ucpagar * vrealUC).toFixed(2);
+    totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
+
+    console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
     console.log("ucbase: ", ucbase);
+    console.log("uctotal MINOR: ", uctotalMinor);
+    console.log("ucbase MINOR: ", ucbaseMinor);
     console.log("Recargos: ", uctotal - ucbase);
     console.log("UC fuera cobertura: ", ucfuera);
     console.log("UC Recargo: ", ucrec);
     console.log("UCpagar: ", ucpagar);
-    console.log("Valor real UC: ", vrealUC);
-    console.log("Total 1pago: ", Number(ucpagar * vrealUC).toFixed(2));*/
-
-    totalbs = Number(ucpagar * vrealUC).toFixed(2);
+    console.log("Valor real UC (BASE): ", vrealUC);
+    console.log("Total totalbs*3: ", totalbs * 3);
+    console.log("Total Minors bs*3: ", totalbsMinor * 3);
 
     if (mode == "UC") {
         GenerarTabla();
@@ -593,29 +605,29 @@ function toggleList(elem) {
 }
 
 function actualizarTotalUC() {
-    document.getElementById("totalUC").innerHTML = `${ucbase} UC`;
+    document.getElementById("totalUC").innerHTML = `${ucbase + ucbaseMinor} UC`;
 }
 
-function materiaSelect(elem) {
+function materiaSelect(elem, isMinor) {
     //Verificamos si es true o false
     let id = elem.getAttribute("id");
     if (elem.checked) {
         //activado
-        addMateriaList(id);
+        addMateriaList(id, isMinor);
     } else {
         //desactivado >> eliminar
-        deleteMateriaList(id);
+        deleteMateriaList(id, isMinor);
     }
 }
 
-function addMateriaList(id) {
+function addMateriaList(id, isMinor) {
     let data = materias[id];
 
     let main = document.getElementsByClassName("materias")[0];
 
     let divC = document.createElement("div");
     divC.classList.add("container", id);
-    divC.setAttribute("onclick", `desCheckMatList(${id});`);
+    divC.setAttribute("onclick", `desCheckMatList(${id}, ${isMinor});`);
 
     divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${data.Asignatura}</td><td> ${data.UC} UC</td></tr><tr><td>${data.Semestre}</td><td> ${data.Tax}</td></tr></table>`;
 
@@ -627,20 +639,30 @@ function addMateriaList(id) {
     });
 
     //ucbase += FixUC(data.Tax, data.UC);
-    ucbase += data.UC;
-    uctotal += UCrecargo(data.UC, data.Tax);
+    if (isMinor) {
+        ucbaseMinor += data.UC;
+        uctotalMinor += UCrecargo(data.UC, data.Tax);
+    } else {
+        ucbase += data.UC;
+        uctotal += UCrecargo(data.UC, data.Tax);
+    }
 
     actualizarTotalUC();
 }
 
-function deleteMateriaList(id) {
+function deleteMateriaList(id, isMinor) {
     let elem = document.getElementsByClassName(id)[0];
     elem.parentNode.removeChild(elem);
 
     let data = materias[id];
     //ucbase -= FixUC(data.Tax, data.UC);
-    ucbase -= data.UC;
-    uctotal -= UCrecargo(data.UC, data.Tax);
+    if (isMinor) {
+        ucbaseMinor -= data.UC;
+        uctotalMinor -= UCrecargo(data.UC, data.Tax);
+    } else {
+        ucbase -= data.UC;
+        uctotal -= UCrecargo(data.UC, data.Tax);
+    }
 
     actualizarTotalUC();
 }
@@ -655,40 +677,59 @@ function cleanTableMat() {
 let ColorArray = ["#fed20180", "#34b2e466"];
 let ScolorUsed = false;
 
-function GenerarTabla() {
+function GenerarTabla(isMinor = false) {
     //let tabla = tables[perioact];
-    let tabla = templateTabla[templateSelect];
-    let celmax = tabla[0];
+    console.warn("isMinor? ", isMinor);
+    if (uctotal > 0 || isMinor) {
+        let tabla;
+        let celmax;
 
-    var divTable = document.getElementById("pagos");
-    divTable.innerHTML = "";
-    // divTable.innerHTML = "<div data-html2canvas-ignore><p>Guardar como:<br><div class='btn-group'><button onclick='saveTABLE(png)'>Imagen PNG <i class='fa fa-file-image-o'></i></button><button onclick='saveTABLE(pdf)'>Archivo PDF <i class='fa fa-file-pdf-o'></i></button></div></p></div>"
-    var tableHTML = document.createElement("table");
-    tableHTML.style = "overflow-x:auto;";
-    tableHTML.id += "tablaPagos";
+        let divTable;
+        if (isMinor) {
+            tabla = templateTabla[templateSelectMinor];
+            celmax = tabla[0];
 
-    //Recorremos para obtener FILAS
-    for (i = 1; i < tabla.length; i++) {
-        let fila = tabla[i];
-        //console.log('FILA ' + i)
-        let filaHTML;
-
-        if (!Number.isInteger(fila[0])) {
-            //Si no es fila mixta
-            filaHTML = GenColumnas(fila, celmax);
+            divTable = document.getElementById("pagoMinor");
         } else {
-            //Si es fila mixta
-            let fmix = fila.slice(1, fila.length);
-            let rspan = fila[0];
+            //No Minors
+            tabla = templateTabla[templateSelect];
+            celmax = tabla[0];
 
-            //console.log('Fila mix');
-            filaHTML = GenFilaMix(rspan, fmix, celmax);
+            divTable = document.getElementById("pagos");
         }
 
-        tableHTML.appendChild(filaHTML);
+        divTable.innerHTML = "";
+        let tableHTML = document.createElement("table");
+        tableHTML.style = "overflow-x:auto;";
+        tableHTML.classList.add("tablaPagos");
+
+        //Recorremos para obtener FILAS
+        for (i = 1; i < tabla.length; i++) {
+            let fila = tabla[i];
+            //console.log('FILA ' + i)
+            let filaHTML;
+
+            if (!Number.isInteger(fila[0])) {
+                //Si no es fila mixta
+                filaHTML = GenColumnas(fila, celmax);
+            } else {
+                //Si es fila mixta
+                let fmix = fila.slice(1, fila.length);
+                let rspan = fila[0];
+
+                //console.log('Fila mix');
+                filaHTML = GenFilaMix(rspan, fmix, celmax);
+            }
+
+            tableHTML.appendChild(filaHTML);
+        }
+        divTable.appendChild(tableHTML);
     }
-    divTable.appendChild(tableHTML);
-    return divTable;
+
+    //Generar Minor Table
+    if (!isMinor && uctotalMinor > 0) {
+        GenerarTabla(true);
+    }
 }
 
 function GenColumnas(fila, celmax) {
