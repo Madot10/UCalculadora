@@ -107,8 +107,8 @@ window.onload = () => {
 function InicializarPeriodoSys() {
     if (
         (mesAct > 2 && mesAct < 8) ||
-        (mesAct == 2 && diaAct >= 15) ||
-        (mesAct == 8 && diaAct <= 15)
+        (mesAct == 2 && diaAct >= 11) /* Mes febrero */ ||
+        (mesAct == 8 && diaAct <= 15) /* Mes Agosto */
     ) {
         //PERIODO 1
         //console.warn("PERIODO 1");
@@ -379,7 +379,8 @@ function UCrecargo(uc, tax) {
         //+40% =>> 30%
         //BADDDDD >:(
         //return Math.round(uc * 0.7143) * 1.3;
-        return uc * 1.3;
+        //BAJ +30% => +20%
+        return uc * 1.2;
     } else {
         let taxN = tax.replace(/^\D+/g, "");
 
@@ -400,7 +401,8 @@ function UCrecargo(uc, tax) {
             case "9":
                 //+ 30% => 20%
                 //console.log("+ 30% 20%");
-                return uc * 1.2;
+                //BAJA +20% => 10%
+                return uc * 1.1;
 
                 break;
 
@@ -556,9 +558,9 @@ function getFechaAnoActual(dia, mes) {
     let Kyear = 0;
     //Mes partida ano pasado y Mes destino next => +1
     //Mes partida next y Mes destino pasado => -1
-    if (hoy.getMonth() >= 2 && mes <= 2) {
+    if (hoy.getMonth() + 1 >= 2 && mes <= 2) {
         Kyear = 1;
-    } else if (hoy.getMonth() < 2 && mes > 2) {
+    } else if (hoy.getMonth() + 1 < 2 && mes > 2) {
         Kyear = -1;
     }
 
