@@ -243,6 +243,7 @@ let templateTabla = {
     "1erMinor": [
         3,
         ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
+        ["SOLO SE PAGA MINORS DE CONTADO"],
         ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `Bs.S `) ")'],
         ["Si eres pago de contado"],
         [
