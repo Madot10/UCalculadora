@@ -271,7 +271,7 @@ let templateTabla = {
     "1erPar": [
         3,
         [
-            'Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`7.5 UC - Estudiantes regulares <br> 5 UC - Estudiantes nuevos`)"></i>',
+            'Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`5 UC - Estudiantes regulares <br> 7.5 UC - Estudiantes nuevos`)"></i>',
             '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
             '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
         ],
