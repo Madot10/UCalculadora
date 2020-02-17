@@ -168,6 +168,13 @@ var educacionmencionintegral = [
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Historia de Venezuela I", UC: 5, Tax: "TA‐1" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Geografìa de Venezuela II", UC: 4, Tax: "TA‐1" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Educación Estética", UC: 4, Tax: "TA‐3" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Estrategias para la Diversidad",

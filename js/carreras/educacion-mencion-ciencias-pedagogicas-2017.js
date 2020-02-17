@@ -159,6 +159,13 @@ var educacionmencioncienciaspedagogicas = [
         UC: 5,
         Tax: "TA‐8",
     },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Tópico Especial", UC: 6, Tax: "TA‐9" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Ética", UC: 3, Tax: "(SP) TA‐1" },
     {

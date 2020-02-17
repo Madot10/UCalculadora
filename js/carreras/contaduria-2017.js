@@ -33,9 +33,21 @@ var contaduria = [
     { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Contabilidad I", UC: 7, Tax: "TA‐3" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Macroeconomía I", UC: 7, Tax: "TA‐1" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Matemáticas Aplicadas", UC: 5, Tax: "TA‐6" },
+    {
+        Semestre: "TERCER SEMESTRE",
+        Asignatura: "(Virtual) Matemáticas Aplicadas",
+        UC: 5,
+        Tax: "(V) TA‐6",
+    },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Investigación Aplicada", UC: 4, Tax: "TA‐6" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Gerencia", UC: 6, Tax: "TA‐1" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Contabilidad II", UC: 7, Tax: "TA‐3" },
+    {
+        Semestre: "TERCER SEMESTRE",
+        Asignatura: "(Virtual) Contabilidad II",
+        UC: 7,
+        Tax: "(V) TA‐3",
+    },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Legislación Mercantil", UC: 3, Tax: "TA‐3" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Matemáticas Financieras", UC: 4, Tax: "TA‐4" },
     {
@@ -47,8 +59,26 @@ var contaduria = [
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Contabilidad Especializada", UC: 6, Tax: "TA‐3" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Sistemas Contables", UC: 4, Tax: "TA‐9" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Contabilidad III", UC: 8, Tax: "TA‐3" },
+    {
+        Semestre: "CUARTO SEMESTRE",
+        Asignatura: "(Virtual) Contabilidad III",
+        UC: 8,
+        Tax: "(V) TA‐3",
+    },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "CUARTO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Derecho del Trabajo", UC: 6, Tax: "TA‐1" },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "(Virtual) Derecho del Trabajo",
+        UC: 6,
+        Tax: "(V) TA‐1",
+    },
     {
         Semestre: "QUINTO SEMESTRE",
         Asignatura: "Mercados e Instituciones Financieras",
@@ -62,9 +92,15 @@ var contaduria = [
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Inglés para los Negocios", UC: 3, Tax: "TA‐6" },
     {
         Semestre: "QUINTO SEMESTRE",
-        Asignatura: "Contabilidad IV (Virtual)",
+        Asignatura: "(Virtual) Inglés para los Negocios",
+        UC: 3,
+        Tax: "(V) TA‐6",
+    },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "Contabilidad IV",
         UC: 8,
-        Tax: "TA‐3 (V)",
+        Tax: "TA‐3",
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Fiscal", UC: 3, Tax: "TA‐3" },
     {
@@ -72,6 +108,12 @@ var contaduria = [
         Asignatura: "Responsabilidad Social Empresarial",
         UC: 3,
         Tax: "TA‐1",
+    },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "(Virtual) Responsabilidad Social Empresarial",
+        UC: 3,
+        Tax: "(V) TA‐1",
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Finanzas I", UC: 6, Tax: "TA‐3" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Auditoría y Aseguramiento II", UC: 3, Tax: "TA‐1" },
@@ -98,6 +140,12 @@ var contaduria = [
         UC: 5,
         Tax: "TA‐3",
     },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Planificación Presupuestaria",
+        UC: 5,
+        Tax: "(V) TA‐3",
+    },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Finanzas II", UC: 6, Tax: "TA‐3" },
     {
         Semestre: "SÉPTIMO SEMESTRE",
@@ -112,6 +160,12 @@ var contaduria = [
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Gerencia Tributaria", UC: 3, Tax: "TA‐3" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Trading", UC: 3, Tax: "TA‐6" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Control de Gestión", UC: 4, Tax: "TA‐3" },
+    {
+        Semestre: "OCTAVO SEMESTRE",
+        Asignatura: "(Virtual) Control de Gestión",
+        UC: 4,
+        Tax: "(V) TA‐3",
+    },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Finanzas III", UC: 6, Tax: "TA‐3" },
     {
         Semestre: "OCTAVO SEMESTRE",

@@ -290,7 +290,7 @@ var psicologianuevopensum = [
     {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Innovación y Emprendimiento",
-        UC: 2,
+        UC: 3,
         Tax: "TA‐1",
     },
     {

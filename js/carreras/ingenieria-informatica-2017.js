@@ -114,7 +114,12 @@ var inginformatica = [
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Inglés II", UC: 5, Tax: "TA‐6" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Seguridad Computacional", UC: 5, Tax: "TA‐9" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Sistemas Distribuidos", UC: 5, Tax: "TA‐9" },
-    { Semestre: "NOVENO SEMESTRE", Asignatura: "Emprendimiento (Virtual)", UC: 4, Tax: "(V) TA‐8" },
+    {
+        Semestre: "NOVENO SEMESTRE",
+        Asignatura: "Innovación y Emprendimiento  (Virtual)",
+        UC: 4,
+        Tax: "(V) TA‐8",
+    },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     {

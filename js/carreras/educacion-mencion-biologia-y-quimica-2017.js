@@ -133,6 +133,13 @@ var educacionmencionbiologiayquimica = [
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Genética Molecular", UC: 5, Tax: "TA‐4" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Evolución", UC: 5, Tax: "TA‐4" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Biología Celular", UC: 5, Tax: "TA‐9" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Ética", UC: 3, Tax: "(SP) TA‐1" },
     {
         Semestre: "OCTAVO SEMESTRE",

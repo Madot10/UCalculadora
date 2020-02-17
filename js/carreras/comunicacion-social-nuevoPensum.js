@@ -44,7 +44,7 @@ var comunicacionsocialnuevopensum = [
         Tax: "TA-6",
     },
     {
-        Semestre: ".TERCER SEMESTRE",
+        Semestre: "TERCER SEMESTRE",
         Asignatura: "Producción de Contenidos para Medios I",
         UC: 4,
         Tax: "TA-9",

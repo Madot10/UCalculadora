@@ -192,14 +192,20 @@ var relacionesindustriales = [
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Ética Profesional", UC: 4, Tax: "TA ‐ 1" },
     {
         Semestre: "OCTAVO SEMESTRE",
+        Asignatura: "(Virtual) Ética Profesional",
+        UC: 4,
+        Tax: "(V) TA ‐ 1",
+    },
+    {
+        Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Innovación y emprendimiento",
-        UC: 2,
-        Tax: "TA ‐ 8",
+        UC: 3,
+        Tax: "TA ‐ 1",
     },
     {
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Innovación y emprendimiento (Virtual)",
-        UC: 2,
+        UC: 3,
         Tax: "(V) TA ‐ 1",
     },
     {

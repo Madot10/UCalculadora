@@ -28,7 +28,7 @@ var educacionmencionpreescolar = [
         Semestre: "PRIMER SEMESTRE",
         Asignatura: "Herramientas para la Educación Inicial",
         UC: 4,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     {
         Semestre: "PRIMER SEMESTRE",
@@ -46,7 +46,7 @@ var educacionmencionpreescolar = [
         Semestre: "SEGUNDO SEMESTRE",
         Asignatura: "Comprensión de Textos en Inglés",
         UC: 5,
-        Tax: "TA‐8",
+        Tax: "TA‐6",
     },
     { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Desarrollo Humano", UC: 6, Tax: "TA‐1" },
     {
@@ -55,8 +55,8 @@ var educacionmencionpreescolar = [
         UC: 4,
         Tax: "(SP) TA‐1",
     },
-    { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Expresión Artística", UC: 4, Tax: "TA‐8" },
-    { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Expresión Musical", UC: 4, Tax: "TA‐8" },
+    { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Expresión Artística", UC: 4, Tax: "TA‐4" },
+    { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Expresión Musical", UC: 4, Tax: "TA‐4" },
     { Semestre: "SEGUNDO SEMESTRE", Asignatura: "Práctica de Observación", UC: 4, Tax: "TA‐7" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Estadística I", UC: 5, Tax: "TA‐4" },
     {
@@ -208,6 +208,13 @@ var educacionmencionpreescolar = [
         Tax: "TA‐1",
     },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva", UC: 3, Tax: "TA‐9" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Marco Legal para la Educación Inicial",

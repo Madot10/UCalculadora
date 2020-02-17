@@ -245,18 +245,6 @@ let templateTabla = {
         ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
         ["SOLO SE PAGA MINORS DE CONTADO"],
         ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `Bs.S `) ")'],
-        ["Si eres pago de contado"],
-        [
-            "Total <br> (1er Parte + Minor)",
-            'Total Regular: <br> eval(" formatNumber.new(((totalbsMinor * 3) + ((5 * valorUC) + (totalbs * 3))), `Bs.S `) ")',
-            'Total Nuevo: <br> eval(" formatNumber.new(((totalbsMinor * 3) + ((7.5 * valorUC) + (totalbs * 3))), `Bs.S `) ")',
-        ],
-        ["Si eres pago financiado"],
-        [
-            "Total <br> (1er Couta + Minor)",
-            'Total Regular: <br> eval(" formatNumber.new(((totalbsMinor * 3) + ((5 * valorUC) + (totalbs * 1))), `Bs.S `) ")',
-            'Total Nuevo: <br> eval(" formatNumber.new(((totalbsMinor * 3) + ((7.5 * valorUC) + (totalbs * 1))), `Bs.S `) ")',
-        ],
     ],
     "2doMinor": [
         3,

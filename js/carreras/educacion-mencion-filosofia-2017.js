@@ -162,6 +162,13 @@ var educacionmencionfilosofia = [
         UC: 3,
         Tax: "TA‐7",
     },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+    {
+        Semestre: "SÉPTIMO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
     {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Ecología, Ambiente y Sustentabilidad",

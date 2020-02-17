@@ -78,6 +78,18 @@ var ingindustrial = [
     },
     {
         Semestre: "QUINTO SEMESTRE",
+        Asignatura: "Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "TA‐1",
+    },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
+    {
+        Semestre: "QUINTO SEMESTRE",
         Asignatura: "Fundamentos de Ingeniería Asistida por Computadora (virtual)",
         UC: 3,
         Tax: "(V) TA‐1",

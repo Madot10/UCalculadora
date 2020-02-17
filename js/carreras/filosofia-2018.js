@@ -125,6 +125,18 @@ var filosofia = [
         Tax: "TA‐9",
     },
     {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "Innovación y Emprendimiento ",
+        UC: 3,
+        Tax: "TA‐1",
+    },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "(Virtual) Innovación y Emprendimiento ",
+        UC: 3,
+        Tax: "(V) TA‐1",
+    },
+    {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Historia de la Filosofía Contemporánea I",
         UC: 6,
