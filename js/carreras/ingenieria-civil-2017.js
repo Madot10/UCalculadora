@@ -79,12 +79,6 @@ var ingcivil = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Resistencia de Materiales II", UC: 5, Tax: "TA‐4" },
     {
         Semestre: "SEXTO SEMESTRE",
-        Asignatura: "Materiales de Construcción (Virutal)",
-        UC: 4,
-        Tax: "(SP) TA‐1",
-    },
-    {
-        Semestre: "SEXTO SEMESTRE",
         Asignatura: "Materiales de Construcción",
         UC: 4,
         Tax: "TA‐1",
@@ -97,12 +91,6 @@ var ingcivil = [
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Ingeniería Económica", UC: 4, Tax: "TA‐4" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Mecánica de los Fluidos I", UC: 5, Tax: "TA‐4" },
-    {
-        Semestre: "SEXTO SEMESTRE",
-        Asignatura: "Introducción a la Ingeniería Ambiental (Virtual)",
-        UC: 5,
-        Tax: "(SP) TA‐2",
-    },
     {
         Semestre: "SEXTO SEMESTRE",
         Asignatura: "Introducción a la Ingeniería Ambiental",
