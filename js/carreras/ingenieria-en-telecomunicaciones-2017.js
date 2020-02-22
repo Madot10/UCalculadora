@@ -80,6 +80,12 @@ var ingentelecomunicaciones = [
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Teoría de Ondas ", UC: 4, Tax: "TA‐4" },
     {
         Semestre: "CUARTO SEMESTRE",
+        Asignatura: "Laboratorio de Física para Telecomunicaciones",
+        UC: 2,
+        Tax: "TA‐9",
+    },
+    {
+        Semestre: "CUARTO SEMESTRE",
         Asignatura: "Laboratorio de Circuitos Eléctricos",
         UC: 3,
         Tax: "TA‐9",
