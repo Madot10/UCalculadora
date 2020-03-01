@@ -1,491 +1,700 @@
 <!DOCTYPE html>
 <html lang="es-ES">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="manifest" href="./manifest.json" />
+        <meta
+            name="description"
+            content="Calculadora de matricula UCAB no-oficial, para nuevo sistema de matricula por Unidades de Credito. Hecho por Miguel De Olim"
+        />
+        <meta name="keywords" content="ucab, ucalculadora, calculadora, uc, unidad de credito" />
+        <meta name="author" content="Miguel De Olim" />
 
-    <link rel="manifest" href="./manifest.json">
-    <meta name="description" content="Calculadora de matricula UCAB no-oficial, para nuevo sistema de matricula por Unidades de Credito. Hecho por Miguel De Olim">
-    <meta name="keywords" content="ucab, ucalculadora, calculadora, uc, unidad de credito"/>
-    <meta name="author" content="Miguel De Olim" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33542195-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33542195-1"></script>
-     <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag() { dataLayer.push(arguments); }
-         gtag('js', new Date());
- 
-         gtag('config', 'UA-33542195-1');
- 
-     </script>
+            gtag("config", "UA-33542195-1");
+        </script>
 
+        <meta name="apple-mobile-web-app-title" content="UCalculadora" />
+        <meta name="application-name" content="UCalculadora" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="icons//apple-touch-icon.png?v=QEJvoAgyeq"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="icons//favicon-32x32.png?v=QEJvoAgyeq"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="icons//favicon-16x16.png?v=QEJvoAgyeq"
+        />
+        <link rel="manifest" href="icons//site.webmanifest?v=QEJvoAgyeq" />
+        <link rel="mask-icon" href="icons//safari-pinned-tab.svg?v=QEJvoAgyeq" color="#0c5426" />
+        <link rel="shortcut icon" href="icons//favicon.ico?v=QEJvoAgyeq" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
 
-    <meta name="apple-mobile-web-app-title" content="UCalculadora">
-    <meta name="application-name" content="UCalculadora">
-    <link rel="apple-touch-icon" sizes="180x180" href="icons//apple-touch-icon.png?v=QEJvoAgyeq">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons//favicon-32x32.png?v=QEJvoAgyeq">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons//favicon-16x16.png?v=QEJvoAgyeq">
-    <link rel="manifest" href="icons//site.webmanifest?v=QEJvoAgyeq">
-    <link rel="mask-icon" href="icons//safari-pinned-tab.svg?v=QEJvoAgyeq" color="#0c5426">
-    <link rel="shortcut icon" href="icons//favicon.ico?v=QEJvoAgyeq">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
+        <meta property="og:image" content="icons/android-chrome-192x192.png" />
+        <meta name="twitter:image" content="icons/android-chrome-512x512.png" />
 
-    <meta property="og:image" content="icons/android-chrome-192x192.png" />
-    <meta name="twitter:image" content="icons/android-chrome-512x512.png">
+        <link rel="stylesheet" href="css/main.css" />
+        <!-- <link rel="stylesheet" href="css/tool.css"> -->
+        <link rel="stylesheet" href="css/menu.css" />
+        <link rel="stylesheet" href="css/modal.css" />
+        <link rel="stylesheet" href="css/fab.css" />
+        <link rel="stylesheet" href="css/chartist.min.css" />
 
-    <link rel="stylesheet" href="css/main.css">
-    <!-- <link rel="stylesheet" href="css/tool.css"> -->
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/fab.css">
-    <link rel="stylesheet" href="css/chartist.min.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/solid.js" integrity="sha384-F4BRNf3onawQt7LDHDJm/hwm3wBtbLIfGk1VSB/3nn3E+7Rox1YpYcKJMsmHBJIl"
-        crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/fontawesome.js" integrity="sha384-treYPdjUrP4rW5q82SnECO7TPVAz4bpas16yuE9F5o7CeBn2YYw1yr5oC8s8Mf8t"
-        crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.6.3/js/solid.js"
+            integrity="sha384-F4BRNf3onawQt7LDHDJm/hwm3wBtbLIfGk1VSB/3nn3E+7Rox1YpYcKJMsmHBJIl"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.6.3/js/fontawesome.js"
+            integrity="sha384-treYPdjUrP4rW5q82SnECO7TPVAz4bpas16yuE9F5o7CeBn2YYw1yr5oC8s8Mf8t"
+            crossorigin="anonymous"
+        ></script>
 
-    <script src="js/main.js?dev=140"></script>
-    <script src="js/modals.js?dev=230"></script>
-    <script src="js/data.js?dev=430"></script>
-    <!-- <script src="js/tool.js"></script> -->
-    <script src="js/fab.js"></script>
+        <script src="js/main.js?dev=140"></script>
+        <script src="js/modals.js?dev=230"></script>
+        <script src="js/data.js?dev=430"></script>
+        <!-- <script src="js/tool.js"></script> -->
+        <script src="js/fab.js"></script>
 
+        <script src="js/pwa.js"></script>
 
-    <script src="js/pwa.js"></script>
+        <script
+            src="js/carreras/Administración-de-Empresas-1.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/comunicacion-social-2017.js?dev=9" type="text/javascript"></script>
+        <script
+            src="js/carreras/comunicacion-social-nuevoPensum.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/contaduria-2017.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras/derecho-2017.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras/economia-2017.js?dev=9" type="text/javascript"></script>
+        <script
+            src="js/carreras/educacion-mencion-biologia-y-quimica-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-ciencias-pedagogicas-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-ciencias-sociales-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-filosofia-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-fisica-y-matematicas-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-integral-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/educacion-mencion-preescolar-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/educacion-preslied-2017.js?dev=9" type="text/javascript"></script>
+        <script
+            src="js/carreras/educacion-tronco-comun-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/filosofia-2018.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras/ingenieria-civil-2017.js?dev=10" type="text/javascript"></script>
+        <script
+            src="js/carreras/ingenieria-en-telecomunicaciones-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/ingenieria-industrial-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script
+            src="js/carreras/ingenieria-informatica-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/letras-2018.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras/psicologia-2018.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras/psicologiaNuevoPensum.js?dev=9" type="text/javascript"></script>
+        <script
+            src="js/carreras/relaciones-industriales-2017.js?dev=9"
+            type="text/javascript"
+        ></script>
+        <script src="js/carreras/sociologia-2017.js?dev=9" type="text/javascript"></script>
+        <script src="js/carreras//minors.js?dev=2" type="text/javascript"></script>
 
-    <script src="js/carreras/Administración-de-Empresas-1.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/comunicacion-social-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/comunicacion-social-nuevoPensum.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/contaduria-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/derecho-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/economia-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-biologia-y-quimica-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-ciencias-pedagogicas-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-ciencias-sociales-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-filosofia-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-fisica-y-matematicas-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-integral-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-mencion-preescolar-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-preslied-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/educacion-tronco-comun-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/filosofia-2018.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/ingenieria-civil-2017.js?dev=10" type="text/javascript"></script>
-    <script src="js/carreras/ingenieria-en-telecomunicaciones-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/ingenieria-industrial-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/ingenieria-informatica-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/letras-2018.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/psicologia-2018.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/psicologiaNuevoPensum.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/relaciones-industriales-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras/sociologia-2017.js?dev=9" type="text/javascript"></script>
-    <script src="js/carreras//minors.js?dev=2" type="text/javascript"></script>
+        <title>UCalculadora</title>
+    </head>
 
+    <body>
+        <!-- LOADER -->
+        <div class="loader"></div>
 
-    <title>UCalculadora</title>
-</head>
-
-<body>
-
-    <!-- LOADER -->
-    <div class="loader"></div>
-
-    <!-- SEDE MODAL -->
-    <div id="sedeModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>SEDE</h2>
-            </div>
-            <div class="modal-body">
-                <button onclick="sedeSelect('mtb')">
-                    <i class="fas fa-university"></i>
-                    <br> MONTALBÁN </button>
-                <button onclick="sedeSelect('g')">
-                    <i class="fas fa-university"></i>
-                    <br> GUAYANA </button>
-                <button onclick="sedeSelect('tq')">
-                    <i class="fas fa-university"></i>
-                    <br> LOS TEQUES </button>
-            </div>
-            <br>
-        </div>
-    </div>
-
-    <!-- CARRERA MODAL -->
-    <div id="carModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>CARRERA</h2>
-            </div>
-            <div class="modal-body">
-                <p class="tFacultad">MINORS (Egresados)</p>
-                <button value="MINORS" onclick="carreraSelect(this, true)">
-                    <i class="fas fa-graduation-cap"></i> MINORS</button>
-
-                <p class="tFacultad">Facultad de Ciencias Económicas y Sociales</p>
-                <button value="Administración-de-Empresas-1" onclick="carreraSelect(this)">
-                    <i class="fas fa-building"></i> Administración de Empresas</button>
-                <button value="contaduria-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-coins"></i> Contaduria</button>
-                <button value="economia-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-chart-line"></i> Economia</button>
-                <button value="sociologia-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-users"></i> Sociologia</button>
-                <button value="relaciones-industriales-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-user-tie"></i> Relaciones industriales</button>
-
-                <p class="tFacultad">Facultad de Derecho</p>
-                <button value="derecho-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-gavel"></i> Derecho</button>
-
-                <p class="tFacultad">Facultad de Ingeniería</p>
-                <button value="ingenieria-civil-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-cogs"></i> Ing. Civil</button>
-                <button value="ingenieria-industrial-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-cogs"></i> Ing. Industrial</button>
-                <button value="ingenieria-informatica-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-cogs"></i> Ing. Informatica</button>
-                <button value="ingenieria-en-telecomunicaciones-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-cogs"></i> Ing. en Telecomunicaciones</button>
-
-                <p class="tFacultad"> Facultad de Humanidades y Educación</p>
-                <button value="comunicacion-social-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-comments"></i> Comunicacion social</button>
-                <button value="comunicacion-social-2017" onclick="carreraSelect(this)">
-                        <i class="fas fa-comments"></i> Comunicacion social Nuevo Pensum</button>
-                <button value="filosofia-2018" onclick="carreraSelect(this)">
-                    <i class="fas fa-book-reader"></i> Filosofia</button>
-                <button value="letras-2018" onclick="carreraSelect(this)">
-                    <i class="fas fa-pen"></i> Letras</button>
-                <button value="psicologia-2018" onclick="carreraSelect(this)">
-                    <i class="fas fa-brain"></i> Psicologia</button>
-                <button value="psicologia-2018" onclick="carreraSelect(this)">
-                    <i class="fas fa-brain"></i> Psicologia Nuevo Pensum</button>
-                <button value="educacion-tronco-comun-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion tronco comun</button>
-                <button value="educacion-preslied-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion preslied</button>
-                <button value="educacion-mencion-biologia-y-quimica-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion biologia y quimica</button>
-                <button value="educacion-mencion-ciencias-pedagogicas-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion ciencias pedagogicas</button>
-                <button value="educacion-mencion-ciencias-sociales-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion ciencias sociales</button>
-                <button value="educacion-mencion-fisica-y-matematicas-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion fisica y matematicas</button>
-                <button value="educacion-mencion-integral-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion integral</button>
-                <button value="educacion-mencion-filosofia-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion filosofia</button>
-                <button value="educacion-mencion-preescolar-2017" onclick="carreraSelect(this)">
-                    <i class="fas fa-book"></i> Educacion mencion preescolar</button>
-
-            </div>
-            <br>
-            <br>
-        </div>
-    </div>
-
-    <!-- COOPERACION MODAL -->
-    <div id="coopModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>COOPERACIÓN</h2>
-            </div>
-            <div id="btnCoop" class="modal-body">
-                <button onclick="coopSelect('ninguna', 0)"> NINGUNA </button>
-                <button onclick="selectCobertura('proporcional')">
-                    <i class="fas fa-percentage"></i>
-                    <br> PROPORCIONAL</button>
-
-                <button onclick="coopSelect('beca', 100)">
-                    <i class="fas fa-suitcase"></i>
-                    <br> BECA-TRABAJO</button>
-
-                <button onclick="selectCobertura('fab')">
-                    <svg width="44" height="57" viewBox="0 0 44 57" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <rect width="44" height="57" fill="url(#pattern0)" />
-                        <defs>
-                            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                                <use xlink:href="#image0" transform="translate(-0.000240077) scale(0.00304097 0.00234742)" />
-                            </pattern>
-                            <image id="image0" width="329" height="426" xlink:href="data:image/png;base64,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HnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURR9RP/378O+MV9Mu/Hr8k4vvFtqoD0cUxvjziiPv5P19/yxIKOP+Ph2jvG9urDkQXx/jyiGOIn359+MAy2ohI7x/bqw5EF8f48ohjGJbRBkRZA9usDkQXx/jyiGMoltINfvnt8R0x1sB2qwPRxTG+POIY6nzBgeXU4fy+LhHWwbarA9HFMb484hjOK979iK4Wtl0diC6O8eURxxTn+/xYVi8ocbtPC9uvDkQXx/jyiGOan397+J6l9Ywyt/u0kIE6EF0c48sjjqlYWs8gpprIQB2ILo7x5RHHdCyvzxBPXeSgDkQXx/jyiGM6r3j/t3K3+7SQhToQXRzjyyOOJc6lwMsor+TtPi3koQ5EF8f48k7/fL/0IoG3Bv2OOEQe6kB0cYzXk9VFWf2Kd9nbfVrIRB2ILo7xwuqi5GWUU/p2nxZyUQeii2O8PmFRzsem64Jc1IHo4hivz6wsympXvNlsfYps1IHo4hivhtMP778npumqFKW3+zyDfNSB6OIYr2esLMp7v+J9vlDFpupzZKQORBfHeF2xsijv+Yo3m6gWMlIHootjvF6wsih5CXfF231eQE7qQHRxjNcrWJQZJb4SdiuyUgeii2O8Xsmi3I7N0TVkpQ5EF8d4dVhVlPdwxZtN0UvISx2ILo7xugERTnXkK97e7tOBzNSB6OIYrxsR41TnT8ph+cPwdp9O5KYORBfHeG1AlFMd7dYgXrZei9zUgejiGK+NiHMqlt49b/e5AdmpA9HlffcXPxk7hESnYund8nafG5GfOhDdGBZlDIlOs/cr3rxM9SI/dSC6cSzKGBKdZq9XvHl5ugUZqsPp8YvxH91lUcacsyTVKc6ntSy9C97usxE5qpNFeSyzi3IvV7y93SeALHUDi/JYZhclyy7FS9EWZKkbTSnKf7732/tCKhWlt/uEkKc2sCiPZWZRrrri7e0+QWSqjSzKY5lalL89vmPZaVhaCWSqAIvyWGYW5cxbg1hSKeSqkNPj2/GnORZlzDlLUh1uxhVvvzN7ALJV0Onh7fjbLizKmJlFyZJD/PTrwweWURL5KsyiPJZ7KErGK418NYBFeSyzinLEFW9v9xmIjDWIRXksRyxKb/cZjJw1kEV5LLOKMnXFm3EahZw1mEV5LLOKcuvXPzBGI5G1JphSlD+8P9RXCezZrG9iPF+VZsku3u4zCXlrEovyWGYVJcu9mrf7TETmmoz4x7EoY/ZYlPwVzUDmWoBdMI5FGTOjKF97xdvbfSYjdy3CbhjHooyZUZQvXfH2dp8FyF4LsSvGsShjZhTlta9/4I9oNvLXQuyKcSzKmBlF2fowDP6TVmE/aCF2xTgWZRSpDsMyH3m7z06wP7QQu2IcizKKVIc5r+HtPjvzcc9rKXbFOBZlFKmqEva9Fjo9nsbe5mFRRpGqKmHfa6HRRckyCiFWVcK+10IW5bEQqyph32shi/I4Zn+vt3aC/a+FLMr9m/XxatopjgMtZFHulwWpjzgetJBFuT8znsDRgXBcaCGLcl+ITfp/HBtayKLcB+KS/hvHiBY6PX4x9H0wltEzvJKtF3GsaCGLcg0LUq/GMaOFLMq5vJKtbhw7WsiinOP0w1ffEonUh2NICw0tyqfTS5Ypy1t9tBnHkhayKMchBWkbjictZFHmsfVSBseVFrIoc7ySrSE4vrSQRbnd6bu/vWOLpTyOMy10eng77mLDnRelt/poCo43LWRR9vNKtqbiuNNCFmUftkyah2NPC1mUr8MWSfNxDGohi/K68zawNdIaHItayKJssyC1GxyTWsii/DOvZGt3ODa10NCifCodltm9049ffcOrlvaFY1SLsTvyDlCU3uqj3eNY1WLsjrydFyWvUto3jlctxu7I22lR8uqkY+C41WLsjrydFaVXsnVIHL9ajN2Rt5Oi9EMrdGgcx1qM3ZG3uCjP6/NKpOPieNZi7I68RUXplWzdFY5rLcbuyFtQlKws3Q+ObS3G7sibWJSsKN0fjnEtdHp8O+5Cx4SiZCXpfnGsa4Ghjy5e/PD+e5aL81YflcExr4mmFOTFgKL0SrbK4djXJMQ+T7Ao/dAKlcXPgAYj7vkCRemtPiqPnwUNQszrbCxKpki18fOgsNPjaR8XOm4sSv62pDN+LhSym4K86CxKr2RLDfx8aKPdFeTFK4vSgpSu4OdENzo9frHvW2VeKEpv9ZFegZ8Xddp9QV48U5Tnf8+fkPQSfm70SlNvFk/4rChP//jrB/6LpNfi50cvOFxBgpf/Ef9KUi9+hvSM08ObY/8G5im2tB19oAYiklQdnaBPEI0k/Y5u0BMikaQ/oyNK2+3N4pL2ga4oyYKU9Cp0RimHuVlc0j7QHSVYkJJuQofctdPXb75lcyWpH11yl476NI2knaFT7srhn6aRtC90y91gsyQph345PDZHkvLomcNiMyRpHPrmcLxZXNI09M5hWJCSpqN/ds+bxSWt8/C26+tMZ7MgJa2306L0aRpJ+7GzovRpGkn7s5Oi9GkaSfu1g6LklUjSTi0sSl6BJO3cgqJkZUk6iIlF6c3iko5pQlFakJKObWBRerO4pPswoCgtSEn3JViUPk0j6T4FivI8g2mSdIc2FKVP00iq4cai5G9LUgGdRcnfkqRCXlmU/GlJKuiFovRmcUl6pigtSEm6+KwovVlckj5HUVqQkvQcT7ElSZIkSZIkSZIkSZIkSZIkSZIkSZIkSdIyp9P/Ad9Rs8gVJpm2AAAAAElFTkSuQmCC"
-                            />
-                        </defs>
-                    </svg>
-                    <br> FUND. ANDRÉS BELLO
-                </button>
-
-                <button onclick="selectCobertura('baup')">
-                    <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0, 0, 400,400">
-                        <g id="svgg"><path 	fill="white" id="path0" d="M98.866 12.728 C 45.072 27.996,39.135 104.883,89.664 131.915 C 103.033 139.067,136.850 138.453,149.830 130.822 C 217.111 91.271,174.012 -8.599,98.866 12.728 M235.614 13.510 C 181.849 32.067,181.044 113.267,234.424 133.550 C 278.356 150.243,321.977 120.372,322.009 73.574 C 322.040 28.529,278.931 -1.442,235.614 13.510 M47.791 179.293 C 43.080 186.948,61.099 280.198,72.676 308.081 C 73.599 310.303,76.417 317.576,78.939 324.242 C 89.548 352.287,114.141 397.980,118.627 397.980 C 132.621 397.980,172.948 297.641,184.800 233.333 L 189.268 209.091 190.749 221.212 C 196.835 271.000,231.265 366.195,253.570 394.905 C 270.475 416.664,329.293 256.651,329.293 188.902 L 329.293 177.778 189.008 177.778 C 111.851 177.778,48.304 178.460,47.791 179.293 " stroke="none" fill="#000000" fill-rule="evenodd"></path></g></svg>
-                    <br> Beca a un Pana <br> (En pruebas)
-                </button>
-            </div>
-
-            <div id="btnRgo" class="modal-body" style="display: none;">
-                <h3>
-                    <span id="tipoAyuda"></span>
-                </h3>
-                <p>Cobertura:
-                    <b>
-                        <span id="scobertura">10%</span>
-                    </b>
-                </p>
-                <div class="slidecontainer">
-                    <input type="range" min="10" max="100" value="10" class="slider" step="10" id="coopRange" oninput="changeCoop(this)">
+        <!-- SEDE MODAL -->
+        <div id="sedeModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>SEDE</h2>
                 </div>
-                <br>
-                <button onclick="coopSelect('m', -1)" >APLICAR</button>
+                <div class="modal-body">
+                    <button onclick="sedeSelect('mtb')">
+                        <i class="fas fa-university"></i>
+                        <br />
+                        MONTALBÁN
+                    </button>
+                    <button onclick="sedeSelect('g')">
+                        <i class="fas fa-university"></i>
+                        <br />
+                        GUAYANA
+                    </button>
+                    <button onclick="sedeSelect('tq')">
+                        <i class="fas fa-university"></i>
+                        <br />
+                        LOS TEQUES
+                    </button>
+                </div>
+                <br />
             </div>
-
-            <div class="modal-footer">
-                <p>Recuerda la cobertura máxima:
-                    <br> AYUDAS PROPORCIONALES (27UC base)
-                    <br> BECAS-TRABAJO (30UC base)
-                    <br> FAB (30UC)
-                </p>
-            </div>
-            <br>
         </div>
-    </div>
 
-    <!-- MATERIAS MODAL -->
-    <div id="matModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>MATERIAS</h2>
+        <!-- CARRERA MODAL -->
+        <div id="carModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>CARRERA</h2>
+                </div>
+                <div class="modal-body">
+                    <p class="tFacultad">MINORS (Egresados)</p>
+                    <button value="MINORS" onclick="carreraSelect(this, true)">
+                        <i class="fas fa-graduation-cap"></i> MINORS
+                    </button>
+
+                    <p class="tFacultad">Facultad de Ciencias Económicas y Sociales</p>
+                    <button value="Administración-de-Empresas-1" onclick="carreraSelect(this)">
+                        <i class="fas fa-building"></i> Administración de Empresas
+                    </button>
+                    <button value="contaduria-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-coins"></i> Contaduria
+                    </button>
+                    <button value="economia-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-chart-line"></i> Economia
+                    </button>
+                    <button value="sociologia-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-users"></i> Sociologia
+                    </button>
+                    <button value="relaciones-industriales-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-user-tie"></i> Relaciones industriales
+                    </button>
+
+                    <p class="tFacultad">Facultad de Derecho</p>
+                    <button value="derecho-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-gavel"></i> Derecho
+                    </button>
+
+                    <p class="tFacultad">Facultad de Ingeniería</p>
+                    <button value="ingenieria-civil-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-cogs"></i> Ing. Civil
+                    </button>
+                    <button value="ingenieria-industrial-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-cogs"></i> Ing. Industrial
+                    </button>
+                    <button value="ingenieria-informatica-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-cogs"></i> Ing. Informatica
+                    </button>
+                    <button
+                        value="ingenieria-en-telecomunicaciones-2017"
+                        onclick="carreraSelect(this)"
+                    >
+                        <i class="fas fa-cogs"></i> Ing. en Telecomunicaciones
+                    </button>
+
+                    <p class="tFacultad">Facultad de Humanidades y Educación</p>
+                    <button value="comunicacion-social-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-comments"></i> Comunicacion social
+                    </button>
+                    <button value="comunicacion-social-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-comments"></i> Comunicacion social Nuevo Pensum
+                    </button>
+                    <button value="filosofia-2018" onclick="carreraSelect(this)">
+                        <i class="fas fa-book-reader"></i> Filosofia
+                    </button>
+                    <button value="letras-2018" onclick="carreraSelect(this)">
+                        <i class="fas fa-pen"></i> Letras
+                    </button>
+                    <button value="psicologia-2018" onclick="carreraSelect(this)">
+                        <i class="fas fa-brain"></i> Psicologia
+                    </button>
+                    <button value="psicologia-2018" onclick="carreraSelect(this)">
+                        <i class="fas fa-brain"></i> Psicologia Nuevo Pensum
+                    </button>
+                    <button value="educacion-tronco-comun-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-book"></i> Educacion tronco comun
+                    </button>
+                    <button value="educacion-preslied-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-book"></i> Educacion preslied
+                    </button>
+                    <button
+                        value="educacion-mencion-biologia-y-quimica-2017"
+                        onclick="carreraSelect(this)"
+                    >
+                        <i class="fas fa-book"></i> Educacion mencion biologia y quimica
+                    </button>
+                    <button
+                        value="educacion-mencion-ciencias-pedagogicas-2017"
+                        onclick="carreraSelect(this)"
+                    >
+                        <i class="fas fa-book"></i> Educacion mencion ciencias pedagogicas
+                    </button>
+                    <button
+                        value="educacion-mencion-ciencias-sociales-2017"
+                        onclick="carreraSelect(this)"
+                    >
+                        <i class="fas fa-book"></i> Educacion mencion ciencias sociales
+                    </button>
+                    <button
+                        value="educacion-mencion-fisica-y-matematicas-2017"
+                        onclick="carreraSelect(this)"
+                    >
+                        <i class="fas fa-book"></i> Educacion mencion fisica y matematicas
+                    </button>
+                    <button value="educacion-mencion-integral-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-book"></i> Educacion mencion integral
+                    </button>
+                    <button value="educacion-mencion-filosofia-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-book"></i> Educacion mencion filosofia
+                    </button>
+                    <button value="educacion-mencion-preescolar-2017" onclick="carreraSelect(this)">
+                        <i class="fas fa-book"></i> Educacion mencion preescolar
+                    </button>
+                </div>
+                <br />
+                <br />
             </div>
-            <div class="modal-body">
-                <!-- <button>
+        </div>
+
+        <!-- COOPERACION MODAL -->
+        <div id="coopModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>COOPERACIÓN</h2>
+                </div>
+                <div id="btnCoop" class="modal-body">
+                    <button onclick="coopSelect('ninguna', 0)">NINGUNA</button>
+                    <button onclick="selectCobertura('proporcional')">
+                        <i class="fas fa-percentage"></i>
+                        <br />
+                        PROPORCIONAL
+                    </button>
+
+                    <button onclick="coopSelect('beca', 100)">
+                        <i class="fas fa-suitcase"></i>
+                        <br />
+                        BECA-TRABAJO
+                    </button>
+
+                    <button onclick="selectCobertura('fab')">
+                        <svg
+                            width="44"
+                            height="57"
+                            viewBox="0 0 44 57"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                            <rect width="44" height="57" fill="url(#pattern0)" />
+                            <defs>
+                                <pattern
+                                    id="pattern0"
+                                    patternContentUnits="objectBoundingBox"
+                                    width="1"
+                                    height="1"
+                                >
+                                    <use
+                                        xlink:href="#image0"
+                                        transform="translate(-0.000240077) scale(0.00304097 0.00234742)"
+                                    />
+                                </pattern>
+                                <image
+                                    id="image0"
+                                    width="329"
+                                    height="426"
+                                    xlink:href="data:image/png;base64,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HnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSaiC6O8eURRxSjFWZJqono4hhfHnFEMVphlqSa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"
+                                />
+                            </defs>
+                        </svg>
+                        <br />
+                        FUND. ANDRÉS BELLO
+                    </button>
+
+                    <button onclick="selectCobertura('baup')">
+                        <svg
+                            id="svg"
+                            version="1.1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                            width="50"
+                            height="50"
+                            viewBox="0, 0, 400,400"
+                        >
+                            <g id="svgg">
+                                <path
+                                    fill="white"
+                                    id="path0"
+                                    d="M98.866 12.728 C 45.072 27.996,39.135 104.883,89.664 131.915 C 103.033 139.067,136.850 138.453,149.830 130.822 C 217.111 91.271,174.012 -8.599,98.866 12.728 M235.614 13.510 C 181.849 32.067,181.044 113.267,234.424 133.550 C 278.356 150.243,321.977 120.372,322.009 73.574 C 322.040 28.529,278.931 -1.442,235.614 13.510 M47.791 179.293 C 43.080 186.948,61.099 280.198,72.676 308.081 C 73.599 310.303,76.417 317.576,78.939 324.242 C 89.548 352.287,114.141 397.980,118.627 397.980 C 132.621 397.980,172.948 297.641,184.800 233.333 L 189.268 209.091 190.749 221.212 C 196.835 271.000,231.265 366.195,253.570 394.905 C 270.475 416.664,329.293 256.651,329.293 188.902 L 329.293 177.778 189.008 177.778 C 111.851 177.778,48.304 178.460,47.791 179.293 "
+                                    stroke="none"
+                                    fill="#000000"
+                                    fill-rule="evenodd"
+                                ></path>
+                            </g>
+                        </svg>
+                        <br />
+                        Beca a un Pana <br />
+                        (En pruebas)
+                    </button>
+                </div>
+
+                <div id="btnRgo" class="modal-body" style="display: none;">
+                    <h3>
+                        <span id="tipoAyuda"></span>
+                    </h3>
+                    <p>
+                        Cobertura:
+                        <b>
+                            <span id="scobertura">10%</span>
+                        </b>
+                    </p>
+                    <div class="slidecontainer">
+                        <input
+                            type="range"
+                            min="10"
+                            max="100"
+                            value="10"
+                            class="slider"
+                            step="10"
+                            id="coopRange"
+                            oninput="changeCoop(this)"
+                        />
+                    </div>
+                    <br />
+                    <button onclick="coopSelect('m', -1)">APLICAR</button>
+                </div>
+
+                <div class="modal-footer">
+                    <p>
+                        Recuerda la cobertura máxima: <br />
+                        AYUDAS PROPORCIONALES (27UC base) <br />
+                        BECAS-TRABAJO (30UC base) <br />
+                        FAB (30UC)
+                    </p>
+                </div>
+                <br />
+            </div>
+        </div>
+
+        <!-- MATERIAS MODAL -->
+        <div id="matModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>MATERIAS</h2>
+                </div>
+                <div class="modal-body">
+                    <!-- <button>
                     <b>ACEPTAR</b>
                 </button> -->
-                <!-- ESTRUCTURA BASE-->
-                <div id="matList"></div>
-
+                    <!-- ESTRUCTURA BASE-->
+                    <div id="matList"></div>
+                </div>
+                <br />
             </div>
-            <br>
-        </div>
-    </div>
-
-    <!-- INFO MODAL -->
-    <div id="infoModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>INFORMACIÓN</h2>
-            </div>
-            <div class="modal-body">
-                <p><span id="info"></span></p>
-            </div>
-            <br>
-        </div>
-    </div>
-
-    <!-- HEADER -->
-    <header class="emenu" style="display: none">
-        <h1>
-            <i class="fa bback" onclick="OpenDiv('menu')">&#xf060;</i>  <span class="ublue">UC</span><span class="ugreen">ALCULADORA</span>
-        </h1>
-       
-        <div class="divider">
-            <b>
-                <span id="ucvalue"></span>
-            </b>
         </div>
 
-        <p> MIGUEL DE OLIM
-        <br>
-            <b>NUEVO SISTEMA UC MENSUAL</b>  <br>
-            <b><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf">(CIRCULAR)</a></b>
-            <br>  
-            <!-- <a href="#" onclick="modalInfoOpen(infoTXT)">¿Por qué diferencia de monto con Caja?</a> -->
-        </p>
-    </header>
+        <!-- INFO MODAL -->
+        <div id="infoModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>INFORMACIÓN</h2>
+                </div>
+                <div class="modal-body">
+                    <p><span id="info"></span></p>
+                </div>
+                <br />
+            </div>
+        </div>
 
-    <!-- MENU -->
-    <div id="menu" class="onLoad emenu" style="display: none">
-        <a href="#" class="noUnder menu">
-            <div class="Dcalc" onclick="OpenDiv('ucalculadora')">
-                <br>
-                
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                        width="100" height="52" viewBox="0 0 434.000000 227.000000"
-                        preserveAspectRatio="xMidYMid meet">
-                        <g transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)"
-                        fill="var(--gray)" stroke="none">
-                        <path d="M2280 2079 c-268 -24 -456 -211 -525 -519 -22 -99 -32 -543 -16 -698
+        <!-- HEADER -->
+        <header class="emenu" style="display: none">
+            <h1>
+                <i class="fa bback" onclick="OpenDiv('menu')">&#xf060;</i>
+                <span class="ublue">UC</span><span class="ugreen">ALCULADORA</span>
+            </h1>
+
+            <div class="divider">
+                <b>
+                    <span id="ucvalue"></span>
+                </b>
+            </div>
+
+            <p>
+                MIGUEL DE OLIM
+                <br />
+                <b>NUEVO SISTEMA UC MENSUAL</b> <br />
+                <b
+                    ><a
+                        href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf"
+                        >(CIRCULAR)</a
+                    ></b
+                >
+                <br />
+                <!-- <a href="#" onclick="modalInfoOpen(infoTXT)">¿Por qué diferencia de monto con Caja?</a> -->
+            </p>
+        </header>
+
+        <!-- MENU -->
+        <div id="menu" class="onLoad emenu" style="display: none">
+            <a href="#" class="noUnder menu">
+                <div class="Dcalc" onclick="OpenDiv('ucalculadora')">
+                    <br />
+
+                    <svg
+                        version="1.0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="52"
+                        viewBox="0 0 434.000000 227.000000"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <g
+                            transform="translate(0.000000,227.000000) scale(0.100000,-0.100000)"
+                            fill="var(--gray)"
+                            stroke="none"
+                        >
+                            <path
+                                d="M2280 2079 c-268 -24 -456 -211 -525 -519 -22 -99 -32 -543 -16 -698
                         22 -212 81 -357 192 -476 113 -121 225 -167 409 -167 175 1 291 42 394 141 99
                         94 160 231 173 387 l6 73 -114 0 -115 0 -11 -82 c-28 -206 -100 -293 -262
                         -319 -230 -35 -372 78 -428 341 -25 119 -25 653 0 775 52 253 215 383 434 346
                         125 -22 195 -84 233 -208 11 -35 22 -93 26 -128 l7 -65 115 0 115 0 -6 68
-                        c-17 210 -112 379 -261 467 -89 52 -230 77 -366 64z"/>
-                        <path d="M302 1353 c3 -634 6 -714 21 -766 57 -195 175 -309 363 -353 88 -20
+                        c-17 210 -112 379 -261 467 -89 52 -230 77 -366 64z"
+                            />
+                            <path
+                                d="M302 1353 c3 -634 6 -714 21 -766 57 -195 175 -309 363 -353 88 -20
                         269 -20 349 1 147 38 271 136 330 260 53 114 55 132 55 878 l0 687 -115 0
                         -114 0 -3 -707 -3 -708 -23 -57 c-40 -100 -107 -149 -231 -169 -83 -14 -189
                         -1 -251 31 -51 26 -103 89 -126 153 -18 49 -19 95 -22 755 l-3 702 -115 0
-                        -115 0 3 -707z"/>
-                        <path d="M3550 1485 l0 -265 -205 0 -205 0 0 -110 0 -110 205 0 205 0 0 -290
+                        -115 0 3 -707z"
+                            />
+                            <path
+                                d="M3550 1485 l0 -265 -205 0 -205 0 0 -110 0 -110 205 0 205 0 0 -290
                         0 -290 110 0 110 0 2 288 3 287 208 3 208 2 -3 108 -3 107 -207 3 -208 2 0
-                        265 0 265 -110 0 -110 0 0 -265z"/>
+                        265 0 265 -110 0 -110 0 0 -265z"
+                            />
                         </g>
                     </svg>
-                    
+
                     <h2>MATRÍCULA</h2>
-                <p class="infoMenu">
-                   <!-- <b>ESTIMACIÓN HABILITADA DIC-ENE</b> <br>  -->
-                   <b>NUEVO SISTEMA UC MENSUAL + MINORS</b> <br> 
-                    Cálculo de matrícula con el sistema por unidades de crédito.        
-                </p>
-                <br>
-            </div>
-        </a>
+                    <p class="infoMenu">
+                        <!-- <b>ESTIMACIÓN HABILITADA DIC-ENE</b> <br>  -->
+                        <b>NUEVO SISTEMA UC MENSUAL + MINORS</b> <br />
+                        Cálculo de matrícula con el sistema por unidades de crédito.
+                    </p>
+                    <br />
+                </div>
+            </a>
 
-        <a href="#" class="noUnder menu">
-            <div class="Dnoti" onclick="OpenDiv('historico')">
-                <br>
-                <svg style="width: 4em !important;" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z" />
-                </svg>
-                <h2>HISTÓRICO UC</h2>
-                <p class="infoMenu">
-                    Evolución de la Unidad de Crédito. 
-                </p>
-                <br>
-            </div>
-        </a>
-
-        <a href="#" class="noUnder menu">
-            <div class="Dfab" onclick="OpenDiv('fab')">
-                <br> 
-                
-                <svg class="fablogo" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3290 4260" preserveAspectRatio="xMidYMid meet">
-                    <g id="layer101" fill="#FFFFFF" stroke="none">
-                     <path d="M757 3682 l-457 -457 0 -1060 0 -1060 453 -487 c248 -267 455 -487 458 -487 4 -1 103 110 220 247 117 136 221 257 232 269 l20 22 -307 314 -306 314 0 864 0 864 305 300 306 300 -226 250 c-125 138 -229 253 -233 257 -4 4 -213 -198 -465 -450z"/>
-                     <path d="M1662 3382 l-372 -380 0 -836 0 -837 370 -405 c204 -222 374 -404 378 -403 4 0 89 108 189 241 l183 240 -57 62 c-31 33 -134 145 -230 247 l-173 187 0 668 0 669 240 235 240 235 -179 208 c-98 115 -187 218 -198 228 -19 20 -23 17 -391 -359z"/>
-                     <path d="M2543 3168 c-44 -51 -148 -174 -231 -274 l-152 -181 0 -562 0 -563 231 -291 c127 -161 234 -293 237 -294 4 -1 96 131 205 295 l197 297 0 557 0 557 -195 273 c-107 150 -199 274 -204 276 -5 2 -44 -39 -88 -90z"/>
-                     </g>
-                    
+            <a href="#" class="noUnder menu">
+                <div class="Dnoti" onclick="OpenDiv('historico')">
+                    <br />
+                    <svg style="width: 4em !important;" viewBox="0 0 24 24">
+                        <path
+                            fill="currentColor"
+                            d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z"
+                        />
                     </svg>
-                      
-                    
-                        
-                        <h2>Donar - FAB</h2>
+                    <h2>HISTÓRICO UC</h2>
+                    <p class="infoMenu">
+                        Evolución de la Unidad de Crédito.
+                    </p>
+                    <br />
+                </div>
+            </a>
+
+            <a href="#" class="noUnder menu">
+                <div class="Dfab" onclick="OpenDiv('fab')">
+                    <br />
+
+                    <svg
+                        class="fablogo"
+                        version="1.0"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 3290 4260"
+                        preserveAspectRatio="xMidYMid meet"
+                    >
+                        <g id="layer101" fill="#FFFFFF" stroke="none">
+                            <path
+                                d="M757 3682 l-457 -457 0 -1060 0 -1060 453 -487 c248 -267 455 -487 458 -487 4 -1 103 110 220 247 117 136 221 257 232 269 l20 22 -307 314 -306 314 0 864 0 864 305 300 306 300 -226 250 c-125 138 -229 253 -233 257 -4 4 -213 -198 -465 -450z"
+                            />
+                            <path
+                                d="M1662 3382 l-372 -380 0 -836 0 -837 370 -405 c204 -222 374 -404 378 -403 4 0 89 108 189 241 l183 240 -57 62 c-31 33 -134 145 -230 247 l-173 187 0 668 0 669 240 235 240 235 -179 208 c-98 115 -187 218 -198 228 -19 20 -23 17 -391 -359z"
+                            />
+                            <path
+                                d="M2543 3168 c-44 -51 -148 -174 -231 -274 l-152 -181 0 -562 0 -563 231 -291 c127 -161 234 -293 237 -294 4 -1 96 131 205 295 l197 297 0 557 0 557 -195 273 c-107 150 -199 274 -204 276 -5 2 -44 -39 -88 -90z"
+                            />
+                        </g>
+                    </svg>
+
+                    <h2>Donar - FAB</h2>
                     <p class="infoMenu">
                         Calcula tu donación para el Programa Andrés Bello (PAB)
-                        <br>
+                        <br />
                     </p>
-                <br>
-            </div>
-        </a>
-      
-    </div>
+                    <br />
+                </div>
+            </a>
+        </div>
 
-    <!-- UCALCULADORA -->
-    <div class="ucalculadora emenu" style="display: none">
-       
-        <!-- BOTONES -->
+        <!-- UCALCULADORA -->
+        <div class="ucalculadora emenu" style="display: none">
+            <!-- BOTONES -->
 
-        <!--SEDE-->
-        <button class="ubtn" onclick="openModal('sedeModal')">
-            <i class="fas fa-university"></i>
-            <span id="sName">SEDE</span>
-            <i class="fas fa-angle-right"></i>
-        </button>
+            <!--SEDE-->
+            <button class="ubtn" onclick="openModal('sedeModal')">
+                <i class="fas fa-university"></i>
+                <span id="sName">SEDE</span>
+                <i class="fas fa-angle-right"></i>
+            </button>
 
-        <br>
-        <br>
-        <!--CARRERA-->
-        <button class="ubtn" onclick="openModal('carModal')">
-            <i class="fas fa-graduation-cap"></i>
-            <span id="sCarrera">CARRERA</span>
-            <i class="fas fa-angle-right"></i>
-        </button>
-        <br>
-        <br>
+            <br />
+            <br />
+            <!--CARRERA-->
+            <button class="ubtn" onclick="openModal('carModal')">
+                <i class="fas fa-graduation-cap"></i>
+                <span id="sCarrera">CARRERA</span>
+                <i class="fas fa-angle-right"></i>
+            </button>
+            <br />
+            <br />
 
-        <!--TABLA MATERIAS-->
-        <div class="tabla">
-            <div class="headTable">
-                <div class="mat head">MATERIAS</div>
-                <!-- <div class="tax head">Tax</div>
+            <!--TABLA MATERIAS-->
+            <div class="tabla">
+                <div class="headTable">
+                    <div class="mat head">MATERIAS</div>
+                    <!-- <div class="tax head">Tax</div>
                 <div class="uc head">UC</div> -->
+                </div>
+
+                <div class="materias"></div>
+                <div class="foot">
+                    TOTAL (base) <b><span id="totalUC">0 UC</span></b>
+                </div>
+                <p id="textTable">Pulsa para agregar una materia</p>
+
+                <button class="tbtn" onclick="openModal('matModal')">+</button>
             </div>
+            <br />
+            <br />
 
-            <div class="materias">
+            <!--COOPERACION-->
+            <button class="ubtn" onclick="openModal('coopModal')">
+                <i class="fas fa-handshake"></i>
+                <span id="sCoop"> COOPERACIÓN <i class="fas fa-angle-right"></i></span>
+            </button>
+            <br />
+            <br />
+
+            <br />
+            <!--CALCULAR-->
+            <button class="cbtn" onclick="calcularMatricula()">
+                <i class="fas fa-calculator"></i>
+                <br />CALCULAR
+            </button>
+
+            <br />
+            <br />
+
+            <div class="alert" id="alertmsg" style="display: none"></div>
+
+            <br />
+            <br />
+            <!-- PER  1-->
+            <div id="per1" class="btn-group">
+                <button id="p1b1" class="w25" data-table="ver" data-minor="verMinor" disabled>
+                    VER. FEB
+                </button>
+                <button id="p1b2" class="w25" data-table="1erPar" data-minor="1erMinor" disabled>
+                    MAR MAY
+                </button>
+                <button id="p1b3" class="w25" data-table="2doPar" data-minor="2doMinor" disabled>
+                    JUN JUL
+                </button>
+                <button id="p1b4" class="w25" data-table="ver" data-minor="verMinor" disabled>
+                    VER. AGO
+                </button>
             </div>
-            <div class="foot">TOTAL (base) <b><span id="totalUC">0 UC</span></b></div>
-            <p id="textTable">Pulsa para agregar una materia</p>
-            
-            <button class="tbtn" onclick="openModal('matModal')">+</button>
-            
-        </div>
-        <br>
-        <br>
+            <!-- PER  2-->
+            <div id="per2" class="btn-group">
+                <button id="p2b1" class="w25" data-table="ver" data-minor="verMinor" disabled>
+                    VER. AGO
+                </button>
+                <button id="p2b2" class="w25" data-table="1erImpar" data-minor="1erMinor" disabled>
+                    SEP NOV
+                </button>
+                <button id="p2b3" class="w25" data-table="2doImpar" data-minor="2doMinor" disabled>
+                    DIC ENE
+                </button>
+                <button id="p2b4" class="w25" data-table="ver" data-minor="verMinor" disabled>
+                    VER. FEB
+                </button>
+            </div>
+            <br />
 
-        <!--COOPERACION-->
-        <button class="ubtn" onclick="openModal('coopModal')">
-            <i class="fas fa-handshake"></i> <span id="sCoop"> COOPERACIÓN 
-                <i class="fas fa-angle-right"></i></span> 
-            
-        </button>
-        <br>
-        <br>
-
-        <br>
-        <!--CALCULAR-->
-        <button class="cbtn" onclick="calcularMatricula()">
-            <i class="fas fa-calculator"></i>
-            <br>CALCULAR
-        </button>
-
-        <br>
-        <br>
-
-        <div class="alert" id="alertmsg" style="display: none">
+            <div id="pagos"></div>
+            <br />
+            <div id="pagoMinor"></div>
+            <br />
         </div>
 
-        <br>
-        <br>
-        <!-- PER  1-->
-        <div id="per1" class="btn-group">
-            <button id="p1b1" class="w25" data-table="ver" data-minor="verMinor" disabled>VER. FEB</button>
-            <button id="p1b2" class="w25" data-table="1erPar" data-minor="1erMinor" disabled>MAR MAY</button>
-            <button id="p1b3" class="w25" data-table="2doPar" data-minor="2doMinor" disabled >JUN JUL</button>
-            <button id="p1b4" class="w25" data-table="ver" data-minor="verMinor" disabled>VER. AGO</button>
-        </div>
-        <!-- PER  2-->
-        <div id="per2" class="btn-group">
-            <button id="p2b1" class="w25" data-table="ver" data-minor="verMinor" disabled>VER. AGO</button>
-            <button id="p2b2" class="w25" data-table="1erImpar" data-minor="1erMinor" disabled>SEP NOV</button>
-            <button id="p2b3" class="w25" data-table="2doImpar" data-minor="2doMinor" disabled>DIC ENE</button>
-            <button id="p2b4" class="w25" data-table="ver" data-minor="verMinor" disabled>VER. FEB</button>
-        </div>
-        <br>
-        
-        <div id="pagos">
-        </div>
-        <br>
-        <div id="pagoMinor"></div>
-        <br>
-
-    </div>
-
-    <!-- TOOL PARA CALCULAR
+        <!-- TOOL PARA CALCULAR
     <div class="tool emenu" style="display: none">
         <div class="panel">
             <div class="cal">0</div>
@@ -524,168 +733,279 @@
 
     </div>-->
 
-     <!--HISTORICO UC-->
-    <div class="historico emenu" style="display: none">
-        <h2>Histórico UC</h2>
-        <div class="ct-chart"></div>
-        <br>
-        <table class="t-historico">
-            <tr>
-                <th>Fecha</th>
-                <th>Circular</th>
-                <th>Monto (Bs.S.)</th>
-            </tr>
-            <tr>
-                <td>SEP-18</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf">Link</a></td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>OCT-18</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf">Link</a></td>
-                <td>169</td>
-            </tr>
-            <tr>
-                <td>NOV-18</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf">Link</a></td>
-                <td>253,50</td>
-            </tr>
-            <tr>
-                <td>DIC-18</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/11/Circular-UC-18-19.pdf">Link</a></td>
-                <td>1.790</td>
-            </tr>
-            <tr>
-                <td>ENE-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/11/Circular-UC-18-19.pdf">Link</a></td>
-                <td>4.027</td>
-            </tr>
-            <tr>
-                <td>FEB-19</td>
-                <td></td>
-                <td>12.082</td>
-            </tr>
-            <tr>
-                <td>MAR-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf">Link</a></td>
-                <td>50.000</td>
-            </tr>
-            <tr>
-                <td>ABR-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf">Link</a></td>
-                <td>150.000</td>
-            </tr>
-            <tr>
-                <td>MAY-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf">Link</a></td>
-                <td>150.000</td>
-            </tr>
-            <tr>
-                <td>JUN-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/05/Circular-Costo-Unidad-de-Cr%c3%a9dito-Segundo-Semestre-2018-2019-Segunda-Parte.pdf">Link</a></td>
-                <td>200.000</td>
-            </tr>
-            <tr>
-                <td>JUL-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/05/Circular-Costo-Unidad-de-Cr%c3%a9dito-Segundo-Semestre-2018-2019-Segunda-Parte.pdf">Link</a></td>
-                <td>262.500</td>
-            </tr>
-            <tr>
-                <td>AGO-19</td>
-                <td></td>
-                <td>393.750</td>
-            </tr>
-            <tr>
-                <td>SEP-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf">Link</a></td>
-                <td>483.840</td>
-            </tr>
-            <tr>
-                <td>OCT-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf">Link</a></td>
-                <td>619.315</td>
-            </tr>
-            <tr>
-                <td>NOV-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf">Link</a></td>
-                <td>619.315</td>
-            </tr>
-            <tr>
-                <td>DIC-19</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/10/comunicado_cu_30_octubre_2019-3.pdf">Link</a></td>
-                <td>619.315</td>
-            </tr>
-            <tr>
-                <td>ENE-20</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/10/comunicado_cu_30_octubre_2019-3.pdf">Link</a></td>
-                <td>792.723</td>
-            </tr>
-            <tr>
-                <td>FEB-20</td>
-                <td></td>
-                <td>1.600.000</td>
-            </tr>
-            <tr>
-                <td>MAR-20</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf">Link</a></td>
-                <td>400.000</td>
-            </tr>
-            <tr>
-                <td>ABR-20</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf">Link</a></td>
-                <td>520.000</td>
-            </tr>
-            <tr>
-                <td>MAY-20</td>
-                <td><a href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf">Link</a></td>
-                <td>702.000</td>
-            </tr>
-            
-        </table>
-    </div>
+        <!--HISTORICO UC-->
+        <div class="historico emenu" style="display: none">
+            <h2>Histórico UC</h2>
+            <div class="ct-chart"></div>
+            <br />
+            <table class="t-historico">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Circular</th>
+                    <th>Semestral (Bs.S.)</th>
+                    <th>Mensual (Bs.S.)</th>
+                </tr>
+                <tr>
+                    <td>SEP-18</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">100</td>
+                </tr>
+                <tr>
+                    <td>OCT-18</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">169</td>
+                </tr>
+                <tr>
+                    <td>NOV-18</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/07/58a1e5ab31ed55835810decc0d1e3077.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">253,50</td>
+                </tr>
+                <tr>
+                    <td>DIC-18</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/11/Circular-UC-18-19.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">1.790</td>
+                </tr>
+                <tr>
+                    <td>ENE-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2018/11/Circular-UC-18-19.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">4.027</td>
+                </tr>
+                <tr>
+                    <td>FEB-19</td>
+                    <td></td>
+                    <td colspan="2">12.082</td>
+                </tr>
+                <tr>
+                    <td>MAR-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">50.000</td>
+                </tr>
+                <tr>
+                    <td>ABR-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">150.000</td>
+                </tr>
+                <tr>
+                    <td>MAY-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/03/Circular-Costo-UC-2018-2019-2b.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">150.000</td>
+                </tr>
+                <tr>
+                    <td>JUN-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/05/Circular-Costo-Unidad-de-Cr%c3%a9dito-Segundo-Semestre-2018-2019-Segunda-Parte.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">200.000</td>
+                </tr>
+                <tr>
+                    <td>JUL-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/05/Circular-Costo-Unidad-de-Cr%c3%a9dito-Segundo-Semestre-2018-2019-Segunda-Parte.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">262.500</td>
+                </tr>
+                <tr>
+                    <td>AGO-19</td>
+                    <td></td>
+                    <td colspan="2">393.750</td>
+                </tr>
+                <tr>
+                    <td>SEP-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">483.840</td>
+                </tr>
+                <tr>
+                    <td>OCT-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">619.315</td>
+                </tr>
+                <tr>
+                    <td>NOV-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/09/circular_vr_23_julio_2019-.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">619.315</td>
+                </tr>
+                <tr>
+                    <td>DIC-19</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/10/comunicado_cu_30_octubre_2019-3.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">619.315</td>
+                </tr>
+                <tr>
+                    <td>ENE-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2019/10/comunicado_cu_30_octubre_2019-3.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td colspan="2">792.723</td>
+                </tr>
+                <tr>
+                    <td>FEB-20</td>
+                    <td></td>
+                    <td colspan="2">1.600.000</td>
+                </tr>
+                <tr>
+                    <td>MAR-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>2.000.000</td>
+                    <td>400.000</td>
+                </tr>
+                <tr>
+                    <td>ABR-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>2.600.000</td>
+                    <td>520.000</td>
+                </tr>
+                <tr>
+                    <td>MAY-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/02/Circular_UC_2sem_1parte_2019-2020.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>3.510.000</td>
+                    <td>702.000</td>
+                </tr>
+            </table>
+        </div>
 
-    <!-- DONACIONES CALCULADORA - FAB -->
-    <div class="fab emenu" style="display: none">
-
-        <!--CARRERA
+        <!-- DONACIONES CALCULADORA - FAB -->
+        <div class="fab emenu" style="display: none">
+            <!--CARRERA
         <button class="ubtn" onclick="openCarrera()">
             <i class="fas fa-graduation-cap"></i>
             <span id="sCarreraFab">CARRERA</span>
             <i class="fas fa-angle-right"></i>
         </button>-->
 
-        <!-- SEMESTRE 
+            <!-- SEMESTRE 
         <button class="ubtn" onclick="openSem()">
                 <i class="fas fa-book"></i>
                 <span id="sSem">SEMESTRE <i class="fas fa-angle-right"></i></span>
                
         </button>-->
 
-        <p class="pInfo descrp">El <b> Programa Andrés Bello (PAB)</b> se consolida como un proyecto social para atender integralmente al grupo de jóvenes beneficiados con una cobertura económica de la matrícula en su carrera cursada</p>
+            <p class="pInfo descrp">
+                El <b> Programa Andrés Bello (PAB)</b> se consolida como un proyecto social para
+                atender integralmente al grupo de jóvenes beneficiados con una cobertura económica
+                de la matrícula en su carrera cursada
+            </p>
 
-        <!-- CANTIDAD DE ALUMNOS -->
-        <h3>CANTIDAD DE ALUMNOS:</h3>
-        <input type="number" min="1" class="cantAlum" id="cantAlum" value="1" onchange="totalizarDonacion()">
-        <br>
+            <!-- CANTIDAD DE ALUMNOS -->
+            <h3>CANTIDAD DE ALUMNOS:</h3>
+            <input
+                type="number"
+                min="1"
+                class="cantAlum"
+                id="cantAlum"
+                value="1"
+                onchange="totalizarDonacion()"
+            />
+            <br />
 
-        <!-- COOPERACION -->
-        <h3> COOPERACIÓN: <span id="spcoop">10%</span> </h3>
-        <div class="slidecontainer">
-            <input type="range" min="10" max="100" value="10" class="slider" step="10" id="coopRangeFab" oninput="updateTextPorcentaje(this)">
-        </div>
+            <!-- COOPERACION -->
+            <h3>COOPERACIÓN: <span id="spcoop">10%</span></h3>
+            <div class="slidecontainer">
+                <input
+                    type="range"
+                    min="10"
+                    max="100"
+                    value="10"
+                    class="slider"
+                    step="10"
+                    id="coopRangeFab"
+                    oninput="updateTextPorcentaje(this)"
+                />
+            </div>
 
-        <br>
+            <br />
 
-        <!--CALCULAR
+            <!--CALCULAR
         <button class="cbtn" onclick=" generarDonacionCal()">
             <i class="fas fa-calculator"></i>
             <br>CALCULAR
         </button>-->
-        <br>
+            <br />
 
-        <div class="totalizacion">
-           
-            <!-- RECARGOS 
+            <div class="totalizacion">
+                <!-- RECARGOS 
             <button class="accordion recargos">RECARGOS</button>
             <div class="panelInf">
                 <p>
@@ -699,7 +1019,7 @@
                 </p>
             </div>-->
 
-            <!-- DERECHO DE INSCRIPCION 
+                <!-- DERECHO DE INSCRIPCION 
             <button class="accordion derIn">DER. INSCRIPCIÓN</button>
             <div class="panelInf">
                 <p>
@@ -711,7 +1031,7 @@
                 </p>
             </div>-->
 
-            <!-- FUERA DE COBERTURA
+                <!-- FUERA DE COBERTURA
             <button class="accordion outCober">FUERA DE COBERTURA</button>
             <div class="panelInf">
                 <p> 
@@ -724,38 +1044,79 @@
                 </p>
             </div> -->
 
-        
-            <div class="tableTotal">
-                <table>
-                    <tr>
-                        <th>DONACIÓN <br> <span class="lowword">ESTIMACIÓN MENSUAL - <span id="mesActual"></span></span></th>
-                    </tr>
-                    <tr>
-                        <td><h2><span id="montoT"></span></h2></td>
-                    </tr>
-                </table>
+                <div class="tableTotal">
+                    <table>
+                        <tr>
+                            <th>
+                                DONACIÓN <br />
+                                <span class="lowword"
+                                    >ESTIMACIÓN MENSUAL - <span id="mesActual"></span
+                                ></span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2><span id="montoT"></span></h2>
+                            </td>
+                        </tr>
+                    </table>
 
-                <p class="pInfo">Estimación de <b>5UC</b> mesuales con el valor de la UC actual. <br> La Unidad de Crédito está sujeta a cambios mensuales según circular de Vicerrectorado.</p>
+                    <p class="pInfo">
+                        Estimación de <b>5UC</b> mesuales con el valor de la UC actual. <br />
+                        La Unidad de Crédito está sujeta a cambios mensuales según circular de
+                        Vicerrectorado.
+                    </p>
+                </div>
             </div>
+            <br />
         </div>
-        <br>
-    </div>
 
-    <footer style="display: none">
-        <div class="Dsocial">
-            <br>
-            <p class="textYellow"> UCalculadora V2.4</p>
-            <h2 class="textYellow">Contacto</h2>
-            
-            <p class="textYellow">Reportar error: <a class="textYellow" onClick="OnClickGa('toForm','Report')" href="https://goo.gl/forms/OHikbscMvAv1LdI62">Google Form</a> </p>
-            <p class="textYellow">Instagram: <a class="textYellow" onClick="OnClickGa('toIG','Social')" href="https://www.instagram.com/miguel_olim">@Miguel_Olim</a></p>
-            <p class="textYellow">Twitter: <a class="textYellow" onClick="OnClickGa('toTW','Social')" href="https://twitter.com/Miguel_Olim">@Miguel_Olim</a></p>
-            <p class="textYellow">Correo:  <a class="textYellow" onClick="OnClickGa('toGmail','Social')" href="mailto:migueldeolim1@gmail.com">migueldeolim1@gmail.com</a></p>
-            <br>
-        </div>  
-    </footer>
-    <script src="js/chartist-js.min.js"></script>
-    <script src="js/historico.js"></script>
-</body>
+        <footer style="display: none">
+            <div class="Dsocial">
+                <br />
+                <p class="textYellow">UCalculadora V2.4</p>
+                <h2 class="textYellow">Contacto</h2>
 
+                <p class="textYellow">
+                    Reportar error:
+                    <a
+                        class="textYellow"
+                        onClick="OnClickGa('toForm','Report')"
+                        href="https://goo.gl/forms/OHikbscMvAv1LdI62"
+                        >Google Form</a
+                    >
+                </p>
+                <p class="textYellow">
+                    Instagram:
+                    <a
+                        class="textYellow"
+                        onClick="OnClickGa('toIG','Social')"
+                        href="https://www.instagram.com/miguel_olim"
+                        >@Miguel_Olim</a
+                    >
+                </p>
+                <p class="textYellow">
+                    Twitter:
+                    <a
+                        class="textYellow"
+                        onClick="OnClickGa('toTW','Social')"
+                        href="https://twitter.com/Miguel_Olim"
+                        >@Miguel_Olim</a
+                    >
+                </p>
+                <p class="textYellow">
+                    Correo:
+                    <a
+                        class="textYellow"
+                        onClick="OnClickGa('toGmail','Social')"
+                        href="mailto:migueldeolim1@gmail.com"
+                        >migueldeolim1@gmail.com</a
+                    >
+                </p>
+                <br />
+            </div>
+        </footer>
+        <script src="js/chartist-js.min.js"></script>
+        <script src="js/historico.js"></script>
+    </body>
 </html>
