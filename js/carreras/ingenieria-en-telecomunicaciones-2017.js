@@ -40,12 +40,6 @@ var ingentelecomunicaciones = [
     { Semestre: "TERCER SEMESTRE", Asignatura: "Innovación y Emprendimiento ", UC: 3, Tax: "TA‐1" },
     {
         Semestre: "TERCER SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento ",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
-    {
-        Semestre: "TERCER SEMESTRE",
         Asignatura: "Física Eléctrica (Nuevo Pensum)",
         UC: 6,
         Tax: "TA‐4",

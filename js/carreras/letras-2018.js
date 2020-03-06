@@ -170,11 +170,5 @@ var letras = [
         Tax: "TA‐1",
     },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
-    {
-        Semestre: "OCTAVO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 4, Tax: "TA‐1" },
 ];

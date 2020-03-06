@@ -211,12 +211,6 @@ var educacionmencionpreescolar = [
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
     {
         Semestre: "SÉPTIMO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
-    {
-        Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Marco Legal para la Educación Inicial",
         UC: 5,
         Tax: "TA‐1",

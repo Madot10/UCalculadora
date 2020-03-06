@@ -53,12 +53,6 @@ var ingcivil = [
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
     {
         Semestre: "CUARTO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
-    {
-        Semestre: "CUARTO SEMESTRE",
         Asignatura: "Ecología, Ambiente y Sustentabilidad",
         UC: 3,
         Tax: "TA‐1",

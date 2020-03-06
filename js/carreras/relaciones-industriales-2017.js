@@ -204,12 +204,6 @@ var relacionesindustriales = [
     },
     {
         Semestre: "OCTAVO SEMESTRE",
-        Asignatura: "Innovación y emprendimiento (Virtual)",
-        UC: 3,
-        Tax: "(V) TA ‐ 1",
-    },
-    {
-        Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Gestión de Cambios Organizacionales",
         UC: 3,
         Tax: "TA ‐ 3",

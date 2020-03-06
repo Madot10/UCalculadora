@@ -73,12 +73,6 @@ var economia = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
     {
         Semestre: "SEXTO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
-    {
-        Semestre: "SEXTO SEMESTRE",
         Asignatura: "Teoría y Política del Comercio Internacional",
         UC: 5,
         Tax: "TA‐1",

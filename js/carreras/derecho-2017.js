@@ -197,12 +197,7 @@ var derecho = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Derechos Humanos", UC: 3, Tax: "TA‐3" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Fuentes de las Obligaciones", UC: 6, Tax: "TA‐1" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
-    {
-        Semestre: "SÉPTIMO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
+
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Argumentación Jurídica", UC: 3, Tax: "TA‐4" },
     {
         Semestre: "SÉPTIMO SEMESTRE",

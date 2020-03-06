@@ -66,12 +66,6 @@ var contaduria = [
         Tax: "(V) TA‐3",
     },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
-    {
-        Semestre: "CUARTO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA‐1",
-    },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Derecho del Trabajo", UC: 6, Tax: "TA‐1" },
     {
         Semestre: "QUINTO SEMESTRE",

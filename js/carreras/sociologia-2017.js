@@ -97,12 +97,6 @@ var sociologia = [
         UC: 3,
         Tax: "TA ‐ 1",
     },
-    {
-        Semestre: "QUINTO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y emprendimiento",
-        UC: 3,
-        Tax: "(V) TA ‐ 1",
-    },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Estadística Multivariable", UC: 5, Tax: "TA ‐ 5" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Desarrollo Social", UC: 4, Tax: "TA ‐ 3" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Cambio Social en Venezuela", UC: 4, Tax: "TA ‐ 1" },

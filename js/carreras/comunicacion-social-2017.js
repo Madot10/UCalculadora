@@ -120,13 +120,7 @@ var comunicacionsocial = [
         Tax: "TA-1",
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Gerencia de Proyectos", UC: 5, Tax: "TA-4" },
-    { Semestre: "SEXTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA-4" },
-    {
-        Semestre: "SEXTO SEMESTRE",
-        Asignatura: "(Virtual) Innovación y Emprendimiento",
-        UC: 3,
-        Tax: "(V) TA-4",
-    },
+    { Semestre: "SEXTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA-1" },
     {
         Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
         Asignatura: "Comunicaciones Organizacionales",
