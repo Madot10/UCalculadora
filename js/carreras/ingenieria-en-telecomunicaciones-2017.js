@@ -69,7 +69,6 @@ var ingentelecomunicaciones = [
         UC: 7,
         Tax: "TA‐4",
     },
-    { Semestre: "CUARTO SEMESTRE", Asignatura: "Campos Electromagnéticos", UC: 6, Tax: "TA‐4" },
     {
         Semestre: "CUARTO SEMESTRE",
         Asignatura: "Ecología, Ambiente y Sustentabilidad",
