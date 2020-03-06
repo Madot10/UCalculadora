@@ -3,7 +3,7 @@ var ingindustrial = [
         Semestre: "PRIMER SEMESTRE",
         Asignatura: "Fundamentos de Ingeniería Industrial",
         UC: 5,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     { Semestre: "PRIMER SEMESTRE", Asignatura: "Matemática Básica", UC: 7, Tax: "TA‐6" },
     {
@@ -43,7 +43,7 @@ var ingindustrial = [
         UC: 3,
         Tax: "TA‐9",
     },
-    { Semestre: "TERCER SEMESTRE", Asignatura: "Geometría del Espacio", UC: 5, Tax: "TA‐8" },
+    { Semestre: "TERCER SEMESTRE", Asignatura: "Geometría del Espacio", UC: 5, Tax: "TA‐4" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Fundamentos de Programación", UC: 5, Tax: "TA‐9" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Cálculo III", UC: 7, Tax: "TA‐4" },
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Laboratorio de Química", UC: 3, Tax: "TA‐9" },
@@ -102,7 +102,14 @@ var ingindustrial = [
         UC: 5,
         Tax: "TA‐4",
     },
+    { Semestre: "SEXTO SEMESTRE", Asignatura: "(Caracas) Térmica", UC: 7, Tax: "TA‐4" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Térmica", UC: 7, Tax: "TA‐9" },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "(Caracas) Procesos Químicos Industriales",
+        UC: 6,
+        Tax: "TA‐4",
+    },
     {
         Semestre: "SEXTO SEMESTRE",
         Asignatura: "Procesos Químicos Industriales",
@@ -120,7 +127,7 @@ var ingindustrial = [
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Diseño del Trabajo y Factores Humanos",
         UC: 6,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Métodos Estadísticos", UC: 5, Tax: "TA‐4" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Mecánica de Fluidos", UC: 7, Tax: "TA‐9" },
@@ -131,7 +138,7 @@ var ingindustrial = [
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Diseño de Sistemas Productivos",
         UC: 5,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     {
         Semestre: "OCTAVO SEMESTRE",
@@ -143,7 +150,7 @@ var ingindustrial = [
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Diseño de Instalaciones Auxiliares",
         UC: 5,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     {
         Semestre: "OCTAVO SEMESTRE",
@@ -169,7 +176,7 @@ var ingindustrial = [
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Mercadotecnia para Ingenieros Industriales",
         UC: 4,
-        Tax: "TA‐8",
+        Tax: "TA‐4",
     },
     {
         Semestre: "NOVENO SEMESTRE",
