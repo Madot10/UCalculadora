@@ -58,7 +58,7 @@ var ingcivil = [
         Tax: "TA‐1",
     },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Calculo IV", UC: 7, Tax: "TA‐4" },
-    { Semestre: "QUINTO SEMESTRE", Asignatura: "Topografía", UC: 7, Tax: "TA‐4" },
+    { Semestre: "QUINTO SEMESTRE", Asignatura: "Topografía", UC: 7, Tax: "TA‐9" },
     {
         Semestre: "QUINTO SEMESTRE",
         Asignatura: "Dibujo Asistido por Computadora",
@@ -75,7 +75,7 @@ var ingcivil = [
         Semestre: "SEXTO SEMESTRE",
         Asignatura: "Materiales de Construcción",
         UC: 4,
-        Tax: "TA‐1",
+        Tax: "TA‐4",
     },
     {
         Semestre: "SEXTO SEMESTRE",
@@ -128,6 +128,12 @@ var ingcivil = [
     },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Ingeniería Sanitaria II", UC: 4, Tax: "TA‐4" },
     {
+        Semestre: "OCTAVO SEMESTRE",
+        Asignatura: "(Virtual) Ingeniería Sanitaria II",
+        UC: 4,
+        Tax: "(V) TA‐4",
+    },
+    {
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Etica Profesional (Virtual)",
         UC: 3,
@@ -158,8 +164,9 @@ var ingcivil = [
         UC: 4,
         Tax: "(SP) TA‐8",
     },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "( TA‐8" },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva o Pasantía", UC: 4, Tax: "TA‐8" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "asantía", UC: 4, Tax: "TA‐7" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Ingeniería de Fundaciones", UC: 4, Tax: "TA‐4" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Pavimentos", UC: 5, Tax: "TA‐4" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Proyecto Estructural II", UC: 5, Tax: "TA‐9" },
