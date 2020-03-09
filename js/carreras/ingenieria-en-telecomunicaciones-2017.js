@@ -177,13 +177,7 @@ var ingentelecomunicaciones = [
         Tax: "TA‐9",
     },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Pasantía", UC: 5.2, Tax: "TA‐7" },
-    {
-        Semestre: "DECIMO SEMESTRE",
-        Asignatura: "Etica Profesional (Virtual)",
-        UC: 3,
-        Tax: "(SP) TA‐2",
-    },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Etica Profesional", UC: 3, Tax: "TA‐2" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Etica Profesional", UC: 3, Tax: "(SP) TA‐9" },
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Sistemas de Radiodifusión (Virtual)",

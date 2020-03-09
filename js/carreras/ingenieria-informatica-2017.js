@@ -131,13 +131,7 @@ var inginformatica = [
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Pasantía", UC: 4, Tax: "TA‐7" },
-    {
-        Semestre: "DECIMO SEMESTRE",
-        Asignatura: "Ética Profesional (Virtual)",
-        UC: 3,
-        Tax: "(SP) TA‐2",
-    },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐2" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "(SP) TA‐9" },
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Evaluación de Sistemas Informáticos",

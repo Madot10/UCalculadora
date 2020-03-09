@@ -191,13 +191,7 @@ var ingindustrial = [
         UC: 5,
         Tax: "TA‐8",
     },
-    {
-        Semestre: "NOVENO SEMESTRE",
-        Asignatura: "Ética Profesional (Virtual)",
-        UC: 3,
-        Tax: "(V) TA‐2",
-    },
-    { Semestre: "NOVENO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐2" },
+    { Semestre: "NOVENO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "(SP) TA‐9" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Costos Industriales", UC: 4, Tax: "TA‐6" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Prácticas Profesionales", UC: 5, Tax: "TA‐9" },
     {
