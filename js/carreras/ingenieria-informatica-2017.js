@@ -75,7 +75,7 @@ var inginformatica = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Sistemas de Bases de Datos I", UC: 5, Tax: "TA‐9" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Programación Lineal", UC: 5, Tax: "TA‐4" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Redes de Computadores II", UC: 8, Tax: "TA‐9" },
-    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Metodologia del Software", UC: 6, Tax: "TA‐9" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Metodologia del Software", UC: 6, Tax: "TA‐4" },
     {
         Semestre: "SÉPTIMO SEMESTRE",
         Asignatura: "Sistemas de Bases de Datos II",
@@ -154,7 +154,7 @@ var inginformatica = [
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Gestión de Proyectos de Software",
         UC: 5,
-        Tax: "TA‐9",
+        Tax: "TA‐4",
     },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
