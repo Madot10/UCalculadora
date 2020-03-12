@@ -120,12 +120,6 @@ var inginformatica = [
         UC: 4,
         Tax: "TA‐1",
     },
-    {
-        Semestre: "NOVENO SEMESTRE",
-        Asignatura: "Innovación y Emprendimiento  (Virtual)",
-        UC: 4,
-        Tax: "(V) TA‐1",
-    },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     {
