@@ -82,7 +82,6 @@ var contaduria = [
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Auditoria y Aseguramiento I", UC: 3, Tax: "TA‐1" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐2" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Costos I", UC: 4, Tax: "TA‐3" },
-    { Semestre: "QUINTO SEMESTRE", Asignatura: "Contabilidad IV", UC: 8, Tax: "TA‐3" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Inglés para los Negocios", UC: 3, Tax: "TA‐6" },
     {
         Semestre: "QUINTO SEMESTRE",
@@ -95,6 +94,12 @@ var contaduria = [
         Asignatura: "Contabilidad IV",
         UC: 8,
         Tax: "TA‐3",
+    },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "(Virtual) Contabilidad IV",
+        UC: 8,
+        Tax: "(V) TA‐3",
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Fiscal", UC: 3, Tax: "TA‐3" },
     {
