@@ -54,6 +54,12 @@ var relacionesindustriales = [
         Tax: "TA ‐ 8",
     },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Derecho del Trabajo", UC: 6, Tax: "TA ‐ 1" },
+    {
+        Semestre: "TERCER SEMESTRE",
+        Asignatura: "(Virtual) Derecho del Trabajo",
+        UC: 6,
+        Tax: "(V) TA ‐ 1",
+    },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Estadística II", UC: 5, Tax: "TA ‐ 5" },
     {
         Semestre: "TERCER SEMESTRE",
@@ -68,7 +74,19 @@ var relacionesindustriales = [
         UC: 3,
         Tax: "TA ‐ 1",
     },
+    {
+        Semestre: "TERCER SEMESTRE",
+        Asignatura: "(Virtual) Teoría de las Relaciones Industriales",
+        UC: 3,
+        Tax: "(V) TA ‐ 1",
+    },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Gestión del Talento Humano", UC: 4, Tax: "TA ‐ 1" },
+    {
+        Semestre: "TERCER SEMESTRE",
+        Asignatura: "(Virtual) Gestión del Talento Humano",
+        UC: 4,
+        Tax: "(V) TA ‐ 1",
+    },
     {
         Semestre: "CUARTO SEMESTRE",
         Asignatura: "Metodología de la Investigación Social II: Enfoques Cuantitativos",
@@ -103,6 +121,12 @@ var relacionesindustriales = [
         Asignatura: "Teoría de las Relaciones Sindicato‐Gerenciales",
         UC: 3,
         Tax: "TA ‐ 1",
+    },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "(Virtual) Teoría de las Relaciones Sindicato‐Gerenciales",
+        UC: 3,
+        Tax: "(V) TA ‐ 1",
     },
     {
         Semestre: "QUINTO SEMESTRE",
