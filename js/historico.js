@@ -60,9 +60,9 @@ new Chartist.Line(
             "dic-19",
             "ene-20",
             "feb-20",
-            "mar-20",
-            "abr-20",
-            "may-20",
+            "mar-abr-20",
+            "?-20",
+            "?-20",
         ],
         series: [
             [
