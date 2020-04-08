@@ -58,8 +58,8 @@ let periodo = {
     2020201: {
         base: 400000,
         variacion: [
-            ["04/30/2020", 30],
-            ["05/01/2020", 35],
+            ["05/9/2020", 30],
+            ["05/29/2020", 35],
         ],
     },
 };
@@ -237,7 +237,8 @@ let tables = {
         ["Pago único verano"],
         ["Total (Febrero-Marzo) ", '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")'],
     ],
-};*/
+};
+*/
 
 let templateTabla = {
     "1erMinor": [
@@ -258,31 +259,31 @@ let templateTabla = {
     ],
     "1erPar": [
         3,
-        ["*EN ESPERA DE INICIO DE CLASES"],
+        ["*CRONOGRAMA MODIFICADO"],
         [
             'Derecho de inscripción <br> (75% ~ Pago Marzo) <i class="fas fa-question-circle" onclick="modalInfoOpen(`5 UC - Estudiantes regulares <br> 7.5 UC - Estudiantes nuevos`)"></i>',
             '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
             '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
         ],
-        ["Modalidad pago de contado (Marzo-?): "],
+        ["Modalidad pago de contado (Abril-Junio): "],
         [
-            "Total <br> (Período Marzo-?*)",
+            "Total <br> (Período Abril-Junio*)",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
-        ["Modalidad pago financiado (Marzo-?*): "],
+        ["Modalidad pago financiado (Abril-Junio): "],
         [
-            "Marzo <br> (1er Mes)",
+            "Abril <br> (1er Mes)",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
         ],
         [
-            'Abril* <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(30,4)))"></i>',
-            '<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(30,4))), `Bs.S `, true)")',
+            'Mayo* <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
+            '<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(11,5))), `Bs.S `, true)")',
         ],
         [
-            'Mayo* <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,5)))"></i>',
-            '<span class="ugreen">Desde 3er Mes:</span> <br>eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,5))), `Bs.S `, true)")',
+            'Junio* <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+            '<span class="ugreen">Desde 3er Mes:</span> <br>eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,6))), `Bs.S `, true)")',
         ],
     ],
     "2doPar": [

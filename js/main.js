@@ -305,7 +305,7 @@ function calcularMatricula() {
 let formatNumber = {
     separador: ".",
     sepDecimal: ",",
-    formatear: function(num) {
+    formatear: function (num) {
         num += "";
         var splitStr = num.split(".");
         var splitLeft = splitStr[0];
@@ -316,7 +316,7 @@ let formatNumber = {
         }
         return this.simbol + splitLeft + splitRight;
     },
-    new: function(num, simbol, IsProc) {
+    new: function (num, simbol, IsProc) {
         this.simbol = simbol || "";
         if (IsProc) {
             //console.log("Num entrante",num);
@@ -524,7 +524,6 @@ function totalizacion() {
 
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
-
     /*
     console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
