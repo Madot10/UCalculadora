@@ -5,12 +5,12 @@ let responsiveOptions = [
             showPoint: false,
             offset: 30,
             axisY: {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                     return value / 1000000 + "MM";
                 },
             },
             axisX: {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                     let arrLabel = value.split("-");
                     return arrLabel[1];
                 },
@@ -23,12 +23,12 @@ let responsiveOptions = [
             showPoint: false,
             offset: 15,
             axisY: {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                     return value / 1000000 + "MM";
                 },
             },
             axisX: {
-                labelInterpolationFnc: function(value) {
+                labelInterpolationFnc: function (value) {
                     /*let arrLabel = value.split("-");
                     return arrLabel[1];*/
                     return value[0].toUpperCase();
@@ -60,9 +60,10 @@ new Chartist.Line(
             "dic-19",
             "ene-20",
             "feb-20",
-            "mar-abr-20",
-            "?-20",
-            "?-20",
+            "mar-20",
+            "abr-20",
+            "may-20",
+            "jun-20",
         ],
         series: [
             [
@@ -85,10 +86,11 @@ new Chartist.Line(
                 792723,
                 1600000,
                 2000000,
+                2000000,
                 2600000,
                 3510000,
             ],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400000, 520000, 702000],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 400000, 400000, 520000, 702000],
         ],
     },
     {
@@ -97,7 +99,7 @@ new Chartist.Line(
         },
         axisY: {
             offset: 50,
-            labelInterpolationFnc: function(value) {
+            labelInterpolationFnc: function (value) {
                 return value / 1000 + "mil";
             },
         },
