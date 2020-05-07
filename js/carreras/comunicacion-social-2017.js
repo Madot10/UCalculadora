@@ -104,6 +104,12 @@ var comunicacionsocial = [
     },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Metodología", UC: 5, Tax: "TA-6" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Procesos editoriales", UC: 5, Tax: "TA-2" },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "Procesos editoriales (Virtual)",
+        UC: 5,
+        Tax: "(V) TA-1",
+    },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Periodismo", UC: 4, Tax: "TA-9" },
     {
         Semestre: "SEXTO SEMESTRE",
