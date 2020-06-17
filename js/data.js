@@ -304,11 +304,11 @@ let templateTabla = {
         ],
         ["Modalidad pago financiado <br> (50% restante) "],
         [
-            'Junio/Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+            'Junio/Julio (4to Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
             '<span class="ugreen">Desde 29 de Junio (+DI): <br> </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 1) + (2.5 * valorUC), `Bs.S `, true)")',
         ],
         [
-            'Agosto (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>',
+            'Agosto (5to Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>',
             '<span class="ugreen">Desde 10 de Agosto:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(11,8))) *1), `Bs.S `, true)")',
         ],
     ],
