@@ -134,6 +134,12 @@ var inginformatica = [
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "(SP) TA‐9" },
     {
         Semestre: "DECIMO SEMESTRE",
+        Asignatura: "(VIRTUAL) Evaluación de Sistemas Informáticos",
+        UC: 5,
+        Tax: "(V) TA‐1",
+    },
+    {
+        Semestre: "DECIMO SEMESTRE",
         Asignatura: "Evaluación de Sistemas Informáticos",
         UC: 5,
         Tax: "TA‐4",
