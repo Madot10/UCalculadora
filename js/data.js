@@ -62,6 +62,10 @@ let periodo = {
             ["05/29/2020", 35],
         ],
     },
+    2020202: {
+        base: 947700,
+        variacion: [["08/11/2020", 35]],
+    },
 };
 /*
 let tables = {
@@ -288,23 +292,24 @@ let templateTabla = {
     ],
     "2doPar": [
         3,
+        ["*CRONOGRAMA MODIFICADO"],
         [
             "Derecho de inscripción <br> (25% ~ Pago Junio)",
-            '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((0.25 * valorUC), `Bs.S `)")',
+            '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((2.5 * valorUC), `Bs.S `)")',
         ],
-        ["Modalidad pago de contado (Jun-Jul): <br> (50% restante)"],
+        ["Modalidad pago de contado (Jul-Ago): <br> (50% restante)"],
         [
-            "Total <br> (Período Junio-Julio)",
-            '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
+            "Total <br> (Período Julio-Agosto)",
+            '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((2.5 * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
         ],
         ["Modalidad pago financiado <br> (50% restante) "],
         [
-            'Junio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
-            '<span class="ugreen">Desde 1 de Junio (+DI): </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 0.25) + (0.25 * valorUC), `Bs.S `, true)")',
+            'Junio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
+            '<span class="ugreen">Desde 29 de Julio (+DI): <br> </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,7)) * 1) + (2.5 * valorUC), `Bs.S `, true)")',
         ],
         [
-            'Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
-            '<span class="ugreen">Desde 1 de Julio:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,7))) * 0.25), `Bs.S `, true)")',
+            'Julio (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>',
+            '<span class="ugreen">Desde 10 de Agosto:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(11,8))) *1), `Bs.S `, true)")',
         ],
     ],
     ver: [
