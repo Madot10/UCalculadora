@@ -294,10 +294,11 @@ let templateTabla = {
         3,
         ["*CRONOGRAMA MODIFICADO"],
         [
-            "Derecho de inscripción <br> (25% ~ Pago Junio)",
+            "Derecho de inscripción <br> (25% ~ Pago Julio)",
             '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((2.5 * valorUC), `Bs.S `)")',
         ],
-        ["Modalidad pago de contado (Jul-Ago): <br> (50% restante)"],
+        ["Modalidad pago de contado (Jul-Ago): "],
+        ["29 de junio hasta el 13 de julio"],
         [
             "Total <br> (Período Julio-Agosto)",
             '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((2.5 * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
