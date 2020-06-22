@@ -172,7 +172,7 @@ var comunicacionsocialnuevopensum = [
         Tax: "TA-8",
     },
     {
-        Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE nB",
+        Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
         Asignatura: "Responsabilidad Social Empresarial y Desarrollo Sustentable",
         UC: 3,
         Tax: "TA-2",
