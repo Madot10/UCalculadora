@@ -524,6 +524,7 @@ function totalizacion() {
 
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
+
     /*
     console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
@@ -536,6 +537,7 @@ function totalizacion() {
     console.log("UC Recargo: ", ucrec);
     console.log("UCpagar: ", ucpagar);
     console.log("Valor real UC (BASE): ", vrealUC);
+    console.log("Total totalbs ", totalbs);
     console.log("Total totalbs*3: ", totalbs * 3);
     console.log("Total Minors bs*3: ", totalbsMinor * 3);*/
 
@@ -570,7 +572,18 @@ function getUCfecha(fecha) {
 }
 
 function GetMontoTarifa(fecha) {
-    return getUCfecha(fecha) * ucpagar;
+    let aux = ucpagar;
+    switch (sede) {
+        case "g":
+        case "tq":
+            //Guayana  /Los teques 20% descuento
+            //document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
+            aux *= 0.8;
+
+            break;
+    }
+
+    return getUCfecha(fecha) * aux;
 }
 
 function getFechaAnoActual(dia, mes) {
