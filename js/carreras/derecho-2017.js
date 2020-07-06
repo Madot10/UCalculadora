@@ -181,9 +181,9 @@ var derecho = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Teoría y Política Económica", UC: 4, Tax: "TA‐1" },
     {
         Semestre: "SEXTO SEMESTRE",
-        Asignatura: "(Virtual) Teoría y Política Económica",
+        Asignatura: "(SP) Teoría y Política Económica",
         UC: 4,
-        Tax: "(V) TA‐1",
+        Tax: "(SP) TA‐1",
     },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Ética", UC: 3, Tax: "TA‐1" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Penal Económico", UC: 4, Tax: "TA‐1" },
