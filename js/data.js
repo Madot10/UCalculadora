@@ -66,6 +66,9 @@ let periodo = {
         base: 947700,
         variacion: [["08/11/2020", 35]],
     },
+    220:{
+        base: 1920000
+    }
 };
 /*
 let tables = {

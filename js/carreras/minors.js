@@ -162,42 +162,7 @@ let minors = [
         UC: 3,
         Tax: "TA‐4",
     },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Fundamentos de Guión",
-        UC: 6,
-        Tax: "TA‐4",
-    },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Estructura Dramática",
-        UC: 5,
-        Tax: "TA‐8",
-    },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Personajes y Diálogos",
-        UC: 5,
-        Tax: "TA‐8",
-    },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Guión para Cine I",
-        UC: 5,
-        Tax: "TA‐9",
-    },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Guión para Cine II",
-        UC: 5,
-        Tax: "TA‐9",
-    },
-    {
-        Semestre: "(MINOR) GUIONISMO",
-        Asignatura: "Adaptación Cinematográfica",
-        UC: 5,
-        Tax: "TA‐4",
-    },
+
     {
         Semestre: "(MINOR) VOCERÍA",
         Asignatura: "Comunicación Oral",
