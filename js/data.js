@@ -66,9 +66,9 @@ let periodo = {
         base: 947700,
         variacion: [["08/11/2020", 35]],
     },
-    220:{
-        base: 1920000
-    }
+    220: {
+        base: 1920000,
+    },
 };
 /*
 let tables = {
@@ -319,7 +319,7 @@ let templateTabla = {
     ver: [
         3,
         ["Pago único verano"],
-        ["Total", '(100%) eval(" formatNumber.new(totalbs, `Bs.S `) ")'],
+        ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `Bs.S `) ")'],
     ],
     "1erImpar": [
         3,
