@@ -319,7 +319,7 @@ let templateTabla = {
     ver: [
         3,
         ["Pago único verano"],
-        ["*EN ESPERA DE CIRCULAR PARA CONFIRMAR"],
+        ["*APLICA UC SEMESTRAL (UC mensual x5)"],
         ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `Bs.S `) ")'],
     ],
     "1erImpar": [
