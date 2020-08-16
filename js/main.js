@@ -112,7 +112,7 @@ function InicializarPeriodoSys() {
     if (
         (mesAct > 2 && mesAct < 8) ||
         (mesAct == 2 && diaAct >= 11) /* Mes febrero */ ||
-        (mesAct == 8 && diaAct <= 15) /* Mes Agosto */
+        (mesAct == 8 && diaAct <= 28) /* Mes Agosto */
     ) {
         //PERIODO 1
         //console.warn("PERIODO 1");
