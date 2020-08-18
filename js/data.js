@@ -312,8 +312,9 @@ let templateTabla = {
             '<span class="ugreen">Desde 29 de Junio (+DI): <br> </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 1) + (2.5 * valorUC), `Bs.S `, true)")',
         ],
         [
-            'Agosto (5to Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>',
-            '<span class="ugreen">Desde 1 de Agosto:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,8))) *1), `Bs.S `, true)")',
+            "Agosto (5to Mes)",
+            '<span class="ugreen">Desde 1 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,8))) *1), `Bs.S `, true)")',
+            '<span class="ugreen">Desde 11 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(11,8))) *1), `Bs.S `, true)")',
         ],
     ],
     ver: [

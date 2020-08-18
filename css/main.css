@@ -100,6 +100,12 @@ button:hover {
     background-color: #3f6a45;
 }
 
+button.cbtn {
+    color: var(--green);
+    background-color: white;
+    border: 3px solid var(--green);
+}
+
 /* button:focus{
     background-color: #3f6a45;
 } */
