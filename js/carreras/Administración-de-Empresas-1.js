@@ -120,7 +120,7 @@ var administracióndeempresas = [
     },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Finanzas II", UC: 6, Tax: "TA‐3" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Gerencia de Proyectos", UC: 3, Tax: "TA‐3" },
-    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación Empresarial", UC: 3, Tax: "TA‐8" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación Empresarial", UC: 3, Tax: "TA‐6" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Negociación y Conflicto", UC: 3, Tax: "TA‐4" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 4, Tax: "(V) TA‐8" },
