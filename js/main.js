@@ -526,7 +526,7 @@ function totalizacion() {
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
 
-    console.warn("FINAL: ");
+    /* console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
     console.log("ucbase: ", ucbase);
@@ -539,7 +539,7 @@ function totalizacion() {
     console.log("Valor real UC (BASE): ", vrealUC);
     console.log("Total totalbs ", totalbs);
     console.log("Total totalbs*3: ", totalbs * 3);
-    console.log("Total Minors bs*3: ", totalbsMinor * 3);
+    console.log("Total Minors bs*3: ", totalbsMinor * 3);*/
 
     if (mode == "UC") {
         GenerarTabla();
