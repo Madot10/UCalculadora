@@ -69,6 +69,13 @@ let periodo = {
     220: {
         base: 1920000,
     },
+    2020211: {
+        base: 2304000,
+        variacion: [
+            ["11/09/2020", 35],
+            ["12/09/2020", 44.9974279835391],
+        ],
+    },
 };
 /*
 let tables = {
@@ -326,29 +333,29 @@ let templateTabla = {
     "1erImpar": [
         3,
         [
-            "Derecho de inscripción <br> (75% ~ Pago Sept)",
-            '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((1.25 * valorUC), `Bs.S `,true)")',
-            '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((2.75 * valorUC), `Bs.S `, true)")',
+            "Derecho de inscripción <br> (75% ~ Pago Sept/Oct)",
+            '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
+            '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
         ],
-        ["Modalidad pago de contado (Sep-Nov): <br> (50% del total)"],
+        ["Modalidad pago de contado (Sep-Dic): <br> (50% del total)"],
         [
             "Total <br> (Período Sep-Nov)",
-            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
-            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
+            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
         ["Modalidad pago financiado (Sep-Nov): <br> (50% del total)"],
         [
-            "Septiembre <br> (25%)",
-            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((1.25 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")',
-            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((2.75 * valorUC) + (totalbs * 0.25)), `Bs.S `, true)")',
+            "Septiembre / Octubre <br> (25%)",
+            '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
+            '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
         ],
         [
-            'Octubre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,10)))"></i>',
-            '<span class="ugreen">Desde el 1 Oct: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,10)) * 0.125), `Bs.S `, true)")',
+            'Noviembre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,11)))"></i>',
+            '<span class="ugreen">Desde el 9 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(10,11))), `Bs.S `, true)")',
         ],
         [
-            'Noviembre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,11)))"></i>',
-            '<span class="ugreen">Desde el 1 Nov: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,11)) * 0.125), `Bs.S `, true)")',
+            'Diciembre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
+            '<span class="ugreen">Desde el 9 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
         ],
     ],
     "2doImpar": [

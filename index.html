@@ -77,9 +77,9 @@
             crossorigin="anonymous"
         ></script>
 
-        <script src="js/main.js?dev=150"></script>
+        <script src="js/main.js?dev=151"></script>
         <script src="js/modals.js?dev=230"></script>
-        <script src="js/data.js?dev=450"></script>
+        <script src="js/data.js?dev=451"></script>
         <!-- <script src="js/tool.js"></script> -->
         <script src="js/fab.js"></script>
 
@@ -393,7 +393,7 @@
                     </button>
                 </div>
 
-                <div id="btnRgo" class="modal-body" style="display: none;">
+                <div id="btnRgo" class="modal-body" style="display: none">
                     <h3>
                         <span id="tipoAyuda"></span>
                     </h3>
@@ -466,7 +466,7 @@
         </div>
 
         <!-- HEADER -->
-        <header class="emenu" style="display: none;">
+        <header class="emenu" style="display: none">
             <h1>
                 <i class="fa bback" onclick="OpenDiv('menu')">&#xf060;</i>
                 <span class="ublue">UC</span><span class="ugreen">ALCULADORA</span>
@@ -481,21 +481,21 @@
             <p>
                 MIGUEL DE OLIM
                 <br />
-                <!--<b>CIRCULAR JULIO</b> <br />
+                <b>CIRCULAR SEPTIEMBRE</b> <br />
                 <b
                     ><a
                         target="_blank"
-                        href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/06/Circular_UC_2sem_2parte_2019-2020_v05.pdf"
+                        href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/09/Circular-Costo-Unidad-de-Credito-Primer-Semestre-2020-2021-Primera-Parte.pdf"
                         >(CIRCULAR)</a
                     ></b
                 >
-                <br />-->
+                <br />
                 <!-- <a href="#" onclick="modalInfoOpen(infoTXT)">¿Por qué diferencia de monto con Caja?</a> -->
             </p>
         </header>
 
         <!-- MENU -->
-        <div id="menu" class="onLoad emenu" style="display: none;">
+        <div id="menu" class="onLoad emenu" style="display: none">
             <a href="#" class="noUnder menu">
                 <div class="Dcalc" onclick="OpenDiv('ucalculadora')">
                     <br />
@@ -538,8 +538,8 @@
 
                     <h2>MATRÍCULA</h2>
                     <p class="infoMenu">
-                        <b>ESTIMACIÓN HABILITADA VERANO</b> <br />
-                        <!--<b>NUEVO PAGO JUL-AGO ACTUALIZADO</b> <br />-->
+                        <!--<b>ESTIMACIÓN HABILITADA VERANO</b> <br />-->
+                        <b>NUEVO PAGO SEPT-DIC ACTUALIZADO</b> <br />
                         Cálculo de matrícula con el sistema por unidades crédito.
                     </p>
                     <br />
@@ -549,16 +549,14 @@
             <a href="#" class="noUnder menu">
                 <div class="Dnoti" onclick="OpenDiv('historico')">
                     <br />
-                    <svg style="width: 4em !important;" viewBox="0 0 24 24">
+                    <svg style="width: 4em !important" viewBox="0 0 24 24">
                         <path
                             fill="currentColor"
                             d="M16,11.78L20.24,4.45L21.97,5.45L16.74,14.5L10.23,10.75L5.46,19H22V21H2V3H4V17.54L9.5,8L16,11.78Z"
                         />
                     </svg>
                     <h2>HISTÓRICO UC</h2>
-                    <p class="infoMenu">
-                        Evolución de la Unidad Crédito.
-                    </p>
+                    <p class="infoMenu">Evolución de la Unidad Crédito.</p>
                     <br />
                 </div>
             </a>
@@ -598,7 +596,7 @@
         </div>
 
         <!-- UCALCULADORA -->
-        <div class="ucalculadora emenu" style="display: none;">
+        <div class="ucalculadora emenu" style="display: none">
             <!-- BOTONES -->
 
             <!--SEDE-->
@@ -656,7 +654,7 @@
             <br />
             <br />
 
-            <div class="alert" id="alertmsg" style="display: none;"></div>
+            <div class="alert" id="alertmsg" style="display: none"></div>
 
             <br />
             <br />
@@ -687,7 +685,7 @@
                     ENE FEB
                 </button>
                 <button id="p2b4" class="w25" data-table="ver" data-minor="verMinor" disabled>
-                    VER. ?
+                    VER. MARZO*
                 </button>
             </div>
             <br />
@@ -738,9 +736,14 @@
     </div>-->
 
         <!--HISTORICO UC-->
-        <div class="historico emenu" style="display: none;">
+        <div class="historico emenu" style="display: none">
             <h2>Histórico UC</h2>
             <div class="ct-chart"></div>
+            <br />
+            <div class="leyenda">
+                <span class="dots s"></span> UC Semestral <span class="dots m"></span> UC Mensual
+                (Actual)
+            </div>
             <br />
             <table class="t-historico">
                 <tr>
@@ -975,11 +978,44 @@
                     <td>9.600.000</td>
                     <td>1.920.000</td>
                 </tr>
+                <tr>
+                    <td>SEPT-OCT-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/09/Circular-Costo-Unidad-de-Credito-Primer-Semestre-2020-2021-Primera-Parte.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>11.520.000</td>
+                    <td>2.304.000</td>
+                </tr>
+                <tr>
+                    <td>NOV-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/09/Circular-Costo-Unidad-de-Credito-Primer-Semestre-2020-2021-Primera-Parte.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>15.552.000</td>
+                    <td>3.110.400</td>
+                </tr>
+                <tr>
+                    <td>DIC-20</td>
+                    <td>
+                        <a
+                            href="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2020/09/Circular-Costo-Unidad-de-Credito-Primer-Semestre-2020-2021-Primera-Parte.pdf"
+                            >Link</a
+                        >
+                    </td>
+                    <td>22.550.000</td>
+                    <td>4.510.400</td>
+                </tr>
             </table>
         </div>
 
         <!-- DONACIONES CALCULADORA - FAB -->
-        <div class="fab emenu" style="display: none;">
+        <div class="fab emenu" style="display: none">
             <!--CARRERA
         <button class="ubtn" onclick="openCarrera()">
             <i class="fas fa-graduation-cap"></i>
@@ -1103,7 +1139,7 @@
             <br />
         </div>
 
-        <footer style="display: none;">
+        <footer style="display: none">
             <div class="Dsocial">
                 <br />
                 <p class="textYellow">UCalculadora V2.4.3</p>

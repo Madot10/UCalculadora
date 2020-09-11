@@ -112,14 +112,14 @@ function InicializarPeriodoSys() {
     if (
         (mesAct > 2 && mesAct < 9) /* (mesAct > 2 && mesAct < 8)  */ ||
         (mesAct == 2 && diaAct >= 11) /* Mes febrero */ ||
-        (mesAct == 9 && diaAct <= 5) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
+        (mesAct == 8 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
     ) {
         //PERIODO 1
-        //console.warn("PERIODO 1");
+        console.warn("PERIODO 1");
         perActivo = 1;
     } else {
         //PERIODO 2
-        //console.warn("PERIODO 2");
+        console.warn("PERIODO 2");
         perActivo = 2;
     }
 
@@ -417,11 +417,12 @@ function UCrecargo(uc, tax) {
                 break;
 
             case "9":
-                return uc * 1.15;
+                //BAJA 15% => 10% presencialidad remota
+                return uc * 1.1;
                 break;
 
             default:
-                //console.log("error UC RECARGO");
+                console.error("error UC RECARGO");
                 //alert('ERROR INESPERADO: #01');
                 return 0;
                 break;

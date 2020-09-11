@@ -424,3 +424,20 @@ table.t-historico tr:nth-child(even) {
 table.t-historico th, table.t-historico td {
     padding: 10px;
 }
+
+.dots {
+    border-radius: 100%;
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dots.m {
+    background-color: red;
+}
+
+.dots.s {
+    background-color: var(--blue);
+}
