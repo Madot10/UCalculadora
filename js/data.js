@@ -333,28 +333,28 @@ let templateTabla = {
     "1erImpar": [
         3,
         [
-            "Derecho de inscripción <br> (75% ~ Pago Sept/Oct)",
+            "Derecho de inscripción <br> (Pago Sept/Oct)",
             '<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
             '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
         ],
-        ["Modalidad pago de contado (Sep-Dic): <br> (50% del total)"],
+        ["Modalidad pago de contado (Sep-Dic):"],
         [
             "Total <br> (Período Sep-Nov)",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
-        ["Modalidad pago financiado (Sep-Dic): <br> (50% del total)"],
+        ["Modalidad pago financiado (Sep-Dic):"],
         [
-            "Septiembre / Octubre <br> (25%)",
+            "Septiembre / Octubre",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
         ],
         [
-            'Noviembre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,11)))"></i>',
+            'Noviembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,11)))"></i>',
             '<span class="ugreen">Desde el 9 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(10,11))), `Bs.S `, true)")',
         ],
         [
-            'Diciembre <br> (12,5%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
+            'Diciembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
             '<span class="ugreen">Desde el 9 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
         ],
     ],
