@@ -343,7 +343,7 @@ let templateTabla = {
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
-        ["Modalidad pago financiado (Sep-Nov): <br> (50% del total)"],
+        ["Modalidad pago financiado (Sep-Dic): <br> (50% del total)"],
         [
             "Septiembre / Octubre <br> (25%)",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
