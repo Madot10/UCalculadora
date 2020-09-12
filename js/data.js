@@ -339,7 +339,7 @@ let templateTabla = {
         ],
         ["Modalidad pago de contado (Sep-Dic):"],
         [
-            "Total <br> (Período Sep-Nov)",
+            "Total <br> (Período Sep-Dic)",
             '<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
         ],
