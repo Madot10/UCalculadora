@@ -72,8 +72,8 @@ let periodo = {
     2020211: {
         base: 2304000,
         variacion: [
-            ["11/09/2020", 35],
-            ["12/09/2020", 44.9974279835391],
+            ["10/17/2020", 35],
+            ["11/09/2020", 44.9974279835391],
         ],
     },
 };
@@ -350,12 +350,12 @@ let templateTabla = {
             '<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
         ],
         [
-            'Noviembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,11)))"></i>',
-            '<span class="ugreen">Desde el 9 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(10,11))), `Bs.S `, true)")',
+            'Noviembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,11)))"></i>',
+            '<span class="ugreen">Desde el 1 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,11))), `Bs.S `, true)")',
         ],
         [
             'Diciembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
-            '<span class="ugreen">Desde el 9 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
+            '<span class="ugreen">Desde el 1 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
         ],
     ],
     "2doImpar": [
