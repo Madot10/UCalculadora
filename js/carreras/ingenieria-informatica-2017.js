@@ -10,7 +10,7 @@ var inginformatica = [
         Semestre: "PRIMER SEMESTRE",
         Asignatura: "Introducción a la Informática",
         UC: 5,
-        Tax: "TA‐4",
+        Tax: "TA‐9",
     },
     {
         Semestre: "PRIMER SEMESTRE",
