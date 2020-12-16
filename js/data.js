@@ -76,6 +76,10 @@ let periodo = {
             ["11/09/2020", 44.9974279835391],
         ],
     },
+    2020212: {
+        base: 8840000,
+        variacion: [["02/01/2021", 35]],
+    },
 };
 /*
 let tables = {
@@ -361,23 +365,22 @@ let templateTabla = {
     "2doImpar": [
         3,
         [
-            "Derecho de inscripción <br> (25% ~ Pago Nov)",
-            '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((0.25 * valorUC), `Bs.S `)")',
+            "Derecho de inscripción <br> (25% ~ Pago Ene)",
+            '<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((2.5 * valorUC), `Bs.S `)")',
         ],
-        ["Modalidad pago de contado (Dic-Ene): <br> (50% restante)"],
+        ["Modalidad pago de contado (Ene-Feb): <br> (50% restante)"],
         [
-            "Total <br> (Período Dic-Ene)",
-            '<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((0.25 * valorUC) + (totalbs * 0.5)), `Bs.S `, true)")',
+            "Total <br> (Período Ene-Feb)",
+            '<span class="ugreen">Total (+DI)*: </span> <br> eval("formatNumber.new(Math.round((2.5 * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
         ],
         ["Modalidad pago financiado <br> (50% restante) "],
         [
-            'Diciembre (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,11)))"></i>',
-            '<span class="ugreen">Total (+DI)*:  </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,11)) * 0.25) + (0.25 * valorUC), `Bs.S `,true)")',
+            'Enero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,1)))"></i>',
+            '<span class="ugreen">Total (+DI)*:  </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,1)) * 1) + (2.5 * valorUC), `Bs.S `,true)")',
         ],
         [
-            'Enero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1er Enero ${genMsgUc(getFechaAnoActual(1,1))} <br> 7 de Enero ${genMsgUc(getFechaAnoActual(7,1))}`)"></i>',
-            '<span class="ugreen"> Desde 1 de Enero:  </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,1))) * 0.25), `Bs.S `, true)")',
-            '<span class="ugreen"> Desde 7 de Enero: </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(7,1))) * 0.25), `Bs.S `, true)")',
+            'Febrero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1er Feb ${genMsgUc(getFechaAnoActual(1,2))}`)"></i>',
+            '<span class="ugreen"> Desde 1 de Febrero:  </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,2))) * 1), `Bs.S `, true)")',
         ],
     ],
 };

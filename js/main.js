@@ -393,7 +393,9 @@ function UCrecargo(uc, tax) {
         //ya DB incluye recargo pro virtual
         //+40% =>> 30%
         //BAJ +30% => +20%
-        return uc * 1.2;
+        return uc * 1.1;
+        //BAJ +20% => +10%
+        //return uc * 1.2;
     } else {
         switch (taxN) {
             case "1":
