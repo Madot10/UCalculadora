@@ -92,10 +92,8 @@ function initVar(md) {
 window.onload = () => {
     //Cargamos UC visual
     InicializarPeriodoSys();
-
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
     UC = visualUC;
-
     if (window.location.hostname == "127.0.0.1") setGa(false);
 
     initAccordion();
@@ -108,29 +106,39 @@ window.onload = () => {
 };
 
 /* SISTEMA PERIODO TABLA*/
-function InicializarPeriodoSys() {
-    if (
-        (mesAct > 2 && mesAct < 9) /* (mesAct > 2 && mesAct < 8)  */ ||
-        (mesAct == 2 && diaAct >= 11) /* Mes febrero */ ||
-        (mesAct == 8 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
-    ) {
-        //PERIODO 1
-        console.warn("PERIODO 1");
-        perActivo = 1;
+function InicializarPeriodoSys(perioObligatorio = 0) {
+    if (perioObligatorio == 0) {
+        if (
+            (mesAct > 2 && mesAct < 9) /* (mesAct > 2 && mesAct < 8)  */ ||
+            (mesAct == 2 && diaAct >= 12) /* Mes febrero */ ||
+            (mesAct == 8 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
+        ) {
+            //PERIODO 1
+            console.warn("PERIODO 1");
+            perActivo = 1;
+        } else {
+            //PERIODO 2
+            console.warn("PERIODO 2");
+            perActivo = 2;
+        }
     } else {
-        //PERIODO 2
-        console.warn("PERIODO 2");
-        perActivo = 2;
+        //Establecer periodo obligatorio
+        console.warn(`PERIODO ${perioObligatorio}`);
+        perActivo = perioObligatorio;
     }
 
     let botones = document.getElementById(`per${perActivo}`).children;
     let lastI = 0;
+    let some_active = false;
     for (i = 0; i < botones.length; i++) {
         let idBTN = `p${perActivo}b${i + 1}`;
         let codeGen = genPeriodoCode(perActivo, i);
+        //console.warn("codeGen", codeGen);
 
         //Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
         if (periodo[codeGen]) {
+            some_active = true;
+
             perioact = codeGen;
             templateSelect = botones[i].dataset.table;
             templateSelectMinor = botones[i].dataset.minor;
@@ -140,8 +148,13 @@ function InicializarPeriodoSys() {
         }
     }
 
-    botones[lastI].classList.add("active");
-    perBtnActivo = botones[lastI].id;
+    if (!some_active) {
+        console.warn("ACTIVANDO MODO ALTERNATIVO");
+        InicializarPeriodoSys(-1 * perActivo + 3);
+    } else {
+        botones[lastI].classList.add("active");
+        perBtnActivo = botones[lastI].id;
+    }
 }
 
 function showPeriodo() {
