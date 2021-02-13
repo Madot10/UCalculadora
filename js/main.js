@@ -92,7 +92,7 @@ function initVar(md) {
 window.onload = () => {
     //Cargamos UC visual
     InicializarPeriodoSys();
-    document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} Bs.S`;
+    document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} USD`;
     UC = visualUC;
     if (window.location.hostname == "127.0.0.1") setGa(false);
 

@@ -80,6 +80,9 @@ let periodo = {
         base: 8840000,
         variacion: [["02/01/2021", 35]],
     },
+    121: {
+        base: 10,
+    },
 };
 /*
 let tables = {
@@ -332,7 +335,7 @@ let templateTabla = {
         3,
         ["Pago único verano"],
         ["*APLICA UC SEMESTRAL (UC mensual x5)"],
-        ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `Bs.S `) ")'],
+        ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
     ],
     "1erImpar": [
         3,
