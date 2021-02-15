@@ -81,7 +81,7 @@ let periodo = {
         variacion: [["02/01/2021", 35]],
     },
     121: {
-        base: 10,
+        base: 12,
     },
 };
 /*

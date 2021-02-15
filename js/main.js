@@ -408,6 +408,7 @@ function UCrecargo(uc, tax) {
         //BAJ +30% => +20%
         //return uc * 1.1;
         //BAJ +20% => +10%
+        //BAJA 5$
         return uc * 1.2;
     } else {
         switch (taxN) {
@@ -427,13 +428,15 @@ function UCrecargo(uc, tax) {
                 //+ 30% => 20%
                 //console.log("+ 30% 20%");
                 //BAJA +20% => 10%
-                return uc * 1.1;
+                //BAJA A 5%
+                return uc * 1.05;
 
                 break;
 
             case "9":
                 //BAJA 15% => 10% presencialidad remota
-                return uc * 1.1;
+                //BAJA A 5%
+                return uc * 1.05;
                 break;
 
             default:
