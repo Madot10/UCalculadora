@@ -43,7 +43,7 @@ function openModal(nameModal) {
     }
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     // alert("run");
     if (isOpen && event.target.className == "modal") {
         //Si hay algun modal abierto >> cerrar
@@ -58,7 +58,8 @@ function msgAlert(msg) {
 
 function genMsgUc(fuc) {
     //let html = `<i class="fas fa-question-circle" onclick="alert('dfd')"></i>`;
-    return `UC a ${formatNumber.new(getUCfecha(fuc), "Bs.S ")}`;
+    //return `UC a ${formatNumber.new(getUCfecha(fuc), "Bs.S ")}`;
+    return `UC a ${formatNumber.new(getUCfecha(fuc), "USD ")}`;
     //return html;
 }
 

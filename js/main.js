@@ -1,6 +1,7 @@
 /* SISTEMA GENERAL */
 let valorUC = 0;
 let vrealUC = valorUC;
+let valorBCV = 0;
 let visualUC = 0;
 let ucbase = 0;
 let ucbaseMinor = 0;
@@ -70,7 +71,7 @@ function initVar(md) {
         totalizarDonacion();
         document.getElementById("mesActual").innerHTML = `${loadMes()} <br> UC: ${formatNumber.new(
             getUCfecha(getFistDayThisMonth()),
-            "Bs.S ",
+            "USD ",
             true
         )}`;
         //coop
@@ -94,6 +95,9 @@ window.onload = () => {
     InicializarPeriodoSys();
     document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} USD`;
     UC = visualUC;
+
+    GetValorBCV();
+
     if (window.location.hostname == "127.0.0.1") setGa(false);
 
     initAccordion();
@@ -366,6 +370,18 @@ function LoadUC() {
     return uc;
 }
 
+//Encargado de obtener valor BCV
+function GetValorBCV() {
+    fetch("https://madot10.github.io/bot-dolar-bcv/uctoday.json")
+        .then((response) => {
+            return response.json();
+        })
+        .then((datos) => {
+            //console.log("BCV: ", datos);
+            valorBCV = datos.valor;
+        });
+}
+
 //Retorna jsonData de carrera
 function GetJsonDataMaterias(tx) {
     tx = tx.replace(/\s/g, "");
@@ -409,7 +425,7 @@ function UCrecargo(uc, tax) {
         //return uc * 1.1;
         //BAJ +20% => +10%
         //BAJA 5$
-        return uc * 1.2;
+        return uc * 1.05;
     } else {
         switch (taxN) {
             case "1":
@@ -543,8 +559,8 @@ function totalizacion() {
 
     totalbs = Number(ucpagar * vrealUC).toFixed(2);
     totalbsMinor = Number(uctotalMinor * vrealUC).toFixed(2);
-
-    /* console.warn("FINAL: ");
+    /*
+    console.warn("FINAL: ");
     console.log("Cobertura: ", cobertura);
     console.log("uctotal: ", uctotal);
     console.log("ucbase: ", ucbase);
@@ -557,6 +573,7 @@ function totalizacion() {
     console.log("Valor real UC (BASE): ", vrealUC);
     console.log("Total totalbs ", totalbs);
     console.log("Total totalbs*3: ", totalbs * 3);
+    console.log("Total totalbs*5: ", totalbs * 5);
     console.log("Total Minors bs*3: ", totalbsMinor * 3);*/
 
     if (mode == "UC") {

@@ -1,5 +1,5 @@
 let responsiveOptions = [
-    [
+    /*  [
         "screen and (max-width: 640px)",
         {
             showPoint: false,
@@ -30,36 +30,18 @@ let responsiveOptions = [
             axisX: {
                 labelInterpolationFnc: function (value) {
                     /*let arrLabel = value.split("-");
-                    return arrLabel[1];*/
+                    return arrLabel[1];
                     return value[0].toUpperCase();
                 },
             },
         },
-    ],
+    ],*/
 ];
 
 new Chartist.Line(
     ".ct-chart",
     {
         labels: [
-            "sep-18",
-            "oct-18",
-            "nov-18",
-            "dic-18",
-            "ene-19",
-            "feb-19",
-            "mar-19",
-            "abr-19",
-            "may-19",
-            "jun-19",
-            "jul-19",
-            "ago-19",
-            "sep-19",
-            "oct-19",
-            "nov-19",
-            "dic-19",
-            "ene-20",
-            "feb-20",
             "mar-20",
             "abr-20",
             "may-20",
@@ -72,28 +54,13 @@ new Chartist.Line(
             "dic-20",
             "ene-21",
             "feb-21",
+            "mar-21",
+            "abr-21",
+            "jun-21",
         ],
         series: [
-            [
+            /*  [
                 //UC SEMESTRAl
-                100,
-                169,
-                253.5,
-                1790,
-                4027,
-                12082,
-                50000,
-                150000,
-                150000,
-                200000,
-                262500,
-                393750,
-                483840,
-                619267,
-                619267,
-                619267,
-                792723,
-                1600000,
                 2000000,
                 2000000,
                 2600000,
@@ -109,24 +76,6 @@ new Chartist.Line(
             ],
             [
                 //UC MENSUAL
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
                 400000,
                 400000,
                 520000,
@@ -139,19 +88,20 @@ new Chartist.Line(
                 4510000,
                 8840000,
                 11934000,
-            ],
+            ],*/
+            [5.47, 5.47, 7.11, 9.59, 4.65, 6.29, 7.41, 6.38, 8.62, 12.5, 8.15, 11, 12, 10, 10],
         ],
     },
     {
         chartPadding: {
-            right: 20,
+            right: 10,
         },
-        axisY: {
+        /*axisY: {
             offset: 50,
             labelInterpolationFnc: function (value) {
                 return value / 1000 + "mil";
             },
-        },
+        },*/
     },
     responsiveOptions
 );
