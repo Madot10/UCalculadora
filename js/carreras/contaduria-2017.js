@@ -181,5 +181,5 @@ var contaduria = [
         Tax: "TA‐4",
     },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Auditoría Interna", UC: 3, Tax: "TA‐3" },
-    { Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantía", UC: 3, Tax: "TA‐1" },
+    { Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantía", UC: 0, UCE: 3, Tax: "TA‐1" },
 ];

@@ -154,8 +154,15 @@ var ingcivil = [
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     {
         Semestre: "DECIMO SEMESTRE",
-        Asignatura: "Electiva o Pasantía (Virtual)",
+        Asignatura: "Electiva(Virtual)",
         UC: 4,
+        Tax: "(SP) TA‐8",
+    },
+    {
+        Semestre: "DECIMO SEMESTRE",
+        Asignatura: "Pasantía (Virtual)",
+        UC: 0,
+        UCE: 4,
         Tax: "(SP) TA‐8",
     },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },

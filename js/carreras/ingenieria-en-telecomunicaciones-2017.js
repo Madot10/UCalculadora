@@ -176,7 +176,7 @@ var ingentelecomunicaciones = [
         UC: 2,
         Tax: "TA‐9",
     },
-    { Semestre: "NOVENO SEMESTRE", Asignatura: "Pasantía", UC: 4, Tax: "TA‐7" },
+    { Semestre: "NOVENO SEMESTRE", Asignatura: "Pasantía", UC: 0, UCE: 4, Tax: "TA‐7" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Etica Profesional", UC: 3, Tax: "TA‐2" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "(SP) Etica Profesional", UC: 3, Tax: "(SP) TA‐2" },
     {

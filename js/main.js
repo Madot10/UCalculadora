@@ -411,9 +411,17 @@ function FixUC(taxNum, ucnum) {
     return 0;
 }
 
-function UCrecargo(uc, tax) {
+function UCrecargo(uc, tax, uce) {
     let taxN = tax.replace(/^\D+/g, "");
+    let xuc = 0;
 
+    if (uce) {
+        console.log("definido");
+        xuc = uce;
+    } else {
+        console.log("no definido");
+        xuc = uc;
+    }
     if (tax.includes("(V)") || tax.includes("(SP)")) {
         //if (taxN == "7" || taxN == "8" || taxN == "9") {
         //Recargo 20%
@@ -425,7 +433,7 @@ function UCrecargo(uc, tax) {
         //return uc * 1.1;
         //BAJ +20% => +10%
         //BAJA 5$
-        return uc * 1.05;
+        return xuc * 1.05;
     } else {
         switch (taxN) {
             case "1":
@@ -436,7 +444,7 @@ function UCrecargo(uc, tax) {
             case "6":
                 //sin recargo
                 //console.log("sin recargo");
-                return uc;
+                return xuc;
                 break;
 
             case "7":
@@ -445,14 +453,14 @@ function UCrecargo(uc, tax) {
                 //console.log("+ 30% 20%");
                 //BAJA +20% => 10%
                 //BAJA A 5%
-                return uc * 1.05;
+                return xuc * 1.05;
 
                 break;
 
             case "9":
                 //BAJA 15% => 10% presencialidad remota
                 //BAJA A 5%
-                return uc * 1.05;
+                return xuc * 1.05;
                 break;
 
             default:
@@ -662,7 +670,7 @@ function toggleList(elem) {
 }
 
 function actualizarTotalUC() {
-    document.getElementById("totalUC").innerHTML = `${ucbase + ucbaseMinor} UC`;
+    document.getElementById("totalUC").innerHTML = `${baseVisual + ucbaseMinor} UC`;
 }
 
 function materiaSelect(elem, isMinor) {
@@ -676,7 +684,7 @@ function materiaSelect(elem, isMinor) {
         deleteMateriaList(id, isMinor);
     }
 }
-
+let baseVisual = 0;
 function addMateriaList(id, isMinor) {
     let data = materias[id];
 
@@ -686,7 +694,11 @@ function addMateriaList(id, isMinor) {
     divC.classList.add("container", id);
     divC.setAttribute("onclick", `desCheckMatList(${id}, ${isMinor});`);
 
-    divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${data.Asignatura}</td><td> ${data.UC} UC</td></tr><tr><td>${data.Semestre}</td><td> ${data.Tax}</td></tr></table>`;
+    divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${
+        data.Asignatura
+    }</td><td> ${data.UC != 0 ? data.UC : data.UCE} UC</td></tr><tr><td>${data.Semestre}</td><td> ${
+        data.Tax
+    }</td></tr></table>`;
 
     main.appendChild(divC);
 
@@ -701,7 +713,8 @@ function addMateriaList(id, isMinor) {
         uctotalMinor += UCrecargo(data.UC, data.Tax);
     } else {
         ucbase += data.UC;
-        uctotal += UCrecargo(data.UC, data.Tax);
+        baseVisual += data.UC != 0 ? data.UC : data.UCE;
+        uctotal += UCrecargo(data.UC, data.Tax, data.UCE);
     }
 
     actualizarTotalUC();
@@ -718,6 +731,7 @@ function deleteMateriaList(id, isMinor) {
         uctotalMinor -= UCrecargo(data.UC, data.Tax);
     } else {
         ucbase -= data.UC;
+        baseVisual -= data.UC != 0 ? data.UC : data.UCE;
         uctotal -= UCrecargo(data.UC, data.Tax);
     }
 

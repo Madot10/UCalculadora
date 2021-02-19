@@ -145,7 +145,7 @@ var letras = [
         Tax: "TA‐5",
     },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Inglés II", UC: 4, Tax: "TA‐6" },
-    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantía", UC: 3, Tax: "TA‐7" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantía", UC: 0, UCE: 3, Tax: "TA‐7" },
     {
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Seminario de Trabajo de Grado II",
