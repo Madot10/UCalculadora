@@ -416,10 +416,10 @@ function UCrecargo(uc, tax, uce) {
     let xuc = 0;
 
     if (uce) {
-        console.log("definido");
+        //console.log("definido");
         xuc = uce;
     } else {
-        console.log("no definido");
+        //console.log("no definido");
         xuc = uc;
     }
     if (tax.includes("(V)") || tax.includes("(SP)")) {
