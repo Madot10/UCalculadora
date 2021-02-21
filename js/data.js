@@ -335,12 +335,20 @@ let templateTabla = {
             'eval("formatNumber.new((((totalbs * 1)) * valorBCV), `Bs.S `, true)")',
         ],
         [
-            'Mayo* <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
+            'Mayo <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
             '<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(11,5))), `USD `, true)")',
         ],
         [
-            'Junio* <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+            'Junio <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
             '<span class="ugreen">Desde 3er Mes:</span> <br>eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,6))), `USD `, true)")',
+        ],
+        [
+            'Julio** <br> (4to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
+            'eval("formatNumber.new((2.5 * valorUC) + (GetMontoTarifa(getFechaAnoActual(1,7))*1), `USD `, true)")',
+        ],
+        [
+            'Agosto** <br> (5to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>',
+            'eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,8))), `USD `, true)")',
         ],
     ],
     "2doPar": [
