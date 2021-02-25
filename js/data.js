@@ -267,14 +267,29 @@ let tables = {
 let templateTabla = {
     "1erMinor": [
         3,
+        ["Tasa del BCV"],
+        ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
         ["SOLO SE PAGA MINORS DE CONTADO"],
-        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `Bs.S `) ")'],
+        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `) ")'],
+        [
+            "SubTotal <br> (Minor)",
+            'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `) ")',
+        ],
+        ["MINOR - Modalidad pago de total <br> (100%)"],
+        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `) ")'],
+        [
+            "SubTotal <br> (Minor)",
+            'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `) ")',
+        ],
     ],
     "2doMinor": [
         3,
+        ["Tasa del BCV"],
+        ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (2da Parte)"],
-        ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `Bs.S `) ")'],
+        ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `) ")'],
+        ["Total", 'eval(" formatNumber.new(((totalbsMinor * 2) * valorBCV), `Bs.S `) ")'],
     ],
     verMinor: [
         3,
