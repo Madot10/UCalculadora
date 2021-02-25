@@ -377,9 +377,12 @@ let templateTabla = {
     ],
     ver: [
         3,
+        ["Tasa del BCV"],
+        ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["Pago único verano"],
         ["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
         ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
+        ["Total <br> Bs.S", '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `) ")'],
     ],
     "1erImpar": [
         3,
