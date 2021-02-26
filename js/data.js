@@ -271,16 +271,16 @@ let templateTabla = {
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
         ["SOLO SE PAGA MINORS DE CONTADO"],
-        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `) ")'],
+        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `,true) ")'],
         [
             "SubTotal <br> (Minor)",
-            'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `) ")',
+            'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `,true) ")',
         ],
         ["MINOR - Modalidad pago de total <br> (100%)"],
-        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `) ")'],
+        ["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `,true) ")'],
         [
             "SubTotal <br> (Minor)",
-            'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `) ")',
+            'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `,true) ")',
         ],
     ],
     "2doMinor": [
@@ -288,13 +288,18 @@ let templateTabla = {
         ["Tasa del BCV"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (2da Parte)"],
-        ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `) ")'],
-        ["Total", 'eval(" formatNumber.new(((totalbsMinor * 2) * valorBCV), `Bs.S `) ")'],
+        ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `,true) ")'],
+        ["Total", 'eval(" formatNumber.new(((totalbsMinor * 2) * valorBCV), `Bs.S `,true) ")'],
     ],
     verMinor: [
         3,
+        ["Tasa del BCV"],
+        ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Pago único"],
-        ["Total <br> (100%)", 'eval(" formatNumber.new(totalbsMinor, `Bs.S `) ")'],
+        [
+            "Total <br> (100%)",
+            'eval(" formatNumber.new((totalbsMinor * 5) * valorBCV, `USD `,true) ")',
+        ],
     ],
     "1erPar": [
         3,
@@ -397,7 +402,10 @@ let templateTabla = {
         ["Pago único verano"],
         ["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
         ["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
-        ["Total <br> Bs.S", '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `) ")'],
+        [
+            "Total <br> Bs.S",
+            '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `,true) ")',
+        ],
     ],
     "1erImpar": [
         3,
