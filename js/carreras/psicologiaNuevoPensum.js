@@ -302,7 +302,7 @@ var psicologianuevopensum = [
     {
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Trabajo de Grado I",
-        UC: 2,
+        UC: 4,
         Tax: "TA‐4",
     },
     {
@@ -340,13 +340,13 @@ var psicologianuevopensum = [
     {
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Trabajo de Grado II",
-        UC: 2,
+        UC: 4,
         Tax: "TA‐4",
     },
     {
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Trabajo de Grado II (Virtual)",
-        UC: 2,
+        UC: 4,
         Tax: "(V) TA‐1",
     },
     {
@@ -414,13 +414,13 @@ var psicologianuevopensum = [
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Trabajo de Grado III",
-        UC: 2,
+        UC: 4,
         Tax: "TA‐4",
     },
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Trabajo de Grado III (Virtual)",
-        UC: 2,
+        UC: 4,
         Tax: "(V) TA‐1",
     },
     {
