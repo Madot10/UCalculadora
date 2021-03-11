@@ -268,6 +268,7 @@ let templateTabla = {
     "1erMinor": [
         3,
         ["Tasa del BCV"],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (1era Parte)"],
         ["SOLO SE PAGA MINORS DE CONTADO"],
@@ -286,6 +287,7 @@ let templateTabla = {
     "2doMinor": [
         3,
         ["Tasa del BCV"],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Modalidad pago de contado <br> (2da Parte)"],
         ["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `,true) ")'],
@@ -294,6 +296,7 @@ let templateTabla = {
     verMinor: [
         3,
         ["Tasa del BCV"],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["MINOR - Pago único"],
         [
@@ -304,6 +307,7 @@ let templateTabla = {
     "1erPar": [
         3,
         ["Tasa del BCV"],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["Derecho de inscripción"],
         [
@@ -317,6 +321,7 @@ let templateTabla = {
             '<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new(((7.5 * valorUC) * valorBCV), `Bs.S `, true)")',
         ],
         ["Modalidad pago de TOTAL (5 meses) "],
+        ["** COMPROBAR MONTO CON CAJA"],
         [
             'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 7%`)"></i>',
             '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 5 * 0.93)) , `USD `, true)")',
@@ -331,6 +336,7 @@ let templateTabla = {
             'eval("formatNumber.new((((7.5 * valorUC) + (totalbs * 5 * 0.93)) * valorBCV) , `Bs.S `, true)")',
         ],
         ["Modalidad pago PARCIAL (Abr-Jun) "],
+        ["** COMPROBAR MONTO CON CAJA"],
         [
             'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Abr-Jun*)',
             '<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3 * 0.95)) , `USD `, true)")',
@@ -349,6 +355,7 @@ let templateTabla = {
             '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.5 * valorUC) + (totalbs * 2 * 0.95)) , `USD `, true)")',
         ],
         ["Modalidad pago FINANCIADO (Abr-Jun) "],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["Abril <br> (1er Mes)", 'eval("formatNumber.new(((totalbs * 1)), `USD `, true)")'],
         [
             '<span class="ugreen">Total <br> Abril</span>',
@@ -398,6 +405,7 @@ let templateTabla = {
     ver: [
         3,
         ["Tasa del BCV"],
+        ["** COMPROBAR MONTO CON CAJA"],
         ["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
         ["Pago único verano"],
         ["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
