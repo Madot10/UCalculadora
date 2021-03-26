@@ -371,11 +371,11 @@ let templateTabla = {
         ],
         [
             'Julio** <br> (4to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
-            'eval("formatNumber.new((2.5 * valorUC) + (GetMontoTarifa(getFechaAnoActual(1,7))*1), `USD `, true)")',
+            '<span class="ugreen">Desde 4to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,7))*1), `USD `, true)")',
         ],
         [
             'Agosto** <br> (5to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>',
-            'eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,8))), `USD `, true)")',
+            '<span class="ugreen">Desde 5to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,8))), `USD `, true)")',
         ],
     ],
     "2doPar": [
