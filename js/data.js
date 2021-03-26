@@ -352,7 +352,7 @@ let templateTabla = {
         ],
         [
             'Estimado 2da parte (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Jul-Ago**)',
-            '<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((2.5 * valorUC) + (totalbs * 2 * 0.95)) , `USD `, true)")',
+            'eval("formatNumber.new(((2.5 * valorUC) + (totalbs * 2 * 0.95)) , `USD `, true)")',
         ],
         ["Modalidad pago FINANCIADO (Abr-Jun) "],
         ["** COMPROBAR MONTO CON CAJA"],
