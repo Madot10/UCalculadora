@@ -107,7 +107,27 @@ window.onload = () => {
     //Mostramos menu y footer
     document.getElementById("menu").style.display = "block";
     document.getElementsByTagName("footer")[0].style.display = "block";
+
+    //iniciarlizarAcordionesPagos();
 };
+
+/* INICIALIZADOR DE ACORDION TABLE */
+function iniciarlizarAcordionesPagos() {
+    const acc = document.getElementsByClassName("box-btn");
+
+    for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            panel.classList.toggle("active");
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+}
 
 /* SISTEMA PERIODO TABLA*/
 function InicializarPeriodoSys(perioObligatorio = 0) {
@@ -748,7 +768,12 @@ function cleanTableMat() {
 let ColorArray = ["#fed20180", "#34b2e466"];
 let ScolorUsed = false;
 
-function GenerarTabla(isMinor = false) {
+function GenerarTabla() {
+    generarPagos();
+    iniciarlizarAcordionesPagos();
+}
+
+function _GenerarTabla(isMinor = false) {
     //let tabla = tables[perioact];
     //console.warn("isMinor? ", isMinor);
     if (uctotal > 0 || isMinor) {
@@ -920,3 +945,465 @@ function SetStyle(elemt, long, ind) {
 }
 
 /* END TABLA */
+
+/* NUEVO SISTEMA TEMPLATE 
+1. Get periodo
+2. Generar tabla
+3. Tiene Minior?
+*/
+
+function generarPagos() {
+    const divMain = document.getElementById("pagos");
+    divMain.innerHTML = "";
+
+    //Tasa BCV
+    divMain.insertAdjacentHTML("beforeend", getBCVhtml());
+
+    //Segun periodo
+    if (templateSelect == "ver") {
+        //Verano
+        //pago unico
+        divMain.insertAdjacentHTML(
+            "beforeend",
+            `
+        <div class="box-table">
+            <h2 class="title-center">Pago único verano</h2>
+            <div class="box-info">
+                <div><span class="subtitle-table">Total (100%)</span></div>
+                <div>
+                    <span class="bs">${formatNumber.new(
+                        totalbs * 5 * valorBCV,
+                        `Bs.S `,
+                        true
+                    )}</span> <br />
+                    <span class="usd">${formatNumber.new(totalbs * 5, `USD `)}</span>
+                </div>
+            </div>
+        </div>    
+        `
+        );
+    } else if (templateSelect == "1erPar" || templateSelect == "1erImpar") {
+        //Primera parte semestre
+        //DI
+        divMain.insertAdjacentHTML("beforeend", getDIhtml());
+
+        //PAGOS
+        divMain.insertAdjacentHTML(
+            "beforeend",
+            `
+        <!-- PAGO TOTAL-->
+            <div class="box-btn">
+                PAGO TOTAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 7% de descuento sobre las UC (No DI). <br>Exento del proceso de confirmación de inscripción. <br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">Estudiante regular (+DI)</span></div>
+                    <div>
+                        <span class="bs">${formatNumber.new(
+                            (5 * valorUC + totalbs * 5 * 0.93) * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            5 * valorUC + totalbs * 5 * 0.93,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">Estudiante nuevo (+DI)</span></div>
+                    <div>
+                        <span class="bs">${formatNumber.new(
+                            (7.5 * valorUC + totalbs * 5 * 0.93) * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            7.5 * valorUC + totalbs * 5 * 0.93,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGO PARCIAL-->
+            <div class="box-btn">
+                PAGO PARCIAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">1ERA CUOTA</span></div>
+                    <div class="indent-10">
+                        <span class="subtitle-table">Estudiante regular (+DI)</span><br />
+                        <span class="bs">${formatNumber.new(
+                            (5 * valorUC + totalbs * 3 * 0.95) * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            5 * valorUC + totalbs * 3 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+
+                    <div class="indent-10">
+                        <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
+                        <span class="bs">${formatNumber.new(
+                            (7.5 * valorUC + totalbs * 3 * 0.95) * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            7.5 * valorUC + totalbs * 3 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            2.5 * valorUC + totalbs * 2 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGO FINANCIADO-->
+            <div class="box-btn">
+                PAGO FINANCIADO
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">CUOTA INICIAL</span></div>
+                    <div class="indent-10">
+                        <span class="bs">${formatNumber.new(
+                            totalbs * 1 * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(totalbs * 1, `USD `, true)}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">2DA MES</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            Number(GetMontoTarifa(getFechaAnoActual(11, 5))),
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">3ER MES</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 6)),
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">4TO MES (*Estimado 2da parte)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">5TO MES (*Estimado 2da parte)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 8)),
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>    
+        `
+        );
+    } else {
+        //Segunda parte semestre
+        //Confirmacion
+        divMain.insertAdjacentHTML("beforeend", getConfDIhtml());
+
+        //PAGOS
+        divMain.insertAdjacentHTML(
+            "beforeend",
+            `
+            <!-- PAGO PARCIAL-->
+            <div class="box-btn">
+                PAGO PARCIAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen(${"Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*"})"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">2DA CUOTA (+ CI)</span></div>
+                    <div class="indent-10">
+                    <span class="bs">${formatNumber.new(
+                        (2.5 * valorUC + totalbs * 2 * 0.95) * valorBCV,
+                        `Bs.S `,
+                        true
+                    )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            2.5 * valorUC + totalbs * 2 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGO FINANCIADO-->
+            <div class="box-btn">
+                PAGO FINANCIADO
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen(${"Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*"})"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">4TO MES (Sin CI)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">5TO MES</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 8)),
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>   
+        `
+        );
+    }
+
+    //Hay minior
+    if (uctotalMinor > 0) {
+        divMain.insertAdjacentHTML("beforeend", `<h2>MINOR</h2>`);
+
+        if (templateSelectMinor == "verMinor") {
+            //Verano
+            //pago unico
+            divMain.insertAdjacentHTML(
+                "beforeend",
+                `
+            <div class="box-table">
+                <h2 class="title-center">Pago único verano</h2>
+                <div class="box-info">
+                    <div><span class="subtitle-table">Total (100%)</span></div>
+                    <div>
+                        <span class="bs">${formatNumber.new(
+                            totalbsMinor * 5 * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `)}</span>
+                    </div>
+                </div>
+            </div>    
+            `
+            );
+        } else if (templateSelectMinor == "1erMinor") {
+            //Primera parte semestre
+            divMain.insertAdjacentHTML(
+                "beforeend",
+                `
+            <!-- PAGO TOTAL-->
+            <div class="box-btn">
+                PAGO TOTAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 7% de descuento sobre las UC (No DI). <br>MINORS SOLO SE PAGA DE CONTADO <br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">Sub-Total</span></div>
+                    <div>
+                        <span class="bs">${formatNumber.new(
+                            totalbsMinor * 5 * 0.93 * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            totalbsMinor * 5 * 0.93,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PAGO PARCIAL-->
+            <div class="box-btn">
+                PAGO PARCIAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>MINORS SOLO SE PAGA DE CONTADO <br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+                <div class="box-info">
+                    <div><span class="subtitle-table">1ERA CUOTA</span></div>
+                    <div class="indent-10">
+                        <span class="bs">${formatNumber.new(
+                            totalbsMinor * 3 * 0.95 * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            totalbsMinor * 3 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            totalbsMinor * 2 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+            `
+            );
+        } else {
+            //Segunda parte semestre
+            divMain.insertAdjacentHTML(
+                "beforeend",
+                `
+            <!-- PAGO PARCIAL-->
+            <div class="box-btn">
+                PAGO PARCIAL
+                <i
+                    class="fas fa-question-circle"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>MINORS SOLO SE PAGA DE CONTADO <br>*Comprobar monto con caja*')"
+                ></i>
+            </div>
+            <div class="box-panel">
+
+                <div class="box-info">
+                    <div><span class="subtitle-table">2DA CUOTA</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            totalbsMinor * 2 * 0.95,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+            </div>
+            `
+            );
+        }
+    }
+}
+
+//Return html con valores de tasa BCV
+function getBCVhtml() {
+    return `
+    <!-- TASA -->
+    <div class="box-table">
+        <h2 class="title-center">TASA USD</h2>
+        <p class="text-center">${formatNumber.new(valorBCV, `Bs.S. `, true)}</p>
+    </div>
+    `;
+}
+
+//Retorna html de DI
+function getDIhtml() {
+    return `
+    <!-- DI -->
+    <div class="box-table">
+        <h2 class="title-center">Derecho inscripción</h2>
+        <div class="box-info">
+            <div><span class="subtitle-table">Estudiante regular</span></div>
+            <div>
+                <span class="bs">${formatNumber.new(
+                    5 * valorUC * valorBCV,
+                    `Bs.S `,
+                    true
+                )}</span> <br />
+                <span class="usd">${formatNumber.new(5 * valorUC, `USD `, true)}</span>
+            </div>
+        </div>
+
+        <div class="box-info">
+            <div><span class="subtitle-table">Estudiante nuevo</span></div>
+            <div>
+                <span class="bs">${formatNumber.new(
+                    7.5 * valorUC * valorBCV,
+                    `Bs.S `,
+                    true
+                )}</span> <br />
+                <span class="usd">${formatNumber.new(7.5 * valorUC, `USD `, true)}</span>
+            </div>
+        </div>
+    </div>    
+    `;
+}
+
+//Retorna html de confimracion de DI
+function getConfDIhtml() {
+    return `
+    <!-- DI -->
+    <div class="box-table">
+        <h2 class="title-center">Confirmación inscripción</h2>
+        <div class="box-info">
+            <div><span class="subtitle-table">Estudiante regular</span></div>
+            <div>
+                <span class="bs">${formatNumber.new(
+                    2.5 * valorUC * valorBCV,
+                    `Bs.S `,
+                    true
+                )}</span> <br />
+                <span class="usd">${formatNumber.new(2.5 * valorUC, `USD `, true)}</span>
+            </div>
+        </div>
+    </div>  
+    `;
+}

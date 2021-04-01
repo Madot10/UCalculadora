@@ -1,7 +1,7 @@
 :root {
-    --green: #0C5426;
-    --blue: #1CA0DE;
-    --yellow: #F4D217;
+    --green: #0c5426;
+    --blue: #1ca0de;
+    --yellow: #f4d217;
     --gray: #374746;
 }
 
@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     /*font: 100% Fedra-Sans-Std-Bold, sans-serif;*/
-    font-family: 'Roboto', sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
     background-color: white;
     text-align: center;
     align-content: center;
@@ -230,13 +230,16 @@ table.tablaPagos {
     }
 }
 
-table.tablaPagos, .tablaPagos th, .tablaPagos td {
+table.tablaPagos,
+.tablaPagos th,
+.tablaPagos td {
     /*  border: 1px solid #374746;
       border-collapse: collapse;*/
     margin: 0px auto;
 }
 
-.tablaPagos th, .tablaPagos td {
+.tablaPagos th,
+.tablaPagos td {
     padding: 5px;
     text-align: center;
     width: fit-content;
@@ -290,8 +293,8 @@ footer a {
 .loader {
     border: 16px solid #f3f3f3;
     /* Light grey */
-    border-top: 16px solid #0C5426;
-    border-bottom: 16px solid #FED201;
+    border-top: 16px solid #0c5426;
+    border-bottom: 16px solid #fed201;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -315,28 +318,28 @@ footer a {
     -webkit-animation-name: animatebottom;
     -webkit-animation-duration: 1s;
     animation-name: animatebottom;
-    animation-duration: 1s
+    animation-duration: 1s;
 }
 
 @-webkit-keyframes animatebottom {
     from {
         bottom: -30px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         bottom: 0px;
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes animatebottom {
     from {
         bottom: -30px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         bottom: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
@@ -408,7 +411,8 @@ button.w25 {
 
 /****** SISTEMA DE PERIODO *******/
 
-#per1, #per2 {
+#per1,
+#per2 {
     display: none;
 }
 
@@ -421,7 +425,8 @@ table.t-historico tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-table.t-historico th, table.t-historico td {
+table.t-historico th,
+table.t-historico td {
     padding: 10px;
 }
 
@@ -440,4 +445,113 @@ table.t-historico th, table.t-historico td {
 
 .dots.s {
     background-color: var(--blue);
+}
+
+/***TABLAS DESPLEGABLES ***/
+.box-table {
+    background: #ffffff;
+    border: 4px solid var(--green);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    width: 90%;
+
+    color: var(--gray);
+
+    margin: 0.8em auto;
+    padding: 0 0.5em 0.3em;
+}
+
+.box-table h2.title-center {
+    color: var(--green);
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+}
+
+.box-table p {
+    margin: 0.3em 0px;
+}
+
+.box-table .box-info,
+.box-panel .box-info {
+    text-align: left;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+}
+
+.subtitle-table {
+    font-weight: bold;
+    color: var(--green);
+}
+
+.box-btn {
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    margin: 0 auto;
+    margin-bottom: 0;
+
+    width: 90%;
+    background: #ffffff;
+    border-radius: 8px 8px 0 0;
+    border: 4px solid var(--green);
+    border-bottom: none;
+    box-sizing: border-box;
+    box-shadow: none;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    color: var(--green);
+    font-size: 1.2em;
+}
+.box-btn svg {
+    float: right;
+}
+
+.active,
+.box-btn:hover {
+    background-color: #fff;
+}
+
+.box-btn:before {
+    content: "\002B";
+    color: var(--green);
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+    margin-left: -5px;
+}
+
+.box-btn.active:before {
+    content: "\2212";
+}
+
+.box-panel {
+    background-color: white;
+    color: var(--gray) !important;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+
+    box-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    box-sizing: border-box;
+
+    border-radius: 0px 0px 8px 8px;
+    border: 4px solid var(--green);
+    border-top: none;
+
+    width: 90%;
+    margin: 0px auto;
+    margin-bottom: 0.8em;
+    padding: 0 0.5em;
+}
+
+.box-panel.active {
+    padding: 0 0.5em 0.3em;
+}
+
+.indent-10 {
+    padding-left: 10px;
+    margin-bottom: 0.3em;
 }

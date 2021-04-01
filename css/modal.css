@@ -11,8 +11,8 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Header */
@@ -24,7 +24,9 @@
 }
 
 /* Modal Body */
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+}
 
 /* Modal Footer */
 .modal-footer {
@@ -41,12 +43,12 @@
     padding: 0;
     border: 1px solid #888;
     width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
     .modal-content {
         width: 90%;
     }
@@ -54,13 +56,25 @@
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 /* The Close Button */
@@ -78,99 +92,99 @@
     cursor: pointer;
 }
 
-.tFacultad{
+.tFacultad {
     text-align: left;
-	padding-left: 0.5em;
-	border-bottom: 2px solid;
+    padding-left: 0.5em;
+    border-bottom: 2px solid;
 }
 
-.modal-body button{
+.modal-body button {
     /*line-height: 35px;*/
     width: 90%;
     font-weight: normal;
-   /* text-transform: uppercase;*/
+    /* text-transform: uppercase;*/
     vertical-align: middle;
     /*text-align: right;*/
 }
 
-#sedeModal .modal-body button, #coopModal .modal-body button{
+#sedeModal .modal-body button,
+#coopModal .modal-body button {
     font-weight: bold;
 }
 
-.modal-body button .svg-inline--fa{
+.modal-body button .svg-inline--fa {
     height: auto !important;
     width: 1.5em !important;
     vertical-align: middle;
-   /* float: left;*/
+    /* float: left;*/
 }
 
 /* RANGE CUSTOM IN MODAL**/
 
 .slidecontainer {
     width: 100%; /* Width of the outside container */
-  }
-  
-  /* The slider itself */
-  .slider {
+}
+
+/* The slider itself */
+.slider {
     -webkit-appearance: none;
     width: 80%;
     height: 15px;
-    border-radius: 5px;   
+    border-radius: 5px;
     background: #d3d3d3;
     outline: none;
     opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider::-webkit-slider-thumb {
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%; 
-    background: var(--green);
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background: var(--green);
     cursor: pointer;
-  }
+}
 
-  @media only screen and (max-width: 768px){
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--green);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
     .slider {
         width: 95%;
     }
-  }
-  /* END RANGE CUSTOM IN MODAL**/
+}
+/* END RANGE CUSTOM IN MODAL**/
 
 /* MATERIA MODAL */
-.labelSemestre{
+.labelSemestre {
     text-align: left;
-	padding-left: 0.5em;
-	border-bottom: 2px solid;
+    padding-left: 0.5em;
+    border-bottom: 2px solid;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     /*position: absolute;
     left: -9999px;*/
 }
 
 input[type="checkbox"]:checked + label {
     /* awesome styles */ /* styles for an "on" indicator */
-    
 }
 
-.actChbox{
+.actChbox {
     background-color: var(--green);
     color: white;
 }
 
-.divMat{
+.divMat {
     display: flex;
 }
 
@@ -189,30 +203,30 @@ input:checked + label::before {
     text-align: left;
     outline: none;
     /*font-size: 15px;*/
-  }
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
     background-color: #ccc;
-  }
-  
-  .materia{
+}
+
+.materia {
     cursor: pointer;
     width: 100%;
-	display: block;
-  }
+    display: block;
+}
 
-
-  /* Style the collapsible content. Note: hidden by default */
-  .content {
+/* Style the collapsible content. Note: hidden by default */
+.content {
     padding: 0 0 0 5%;
     display: none;
     overflow: hidden;
     background-color: #f1f1f1;
     text-align: left;
-  }
+}
 
-.content div{
+.content div {
     margin-bottom: 0.5em;
     margin-top: 0.2em;
 }

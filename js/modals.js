@@ -64,7 +64,8 @@ function genMsgUc(fuc) {
 }
 
 function modalInfoOpen(msg) {
-    document.getElementById("info").innerHTML = msg;
+    document.getElementById("info").innerHTML = "";
+    document.getElementById("info").insertAdjacentHTML("afterbegin", msg);
     document.getElementById("infoModal").style.display = "block";
 }
 
