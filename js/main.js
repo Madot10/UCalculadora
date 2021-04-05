@@ -1093,7 +1093,7 @@ function generarPagos() {
             </div>
             <div class="box-panel">
                 <div class="box-info">
-                    <div><span class="subtitle-table">CUOTA INICIAL</span></div>
+                    <div><span class="subtitle-table">CUOTA INICIAL (Sin DI)</span></div>
                     <div class="indent-10">
                         <span class="bs">${formatNumber.new(
                             totalbs * 1 * valorBCV,
@@ -1124,7 +1124,7 @@ function generarPagos() {
                     </div>
                 </div>
                 <div class="box-info">
-                    <div><span class="subtitle-table">4TO MES (*Estimado 2da parte)</span></div>
+                    <div><span class="subtitle-table">4TO MES (*Estimado 2da parte - Sin CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
                             GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
