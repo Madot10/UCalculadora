@@ -88,15 +88,21 @@ var comunicacionsocialnuevopensum = [
     { Semestre: "CUARTO SEMESTRE", Asignatura: "Sociología Política", UC: 6, Tax: "TA-3" },
     {
         Semestre: "CUARTO SEMESTRE",
-        Asignatura: "Régimen Jurídico de la Comunicación ",
+        Asignatura: "Ética de la Comunicación Social",
+        UC: 6,
+        Tax: "TA-1",
+    },
+    { Semestre: "CUARTO SEMESTRE", Asignatura: "Estadística", UC: 5, Tax: "TA-4" },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "Sociología de la Comunicación",
         UC: 5,
         Tax: "TA-1",
     },
-    { Semestre: "CUARTO SEMESTRE", Asignatura: "Estadística", UC: 5, Tax: "TA-6" },
     {
         Semestre: "QUINTO SEMESTRE",
-        Asignatura: "Ética de la Comunicación Social ",
-        UC: 6,
+        Asignatura: "Régimen Jurídico de la Comunicación",
+        UC: 5,
         Tax: "TA-1",
     },
     {
@@ -110,6 +116,12 @@ var comunicacionsocialnuevopensum = [
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Semiótica", UC: 5, Tax: "TA-1" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Metodología", UC: 5, Tax: "TA-6" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Procesos editoriales", UC: 5, Tax: "TA-2" },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "Procesos editoriales (Virtual)",
+        UC: 5,
+        Tax: "TA-2 (V)",
+    },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Periodismo", UC: 4, Tax: "TA-9" },
     {
         Semestre: "SEXTO SEMESTRE",
@@ -121,7 +133,13 @@ var comunicacionsocialnuevopensum = [
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Gestión Cultural", UC: 5, Tax: "TA-2" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Opinión Pública", UC: 5, Tax: "TA-2" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Gerencia de Proyectos", UC: 5, Tax: "TA-4" },
-    { Semestre: "SEXTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA-1" },
+    { Semestre: "SEXTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 2, Tax: "TA-1" },
+    {
+        Semestre: "SEXTO SEMESTRE",
+        Asignatura: "Innovación y Emprendimiento (Virtual)",
+        UC: 2,
+        Tax: "TA-1 (V)",
+    },
 
     {
         Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
@@ -146,6 +164,12 @@ var comunicacionsocialnuevopensum = [
         Asignatura: "Comunicaciones Digitales",
         UC: 3,
         Tax: "TA-2",
+    },
+    {
+        Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
+        Asignatura: "Comunicaciones Digitales (Virtual)",
+        UC: 3,
+        Tax: "TA-1 (V)",
     },
     {
         Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
@@ -176,6 +200,12 @@ var comunicacionsocialnuevopensum = [
         Asignatura: "Responsabilidad Social Empresarial y Desarrollo Sustentable",
         UC: 3,
         Tax: "TA-2",
+    },
+    {
+        Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
+        Asignatura: "Responsabilidad Social Empresarial y Desarrollo Sustentable (Virtual)",
+        UC: 3,
+        Tax: "TA-2 (V)",
     },
     {
         Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
@@ -265,7 +295,7 @@ var comunicacionsocialnuevopensum = [
         Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS DE\nMERCADEO SEMESTRE B",
         Asignatura: "Mercadeo Digital",
         UC: 5,
-        Tax: "TA-2",
+        Tax: "TA-2 (SP)",
     },
     {
         Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS DE\nMERCADEO SEMESTRE B",
@@ -289,6 +319,12 @@ var comunicacionsocialnuevopensum = [
         Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS DE\nMERCADEO SEMESTRE B",
         Asignatura: "Trabajo Final de la Concentración Comunicaciones Integradas de Mercadeo",
         UC: 6,
+        Tax: "TA-9",
+    },
+    {
+        Semestre: "CONCENTRACIÓN PRODUCCIÓN AUDIOVISUAL SEMESTRE A",
+        Asignatura: "Videografía ",
+        UC: 4,
         Tax: "TA-9",
     },
     {
@@ -335,9 +371,9 @@ var comunicacionsocialnuevopensum = [
     },
     {
         Semestre: "CONCENTRACIÓN PRODUCCIÓN AUDIOVISUAL SEMESTRE B",
-        Asignatura: "Videografía",
+        Asignatura: "Investigación Audiovisual",
         UC: 4,
-        Tax: "TA-9",
+        Tax: "TA-2 (SP)",
     },
     {
         Semestre: "CONCENTRACIÓN PRODUCCIÓN AUDIOVISUAL SEMESTRE B",
@@ -391,7 +427,7 @@ var comunicacionsocialnuevopensum = [
         Semestre: "CONCENTRACIÓN GUIONISMO SEMESTRE A",
         Asignatura: "Análisis Fílmico",
         UC: 4,
-        Tax: "TA-2",
+        Tax: "TA-2 (SP)",
     },
     {
         Semestre: "CONCENTRACIÓN GUIONISMO SEMESTRE A",
