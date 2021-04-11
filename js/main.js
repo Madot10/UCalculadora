@@ -581,7 +581,7 @@ function totalizacion() {
         msgAlert(
             `<b> ¡${Number(ucfuera).toFixed(
                 2
-            )} UC fuera de financiamiento! </b> <br> (Incluido en el total)`
+            )} UC fuera de financiamiento! </b> <br> (Recargos por tax, modalidad o superar límite de cooperación) <br> (Incluido en el total)`
         );
     }
 
