@@ -1085,22 +1085,40 @@ function generarPagos() {
 
             <!-- PAGO FINANCIADO-->
             <div class="box-btn">
-                PAGO FINANCIADO
+                PAGO MENSUAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja* <br><br> AHORA LOS PAGOS SON CON LA UCAB. <br> <b>NO</b> A LOS BANCOS')"
                 ></i>
             </div>
             <div class="box-panel">
                 <div class="box-info">
-                    <div><span class="subtitle-table">CUOTA INICIAL (Sin DI)</span></div>
+                    <div><span class="subtitle-table">CUOTA INICIAL (+DI)</span></div>
                     <div class="indent-10">
+                    <span class="subtitle-table">Estudiante regular (+DI)</span><br />
+                    <span class="bs">${formatNumber.new(
+                        (5 * valorUC + totalbs * 1) * valorBCV,
+                        `Bs.S `,
+                        true
+                    )}</span> <br />
+                    <span class="usd">${formatNumber.new(
+                        5 * valorUC + totalbs * 1,
+                        `USD `,
+                        true
+                    )}</span>
+                </div>
+                    <div class="indent-10">
+                        <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-                            totalbs * 1 * valorBCV,
+                            (7.5 * valorUC + totalbs * 1) * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
-                        <span class="usd">${formatNumber.new(totalbs * 1, `USD `, true)}</span>
+                        <span class="usd">${formatNumber.new(
+                            7.5 * valorUC + totalbs * 1,
+                            `USD `,
+                            true
+                        )}</span>
                     </div>
                 </div>
                 <div class="box-info">
