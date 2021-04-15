@@ -500,6 +500,7 @@ function totalizacion() {
     }
 
     let ucfuera = 0;
+    ucpagar = 0;
 
     //descuentos segun carrera
     if (
