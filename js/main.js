@@ -1002,22 +1002,7 @@ function generarPagos() {
             </div>
             <div class="box-panel">
                 <div class="box-info">
-                    <div><span class="subtitle-table">Estudiante regular (+DI)</span></div>
-                    <div>
-                        <span class="bs">${formatNumber.new(
-                            (5 * valorUC + totalbs * 5 * 0.93) * valorBCV,
-                            `Bs.S `,
-                            true
-                        )}</span> <br />
-                        <span class="usd">${formatNumber.new(
-                            5 * valorUC + totalbs * 5 * 0.93,
-                            `USD `,
-                            true
-                        )}</span>
-                    </div>
-                </div>
-                <div class="box-info">
-                    <div><span class="subtitle-table">Estudiante nuevo (+DI)</span></div>
+                    <div><span class="subtitle-table">Estudiante regular (+DI+CI)</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
                             (7.5 * valorUC + totalbs * 5 * 0.93) * valorBCV,
@@ -1026,6 +1011,21 @@ function generarPagos() {
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
                             7.5 * valorUC + totalbs * 5 * 0.93,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">Estudiante nuevo (+DI+CI)</span></div>
+                    <div>
+                        <span class="bs">${formatNumber.new(
+                            (10 * valorUC + totalbs * 5 * 0.93) * valorBCV,
+                            `Bs.S `,
+                            true
+                        )}</span> <br />
+                        <span class="usd">${formatNumber.new(
+                            10 * valorUC + totalbs * 5 * 0.93,
                             `USD `,
                             true
                         )}</span>
