@@ -164,5 +164,5 @@ var inginformatica = [
     },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado (TG)", UC: 4, Tax: "TA‐1" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado (TG)", UC: 5.25, Tax: "TA‐1" },
 ];

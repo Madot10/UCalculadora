@@ -231,7 +231,7 @@ var ingindustrial = [
     { Semestre: "DÉCIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: " TA‐8" },
     { Semestre: "DÉCIMO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
     { Semestre: "DÉCIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
-    { Semestre: "DÉCIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 4, Tax: "TA‐1" },
+    { Semestre: "DÉCIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 5.25, Tax: "TA‐1" },
     {
         Semestre: "[Anual]SEXTO SEMESTRE",
         Asignatura: "LABORATORIO DE MECÁNICA DE FLUIDOS",

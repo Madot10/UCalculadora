@@ -211,5 +211,5 @@ var ingentelecomunicaciones = [
         UC: 2,
         Tax: "TA‐9",
     },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 4, Tax: "TA‐1" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 5.25, Tax: "TA‐1" },
 ];

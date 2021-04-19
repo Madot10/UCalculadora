@@ -178,5 +178,5 @@ var ingcivil = [
         Tax: "TA‐9",
     },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Ingeniería Hidráulica II", UC: 6, Tax: "TA‐4" },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 4, Tax: "TA‐1" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Trabajo de Grado", UC: 5.25, Tax: "TA‐1" },
 ];
