@@ -320,15 +320,13 @@ var psicologianuevopensum = [
     {
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Pasantías de Psicología Clínica de la Niñez y de la Adolescencia",
-        UC: 0,
-        UCE: 6,
+        UC: 6,
         Tax: "TA‐7",
     },
     {
         Semestre: "OCTAVO SEMESTRE",
         Asignatura: "Pasantías de Psicología Escolar I",
-        UC: 0,
-        UCE: 6,
+        UC: 6,
         Tax: "TA‐7",
     },
     {
@@ -358,15 +356,13 @@ var psicologianuevopensum = [
     {
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Pasantías de Psicología Escolar II",
-        UC: 0,
-        UCE: 6,
+        UC: 6,
         Tax: "TA‐7",
     },
     {
         Semestre: "NOVENO SEMESTRE",
         Asignatura: "Pasantías en Asesoramiento Psicológico I",
-        UC: 0,
-        UCE: 6,
+        UC: 6,
         Tax: "TA‐7",
     },
     {
@@ -426,15 +422,13 @@ var psicologianuevopensum = [
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Pasantías en Psicología Clínica de la Adultez",
-        UC: 0,
-        UCE: 8,
+        UC: 8,
         Tax: "TA‐7",
     },
     {
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Pasantías en Asesoramiento Psicológico II",
-        UC: 0,
-        UCE: 6,
+        UC: 6,
         Tax: "TA‐7",
     },
     {
