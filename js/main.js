@@ -453,7 +453,7 @@ function UCrecargo(uc, tax, uce) {
         //return uc * 1.1;
         //BAJ +20% => +10%
         //BAJA 5$
-        return xuc * 1.2;
+        return xuc * 1.05;
     } else {
         switch (taxN) {
             case "1":
