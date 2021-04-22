@@ -1281,12 +1281,12 @@ function generarPagos() {
                     <div><span class="subtitle-table">Sub-Total</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
-                            totalbsMinor * 5 * 0.93 * valorBCV,
+                            totalbsMinor * 5  * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            totalbsMinor * 5 * 0.93,
+                            totalbsMinor * 5,
                             `USD `,
                             true
                         )}</span>
@@ -1308,12 +1308,12 @@ function generarPagos() {
                     <div><span class="subtitle-table">1ERA CUOTA</span></div>
                     <div class="indent-10">
                         <span class="bs">${formatNumber.new(
-                            totalbsMinor * 3 * 0.95 * valorBCV,
+                            totalbsMinor * 3 * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            totalbsMinor * 3 * 0.95,
+                            totalbsMinor * 3 ,
                             `USD `,
                             true
                         )}</span>
@@ -1324,7 +1324,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            totalbsMinor * 2 * 0.95,
+                            totalbsMinor * 2,
                             `USD `,
                             true
                         )}</span>
@@ -1352,7 +1352,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            totalbsMinor * 2 * 0.95,
+                            totalbsMinor * 2 ,
                             `USD `,
                             true
                         )}</span>
