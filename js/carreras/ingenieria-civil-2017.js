@@ -167,7 +167,7 @@ var ingcivil = [
     },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
-    { Semestre: "DECIMO SEMESTRE", Asignatura: "asantía", UC: 4, Tax: "TA‐7" },
+    { Semestre: "DECIMO SEMESTRE", Asignatura: "Pasantía", UC: 4, Tax: "TA‐7" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Ingeniería de Fundaciones", UC: 4, Tax: "TA‐4" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Pavimentos", UC: 5, Tax: "TA‐4" },
     { Semestre: "DECIMO SEMESTRE", Asignatura: "Proyecto Estructural II", UC: 5, Tax: "TA‐9" },

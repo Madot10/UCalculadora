@@ -1182,7 +1182,7 @@ function generarPagos() {
                 PAGO PARCIAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen(${"Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*"})"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
@@ -1208,7 +1208,7 @@ function generarPagos() {
                 PAGO FINANCIADO
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen(${"Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*"})"
+                    onclick="modalInfoOpen('Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
@@ -1281,15 +1281,11 @@ function generarPagos() {
                     <div><span class="subtitle-table">Sub-Total</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
-                            totalbsMinor * 5  * valorBCV,
+                            totalbsMinor * 5 * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
-                        <span class="usd">${formatNumber.new(
-                            totalbsMinor * 5,
-                            `USD `,
-                            true
-                        )}</span>
+                        <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `, true)}</span>
                     </div>
                 </div>
             </div>
@@ -1312,22 +1308,14 @@ function generarPagos() {
                             `Bs.S `,
                             true
                         )}</span> <br />
-                        <span class="usd">${formatNumber.new(
-                            totalbsMinor * 3 ,
-                            `USD `,
-                            true
-                        )}</span>
+                        <span class="usd">${formatNumber.new(totalbsMinor * 3, `USD `, true)}</span>
                     </div>
 
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-                            totalbsMinor * 2,
-                            `USD `,
-                            true
-                        )}</span>
+                        <span class="usd">${formatNumber.new(totalbsMinor * 2, `USD `, true)}</span>
                     </div>
                 </div>
             </div>
@@ -1351,11 +1339,7 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">2DA CUOTA</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-                            totalbsMinor * 2 ,
-                            `USD `,
-                            true
-                        )}</span>
+                        <span class="usd">${formatNumber.new(totalbsMinor * 2, `USD `, true)}</span>
                     </div>
                 </div>
             </div>
