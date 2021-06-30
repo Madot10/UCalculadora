@@ -1079,7 +1079,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            2.5 * valorUC + totalbs * 2 * 0.95,
+                            2.5 * valorUC + totalbs * 2,
                             `USD `,
                             true
                         )}</span>
@@ -1190,12 +1190,12 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (+ CI)</span></div>
                     <div class="indent-10">
                     <span class="bs">${formatNumber.new(
-                        (2.5 * valorUC + totalbs * 2 * 0.95) * valorBCV,
+                        (2.5 * valorUC + totalbs * 2) * valorBCV,
                         `Bs.S `,
                         true
                     )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            2.5 * valorUC + totalbs * 2 * 0.95,
+                            2.5 * valorUC + totalbs * 2,
                             `USD `,
                             true
                         )}</span>
