@@ -956,6 +956,9 @@ function SetStyle(elemt, long, ind) {
 3. Tiene Minior?
 */
 
+const DESCUENTO_TOTAL = 0.94;
+const DESCUENTO_PARCIAL = 0.96;
+
 function generarPagos() {
     const divMain = document.getElementById("pagos");
     divMain.innerHTML = "";
@@ -1008,12 +1011,12 @@ function generarPagos() {
                     <div><span class="subtitle-table">Estudiante regular (+DI+CI)</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
-                            (7.5 * valorUC + totalbs * 5 * 0.93) * valorBCV,
+                            (7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            7.5 * valorUC + totalbs * 5 * 0.93,
+                            7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
                             `USD `,
                             true
                         )}</span>
@@ -1023,12 +1026,12 @@ function generarPagos() {
                     <div><span class="subtitle-table">Estudiante nuevo (+DI+CI)</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
-                            (10 * valorUC + totalbs * 5 * 0.93) * valorBCV,
+                            (10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            10 * valorUC + totalbs * 5 * 0.93,
+                            10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
                             `USD `,
                             true
                         )}</span>
@@ -1050,12 +1053,12 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante regular (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-                            (5 * valorUC + totalbs * 3 * 0.95) * valorBCV,
+                            (5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            5 * valorUC + totalbs * 3 * 0.95,
+                            5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
                             `USD `,
                             true
                         )}</span>
@@ -1064,12 +1067,12 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-                            (7.5 * valorUC + totalbs * 3 * 0.95) * valorBCV,
+                            (7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
                             `Bs.S `,
                             true
                         )}</span> <br />
                         <span class="usd">${formatNumber.new(
-                            7.5 * valorUC + totalbs * 3 * 0.95,
+                            7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
                             `USD `,
                             true
                         )}</span>
@@ -1129,7 +1132,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            Number(GetMontoTarifa(getFechaAnoActual(11, 5))),
+                            Number(GetMontoTarifa(getFechaAnoActual(11, 10))),
                             `USD `,
                             true
                         )}</span>
@@ -1139,7 +1142,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">3ER MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            GetMontoTarifa(getFechaAnoActual(1, 6)),
+                            GetMontoTarifa(getFechaAnoActual(1, 11)),
                             `USD `,
                             true
                         )}</span>
@@ -1149,7 +1152,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">4TO MES (*Estimado 2da parte - Sin CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
+                            GetMontoTarifa(getFechaAnoActual(1, 12)) * 1,
                             `USD `,
                             true
                         )}</span>
@@ -1159,7 +1162,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">5TO MES (*Estimado 2da parte)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            GetMontoTarifa(getFechaAnoActual(1, 8)),
+                            GetMontoTarifa(getFechaAnoActual(1, 12)),
                             `USD `,
                             true
                         )}</span>
@@ -1205,7 +1208,7 @@ function generarPagos() {
 
             <!-- PAGO FINANCIADO-->
             <div class="box-btn">
-                PAGO FINANCIADO
+                PAGO MENSUAL
                 <i
                     class="fas fa-question-circle"
                     onclick="modalInfoOpen('Modalidad de pago mensual. <br>Derecho de inscripción y confirmación deberá realizarse directamente a la UCAB.<br>*Comprobar monto con caja*')"
@@ -1216,7 +1219,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">4TO MES (Sin CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
+                            GetMontoTarifa(getFechaAnoActual(1, 12)) * 1,
                             `USD `,
                             true
                         )}</span>
@@ -1226,7 +1229,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">5TO MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            GetMontoTarifa(getFechaAnoActual(1, 8)),
+                            GetMontoTarifa(getFechaAnoActual(1, 12)),
                             `USD `,
                             true
                         )}</span>
