@@ -133,9 +133,9 @@ function iniciarlizarAcordionesPagos() {
 function InicializarPeriodoSys(perioObligatorio = 0) {
     if (perioObligatorio == 0) {
         if (
-            (mesAct > 2 && mesAct < 9) /* (mesAct > 2 && mesAct < 8)  */ ||
+            (mesAct > 2 && mesAct < 8) /* (mesAct > 2 && mesAct < 8)  */ ||
             (mesAct == 2 && diaAct >= 12) /* Mes febrero */ ||
-            (mesAct == 8 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
+            (mesAct == 7 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
         ) {
             //PERIODO 1
             console.warn("PERIODO 1");
