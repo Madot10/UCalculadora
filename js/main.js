@@ -756,7 +756,7 @@ function deleteMateriaList(id, isMinor) {
     } else {
         ucbase -= data.UC;
         baseVisual -= data.UC != 0 ? data.UC : data.UCE;
-        uctotal -= UCrecargo(data.UC, data.Tax);
+        uctotal -= UCrecargo(data.UC, data.Tax, data.UCE);
     }
 
     actualizarTotalUC();
