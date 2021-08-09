@@ -1079,10 +1079,11 @@ function generarPagos() {
                     </div>
                 </div>
                 <div class="box-info">
-                    <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN)</span></div>
+                    <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN +CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-                            2.5 * valorUC + totalbs * 2,
+                            2.5 * getUCfecha(getFechaAnoActual(1, 12)) +
+                                Number(GetMontoTarifa(getFechaAnoActual(1, 12))) * 2,
                             `USD `,
                             true
                         )}</span>
