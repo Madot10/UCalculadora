@@ -1003,7 +1003,7 @@ function generarPagos() {
                 PAGO TOTAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 7% de descuento sobre las UC (No DI). <br>Exento del proceso de confirmación de inscripción. <br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 6% de descuento sobre las UC (No DI). <br>Exento del proceso de confirmación de inscripción. <br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
@@ -1044,7 +1044,7 @@ function generarPagos() {
                 PAGO PARCIAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 4% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
@@ -1186,7 +1186,7 @@ function generarPagos() {
                 PAGO PARCIAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 5% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago de 3 meses por adelantado (1era cuota) y 2 meses posteriormente (2da cuota).<br>Recibe un 4% de descuento sobre las UC (No DI).<br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
@@ -1277,7 +1277,7 @@ function generarPagos() {
                 PAGO TOTAL
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 7% de descuento sobre las UC (No DI). <br>MINORS SOLO SE PAGA DE CONTADO <br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 6% de descuento sobre las UC (No DI). <br>MINORS SOLO SE PAGA DE CONTADO <br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
