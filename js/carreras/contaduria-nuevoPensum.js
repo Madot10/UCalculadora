@@ -115,6 +115,12 @@ var contadurianuevopensum = [
         UC: 3,
         Tax: "TA‐1",
     },
+    {
+        Semestre: "QUINTO SEMESTRE",
+        Asignatura: "Responsabilidad Social Empresarial",
+        UC: 3,
+        Tax: "TA‐1",
+    },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Inglés para los Negocios", UC: 3, Tax: "TA‐6" },
     {
         Semestre: "QUINTO SEMESTRE",
