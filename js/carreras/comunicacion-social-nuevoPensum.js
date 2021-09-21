@@ -49,12 +49,7 @@ var comunicacionsocialnuevopensum = [
         UC: 4,
         Tax: "TA-9",
     },
-    {
-        Semestre: "TERCER SEMESTRE",
-        Asignatura: "Sociología de la Comunicación",
-        UC: 5,
-        Tax: "TA-1",
-    },
+
     { Semestre: "TERCER SEMESTRE", Asignatura: "Economía", UC: 5, Tax: "TA-3" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Cultura y Posmodernidad", UC: 6, Tax: "TA-3" },
     { Semestre: "TERCER SEMESTRE", Asignatura: "Comunicación Escrita II", UC: 4, Tax: "TA-8" },
