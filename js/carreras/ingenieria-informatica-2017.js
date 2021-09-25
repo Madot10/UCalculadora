@@ -136,7 +136,7 @@ var inginformatica = [
         Semestre: "DECIMO SEMESTRE",
         Asignatura: "Ética Profesional (Virtual)",
         UC: 3,
-        Tax: "(B) TA‐2",
+        Tax: "(V) TA‐2",
     },
     {
         Semestre: "DECIMO SEMESTRE",
