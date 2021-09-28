@@ -131,7 +131,7 @@ var ingindustrial = [
     },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Métodos Estadísticos", UC: 5, Tax: "TA‐4" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Mecánica de Fluidos", UC: 7, Tax: "TA‐9" },
-    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐4" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐3" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Ciencias de los Materiales", UC: 6, Tax: "TA‐9" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Simulación", UC: 5, Tax: "TA‐9" },
     {

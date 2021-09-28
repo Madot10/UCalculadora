@@ -82,7 +82,7 @@ var inginformatica = [
         UC: 5,
         Tax: "TA‐9",
     },
-    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐4" },
+    { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐3" },
     { Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Inglés I", UC: 5, Tax: "TA‐6" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Investigación de Operaciones", UC: 5, Tax: "TA‐4" },
     {
