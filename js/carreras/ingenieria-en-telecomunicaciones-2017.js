@@ -153,7 +153,7 @@ var ingentelecomunicaciones = [
     },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Procesamiento de Señales", UC: 4, Tax: "TA‐8" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Telemática III", UC: 5, Tax: "TA‐4" },
-    { Semestre: "OCTAVO SEMESTRE", Asignatura: "Contabilidad General", UC: 4, Tax: "TA‐6" },
+    { Semestre: "OCTAVO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐4" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
     { Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(V) TA‐1" },
     { Semestre: "NOVENO SEMESTRE", Asignatura: "Comunicaciones Ópticas", UC: 7, Tax: "TA‐4" },

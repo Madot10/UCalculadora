@@ -68,7 +68,7 @@ var ingcivil = [
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Instalaciones Eléctricas", UC: 2, Tax: "TA‐8" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Resistencia de Materiales I", UC: 5, Tax: "TA‐4" },
     { Semestre: "QUINTO SEMESTRE", Asignatura: "Estadística y Probabilidades", UC: 5, Tax: "TA‐4" },
-    { Semestre: "QUINTO SEMESTRE", Asignatura: "Contabilidad General", UC: 4, Tax: "TA‐6" },
+    { Semestre: "QUINTO SEMESTRE", Asignatura: "Contabilidad Financiera", UC: 5, Tax: "TA‐4" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Cálculo Numérico", UC: 5, Tax: "TA‐9" },
     { Semestre: "SEXTO SEMESTRE", Asignatura: "Resistencia de Materiales II", UC: 5, Tax: "TA‐4" },
     {
