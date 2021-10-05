@@ -980,14 +980,10 @@ function generarPagos() {
                 <div>
                     <span class="bs">${formatNumber.new(
                         totalbs * 5 * valorBCV,
-                        `Bs.S `,
+                        `Bs `,
                         true
                     )}</span> <br />
-                    <span class="bs">${formatNumber.new(
-                        (totalbs * 5 * valorBCV) / 1000000,
-                        `Bs. Digital `,
-                        true
-                    )}</span> <br />
+             
                     <span class="usd">${formatNumber.new(totalbs * 5, `USD `)}</span>
                 </div>
             </div>
@@ -1017,14 +1013,10 @@ function generarPagos() {
                     <div>
                         <span class="bs">${formatNumber.new(
                             (7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            ((7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                  
                         <span class="usd">${formatNumber.new(
                             7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
                             `USD `,
@@ -1037,14 +1029,10 @@ function generarPagos() {
                     <div>
                         <span class="bs">${formatNumber.new(
                             (10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            ((10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                    
                         <span class="usd">${formatNumber.new(
                             10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
                             `USD `,
@@ -1069,14 +1057,10 @@ function generarPagos() {
                         <span class="subtitle-table">Estudiante regular (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
                             (5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            ((5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                       
                         <span class="usd">${formatNumber.new(
                             5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
                             `USD `,
@@ -1088,15 +1072,10 @@ function generarPagos() {
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
                             (7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            ((7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV) /
-                                1000000,
-                            `Bs.S `,
-                            true
-                        )}</span> <br />
+                      
                         <span class="usd">${formatNumber.new(
                             7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
                             `USD `,
@@ -1132,14 +1111,10 @@ function generarPagos() {
                     <span class="subtitle-table">Estudiante regular (+DI)</span><br />
                     <span class="bs">${formatNumber.new(
                         (5 * valorUC + totalbs * 1) * valorBCV,
-                        `Bs.S `,
+                        `Bs `,
                         true
                     )}</span> <br />
-                    <span class="bs">${formatNumber.new(
-                        ((5 * valorUC + totalbs * 1) * valorBCV) / 1000000,
-                        `Bs. Digital `,
-                        true
-                    )}</span> <br />
+                 
                     <span class="usd">${formatNumber.new(
                         5 * valorUC + totalbs * 1,
                         `USD `,
@@ -1150,14 +1125,10 @@ function generarPagos() {
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
                             (7.5 * valorUC + totalbs * 1) * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            ((7.5 * valorUC + totalbs * 1) * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                     
                         <span class="usd">${formatNumber.new(
                             7.5 * valorUC + totalbs * 1,
                             `USD `,
@@ -1231,14 +1202,10 @@ function generarPagos() {
                     <div class="indent-10">
                     <span class="bs">${formatNumber.new(
                         (2.5 * valorUC + totalbs * 2) * valorBCV,
-                        `Bs.S `,
+                        `Bs `,
                         true
                     )}</span> <br />
-                    <span class="bs">${formatNumber.new(
-                        ((2.5 * valorUC + totalbs * 2) * valorBCV) / 1000000,
-                        `Bs. Digital `,
-                        true
-                    )}</span> <br />
+                 
                         <span class="usd">${formatNumber.new(
                             2.5 * valorUC + totalbs * 2,
                             `USD `,
@@ -1299,14 +1266,10 @@ function generarPagos() {
                     <div>
                         <span class="bs">${formatNumber.new(
                             totalbsMinor * 5 * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            (totalbsMinor * 5 * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                      
                         <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `)}</span>
                     </div>
                 </div>
@@ -1332,14 +1295,10 @@ function generarPagos() {
                     <div>
                         <span class="bs">${formatNumber.new(
                             totalbsMinor * 5 * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            (totalbsMinor * 5 * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                    
                         <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `, true)}</span>
                     </div>
                 </div>
@@ -1360,14 +1319,10 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="bs">${formatNumber.new(
                             totalbsMinor * 3 * valorBCV,
-                            `Bs.S `,
+                            `Bs `,
                             true
                         )}</span> <br />
-                        <span class="bs">${formatNumber.new(
-                            (totalbsMinor * 3 * valorBCV) / 1000000,
-                            `Bs. Digital `,
-                            true
-                        )}</span> <br />
+                 
                         <span class="usd">${formatNumber.new(totalbsMinor * 3, `USD `, true)}</span>
                     </div>
 
@@ -1415,8 +1370,8 @@ function getBCVhtml() {
     <!-- TASA -->
     <div class="box-table">
         <h2 class="title-center">TASA USD</h2>
-        <p class="text-center">${formatNumber.new(valorBCV, `Bs.S. `, true)}</p>
-        <p class="text-center">${formatNumber.new(valorBCV / 1000000, `Bs. Digital `, true)}</p>
+        <p class="text-center">${formatNumber.new(valorBCV, `Bs. `, true)}</p>
+       
     </div>
     `;
 }
@@ -1432,14 +1387,10 @@ function getDIhtml() {
             <div>
                 <span class="bs">${formatNumber.new(
                     5 * valorUC * valorBCV,
-                    `Bs.S `,
+                    `Bs `,
                     true
                 )}</span> <br />
-                <span class="bs">${formatNumber.new(
-                    (5 * valorUC * valorBCV) / 1000000,
-                    `Bs. Digital `,
-                    true
-                )}</span> <br />
+           
                 <span class="usd">${formatNumber.new(5 * valorUC, `USD `, true)}</span>
             </div>
         </div>
@@ -1449,14 +1400,10 @@ function getDIhtml() {
             <div>
                 <span class="bs">${formatNumber.new(
                     7.5 * valorUC * valorBCV,
-                    `Bs.S `,
+                    `Bs `,
                     true
                 )}</span> <br />
-                <span class="bs">${formatNumber.new(
-                    (7.5 * valorUC * valorBCV) / 1000000,
-                    `Bs. Digital `,
-                    true
-                )}</span> <br />
+          
                 <span class="usd">${formatNumber.new(7.5 * valorUC, `USD `, true)}</span>
             </div>
         </div>
@@ -1475,14 +1422,10 @@ function getConfDIhtml() {
             <div>
                 <span class="bs">${formatNumber.new(
                     2.5 * valorUC * valorBCV,
-                    `Bs.S `,
+                    `Bs `,
                     true
                 )}</span> <br />
-                <span class="bs">${formatNumber.new(
-                    (2.5 * valorUC * valorBCV) / 1000000,
-                    `Bs. Digital `,
-                    true
-                )}</span> <br />
+            
                 <span class="usd">${formatNumber.new(2.5 * valorUC, `USD `, true)}</span>
             </div>
         </div>
