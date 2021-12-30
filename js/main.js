@@ -1225,10 +1225,20 @@ function generarPagos() {
             </div>
             <div class="box-panel">
                 <div class="box-info">
-                    <div><span class="subtitle-table">4TO MES (Sin CI)</span></div>
+                    <div><span class="subtitle-table">4TO MES (SIN CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
                             GetMontoTarifa(getFechaAnoActual(1, 12)) * 1,
+                            `USD `,
+                            true
+                        )}</span>
+                    </div>
+                </div>
+                <div class="box-info">
+                    <div><span class="subtitle-table">4TO MES (+ CI)</span></div>
+                    <div class="indent-10">
+                        <span class="usd">${formatNumber.new(
+                            GetMontoTarifa(getFechaAnoActual(1, 12)) * 1 + 2.5 * valorUC,
                             `USD `,
                             true
                         )}</span>
@@ -1418,7 +1428,7 @@ function getConfDIhtml() {
     <div class="box-table">
         <h2 class="title-center">Confirmación inscripción</h2>
         <div class="box-info">
-            <div><span class="subtitle-table">Estudiante regular</span></div>
+            <div><span class="subtitle-table">Estudiantes</span></div>
             <div>
                 <span class="bs">${formatNumber.new(
                     2.5 * valorUC * valorBCV,
