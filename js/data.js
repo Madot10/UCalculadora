@@ -99,6 +99,9 @@ let periodo = {
     2021222: {
         base: 11,
     },
+    122: {
+        base: 13.2,
+    },
 };
 /*
 let tables = {
