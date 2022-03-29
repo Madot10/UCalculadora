@@ -697,6 +697,12 @@ function actualizarTotalUC() {
 	document.getElementById("totalUC").innerHTML = `${baseVisual + ucbaseMinor} UC`;
 }
 
+function limpiarTotalUC() {
+	baseVisual = 0;
+	ucbaseMinor = 0;
+	actualizarTotalUC();
+}
+
 function materiaSelect(elem, isMinor) {
 	//Verificamos si es true o false
 	let id = elem.getAttribute("id");
