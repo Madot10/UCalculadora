@@ -41,7 +41,14 @@ var contadurianuevopensum = [
 	},
 
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Criptomonedas", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "(Virtual) Criptomonedas", UC: 3, Tax: "(V) TA‐3" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Activos y Pasivos", UC: 7, Tax: "TA‐3" },
+	{
+		Semestre: "TERCER SEMESTRE",
+		Asignatura: "(Virtual) Activos y Pasivos",
+		UC: 7,
+		Tax: "(V) TA‐3",
+	},
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Macroeconomía I", UC: 7, Tax: "TA‐1" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Matemáticas Aplicadas", UC: 5, Tax: "TA‐6" },
 	{
@@ -50,7 +57,7 @@ var contadurianuevopensum = [
 		UC: 5,
 		Tax: "(V) TA‐6",
 	},
-	{ Semestre: "TERCER SEMESTRE", Asignatura: "Gerencia", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Gerencia", UC: 5, Tax: "TA‐1" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Investigación Aplicada", UC: 4, Tax: "TA‐6" },
 	{
 		Semestre: "TERCER SEMESTRE",
@@ -65,17 +72,36 @@ var contadurianuevopensum = [
 		UC: 3,
 		Tax: "TA‐1",
 	},
-	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Legislación Mercantil", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Matemáticas Financieras", UC: 4, Tax: "TA‐4" },
+	{
+		Semestre: "CUARTO SEMESTRE",
+		Asignatura: "Fundamentos y Sujetos del Derecho del Trabajo ",
+		UC: 3,
+		Tax: "TA‐1",
+	},
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐2" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Sistemas Contables", UC: 4, Tax: "TA‐9" },
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Patrimonio y Endeudamiento", UC: 8, Tax: "TA‐3" },
-	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Sistemas Contables", UC: 4, Tax: "TA‐4" },
+	{
+		Semestre: "CUARTO SEMESTRE",
+		Asignatura: "(Virtual) Patrimonio y Endeudamiento",
+		UC: 8,
+		Tax: "(V) TA‐3",
+	},
 	{
 		Semestre: "CUARTO SEMESTRE",
 		Asignatura: "Manejo de Habilidades Directivas",
 		UC: 3,
 		Tax: "TA‐6",
 	},
-	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐2" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Legislación Mercantil", UC: 3, Tax: "TA‐3" },
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+	{
+		Semestre: "CUARTO SEMESTRE",
+		Asignatura: "(Virtual) Innovación y Emprendimiento",
+		UC: 3,
+		Tax: "(V) TA‐1",
+	},
 
 	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Pasantía", UC: 0, UCE: 3, Tax: "TA‐1" },
 	{
@@ -86,9 +112,15 @@ var contadurianuevopensum = [
 	},
 	{
 		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "(Virtual) Derecho Individual del Trabajo",
+		Asignatura: "Mercados e Instituciones Financieras",
+		UC: 4,
+		Tax: "TA‐1",
+	},
+	{
+		Semestre: "QUINTO SEMESTRE",
+		Asignatura: "Auditoria y Aseguramiento",
 		UC: 3,
-		Tax: "(V) TA‐1",
+		Tax: "TA‐1",
 	},
 	{
 		Semestre: "QUINTO SEMESTRE",
@@ -98,11 +130,22 @@ var contadurianuevopensum = [
 	},
 	{
 		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "Grupos Empresariales y Holdings",
-		UC: 8,
-		Tax: "TA‐3",
+		Asignatura: "(Virtual) Fintech",
+		UC: 3,
+		Tax: "(V) TA‐3",
 	},
-	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Auditoria y Aseguramiento", UC: 3, Tax: "TA‐1" },
+	{
+		Semestre: "QUINTO SEMESTRE",
+		Asignatura: "Responsabilidad Social Empresarial",
+		UC: 3,
+		Tax: "TA‐1",
+	},
+	{
+		Semestre: "QUINTO SEMESTRE",
+		Asignatura: "(Virtual) Responsabilidad Social Empresarial",
+		UC: 3,
+		Tax: "(V) TA‐1",
+	},
 	{
 		Semestre: "QUINTO SEMESTRE",
 		Asignatura: "Elementos y Sistemas de Costos",
@@ -111,15 +154,15 @@ var contadurianuevopensum = [
 	},
 	{
 		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "Mercados e Instituciones Financieras",
-		UC: 4,
-		Tax: "TA‐1",
+		Asignatura: "Grupos Empresariales y Holdings",
+		UC: 8,
+		Tax: "TA‐3",
 	},
 	{
 		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "Responsabilidad Social Empresarial",
-		UC: 3,
-		Tax: "TA‐1",
+		Asignatura: "(Virtual) Grupos Empresariales y Holdings",
+		UC: 8,
+		Tax: "(V) TA‐3",
 	},
 	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Inglés para los Negocios", UC: 3, Tax: "TA‐6" },
 	{
@@ -128,41 +171,29 @@ var contadurianuevopensum = [
 		UC: 3,
 		Tax: "(V) TA‐6",
 	},
-	{
-		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "Contabilidad IV",
-		UC: 8,
-		Tax: "TA‐3",
-	},
-	{
-		Semestre: "QUINTO SEMESTRE",
-		Asignatura: "(Virtual) Contabilidad IV",
-		UC: 8,
-		Tax: "(V) TA‐3",
-	},
 
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Fiscal", UC: 3, Tax: "TA‐3" },
-	{
-		Semestre: "SEXTO SEMESTRE",
-		Asignatura: "Entornos Inflacionarios y Multimoneda",
-		UC: 5,
-		Tax: "TA‐3",
-	},
-	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Procedimientos de Auditoría", UC: 3, Tax: "TA‐1" },
-	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Costeo Estándar", UC: 4, Tax: "TA‐3" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Ética Financiera", UC: 3, Tax: "TA‐6" },
 	{
 		Semestre: "SEXTO SEMESTRE",
 		Asignatura: "Gerencia Financiera",
 		UC: 5,
 		Tax: "TA‐4",
 	},
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Procedimientos de Auditoría", UC: 3, Tax: "TA‐1" },
 	{
 		Semestre: "SEXTO SEMESTRE",
 		Asignatura: "Informática Aplicada a los Negocios",
 		UC: 3,
 		Tax: "TA‐9",
 	},
-	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Ética Financiera", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Costeo Estándar", UC: 4, Tax: "TA‐3" },
+	{
+		Semestre: "SEXTO SEMESTRE",
+		Asignatura: "Entornos Inflacionarios y Multimoneda",
+		UC: 5,
+		Tax: "TA‐3",
+	},
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 4, Tax: "(V) TA‐8" },
 
@@ -175,30 +206,6 @@ var contadurianuevopensum = [
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Tributación Municipal", UC: 3, Tax: "TA‐3" },
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
-		Asignatura: "Auditoría Interna",
-		UC: 3,
-		Tax: "TA‐3",
-	},
-	{
-		Semestre: "SÉPTIMO SEMESTRE",
-		Asignatura: "Dictamen de Auditoría",
-		UC: 3,
-		Tax: "TA‐1",
-	},
-	{
-		Semestre: "SÉPTIMO SEMESTRE",
-		Asignatura: "Decisiones Gerenciales en Costos",
-		UC: 4,
-		Tax: "TA‐3",
-	},
-	{
-		Semestre: "SÉPTIMO SEMESTRE",
-		Asignatura: "Finanzas Corporativas",
-		UC: 5,
-		Tax: "TA‐4",
-	},
-	{
-		Semestre: "SÉPTIMO SEMESTRE",
 		Asignatura: "Planificación Presupuestaria",
 		UC: 5,
 		Tax: "TA‐3",
@@ -208,6 +215,37 @@ var contadurianuevopensum = [
 		Asignatura: "(Virtual) Planificación Presupuestaria",
 		UC: 5,
 		Tax: "(V) TA‐3",
+	},
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "Finanzas Corporativas",
+		UC: 5,
+		Tax: "TA‐4",
+	},
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "Dictamen de Auditoría",
+		UC: 3,
+		Tax: "TA‐1",
+	},
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "Auditoría Interna",
+		UC: 3,
+		Tax: "TA‐3",
+	},
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "(Virtual) Auditoría Interna",
+		UC: 3,
+		Tax: "(V) TA‐3",
+	},
+
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "Decisiones Gerenciales en Costos",
+		UC: 4,
+		Tax: "TA‐3",
 	},
 
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
@@ -239,6 +277,4 @@ var contadurianuevopensum = [
 
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 4, Tax: "(V) TA‐8" },
-
-	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantía", UC: 0, UCE: 3, Tax: "TA‐1" },
 ];
