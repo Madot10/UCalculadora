@@ -189,7 +189,7 @@ var administraciondeempresasnuevopensum = [
 		UC: 4,
 		Tax: "(V) TA‐3",
 	},
-	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "(Virtual) Emprendimiento", UC: 4, Tax: "(V) TA‐8" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "(Virtual) Emprendimiento", UC: 3, Tax: "(V) TA‐8" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Control de Gestión", UC: 4, Tax: "TA‐3" },
 	{
 		Semestre: "OCTAVO SEMESTRE",
@@ -210,6 +210,6 @@ var administraciondeempresasnuevopensum = [
 		UC: 3,
 		Tax: "(V) TA‐3",
 	},
-	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Trading", UC: 3, Tax: "TA‐6" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Trading", UC: 4, Tax: "TA‐6" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Finanzas Internacionales ", UC: 4, Tax: "TA‐3" },
 ];
