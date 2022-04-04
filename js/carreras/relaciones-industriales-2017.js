@@ -59,12 +59,11 @@ var relacionesindustriales = [
 		UC: 5,
 		Tax: "TA ‐ 8",
 	},
-	{ Semestre: "TERCER SEMESTRE", Asignatura: "Derecho del Trabajo", UC: 6, Tax: "TA ‐ 1" },
 	{
 		Semestre: "TERCER SEMESTRE",
-		Asignatura: "(Virtual) Derecho del Trabajo",
-		UC: 6,
-		Tax: "(V) TA ‐ 1",
+		Asignatura: "Fundamentos y Sujetos del Derecho del Trabajo",
+		UC: 3,
+		Tax: "TA ‐ 1",
 	},
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Estadística II", UC: 5, Tax: "TA ‐ 5" },
 	{
