@@ -26,6 +26,12 @@ var relacionesindustriales = [
 		Tax: "TA ‐ 1",
 	},
 	{
+		Semestre: "PRIMER SEMESTRE",
+		Asignatura: "(Virtual) El Pensamiento Organizativo",
+		UC: 4,
+		Tax: "(V) TA ‐ 1",
+	},
+	{
 		Semestre: "SEGUNDO SEMESTRE",
 		Asignatura: "Práctica I: Trabajo de Campo",
 		UC: 3,
@@ -80,6 +86,12 @@ var relacionesindustriales = [
 		UC: 3,
 		Tax: "(V) TA ‐ 1",
 	},
+	{
+		Semestre: "TERCER SEMESTRE",
+		Asignatura: "Fundamentos y Sujetos del Derecho del Trabajo",
+		UC: 3,
+		Tax: "TA ‐ 1",
+	},
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Gestión del Talento Humano", UC: 4, Tax: "TA ‐ 1" },
 	{
 		Semestre: "TERCER SEMESTRE",
@@ -106,6 +118,12 @@ var relacionesindustriales = [
 	{
 		Semestre: "CUARTO SEMESTRE",
 		Asignatura: "Ecología, Ambiente y Sustentabilidad",
+		UC: 3,
+		Tax: "TA ‐ 1",
+	},
+	{
+		Semestre: "CUARTO SEMESTRE",
+		Asignatura: "Derecho Individual del Trabajo ",
 		UC: 3,
 		Tax: "TA ‐ 1",
 	},
@@ -176,9 +194,21 @@ var relacionesindustriales = [
 	},
 	{
 		Semestre: "SEXTO SEMESTRE",
+		Asignatura: "(Virtual) Responsabilidad Social Empresarial",
+		UC: 3,
+		Tax: "(V) TA ‐ 1",
+	},
+	{
+		Semestre: "SEXTO SEMESTRE",
 		Asignatura: "Fundamentos de Administración Financiera",
 		UC: 5,
 		Tax: "TA ‐ 6",
+	},
+	{
+		Semestre: "SEXTO SEMESTRE",
+		Asignatura: "(Virtual) Fundamentos de Administración Financiera",
+		UC: 5,
+		Tax: "(V) TA ‐ 6",
 	},
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
@@ -195,6 +225,12 @@ var relacionesindustriales = [
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Gerencia de Proyectos", UC: 3, Tax: "TA ‐ 3" },
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
+		Asignatura: "(Virtual) Gerencia de Proyectos",
+		UC: 3,
+		Tax: "(V) TA ‐ 3",
+	},
+	{
+		Semestre: "SÉPTIMO SEMESTRE",
 		Asignatura: "Negociación y Concertación Laboral",
 		UC: 4,
 		Tax: "TA ‐ 4",
@@ -207,6 +243,7 @@ var relacionesindustriales = [
 	},
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Seguridad y Salud Laboral", UC: 4, Tax: "TA ‐ 3" },
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA ‐ 8" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "(VirtuaL) Electiva", UC: 4, Tax: "(V) TA ‐ 8" },
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
 		Asignatura: "Administración Laboral: Función Pública",
@@ -228,9 +265,21 @@ var relacionesindustriales = [
 	},
 	{
 		Semestre: "OCTAVO SEMESTRE",
+		Asignatura: "(Virtual) Innovación y emprendimiento",
+		UC: 3,
+		Tax: "(V) TA ‐ 1",
+	},
+	{
+		Semestre: "OCTAVO SEMESTRE",
 		Asignatura: "Gestión de Cambios Organizacionales",
 		UC: 3,
 		Tax: "TA ‐ 3",
+	},
+	{
+		Semestre: "OCTAVO SEMESTRE",
+		Asignatura: "(Virtual) Gestión de Cambios Organizacionales",
+		UC: 3,
+		Tax: "(V) TA ‐ 3",
 	},
 	{
 		Semestre: "OCTAVO SEMESTRE",
@@ -244,7 +293,14 @@ var relacionesindustriales = [
 		UC: 4,
 		Tax: "TA ‐ 3",
 	},
+	{
+		Semestre: "OCTAVO SEMESTRE",
+		Asignatura: "(Virtual) Planificación Estratégica de Recursos Humanos",
+		UC: 4,
+		Tax: "(V) TA ‐ 3",
+	},
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA ‐ 8" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 4, Tax: "(V) TA ‐ 8" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Trabajo de grado", UC: 5, Tax: "TA ‐ 1" },
 	{ Semestre: "TERCER AÑO", Asignatura: "estadística iii", UC: 3, Tax: "TA‐1" },
 	{
