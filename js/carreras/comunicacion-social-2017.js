@@ -315,12 +315,6 @@ var comunicacionsocial = [
 	},
 	{
 		Semestre: "CONCENTRACIÓN PRODUCCIÓN AUDIOVISUAL SEMESTRE A",
-		Asignatura: "Postproducción",
-		UC: 4,
-		Tax: "TA-9",
-	},
-	{
-		Semestre: "CONCENTRACIÓN PRODUCCIÓN AUDIOVISUAL SEMESTRE A",
 		Asignatura: "Historia del Cine",
 		UC: 3,
 		Tax: "TA-1",
