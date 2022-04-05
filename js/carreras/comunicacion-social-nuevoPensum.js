@@ -210,7 +210,7 @@ var comunicacionsocialnuevopensum = [
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
-		Asignatura: "Responsabilidad Social Empresarial y Desarrollo Sustentable (Virtual)",
+		Asignatura: "(Virtual) Responsabilidad Social Empresarial y Desarrollo Sustentable ",
 		UC: 3,
 		Tax: "TA-2 (V)",
 	},
