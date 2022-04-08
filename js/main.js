@@ -1093,8 +1093,8 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN +CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							2.5 * getUCfecha(getFechaAnoActual(1, 06)) +
-								Number(GetMontoTarifa(getFechaAnoActual(1, 06))) * 2,
+							2.5 * getUCfecha(getFechaAnoActual(20, 06)) +
+								Number(GetMontoTarifa(getFechaAnoActual(20, 06))) * 2,
 							`USD `,
 							true
 						)}</span>
@@ -1146,7 +1146,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							Number(GetMontoTarifa(getFechaAnoActual(01, 6))),
+							Number(GetMontoTarifa(getFechaAnoActual(01, 5))),
 							`USD `,
 							true
 						)}</span>
@@ -1156,7 +1156,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">3ER MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 6)),
+							GetMontoTarifa(getFechaAnoActual(01, 6)),
 							`USD `,
 							true
 						)}</span>
@@ -1166,7 +1166,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">4TO MES (*Estimado 2da parte - Sin CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 6)) * 1,
+							GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
 							`USD `,
 							true
 						)}</span>
@@ -1176,7 +1176,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">5TO MES (*Estimado 2da parte)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 6)),
+							GetMontoTarifa(getFechaAnoActual(01, 8)),
 							`USD `,
 							true
 						)}</span>
