@@ -177,6 +177,12 @@ var comunicacionsocial = [
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
+		Asignatura: "Electiva TA-9",
+		UC: 3,
+		Tax: "TA-9",
+	},
+	{
+		Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE A",
 		Asignatura: "Electiva Virtual",
 		UC: 3,
 		Tax: "(V) TA-4",
@@ -225,6 +231,12 @@ var comunicacionsocial = [
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
+		Asignatura: "Electiva TA-9",
+		UC: 3,
+		Tax: "TA-9",
+	},
+	{
+		Semestre: "CONCENTRACIÓN COMUNICACIONES CORPORATIVAS SEMESTRE B",
 		Asignatura: "Electiva Virtual",
 		UC: 3,
 		Tax: "(V) TA-4",
@@ -267,9 +279,15 @@ var comunicacionsocial = [
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS MERCADEO SEMESTRE A",
-		Asignatura: "Electiva Virtaul",
+		Asignatura: "Electiva Virtual",
 		UC: 3,
 		Tax: "(V) TA-4",
+	},
+	{
+		Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS MERCADEO SEMESTRE A",
+		Asignatura: "Electiva TA-9",
+		UC: 3,
+		Tax: "TA-9",
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS MERCADEO SEMESTRE B",
@@ -294,6 +312,12 @@ var comunicacionsocial = [
 		Asignatura: "Canales de Comercialización",
 		UC: 3,
 		Tax: "TA-2",
+	},
+	{
+		Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS MERCADEO SEMESTRE B",
+		Asignatura: "Electiva TA-9",
+		UC: 3,
+		Tax: "TA-9",
 	},
 	{
 		Semestre: "CONCENTRACIÓN COMUNICACIONES INTEGRADAS MERCADEO SEMESTRE B",
