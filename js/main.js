@@ -408,6 +408,8 @@ function GetJsonDataMaterias(tx) {
 	tx = tx.replace(/\n/g, "");
 	tx = tx.toLowerCase();
 
+	console.log("GetJsonDataMaterias", tx);
+
 	//console.log("TX " + tx);
 	return (tx = window[tx]);
 }
