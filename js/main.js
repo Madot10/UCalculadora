@@ -690,6 +690,21 @@ function getUCfecha(fecha) {
 	return Number(uc).toFixed(2);
 }
 
+function getUCMes(mes) {
+	let month = mes;
+
+	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
+	let uc = dataux.base;
+
+	console.log("perioact", perioact, "month", month, "monthMapping", month);
+	if (perioact != 1) {
+		//semestre
+		uc = dataux.variacion[month - 1];
+	}
+
+	return Number(uc).toFixed(2);
+}
+
 function GetMontoTarifa(fecha) {
 	let aux = ucpagar;
 	switch (sede) {
@@ -703,6 +718,21 @@ function GetMontoTarifa(fecha) {
 	}
 
 	return getUCfecha(fecha) * aux;
+}
+
+function GetMontoTarifaMes(mes) {
+	let aux = ucpagar;
+	switch (sede) {
+		case "g":
+		case "tq":
+			//Guayana  /Los teques 20% descuento
+			//document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
+			aux *= 0.8;
+
+			break;
+	}
+
+	return getUCMes(mes) * aux;
 }
 
 function getFechaAnoActual(dia, mes) {
@@ -1048,10 +1078,11 @@ function generarPagos() {
         </div>    
         `
 		);
-	} else if (templateSelect == "1erPar" || templateSelect == "1erImpar") {
-		//Primera parte semestre
+	} else if (templateSelect == "sem") {
+		//Semestre
 		//DI
 		divMain.insertAdjacentHTML("beforeend", getDIhtml());
+		divMain.insertAdjacentHTML("beforeend", getConfDIhtml());
 
 		//PAGOS
 		divMain.insertAdjacentHTML(
@@ -1145,10 +1176,8 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN +CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							2.5 * getUCfecha(getFechaAnoActual(20, 06)) +
-								Number(GetMontoTarifa(getFechaAnoActual(20, 06))) *
-									2 *
-									DESCUENTO_PARCIAL,
+							2.5 * getUCMes(3) +
+								Number(GetMontoTarifaMes(3)) * 2 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
 						)}</span>
@@ -1200,7 +1229,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							Number(GetMontoTarifa(getFechaAnoActual(01, 5))),
+							Number(GetMontoTarifaMes(2)),
 							`USD `,
 							true
 						)}</span>
@@ -1210,27 +1239,27 @@ function generarPagos() {
                     <div><span class="subtitle-table">3ER MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(01, 6)),
+							GetMontoTarifaMes(3),
 							`USD `,
 							true
 						)}</span>
                     </div>
                 </div>
                 <div class="box-info">
-                    <div><span class="subtitle-table">4TO MES (*Estimado 2da parte - Sin CI)</span></div>
+                    <div><span class="subtitle-table">4TO MES (Sin CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 7)) * 1,
+							GetMontoTarifaMes(4) * 1,
 							`USD `,
 							true
 						)}</span>
                     </div>
                 </div>
                 <div class="box-info">
-                    <div><span class="subtitle-table">5TO MES (*Estimado 2da parte)</span></div>
+                    <div><span class="subtitle-table">5TO MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(01, 8)),
+							GetMontoTarifaMes(5),
 							`USD `,
 							true
 						)}</span>
@@ -1346,8 +1375,8 @@ function generarPagos() {
             </div>    
             `
 			);
-		} else if (templateSelectMinor == "1erMinor") {
-			//Primera parte semestre
+		} else if (templateSelectMinor == "semMinor") {
+			//Semestre
 			divMain.insertAdjacentHTML(
 				"beforeend",
 				`
@@ -1451,7 +1480,7 @@ function getDIhtml() {
 	return `
     <!-- DI -->
     <div class="box-table">
-        <h2 class="title-center">Derecho inscripción</h2>
+        <h2 class="title-center">Derecho inscripción (1era Parte)</h2>
         <div class="box-info">
             <div><span class="subtitle-table">Estudiante regular</span></div>
             <div>
@@ -1486,17 +1515,17 @@ function getConfDIhtml() {
 	return `
     <!-- DI -->
     <div class="box-table">
-        <h2 class="title-center">Confirmación inscripción</h2>
+        <h2 class="title-center">Confirmación inscripción (2da Parte)</h2>
         <div class="box-info">
             <div><span class="subtitle-table">Estudiantes</span></div>
             <div>
                 <span class="bs">${formatNumber.new(
-					2.5 * valorUC * valorBCV,
+					2.5 * getUCMes(3) * valorBCV,
 					`Bs `,
 					true
 				)}</span> <br />
             
-                <span class="usd">${formatNumber.new(2.5 * valorUC, `USD `, true)}</span>
+                <span class="usd">${formatNumber.new(2.5 * getUCMes(3), `USD `, true)}</span>
             </div>
         </div>
     </div>  
