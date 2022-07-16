@@ -132,38 +132,44 @@ function iniciarlizarAcordionesPagos() {
 /* SISTEMA PERIODO TABLA*/
 function InicializarPeriodoSys(perioObligatorio = 0) {
 	if (perioObligatorio == 0) {
-		if (
-			(mesAct > 2 && mesAct < 8) /* (mesAct > 2 && mesAct < 8)  */ ||
-			(mesAct == 2 && diaAct >= 12) /* Mes febrero */ ||
-			(mesAct == 7 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
-		) {
-			//PERIODO 1
-			console.warn("PERIODO 1");
-			perActivo = 1;
-		} else {
-			//PERIODO 2
-			console.warn("PERIODO 2");
-			perActivo = 2;
-		}
+		//if (
+		//	(mesAct > 2 && mesAct < 8) /* (mesAct > 2 && mesAct < 8)  */ ||
+		//	(mesAct == 2 && diaAct >= 12) /* Mes febrero */ ||
+		//	(mesAct == 7 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
+		//) {
+		//PERIODO 1
+		console.warn("PERIODO 1");
+		perActivo = 1;
+		//} else {
+		//PERIODO 2
+		//	console.warn("PERIODO 2");
+		//	perActivo = 2;
+		//}
 	} else {
 		//Establecer periodo obligatorio
 		console.warn(`PERIODO ${perioObligatorio}`);
 		perActivo = perioObligatorio;
 	}
 
-	let botones = document.getElementById(`per${perActivo}`).children;
+	//let botones = document.getElementById(`per${perActivo}`).children;
+	let botones = document.getElementById(`per`).children;
 	let lastI = 0;
 	let some_active = false;
 	for (i = 0; i < botones.length; i++) {
-		let idBTN = `p${perActivo}b${i + 1}`;
-		let codeGen = genPeriodoCode(perActivo, i);
+		//let idBTN = `p${perActivo}b${i + 1}`;
+		let idBTN = `p0b${i + 1}`;
+
+		let codeGen = getPeriodoCode(i);
+		let periodoName = getPeriodoName(i);
+
+		console.log(idBTN, codeGen);
 		//console.warn("codeGen", codeGen);
 
 		//Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
-		if (periodo[codeGen]) {
+		if (ucByPeriodo[periodoName]) {
 			some_active = true;
 
-			perioact = codeGen;
+			perioact = getActualPeriodo();
 			templateSelect = botones[i].dataset.table;
 			templateSelectMinor = botones[i].dataset.minor;
 			lastI = i;
@@ -174,7 +180,7 @@ function InicializarPeriodoSys(perioObligatorio = 0) {
 
 	if (!some_active) {
 		console.warn("ACTIVANDO MODO ALTERNATIVO");
-		InicializarPeriodoSys(-1 * perActivo + 3);
+		//InicializarPeriodoSys(-1 * perActivo + 3);
 	} else {
 		botones[lastI].classList.add("active");
 		perBtnActivo = botones[lastI].id;
@@ -182,16 +188,18 @@ function InicializarPeriodoSys(perioObligatorio = 0) {
 }
 
 function showPeriodo() {
-	if (perActivo == 1) {
+	/*if (perActivo == 1) {
 		//PERIODO 1
 		document.getElementById("per1").style.display = "block";
 	} else {
 		//PERIODO 2
 		document.getElementById("per2").style.display = "block";
-	}
+	}*/
+	document.getElementById("per").style.display = "block";
 }
 
 function changePeriodo(idElem, newPeriodo) {
+	console.info("#Periodo cambiado: ", newPeriodo);
 	//Activamos boton
 	if (perBtnActivo != "") document.getElementById(perBtnActivo).classList.remove("active");
 	perBtnActivo = idElem;
@@ -204,8 +212,39 @@ function changePeriodo(idElem, newPeriodo) {
 
 	LoadUC();
 	calcularMatricula();
+}
 
-	//console.info("#Periodo cambiado: ", newPeriodo);
+function getActualPeriodo() {
+	let f = new Date(hoy);
+	let month = f.getMonth() + 1;
+
+	if (monthMapping[month] != null) {
+		//semestre
+		return 2;
+	} else {
+		//verano
+		return 1;
+	}
+}
+
+function getPeriodoCode(Nbtn) {
+	if (Nbtn == 0) {
+		//verano
+		return 1;
+	} else {
+		//semestre
+		return 2;
+	}
+}
+
+function getPeriodoName(Nbtn) {
+	if (Nbtn == 1) {
+		//verano
+		return "verano";
+	} else {
+		//semestre
+		return "semestre";
+	}
 }
 
 function genPeriodoCode(Nper, Nbtn) {
@@ -364,8 +403,10 @@ let formatNumber = {
 };
 
 function LoadUC() {
-	let dataux = periodo[perioact];
-	let uc = dataux.base;
+	//let dataux = periodo[perioact];
+	let dataux = perioact == 1 ? ucByPeriodo["verano"] : ucByPeriodo["semestre"];
+	//let uc = dataux.base;
+	uc = getUCfecha(hoy);
 	valorUC = uc;
 	//Recorremos si existe lista de variacion
 	/*
@@ -384,7 +425,7 @@ function LoadUC() {
                     }
             }
     }*/
-	uc = getUCfecha(hoy);
+
 	//console.log(uc);
 	visualUC = uc;
 	return uc;
@@ -619,10 +660,18 @@ function totalizacion() {
 
 function getUCfecha(fecha) {
 	let f = new Date(fecha);
-	let dataux = periodo[perioact];
+	let month = f.getMonth() + 1;
+
+	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
 	let uc = dataux.base;
 
-	if (dataux.variacion) {
+	//console.log("perioact", perioact, "month", month, "monthMapping", monthMapping[month]);
+	if (perioact != 1) {
+		//semestre
+		uc = dataux.variacion[monthMapping[month] - 1];
+	}
+
+	/*if (dataux.variacion) {
 		let timecmp;
 		for (let i = 0; i < dataux.variacion.length; i++) {
 			timecmp = new Date(dataux.variacion[i][0]);
@@ -636,7 +685,8 @@ function getUCfecha(fecha) {
 				break;
 			}
 		}
-	}
+	}*/
+
 	return Number(uc).toFixed(2);
 }
 

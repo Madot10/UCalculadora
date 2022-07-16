@@ -6,6 +6,38 @@ let perioact = 0;
 // 119 intensivo 1 en 2019
 // 219
 // 2019191 inicia en 2019 y termina en 2019
+
+let ucByPeriodo = {
+	verano: {
+		base: 13.2,
+	},
+	semestre: {
+		base: 10,
+		variacion: [
+			12, //Mes 1
+			12,
+			13,
+			13,
+			13, //Mes 5
+		] /** Monto UC*/,
+	},
+};
+
+let monthMapping = {
+	1: 5,
+	2: null,
+	3: 1,
+	4: 2,
+	5: 3,
+	6: 4,
+	7: 5,
+	8: null,
+	9: 1,
+	10: 2,
+	11: 3,
+	12: 4,
+};
+
 let periodo = {
 	2018191: {
 		base: 130.0,
@@ -96,19 +128,19 @@ let periodo = {
 		base: 10,
 		variacion: [["11/21/2021", 10]],
 	},
-	2021222: {
+	/*2021222: {
 		base: 11,
 	},
 	122: {
 		base: 13.2,
-	},
-	2022221: {
+	},*/
+	/*	2022221: {
 		base: 12,
 		variacion: [["06/20/2022", 8.333333333333332]],
-	},
-	2022222: {
+	},*/
+	/*2022222: {
 		base: 13,
-	},
+	},*/
 };
 /*
 let tables = {
