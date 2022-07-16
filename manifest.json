@@ -1,0 +1,29 @@
+{
+  "name": "UCalculadora",
+  "short_name": "UC",
+  "lang": "Spanish; Castilian",
+  "icons": [
+    {
+        "src": "icons/favicon-16x16.png?v=QEJvoAgyeq",
+        "sizes": "16x16",
+        "type": "image/png"
+    },
+    {
+        "src": "icons/favicon-32x32.png?v=QEJvoAgyeq",
+        "sizes": "32x32",
+        "type": "image/png"
+    },
+      {
+          "src": "icons/android-chrome-192x192.png?v=QEJvoAgyeq",
+          "sizes": "192x192",
+          "type": "image/png"
+      }
+  ],
+  "theme_color": "#0C5426",
+  "background_color": "#ffffff",
+  "scope": "/UCalculadora/",
+  "display": "standalone",
+  "start_url": "/UCalculadora/?utm_source=pwaUC&utm_medium=homescreen&utm_campaign=pwaUC",
+  "gcm_sender_id": "482941778795",
+  "gcm_sender_id_comment": "Do not change the GCM Sender ID"
+}

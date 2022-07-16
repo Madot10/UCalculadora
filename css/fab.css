@@ -1,0 +1,112 @@
+/* LOGO */
+svg.fablogo{
+  width: 4em !important;
+	height: auto;
+}
+
+
+/*Cantindad de alumnos input*/
+input.cantAlum{
+  width: 50%;
+	border: 1px solid var(--green);
+	text-align: right;
+	padding: 2px;
+	font-size: 1em;
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 768px){
+  input.cantAlum{
+      width: 80%;
+  }
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: var(--green);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    box-shadow: none;
+    border-radius: 0;
+    width: 50%;
+
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover {
+    background-color: white;
+    color: var(--green);
+  }
+
+  .active, .accordion:focus {
+    background-color: none;
+    /* color: var(--green); */
+  }
+
+  @media only screen and (max-width: 768px){
+    button.accordion{
+        width: 82%;
+    }
+}
+
+p.pInfo.descrp{	
+  text-align: justify;
+}
+
+@media only screen and (max-width: 768px){
+    .slider#coopRangeFab {
+        width: 80%;
+    }
+    p.pInfo{
+      margin: 0 0.5em;
+    }
+  }
+
+  @media only screen and (min-width: 768px){
+    .slider#coopRangeFab {
+        width: 50%;
+    }
+    p.pInfo{
+      margin: 0 2em;
+    }
+  }
+
+ /* TEXT INFO P*/
+ span.lowword{
+    font-weight: normal;
+ }
+
+ span#mesActual{
+    text-transform: uppercase;
+ }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panelInf {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  /*
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) 
+  }*/
