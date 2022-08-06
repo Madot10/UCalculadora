@@ -1,12 +1,5 @@
 let perioact = 0;
 
-//periodo guia
-// 2018191 inicia en 2018 y termina en 2019 primera mitad
-// 2018192
-// 119 intensivo 1 en 2019
-// 219
-// 2019191 inicia en 2019 y termina en 2019
-
 let ucByPeriodo = {
 	verano: {
 		base: 13.2,
@@ -51,6 +44,13 @@ let monthMapping = {
 	11: 3,
 	12: 4,
 };*/
+
+//periodo guia
+// 2018191 inicia en 2018 y termina en 2019 primera mitad
+// 2018192
+// 119 intensivo 1 en 2019
+// 219
+// 2019191 inicia en 2019 y termina en 2019
 
 let periodo = {
 	2018191: {
