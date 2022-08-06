@@ -326,6 +326,14 @@ function OpenDiv(name) {
 			document.getElementsByTagName("header")[0].style.display = "block";
 			document.getElementsByClassName("fab")[0].style.display = "block";
 			break;
+
+		case "contribuciones":
+			OnClickGa("openContribuciones", "Menu");
+			document.title = "UCalculadora - Open Source";
+
+			document.getElementsByTagName("header")[0].style.display = "block";
+			document.getElementsByClassName("contribuciones")[0].style.display = "block";
+			break;
 	}
 }
 

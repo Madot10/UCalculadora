@@ -1,7 +1,7 @@
 /* BoTON MENU */
 
 #menu {
-    /*
+	/*
     position: absolute;
   margin: auto;
   top: -25%;
@@ -13,80 +13,91 @@
 }
 
 header svg.svg-inline--fa.fa-w-14 {
-    width: 0.7em !important;
+	width: 0.7em !important;
 }
 
 p.infoMenu {
-    margin: 0 10px;
+	margin: 0 10px;
 }
 
 .bback {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .textYellow {
-    /*text-shadow: 2px 2px 20px black;*/
-    color: #374746;
+	/*text-shadow: 2px 2px 20px black;*/
+	color: #374746;
 }
 
 a.menu {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .Dcalc {
-    background-color: var(--yellow);
-    color: var(--gray);
+	background-color: var(--yellow);
+	color: var(--gray);
 }
 
 .Dcalc:hover {
-    background-color: white;
-    color: var(--gray);
+	background-color: white;
+	color: var(--gray);
 }
 
 .Dcalc:hover svg g {
-    color: var(--gray);
+	color: var(--gray);
 }
 
 .Dnoti {
-    background-color: var(--blue);
-    color: white;
+	background-color: var(--blue);
+	color: white;
 }
 
 .Dnoti:hover {
-    background-color: white;
-    color: var(--blue);
+	background-color: white;
+	color: var(--blue);
 }
 
 .Dnoti:hover svg {
-    fill: var(--blue);
+	fill: var(--blue);
 }
 
 .Dsocial {
-    background-color: white;
-    /*color: white;*/
+	background-color: white;
+	/*color: white;*/
 }
 
 .Dsocial:hover {
-    /*  background-color: white;
+	/*  background-color: white;
     color: #FED201;*/
 }
 
 .Dfab {
-    background-color: var(--green);
-    color: white;
+	background-color: var(--green);
+	color: white;
 }
 
 .Dfab:hover {
-    background-color: white;
-    color: var(--green);
+	background-color: white;
+	color: var(--green);
 }
 
 .Dfab:hover svg g {
-    fill: var(--green);
+	fill: var(--green);
 }
 
 @media (min-height: 740px) {
-    .Dnoti, .Dcalc, .Dsocial, .Dfab {
-        /*height: 33.33vh;*/
-    }
+	.Dnoti,
+	.Dcalc,
+	.Dsocial,
+	.Dfab {
+		/*height: 33.33vh;*/
+	}
+}
+svg.openlogo {
+	width: 5em !important;
+	height: auto;
+}
+
+div.lista {
+	line-height: 1.5rem;
 }
