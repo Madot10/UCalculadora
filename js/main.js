@@ -704,7 +704,7 @@ function getUCMes(mes) {
 	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
 	let uc = dataux.base;
 
-	console.log("perioact", perioact, "month", month, "monthMapping", month);
+	//console.log("perioact", perioact, "month", month, "monthMapping", month);
 	if (perioact != 1) {
 		//semestre
 		uc = dataux.variacion[month - 1];
@@ -1185,7 +1185,7 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
 							2.5 * getUCMes(3) +
-								Number(GetMontoTarifaMes(3)) * 2 * DESCUENTO_PARCIAL,
+								Number(GetMontoTarifaMes(4)) * 2 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
 						)}</span>
