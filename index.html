@@ -584,6 +584,30 @@
 			</a>
 
 			<a href="#" class="noUnder menu">
+				<div class="Dfab" onclick="OpenDiv('contribuciones')">
+					<br />
+
+					<svg
+						fill="white"
+						class="openlogo"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M5.719 14.75a.997.997 0 0 1-.664-.252L-.005 10l5.341-4.748a1 1 0 0 1 1.328 1.495L3.005 10l3.378 3.002a1 1 0 0 1-.664 1.748zm8.945-.002L20.005 10l-5.06-4.498a.999.999 0 1 0-1.328 1.495L16.995 10l-3.659 3.252a1 1 0 0 0 1.328 1.496zm-4.678 1.417l2-12a1 1 0 1 0-1.972-.329l-2 12a1 1 0 1 0 1.972.329z"
+						/>
+					</svg>
+
+					<h2>Open Source</h2>
+					<p class="infoMenu">
+						Descubre las maneras de contribuir al proyecto y quienes ya lo han hecho.
+						<br />
+					</p>
+					<br />
+				</div>
+			</a>
+
+			<a href="#" class="noUnder menu">
 				<div class="Dnoti" onclick="OpenDiv('historico')">
 					<br />
 					<svg style="width: 4em !important" viewBox="0 0 24 24">
@@ -594,39 +618,6 @@
 					</svg>
 					<h2>HISTÓRICO UC</h2>
 					<p class="infoMenu">Evolución de la Unidad Crédito.</p>
-					<br />
-				</div>
-			</a>
-
-			<a href="#" class="noUnder menu">
-				<div class="Dfab" onclick="OpenDiv('fab')">
-					<br />
-
-					<svg
-						class="fablogo"
-						version="1.0"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 3290 4260"
-						preserveAspectRatio="xMidYMid meet"
-					>
-						<g id="layer101" fill="#FFFFFF" stroke="none">
-							<path
-								d="M757 3682 l-457 -457 0 -1060 0 -1060 453 -487 c248 -267 455 -487 458 -487 4 -1 103 110 220 247 117 136 221 257 232 269 l20 22 -307 314 -306 314 0 864 0 864 305 300 306 300 -226 250 c-125 138 -229 253 -233 257 -4 4 -213 -198 -465 -450z"
-							/>
-							<path
-								d="M1662 3382 l-372 -380 0 -836 0 -837 370 -405 c204 -222 374 -404 378 -403 4 0 89 108 189 241 l183 240 -57 62 c-31 33 -134 145 -230 247 l-173 187 0 668 0 669 240 235 240 235 -179 208 c-98 115 -187 218 -198 228 -19 20 -23 17 -391 -359z"
-							/>
-							<path
-								d="M2543 3168 c-44 -51 -148 -174 -231 -274 l-152 -181 0 -562 0 -563 231 -291 c127 -161 234 -293 237 -294 4 -1 96 131 205 295 l197 297 0 557 0 557 -195 273 c-107 150 -199 274 -204 276 -5 2 -44 -39 -88 -90z"
-							/>
-						</g>
-					</svg>
-
-					<h2>Donar - FAB</h2>
-					<p class="infoMenu">
-						Calcula tu donación para el Programa Andrés Bello (PAB)
-						<br />
-					</p>
 					<br />
 				</div>
 			</a>
@@ -695,7 +686,7 @@
 
 			<br />
 			<br />
-			<!-- PER  1-->
+			<!-- PER  1-
 			<div id="per1" class="btn-group">
 				<button id="p1b1" class="w25" data-table="ver" data-minor="verMinor" disabled>
 					VER. MARZO
@@ -709,8 +700,8 @@
 				<button id="p1b4" class="w25" data-table="ver" data-minor="verMinor" disabled>
 					VER. SEPT
 				</button>
-			</div>
-			<!-- PER  2-->
+			</div>->
+			<!-- PER  2
 			<div id="per2" class="btn-group">
 				<button id="p2b1" class="w25" data-table="ver" data-minor="verMinor" disabled>
 					VER. SEPT
@@ -723,6 +714,16 @@
 				</button>
 				<button id="p2b4" class="w25" data-table="ver" data-minor="verMinor" disabled>
 					VER. MARZO
+				</button>
+			</div>-->
+
+			<!-- Selector unico-->
+			<div id="per" class="btn-group">
+				<button id="p0b1" class="w50" data-table="ver" data-minor="verMinor" disabled>
+					VERANO
+				</button>
+				<button id="p0b2" class="w50" data-table="sem" data-minor="semMinor" disabled>
+					SEMESTRE
 				</button>
 			</div>
 			<br />
@@ -773,6 +774,175 @@
         </div>
 
     </div>-->
+
+		<!-- DONACIONES CALCULADORA - FAB -->
+		<div class="fab emenu" style="display: none">
+			<!--CARRERA
+	<button class="ubtn" onclick="openCarrera()">
+		<i class="fas fa-graduation-cap"></i>
+		<span id="sCarreraFab">CARRERA</span>
+		<i class="fas fa-angle-right"></i>
+	</button>-->
+
+			<!-- SEMESTRE 
+	<button class="ubtn" onclick="openSem()">
+			<i class="fas fa-book"></i>
+			<span id="sSem">SEMESTRE <i class="fas fa-angle-right"></i></span>
+		   
+	</button>-->
+
+			<p class="pInfo descrp">
+				El <b> Programa Andrés Bello (PAB)</b> se consolida como un proyecto social para
+				atender integralmente al grupo de jóvenes beneficiados con una cobertura económica
+				de la matrícula en su carrera cursada
+			</p>
+
+			<!-- CANTIDAD DE ALUMNOS -->
+			<h3>CANTIDAD DE ALUMNOS:</h3>
+			<input
+				type="number"
+				min="1"
+				class="cantAlum"
+				id="cantAlum"
+				value="1"
+				onchange="totalizarDonacion()"
+			/>
+			<br />
+
+			<!-- COOPERACION -->
+			<h3>COOPERACIÓN: <span id="spcoop">10%</span></h3>
+			<div class="slidecontainer">
+				<input
+					type="range"
+					min="10"
+					max="100"
+					value="10"
+					class="slider"
+					step="10"
+					id="coopRangeFab"
+					oninput="updateTextPorcentaje(this)"
+				/>
+			</div>
+
+			<br />
+
+			<!--CALCULAR
+	<button class="cbtn" onclick=" generarDonacionCal()">
+		<i class="fas fa-calculator"></i>
+		<br>CALCULAR
+	</button>-->
+			<br />
+
+			<div class="totalizacion">
+				<!-- RECARGOS 
+		<button class="accordion recargos">RECARGOS</button>
+		<div class="panelInf">
+			<p>
+				<b>Recargos por taxonomía de las materias:</b><br>
+				<b>Materias TA 7 a TA 9:</b> Recargo de 30% sobre la tarifa base de la UC. <br>
+				<b>Cátedras en línea o semi-presenciales:</b> Recargo del 40% sobre el valor de la UC.
+				<br> <br>
+				<b>(El alumno debe pagarlo)</b><br>
+					<span id="spRecarg"></span> <br>
+				  <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo" onchange="totalizarDonacion()">
+			</p>
+		</div>-->
+
+				<!-- DERECHO DE INSCRIPCION 
+		<button class="accordion derIn">DER. INSCRIPCIÓN</button>
+		<div class="panelInf">
+			<p>
+				<b>Derecho de inscripción</b><br>
+				<br>
+				<b>(El alumno debe pagarlo)</b><br>
+					<span id="spDI"></span> <br>
+				  <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI" onchange="totalizarDonacion()">
+			</p>
+		</div>-->
+
+				<!-- FUERA DE COBERTURA
+		<button class="accordion outCober">FUERA DE COBERTURA</button>
+		<div class="panelInf">
+			<p> 
+				<b>Recargo por fuera de cobertura</b><br>
+				La beca solo cubre las primeras 30UC base.
+				<br> <br>
+				<b>(El alumno debe pagarlo)</b> <br>
+				<span id="spOut"></span> <br>
+				  <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut" onchange="totalizarDonacion()">
+			</p>
+		</div> -->
+
+				<div class="tableTotal">
+					<table>
+						<tr>
+							<th>
+								DONACIÓN <br />
+								<span class="lowword"
+									>ESTIMACIÓN MENSUAL - <span id="mesActual"></span
+								></span>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<h2><span id="montoT"></span></h2>
+							</td>
+						</tr>
+					</table>
+
+					<p class="pInfo">
+						Estimación de <b>5UC</b> mesuales con el valor de la UC actual. <br />
+						La Unidad de Crédito está sujeta a cambios mensuales según circular de
+						Vicerrectorado.
+					</p>
+				</div>
+			</div>
+			<br />
+		</div>
+
+		<!-- CONTRIBUCIONES OPEN SOURCE-->
+		<div class="contribuciones emenu" style="display: none">
+			<h1>Contribuciones</h1>
+
+			<h2>¿Cómo contribuir?</h2>
+			<p>
+				Puedes colaborar de múltiples formas en el proyecto UCalculadora
+				<div class="lista">
+				
+				
+					- Notificando cambios del valor UC mediante el <a href="https://goo.gl/forms/OHikbscMvAv1LdI62" onClick="OnClickGa('toForm','Report')"
+					target="_blank">formaulario 📃</a>
+					<br />
+					- <a href="https://goo.gl/forms/OHikbscMvAv1LdI62" onClick="OnClickGa('toForm','Report')"
+					target="_blank">Reportando</a> un error o bug
+					<br />
+					- Sugiriendo un cambio en el repositorio de <a href="https://github.com/Madot10/UCalculadora/issues" onClick="OnClickGa('toGH','Social')"
+					target="_blank">GitHub 💻</a>
+					<br />
+					- Aportando la idea para un cambio en <a href="https://github.com/Madot10/UCalculadora/issues" onClick="OnClickGa('toGH','Social')"
+					target="_blank">GitHub 💻</a>
+					<br />
+					- Votando o apoyando una idea en <a href="https://github.com/Madot10/UCalculadora/issues" onClick="OnClickGa('toGH','Social')"
+					target="_blank">GitHub 💻</a>
+				</div>
+			</p>
+
+			<p>
+				Repositorio en GitHub: <a href="https://github.com/Madot10/UCalculadora" onClick="OnClickGa('toGH','Social')"
+				target="_blank">Madot10/Ucalculadora</a>
+			</p>
+
+			<h2>Colaboradores</h2>
+
+			<p>¡Agradecer a <b>TODOS</b> los que desde 2018 se han tomado un tiempo para reportar algún error o dar sugerencia!</p>
+			<p>¡Tú nombre puede aparecer aquí!</p>
+
+			<!--<h3>Ideas</h3>
+
+			<h3>Desarrollo</h3>
+
+			<h3>Reportes</h3>-->
+		</div>
 
 		<!--HISTORICO UC-->
 		<div class="historico emenu" style="display: none">
@@ -1114,135 +1284,10 @@
 			</table>
 		</div>
 
-		<!-- DONACIONES CALCULADORA - FAB -->
-		<div class="fab emenu" style="display: none">
-			<!--CARRERA
-        <button class="ubtn" onclick="openCarrera()">
-            <i class="fas fa-graduation-cap"></i>
-            <span id="sCarreraFab">CARRERA</span>
-            <i class="fas fa-angle-right"></i>
-        </button>-->
-
-			<!-- SEMESTRE 
-        <button class="ubtn" onclick="openSem()">
-                <i class="fas fa-book"></i>
-                <span id="sSem">SEMESTRE <i class="fas fa-angle-right"></i></span>
-               
-        </button>-->
-
-			<p class="pInfo descrp">
-				El <b> Programa Andrés Bello (PAB)</b> se consolida como un proyecto social para
-				atender integralmente al grupo de jóvenes beneficiados con una cobertura económica
-				de la matrícula en su carrera cursada
-			</p>
-
-			<!-- CANTIDAD DE ALUMNOS -->
-			<h3>CANTIDAD DE ALUMNOS:</h3>
-			<input
-				type="number"
-				min="1"
-				class="cantAlum"
-				id="cantAlum"
-				value="1"
-				onchange="totalizarDonacion()"
-			/>
-			<br />
-
-			<!-- COOPERACION -->
-			<h3>COOPERACIÓN: <span id="spcoop">10%</span></h3>
-			<div class="slidecontainer">
-				<input
-					type="range"
-					min="10"
-					max="100"
-					value="10"
-					class="slider"
-					step="10"
-					id="coopRangeFab"
-					oninput="updateTextPorcentaje(this)"
-				/>
-			</div>
-
-			<br />
-
-			<!--CALCULAR
-        <button class="cbtn" onclick=" generarDonacionCal()">
-            <i class="fas fa-calculator"></i>
-            <br>CALCULAR
-        </button>-->
-			<br />
-
-			<div class="totalizacion">
-				<!-- RECARGOS 
-            <button class="accordion recargos">RECARGOS</button>
-            <div class="panelInf">
-                <p>
-                    <b>Recargos por taxonomía de las materias:</b><br>
-                    <b>Materias TA 7 a TA 9:</b> Recargo de 30% sobre la tarifa base de la UC. <br>
-                    <b>Cátedras en línea o semi-presenciales:</b> Recargo del 40% sobre el valor de la UC.
-                    <br> <br>
-                    <b>(El alumno debe pagarlo)</b><br>
-                        <span id="spRecarg"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeRecargo" onchange="totalizarDonacion()">
-                </p>
-            </div>-->
-
-				<!-- DERECHO DE INSCRIPCION 
-            <button class="accordion derIn">DER. INSCRIPCIÓN</button>
-            <div class="panelInf">
-                <p>
-                    <b>Derecho de inscripción</b><br>
-                    <br>
-                    <b>(El alumno debe pagarlo)</b><br>
-                        <span id="spDI"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeDI" onchange="totalizarDonacion()">
-                </p>
-            </div>-->
-
-				<!-- FUERA DE COBERTURA
-            <button class="accordion outCober">FUERA DE COBERTURA</button>
-            <div class="panelInf">
-                <p> 
-                    <b>Recargo por fuera de cobertura</b><br>
-                    La beca solo cubre las primeras 30UC base.
-                    <br> <br>
-                    <b>(El alumno debe pagarlo)</b> <br>
-                    <span id="spOut"></span> <br>
-                      <label>¿Desea incluirlo en la donación?</label><input type="checkbox" id="includeOut" onchange="totalizarDonacion()">
-                </p>
-            </div> -->
-
-				<div class="tableTotal">
-					<table>
-						<tr>
-							<th>
-								DONACIÓN <br />
-								<span class="lowword"
-									>ESTIMACIÓN MENSUAL - <span id="mesActual"></span
-								></span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<h2><span id="montoT"></span></h2>
-							</td>
-						</tr>
-					</table>
-
-					<p class="pInfo">
-						Estimación de <b>5UC</b> mesuales con el valor de la UC actual. <br />
-						La Unidad de Crédito está sujeta a cambios mensuales según circular de
-						Vicerrectorado.
-					</p>
-				</div>
-			</div>
-			<br />
-		</div>
-
 		<footer style="display: none">
 			<div class="Dsocial">
 				<br />
-				<p class="textYellow">UCalculadora V2.6</p>
+				<p class="textYellow">UCalculadora V3.0</p>
 				<h2 class="textYellow">Contacto</h2>
 
 				<p class="textYellow">
@@ -1255,7 +1300,7 @@
 						>Google Form</a
 					>
 				</p>
-				<p class="textYellow">
+				<!--<p class="textYellow">
 					Instagram:
 					<a
 						class="textYellow"
@@ -1264,9 +1309,8 @@
 						href="https://www.instagram.com/miguel_olim"
 						>@Miguel_Olim</a
 					>
-				</p>
+				</p>-->
 				<p class="textYellow">
-					Twitter:
 					<a
 						class="textYellow"
 						onClick="OnClickGa('toTW','Social')"
@@ -1277,12 +1321,10 @@
 				</p>
 				<p class="textYellow">No Oficial</p>
 
-
 				<br />
 			</div>
 		</footer>
 		<script src="js/chartist-js.min.js"></script>
 		<script src="js/historico.js"></script>
 	</body>
-
 </html>
