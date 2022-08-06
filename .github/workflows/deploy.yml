@@ -12,7 +12,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
       - name: Configure git to trust the workspace despite the different owner
         run:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -21,3 +24,4 @@ jobs:
         with:
           branch: gh-pages
           folder: .
+          
