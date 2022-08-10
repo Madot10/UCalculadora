@@ -5,13 +5,13 @@ let ucByPeriodo = {
 		base: 13.2,
 	},
 	semestre: {
-		base: 10,
+		base: 14,
 		variacion: [
-			12, //Mes 1
-			12,
-			13,
-			13,
-			13, //Mes 5
+			14, //Mes 1
+			14,
+			14,
+			15,
+			15, //Mes 5
 		] /** Monto UC*/,
 	},
 };
@@ -24,7 +24,7 @@ let monthMapping = {
 	5: 2,
 	6: 3,
 	7: 4,
-	8: 5,
+	8: 1,
 	9: 1,
 	10: 2,
 	11: 3,
