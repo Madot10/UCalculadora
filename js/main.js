@@ -1096,7 +1096,7 @@ function generarPagos() {
 		divMain.insertAdjacentHTML(
 			"beforeend",
 			`
-        <!-- PAGO TOTAL-->
+        <!-- PAGO TOTAL
             <div class="box-btn">
                 PAGO TOTAL  
                 <i
@@ -1137,7 +1137,7 @@ function generarPagos() {
 						)}</span>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
             <!-- PAGO PARCIAL-->
             <div class="box-btn">
