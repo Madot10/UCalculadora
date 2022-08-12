@@ -1,5 +1,5 @@
 let responsiveOptions = [
-    /*  [
+	/*  [
         "screen and (max-width: 640px)",
         {
             showPoint: false,
@@ -39,69 +39,47 @@ let responsiveOptions = [
 ];
 
 new Chartist.Line(
-    ".ct-chart",
-    {
-        labels: [
-            "mar-20",
-            "abr-20",
-            "may-20",
-            "jun-20",
-            "jul-20",
-            "ago-20",
-            "sep-20",
-            "oct-20",
-            "nov-20",
-            "dic-20",
-            "ene-21",
-            "feb-21",
-            "mar-21",
-            "abr-21",
-            "jun-21",
-        ],
-        series: [
-            /*  [
-                //UC SEMESTRAl
-                2000000,
-                2000000,
-                2600000,
-                3510000,
-                4738500,
-                6400000,
-                9600000,
-                11520000,
-                15552000,
-                22550000,
-                44200000,
-                59670000,
-            ],
-            [
-                //UC MENSUAL
-                400000,
-                400000,
-                520000,
-                702000,
-                947700,
-                1280000,
-                1920000,
-                2304000,
-                3110400,
-                4510000,
-                8840000,
-                11934000,
-            ],*/
-            [5.47, 5.47, 7.11, 9.59, 4.65, 6.29, 7.41, 6.38, 8.62, 12.5, 8.15, 11, 12, 10, 10],
-        ],
-    },
-    {
-        chartPadding: {
-            right: 10,
-        },
-        /*axisY: {
+	".ct-chart",
+	{
+		labels: [
+			"mar-20",
+			"abr-20",
+			"may-20",
+			"jun-20",
+			"jul-20",
+			"ago-20",
+			"sep-20",
+			"oct-20",
+			"nov-20",
+			"dic-20",
+			"ene-21",
+			"feb-21",
+			"mar-21",
+			"abr-21",
+			"jun-21",
+			"ene-22",
+			"abr-22",
+			"jun-22",
+			"ago-22",
+			"nov-22",
+		],
+		series: [
+			[
+				5.47, 5.47, 7.11, 9.59, 4.65, 6.29, 7.41, 6.38, 8.62, 12.5, 8.15, 11, 12, 10, 10,
+				11, 12, 13, 14, 15,
+			],
+		],
+	},
+	{
+		chartPadding: {
+			right: 10,
+		},
+		/*axisY: {
             offset: 50,
             labelInterpolationFnc: function (value) {
                 return value / 1000 + "mil";
             },
         },*/
-    },
-    responsiveOptions
+	},
+	responsiveOptions
 );
