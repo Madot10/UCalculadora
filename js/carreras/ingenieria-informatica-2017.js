@@ -37,6 +37,7 @@ var inginformatica = [
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Física General", UC: 6, Tax: "TA‐4" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Matemáticas Discretas", UC: 5, Tax: "TA‐4" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Algoritmos y Programación II", UC: 8, Tax: "TA‐9" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Cálculo III", UC: 7, Tax: "TA‐4" },
 	{
 		Semestre: "CUARTO SEMESTRE",
@@ -114,12 +115,6 @@ var inginformatica = [
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Inglés II", UC: 5, Tax: "TA‐6" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Seguridad Computacional", UC: 5, Tax: "TA‐9" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Sistemas Distribuidos", UC: 5, Tax: "TA‐9" },
-	{
-		Semestre: "NOVENO SEMESTRE",
-		Asignatura: "Innovación y Emprendimiento",
-		UC: 4,
-		Tax: "TA‐1",
-	},
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 4, Tax: "(SP) TA‐8" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
 	{
