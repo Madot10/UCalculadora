@@ -1,7 +1,7 @@
 var comunicacionsocialnuevopensum = [
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura: "Comprensión y Producción de Textos Escritos",
+		Asignatura: "Competencia Textual en Español",
 		UC: 5,
 		Tax: "TA-6",
 	},
@@ -72,6 +72,12 @@ var comunicacionsocialnuevopensum = [
 		Asignatura: "Producción de Contenidos para Medios II",
 		UC: 4,
 		Tax: "TA-9",
+	},
+	{
+		Semestre: "CUARTO SEMESTRE",
+		Asignatura: "Principios de Marketing",
+		UC: 5,
+		Tax: "TA-1",
 	},
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Mercadeo", UC: 5, Tax: "TA-4" },
 	{

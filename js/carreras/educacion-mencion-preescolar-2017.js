@@ -7,7 +7,7 @@ var educacionmencionpreescolar = [
 	},
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura: "Comprensión y Producción de Textos Escritos",
+		Asignatura: "Competencia Textual en Español",
 		UC: 5,
 		Tax: "TA‐6",
 	},
