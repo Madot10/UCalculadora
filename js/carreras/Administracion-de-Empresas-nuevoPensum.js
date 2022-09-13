@@ -2,7 +2,7 @@ var administraciondeempresasnuevopensum = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Principios de Marketing", UC: 5, Tax: "TA‐1" },
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura: "Comprensión Lectora y Redacción",
+		Asignatura: "Competencia Textual en Español",
 		UC: 5,
 		Tax: "TA‐6",
 	},

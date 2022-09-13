@@ -8,7 +8,7 @@ var educaciontroncocomun = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Psicología General", UC: 6, Tax: "TA‐1" },
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura: "Comprensión y producción de textos escritos",
+		Asignatura: "Competencia Textual en Español",
 		UC: 5,
 		Tax: "TA‐8",
 	},
