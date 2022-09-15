@@ -1528,12 +1528,12 @@ function getConfDIhtml() {
             <div><span class="subtitle-table">Estudiantes</span></div>
             <div>
                 <span class="bs">${formatNumber.new(
-					2.5 * getUCMes(3) * valorBCV,
+					2.5 * getUCMes(4) * valorBCV,
 					`Bs `,
 					true
 				)}</span> <br />
             
-                <span class="usd">${formatNumber.new(2.5 * getUCMes(3), `USD `, true)}</span>
+                <span class="usd">${formatNumber.new(2.5 * getUCMes(4), `USD `, true)}</span>
             </div>
         </div>
     </div>  
