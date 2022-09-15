@@ -370,7 +370,7 @@ let minors = [
 	{
 		Semestre: "(MINOR) ECONOMÍA",
 		Asignatura: "Pensamiento Económico Venezolano",
-		UC: 4,
+		UC: 5,
 		Tax: "TA‐1",
 	},
 	{
