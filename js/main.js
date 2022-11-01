@@ -1234,7 +1234,7 @@ function generarPagos() {
                     </div>
                 </div>
                 <div class="box-info">
-                    <div><span class="subtitle-table">2DA MES</span></div>
+                    <div><span class="subtitle-table">2DO MES</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
 							Number(GetMontoTarifaMes(2)),
