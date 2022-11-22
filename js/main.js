@@ -1184,7 +1184,7 @@ function generarPagos() {
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN +CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							2.5 * getUCMes(3) +
+							2.5 * getUCMes(4) +
 								Number(GetMontoTarifaMes(4)) * 2 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
