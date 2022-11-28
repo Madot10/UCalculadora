@@ -93,7 +93,9 @@ function initVar(md) {
 window.onload = () => {
 	//Cargamos UC visual
 	InicializarPeriodoSys();
-	document.getElementById("ucvalue").innerHTML = `${formatNumber.new(LoadUC())} USD`;
+	LoadUC();
+	let bannerUC = getUCfecha(new Date().setDate(hoy.getDate() + 15));
+	document.getElementById("ucvalue").innerHTML = `${formatNumber.new(bannerUC)} USD`;
 	UC = visualUC;
 
 	GetValorBCV();
