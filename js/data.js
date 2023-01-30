@@ -2,9 +2,10 @@ let perioact = 0;
 
 let ucByPeriodo = {
 	verano: {
-		base: 13.2,
+		base: 16,
 	},
-	semestre: {
+	/** Monto UC*/
+	/*semestre: {
 		base: 14,
 		variacion: [
 			14, //Mes 1
@@ -12,8 +13,8 @@ let ucByPeriodo = {
 			14,
 			15,
 			15, //Mes 5
-		] /** Monto UC*/,
-	},
+		],
+	},*/
 };
 
 let monthMapping = {

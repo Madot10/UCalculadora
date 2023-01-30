@@ -94,6 +94,8 @@ window.onload = () => {
 	//Cargamos UC visual
 	InicializarPeriodoSys();
 	LoadUC();
+
+	//console.warn("bannerUC");
 	let bannerUC = getUCfecha(new Date().setDate(hoy.getDate() + 15));
 	document.getElementById("ucvalue").innerHTML = `${formatNumber.new(bannerUC)} USD`;
 	UC = visualUC;
@@ -140,7 +142,7 @@ function InicializarPeriodoSys(perioObligatorio = 0) {
 		//	(mesAct == 7 && diaAct <= 28) /* Mes Agosto (mesAct == 8 && diaAct <= 28)*/
 		//) {
 		//PERIODO 1
-		console.warn("PERIODO 1");
+		//console.warn("PERIODO 1");
 		perActivo = 1;
 		//} else {
 		//PERIODO 2
@@ -149,14 +151,16 @@ function InicializarPeriodoSys(perioObligatorio = 0) {
 		//}
 	} else {
 		//Establecer periodo obligatorio
-		console.warn(`PERIODO ${perioObligatorio}`);
+		//console.warn(`PERIODO OBG ${perioObligatorio}`);
 		perActivo = perioObligatorio;
 	}
 
 	//let botones = document.getElementById(`per${perActivo}`).children;
 	let botones = document.getElementById(`per`).children;
+	//console.log("botones", botones);
 	let lastI = 0;
 	let some_active = false;
+
 	for (i = 0; i < botones.length; i++) {
 		//let idBTN = `p${perActivo}b${i + 1}`;
 		let idBTN = `p0b${i + 1}`;
@@ -164,26 +168,30 @@ function InicializarPeriodoSys(perioObligatorio = 0) {
 		let codeGen = getPeriodoCode(i);
 		let periodoName = getPeriodoName(i);
 
-		console.log(idBTN, codeGen);
+		//console.log(idBTN, codeGen, periodoName);
 		//console.warn("codeGen", codeGen);
 
 		//Comprobar existencia del codigo en data.js ~ UC anunciada para periodo
 		if (ucByPeriodo[periodoName]) {
 			some_active = true;
 
-			perioact = getActualPeriodo();
+			//console.warn("i", i, periodoName, ucByPeriodo[periodoName]);
+			perioact = codeGen; //getActualPeriodo();
+			//console.warn("getActualPeriodo perioact", perioact);
 			templateSelect = botones[i].dataset.table;
 			templateSelectMinor = botones[i].dataset.minor;
 			lastI = i;
+			//console.warn("LastI", lastI);
 			botones[i].disabled = false;
 			botones[i].addEventListener("click", () => changePeriodo(idBTN, codeGen));
 		}
 	}
 
 	if (!some_active) {
-		console.warn("ACTIVANDO MODO ALTERNATIVO");
+		//console.warn("ACTIVANDO MODO ALTERNATIVO");
 		//InicializarPeriodoSys(-1 * perActivo + 3);
 	} else {
+		//console.warn("Else some_active");
 		botones[lastI].classList.add("active");
 		perBtnActivo = botones[lastI].id;
 	}
@@ -240,7 +248,7 @@ function getPeriodoCode(Nbtn) {
 }
 
 function getPeriodoName(Nbtn) {
-	if (Nbtn == 1) {
+	if (Nbtn == 0) {
 		//verano
 		return "verano";
 	} else {
@@ -414,9 +422,10 @@ let formatNumber = {
 
 function LoadUC() {
 	//let dataux = periodo[perioact];
-	let dataux = perioact == 1 ? ucByPeriodo["verano"] : ucByPeriodo["semestre"];
+	//console.warn("LoadUC perioact: ", perioact);
+	//let dataux = perioact == 1 ? ucByPeriodo["verano"] : ucByPeriodo["semestre"];
 	//let uc = dataux.base;
-	uc = getUCfecha(hoy);
+	uc = getUCfecha(hoy, perioact);
 	valorUC = uc;
 	//Recorremos si existe lista de variacion
 	/*
@@ -668,17 +677,20 @@ function totalizacion() {
 	}
 }
 
-function getUCfecha(fecha) {
+function getUCfecha(fecha, force_periodo = null) {
 	let f = new Date(fecha);
 	let month = f.getMonth() + 1;
 
-	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
-	let uc = dataux.base;
+	//console.warn("-getUCfecha: perioact / month", perioact, month);
+	//If the month is a verano, set auxiliar periodo to verano
+	aux_periodo = force_periodo == null ? (monthMapping[month] == null ? 1 : 2) : force_periodo;
+	let dataux = ucByPeriodo[aux_periodo == 1 ? "verano" : "semestre"]; //perioact
+	let uc = dataux?.base;
 
 	//console.log("perioact", perioact, "month", month, "monthMapping", monthMapping[month]);
-	if (perioact != 1) {
+	if (aux_periodo != 1) {
 		//semestre
-		uc = dataux.variacion[monthMapping[month] - 1];
+		uc = dataux?.variacion[monthMapping[month] - 1];
 	}
 
 	/*if (dataux.variacion) {
@@ -696,7 +708,7 @@ function getUCfecha(fecha) {
 			}
 		}
 	}*/
-
+	console.warn("getUCfecha: ", uc);
 	return Number(uc).toFixed(2);
 }
 
