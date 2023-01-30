@@ -2,7 +2,7 @@ let perioact = 0;
 
 let ucByPeriodo = {
 	verano: {
-		base: 16,
+		base: 18,
 	},
 	/** Monto UC*/
 	/*semestre: {
