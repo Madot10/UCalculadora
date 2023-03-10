@@ -1,9 +1,14 @@
 var arquitectura = [
-	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Taller de Proyectos 1", UC: 11, Tax: "TA‐3" },
-	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Matemáticas Básica", UC: 7, Tax: "TA‐6" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Taller de Proyectos 1", UC: 11, Tax: "TA‐8" },
+	{
+		Semestre: "PRIMER SEMESTRE",
+		Asignatura: "Cálculo Infinitesimal para Arquitectura ",
+		UC: 5,
+		Tax: "TA‐4",
+	},
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Dibujo", UC: 3, Tax: "TA‐9" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Historia, Teoría y Crítica I", UC: 3, Tax: "TA‐1" },
-	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Tecnología y Arquitectura", UC: 4, Tax: "TA‐6" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Tecnología y Arquitectura", UC: 5, Tax: "TA‐6" },
 	{
 		Semestre: "PRIMER SEMESTRE",
 		Asignatura: "Identidad, Liderazgo y Compromiso I",
@@ -12,12 +17,12 @@ var arquitectura = [
 	},
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura: "Comprensión y Producción de Textos ",
+		Asignatura: "Competencia Textual en Español",
 		UC: 5,
 		Tax: "TA-6",
 	},
 
-	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Taller de Proyectos 2", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Taller de Proyectos 2", UC: 11, Tax: "TA‐8" },
 	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Modelización Arquitectónica", UC: 3, Tax: "TA‐4" },
 	{
 		Semestre: "SEGUNDO SEMESTRE",
@@ -31,12 +36,11 @@ var arquitectura = [
 		UC: 3,
 		Tax: "TA‐1",
 	},
-	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Diseño Estructural", UC: 4, Tax: "TA‐3" },
 	{
 		Semestre: "SEGUNDO SEMESTRE",
-		Asignatura: "Geometría Plana y Trigonometría",
+		Asignatura: "Cálculo Diferencial e Integral para Arquitectura",
 		UC: 5,
-		Tax: "TA‐6",
+		Tax: "TA‐4",
 	},
 	{
 		Semestre: "SEGUNDO SEMESTRE",
@@ -45,7 +49,7 @@ var arquitectura = [
 		Tax: "TA‐1",
 	},
 
-	{ Semestre: "TERCER SEMESTRE", Asignatura: "Taller de Proyectos 3", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Taller de Proyectos 3", UC: 11, Tax: "TA‐8" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Dibujo II", UC: 3, Tax: "TA‐9" },
 	{
 		Semestre: "TERCER SEMESTRE",
@@ -53,16 +57,16 @@ var arquitectura = [
 		UC: 3,
 		Tax: "TA‐1",
 	},
-	{ Semestre: "TERCER SEMESTRE", Asignatura: "Ambiente y Arquitectura", UC: 3, Tax: "TA‐1" },
 	{
 		Semestre: "TERCER SEMESTRE",
-		Asignatura: "Materiales de Construcción",
+		Asignatura: "Diseño Estructural ",
 		UC: 4,
-		Tax: "TA-1 (SP)",
+		Tax: "TA‐3",
 	},
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Ambiente y Arquitectura", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Geometría Descriptiva I", UC: 8, Tax: "TA-4" },
 
-	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Taller de Proyectos 4", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Taller de Proyectos 4", UC: 11, Tax: "TA‐8" },
 	{
 		Semestre: "CUARTO SEMESTRE",
 		Asignatura: "Dibujo Asistido por Computadora",
@@ -77,6 +81,7 @@ var arquitectura = [
 	},
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Estudios Urbanos I ", UC: 4, Tax: "TA‐3" },
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Impacto Ambiental ", UC: 3, Tax: "TA‐9" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Materiales de Construcción", UC: 4, Tax: "TA‐4" },
 	{
 		Semestre: "CUARTO SEMESTRE",
 		Asignatura: "Laboratorio de Materiales de Construcción ",
@@ -84,7 +89,7 @@ var arquitectura = [
 		Tax: "TA‐9",
 	},
 
-	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Taller de Proyectos 5", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Taller de Proyectos 5", UC: 11, Tax: "TA‐8" },
 	{
 		Semestre: "QUINTO SEMESTRE",
 		Asignatura: "Dibujo Asistido por Computadora II",
@@ -96,7 +101,7 @@ var arquitectura = [
 	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Turismo y Ambiente ", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Instalaciones Eléctricas ", UC: 2, Tax: "TA‐8" },
 
-	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Taller de Proyectos 6", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Taller de Proyectos 6", UC: 11, Tax: "TA‐8" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Taller de Fotografía", UC: 4, Tax: "TA‐8" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Arquitectura Latinoamericana", UC: 3, Tax: "TA-1" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Análisis Urbano", UC: 3, Tax: "TA‐1" },
@@ -114,7 +119,7 @@ var arquitectura = [
 		Tax: "TA‐1 (V)",
 	},
 
-	{ Semestre: "SEPTIMO SEMESTRE", Asignatura: "Taller de Proyectos 7", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "SEPTIMO SEMESTRE", Asignatura: "Taller de Proyectos 7", UC: 11, Tax: "TA‐8" },
 	{
 		Semestre: "SEPTIMO SEMESTRE",
 		Asignatura: "Laboratorio de Fabricación Digital",
@@ -130,14 +135,14 @@ var arquitectura = [
 	},
 	{ Semestre: "SEPTIMO SEMESTRE", Asignatura: "Taller de Tecnología ", UC: 5, Tax: "TA‐4" },
 
-	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Taller de Proyectos 8", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Taller de Proyectos 8", UC: 11, Tax: "TA‐8" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Comunicación Efectiva ", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Reflexión y Crítica", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Asentamientos Informales", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Laboratorio de Fabricación ", UC: 4, Tax: "TA‐9" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Etica Profesional ", UC: 3, Tax: "TA‐2 (SP)" },
 
-	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Taller de Proyectos 9", UC: 11, Tax: "TA‐3" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Taller de Proyectos 9", UC: 11, Tax: "TA‐8" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: " Electiva de Representación", UC: 3, Tax: "TA‐1" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Seminario de Investigación", UC: 5, Tax: "TA‐1" },
 	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva de Proyectos", UC: 3, Tax: "TA‐1" },
