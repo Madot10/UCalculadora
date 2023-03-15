@@ -182,21 +182,9 @@ var ingentelecomunicaciones = [
 
 	{
 		Semestre: "DECIMO SEMESTRE",
-		Asignatura: "Sistemas Móviles (Semi)",
-		UC: 5,
-		Tax: "(SP) TA‐2",
-	},
-	{
-		Semestre: "DECIMO SEMESTRE",
 		Asignatura: "Sistemas Móviles (Virtual)",
 		UC: 5,
 		Tax: "(V) TA‐2",
-	},
-	{
-		Semestre: "DECIMO SEMESTRE",
-		Asignatura: "Sistemas Móviles",
-		UC: 5,
-		Tax: "TA‐2",
 	},
 	{ Semestre: "DECIMO SEMESTRE", Asignatura: "Gerencia y Legislación", UC: 4, Tax: "TA‐4" },
 	{
