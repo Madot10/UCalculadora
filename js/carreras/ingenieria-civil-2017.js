@@ -135,6 +135,12 @@ var ingcivil = [
 	},
 	{
 		Semestre: "NOVENO SEMESTRE",
+		Asignatura: "Vías de Comunicación II",
+		UC: 5,
+		Tax: "TA‐9",
+	},
+	{
+		Semestre: "NOVENO SEMESTRE",
 		Asignatura: "Vías de Comunicación II (Virtual)",
 		UC: 5,
 		Tax: "(V) TA‐1",
