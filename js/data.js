@@ -6,11 +6,11 @@ let ucByPeriodo = {
 	},
 	/** Monto UC*/
 	semestre: {
-		base: 15,
+		base: 16,
 		variacion: [
-			15, //Mes 1
-			15,
-			15,
+			16, //Mes 1
+			16,
+			16,
 			16,
 			16, //Mes 5
 		],
