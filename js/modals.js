@@ -113,7 +113,8 @@ function sedeSelect(cod) {
 function carreraSelect(elem, isMinor = false) {
 	//limpiamos texto
 	let content = elem.textContent.replace(/\n/g, "");
-	content = elem.textContent.replace(/[.]/g, "");
+	content = content.replace(/[.]/g, "");
+	content = content.replace(/[()]/g, "");
 	content = content.trim();
 	content = content.toUpperCase();
 
