@@ -8,7 +8,7 @@ var administraciondeempresasnuevopensum = [
 	},
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Matemáticas I", UC: 8, Tax: "TA‐6" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Estadística I", UC: 5, Tax: "TA‐5" },
-	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Lógica", UC: 3, Tax: "TA‐5" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Lógica", UC: 4, Tax: "TA‐5" },
 	{
 		Semestre: "PRIMER SEMESTRE",
 		Asignatura: "Identidad, Liderazgo y Compromiso I",
