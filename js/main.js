@@ -1167,13 +1167,13 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante regular (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-							(5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
+							(6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
 							`Bs `,
 							true
 						)}</span> <br />
                        
                         <span class="usd">${formatNumber.new(
-							5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
+							6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
 						)}</span>
@@ -1182,13 +1182,13 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-							(7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
+							(10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
 							`Bs `,
 							true
 						)}</span> <br />
                       
                         <span class="usd">${formatNumber.new(
-							7.5 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
+							10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
 						)}</span>
@@ -1221,13 +1221,13 @@ function generarPagos() {
                     <div class="indent-10">
                     <span class="subtitle-table">Estudiante regular (+DI)</span><br />
                     <span class="bs">${formatNumber.new(
-						(5 * valorUC + totalbs * 1) * valorBCV,
+						(6 * valorUC + totalbs * 1) * valorBCV,
 						`Bs `,
 						true
 					)}</span> <br />
                  
                     <span class="usd">${formatNumber.new(
-						5 * valorUC + totalbs * 1,
+						6 * valorUC + totalbs * 1,
 						`USD `,
 						true
 					)}</span>
@@ -1235,13 +1235,13 @@ function generarPagos() {
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
                         <span class="bs">${formatNumber.new(
-							(7.5 * valorUC + totalbs * 1) * valorBCV,
+							(10 * valorUC + totalbs * 1) * valorBCV,
 							`Bs `,
 							true
 						)}</span> <br />
                      
                         <span class="usd">${formatNumber.new(
-							7.5 * valorUC + totalbs * 1,
+							10 * valorUC + totalbs * 1,
 							`USD `,
 							true
 						)}</span>
