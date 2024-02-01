@@ -64,7 +64,7 @@ var arquitectura = [
 		Tax: "TA‐3",
 	},
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Ambiente y Arquitectura", UC: 3, Tax: "TA‐1" },
-	{ Semestre: "TERCER SEMESTRE", Asignatura: "Geometría Descriptiva I", UC: 8, Tax: "TA-4" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Geometría Descriptiva I", UC: 5, Tax: "TA-4" },
 
 	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Taller de Proyectos 4", UC: 11, Tax: "TA‐8" },
 	{
