@@ -1123,13 +1123,13 @@ function generarPagos() {
                     <div><span class="subtitle-table">Estudiante regular (+DI+CI)</span></div>
                     <div>
                         <span class="bs">${formatNumber.new(
-							(7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
+							(6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
 							`Bs `,
 							true
 						)}</span> <br />
                   
                         <span class="usd">${formatNumber.new(
-							7.5 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
+							6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
 							`USD `,
 							true
 						)}</span>
