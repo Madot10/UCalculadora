@@ -40,6 +40,7 @@ var contadurianuevopensum = [
 		Tax: "TA‐1",
 	},
 
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Fundamentos de Programación", UC: 3, Tax: "TA‐9" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Criptomonedas", UC: 3, Tax: "TA‐3" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "(Virtual) Criptomonedas", UC: 3, Tax: "(V) TA‐3" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Activos y Pasivos", UC: 7, Tax: "TA‐3" },
