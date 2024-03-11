@@ -188,7 +188,7 @@ var contadurianuevopensum = [
 		UC: 3,
 		Tax: "TA‐9",
 	},
-	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Costeo Estándar", UC: 4, Tax: "TA‐3" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Costeo Estándar", UC: 3, Tax: "TA‐3" },
 	{
 		Semestre: "SEXTO SEMESTRE",
 		Asignatura: "Entornos Inflacionarios y Multimoneda",
