@@ -1507,12 +1507,12 @@ function getDIhtml() {
             <div><span class="subtitle-table">Estudiante regular</span></div>
             <div>
                 <span class="bs">${formatNumber.new(
-					5 * valorUC * valorBCV,
+					6 * valorUC * valorBCV,
 					`Bs `,
 					true
 				)}</span> <br />
            
-                <span class="usd">${formatNumber.new(5 * valorUC, `USD `, true)}</span>
+                <span class="usd">${formatNumber.new(6 * valorUC, `USD `, true)}</span>
             </div>
         </div>
 
@@ -1520,12 +1520,12 @@ function getDIhtml() {
             <div><span class="subtitle-table">Estudiante nuevo</span></div>
             <div>
                 <span class="bs">${formatNumber.new(
-					7.5 * valorUC * valorBCV,
+					10 * valorUC * valorBCV,
 					`Bs `,
 					true
 				)}</span> <br />
           
-                <span class="usd">${formatNumber.new(7.5 * valorUC, `USD `, true)}</span>
+                <span class="usd">${formatNumber.new(10 * valorUC, `USD `, true)}</span>
             </div>
         </div>
     </div>    

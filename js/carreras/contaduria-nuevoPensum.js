@@ -172,6 +172,7 @@ var contadurianuevopensum = [
 		UC: 3,
 		Tax: "(V) TA‐6",
 	},
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Análisis de datos", UC: 4, Tax: "TA‐9" },
 
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Fiscal", UC: 3, Tax: "TA‐3" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Ética Financiera", UC: 3, Tax: "TA‐6" },
@@ -197,6 +198,12 @@ var contadurianuevopensum = [
 	},
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐8" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 4, Tax: "(V) TA‐8" },
+	{
+		Semestre: "SEXTO SEMESTRE",
+		Asignatura: "Aplicaciones de la Inteligencia Artificial (IA)",
+		UC: 4,
+		Tax: "TA‐4",
+	},
 
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
