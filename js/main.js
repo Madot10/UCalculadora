@@ -69,11 +69,7 @@ function initVar(md) {
 		//sede
 		//sedeSelect('mtb');
 		totalizarDonacion();
-		document.getElementById("mesActual").innerHTML = `${loadMes()} <br> UC: ${formatNumber.new(
-			getUCfecha(getFistDayThisMonth()),
-			"USD ",
-			true
-		)}`;
+		document.getElementById("mesActual").innerHTML = `${loadMes()} <br> UC: ${formatNumber.new(getUCfecha(getFistDayThisMonth()), "USD ", true)}`;
 		//coop
 		//coop = 'fab';
 		//cober = 10; //min
@@ -565,11 +561,7 @@ function totalizacion() {
 	ucpagar = 0;
 
 	//descuentos segun carrera
-	if (
-		carrera.includes("educacion") ||
-		carrera.includes("letras") ||
-		carrera.includes("filosofia")
-	) {
+	if (carrera.includes("educacion") || carrera.includes("letras") || carrera.includes("filosofia")) {
 		//Aplicamos 30% de descuento >>
 		vrealUC = valorUC * 0.7;
 	}
@@ -828,11 +820,9 @@ function addMateriaList(id, isMinor) {
 	divC.classList.add("container", id);
 	divC.setAttribute("onclick", `desCheckMatList(${id}, ${isMinor});`);
 
-	divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${
-		data.Asignatura
-	}</td><td> ${data.UC != 0 ? data.UC : data.UCE} UC</td></tr><tr><td>${data.Semestre}</td><td> ${
-		data.Tax
-	}</td></tr></table>`;
+	divC.innerHTML = `<table><tr><td class="nMat"> <span style="color: red;">X</span> ${data.Asignatura}</td><td> ${
+		data.UC != 0 ? data.UC : data.UCE
+	} UC</td></tr><tr><td>${data.Semestre}</td><td> ${data.Tax}</td></tr></table>`;
 
 	main.appendChild(divC);
 
@@ -1066,8 +1056,8 @@ function SetStyle(elemt, long, ind) {
 3. Tiene Minior?
 */
 
-const DESCUENTO_TOTAL = 0.94;
-const DESCUENTO_PARCIAL = 0.96;
+const DESCUENTO_TOTAL = 0.96;
+const DESCUENTO_PARCIAL = 1;
 
 function generarPagos() {
 	const divMain = document.getElementById("pagos");
@@ -1088,11 +1078,7 @@ function generarPagos() {
             <div class="box-info">
                 <div><span class="subtitle-table">Total (100%)</span></div>
                 <div>
-                    <span class="bs">${formatNumber.new(
-						totalbs * 5 * valorBCV,
-						`Bs `,
-						true
-					)}</span> <br />
+                    <span class="bs">${formatNumber.new(totalbs * 5 * valorBCV, `Bs `, true)}</span> <br />
              
                     <span class="usd">${formatNumber.new(totalbs * 5, `USD `)}</span>
                 </div>
@@ -1115,40 +1101,24 @@ function generarPagos() {
                 PAGO TOTAL  
                 <i
                     class="fas fa-question-circle"
-                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 6% de descuento sobre las UC (No DI). <br>Exento del proceso de confirmación de inscripción. <br>*Comprobar monto con caja*')"
+                    onclick="modalInfoOpen('Modalidad de pago de 5 meses por adelantado.<br>Recibe un 4% de descuento sobre las UC (No DI). <br>Exento del proceso de confirmación de inscripción. <br>*Comprobar monto con caja*')"
                 ></i>
             </div>
             <div class="box-panel">
                 <div class="box-info">
                     <div><span class="subtitle-table">Estudiante regular (+DI+CI)</span></div>
                     <div>
-                        <span class="bs">${formatNumber.new(
-							(6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new((6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV, `Bs `, true)}</span> <br />
                   
-                        <span class="usd">${formatNumber.new(
-							6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(6 * valorUC + totalbs * 5 * DESCUENTO_TOTAL, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">Estudiante nuevo (+DI+CI)</span></div>
                     <div>
-                        <span class="bs">${formatNumber.new(
-							(10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new((10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL) * valorBCV, `Bs `, true)}</span> <br />
                     
-                        <span class="usd">${formatNumber.new(
-							10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(10 * valorUC + totalbs * 5 * DESCUENTO_TOTAL, `USD `, true)}</span>
                     </div>
                 </div>
             </div>-->
@@ -1166,40 +1136,23 @@ function generarPagos() {
                     <div><span class="subtitle-table">1ERA CUOTA</span></div>
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante regular (+DI)</span><br />
-                        <span class="bs">${formatNumber.new(
-							(6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new((6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV, `Bs `, true)}</span> <br />
                        
-                        <span class="usd">${formatNumber.new(
-							6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(6 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL, `USD `, true)}</span>
                     </div>
 
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
-                        <span class="bs">${formatNumber.new(
-							(10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new((10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL) * valorBCV, `Bs `, true)}</span> <br />
                       
-                        <span class="usd">${formatNumber.new(
-							10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(10 * valorUC + totalbs * 3 * DESCUENTO_PARCIAL, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">2DA CUOTA (ESTIMACIÓN +CI)</span></div>
                     <div class="indent-10">
                         <span class="usd">${formatNumber.new(
-							2.5 * getUCMes(4) +
-								Number(GetMontoTarifaMes(4)) * 2 * DESCUENTO_PARCIAL,
+							2.5 * getUCMes(4) + Number(GetMontoTarifaMes(4)) * 2 * DESCUENTO_PARCIAL,
 							`USD `,
 							true
 						)}</span>
@@ -1220,71 +1173,39 @@ function generarPagos() {
                     <div><span class="subtitle-table">CUOTA INICIAL (+DI)</span></div>
                     <div class="indent-10">
                     <span class="subtitle-table">Estudiante regular (+DI)</span><br />
-                    <span class="bs">${formatNumber.new(
-						(6 * valorUC + totalbs * 1) * valorBCV,
-						`Bs `,
-						true
-					)}</span> <br />
+                    <span class="bs">${formatNumber.new((6 * valorUC + totalbs * 1) * valorBCV, `Bs `, true)}</span> <br />
                  
-                    <span class="usd">${formatNumber.new(
-						6 * valorUC + totalbs * 1,
-						`USD `,
-						true
-					)}</span>
+                    <span class="usd">${formatNumber.new(6 * valorUC + totalbs * 1, `USD `, true)}</span>
                 </div>
                     <div class="indent-10">
                         <span class="subtitle-table">Estudiante nuevo (+DI)</span><br />
-                        <span class="bs">${formatNumber.new(
-							(10 * valorUC + totalbs * 1) * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new((10 * valorUC + totalbs * 1) * valorBCV, `Bs `, true)}</span> <br />
                      
-                        <span class="usd">${formatNumber.new(
-							10 * valorUC + totalbs * 1,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(10 * valorUC + totalbs * 1, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">2DO MES</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							Number(GetMontoTarifaMes(2)),
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(Number(GetMontoTarifaMes(2)), `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">3ER MES</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifaMes(3),
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifaMes(3), `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">4TO MES (Sin CI)</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifaMes(4) * 1,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifaMes(4) * 1, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">5TO MES</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifaMes(5),
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifaMes(5), `USD `, true)}</span>
                     </div>
                 </div>
             </div>    
@@ -1311,17 +1232,9 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">2DA CUOTA (+ CI)</span></div>
                     <div class="indent-10">
-                    <span class="bs">${formatNumber.new(
-						(2.5 * valorUC + totalbs * 2 * DESCUENTO_PARCIAL) * valorBCV,
-						`Bs `,
-						true
-					)}</span> <br />
+                    <span class="bs">${formatNumber.new((2.5 * valorUC + totalbs * 2 * DESCUENTO_PARCIAL) * valorBCV, `Bs `, true)}</span> <br />
                  
-                        <span class="usd">${formatNumber.new(
-							2.5 * valorUC + totalbs * 2 * DESCUENTO_PARCIAL,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(2.5 * valorUC + totalbs * 2 * DESCUENTO_PARCIAL, `USD `, true)}</span>
                     </div>
                 </div>
             </div>
@@ -1338,31 +1251,19 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">4TO MES (SIN CI)</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 12)) * 1,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifa(getFechaAnoActual(1, 12)) * 1, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">4TO MES (+ CI)</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 12)) * 1 + 2.5 * valorUC,
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifa(getFechaAnoActual(1, 12)) * 1 + 2.5 * valorUC, `USD `, true)}</span>
                     </div>
                 </div>
                 <div class="box-info">
                     <div><span class="subtitle-table">5TO MES</span></div>
                     <div class="indent-10">
-                        <span class="usd">${formatNumber.new(
-							GetMontoTarifa(getFechaAnoActual(1, 12)),
-							`USD `,
-							true
-						)}</span>
+                        <span class="usd">${formatNumber.new(GetMontoTarifa(getFechaAnoActual(1, 12)), `USD `, true)}</span>
                     </div>
                 </div>
             </div>   
@@ -1385,11 +1286,7 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">Total (100%)</span></div>
                     <div>
-                        <span class="bs">${formatNumber.new(
-							totalbsMinor * 5 * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new(totalbsMinor * 5 * valorBCV, `Bs `, true)}</span> <br />
                       
                         <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `)}</span>
                     </div>
@@ -1414,11 +1311,7 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">Sub-Total</span></div>
                     <div>
-                        <span class="bs">${formatNumber.new(
-							totalbsMinor * 5 * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new(totalbsMinor * 5 * valorBCV, `Bs `, true)}</span> <br />
                     
                         <span class="usd">${formatNumber.new(totalbsMinor * 5, `USD `, true)}</span>
                     </div>
@@ -1438,11 +1331,7 @@ function generarPagos() {
                 <div class="box-info">
                     <div><span class="subtitle-table">1ERA CUOTA</span></div>
                     <div class="indent-10">
-                        <span class="bs">${formatNumber.new(
-							totalbsMinor * 3 * valorBCV,
-							`Bs `,
-							true
-						)}</span> <br />
+                        <span class="bs">${formatNumber.new(totalbsMinor * 3 * valorBCV, `Bs `, true)}</span> <br />
                  
                         <span class="usd">${formatNumber.new(totalbsMinor * 3, `USD `, true)}</span>
                     </div>
@@ -1506,11 +1395,7 @@ function getDIhtml() {
         <div class="box-info">
             <div><span class="subtitle-table">Estudiante regular</span></div>
             <div>
-                <span class="bs">${formatNumber.new(
-					6 * valorUC * valorBCV,
-					`Bs `,
-					true
-				)}</span> <br />
+                <span class="bs">${formatNumber.new(6 * valorUC * valorBCV, `Bs `, true)}</span> <br />
            
                 <span class="usd">${formatNumber.new(6 * valorUC, `USD `, true)}</span>
             </div>
@@ -1519,11 +1404,7 @@ function getDIhtml() {
         <div class="box-info">
             <div><span class="subtitle-table">Estudiante nuevo</span></div>
             <div>
-                <span class="bs">${formatNumber.new(
-					10 * valorUC * valorBCV,
-					`Bs `,
-					true
-				)}</span> <br />
+                <span class="bs">${formatNumber.new(10 * valorUC * valorBCV, `Bs `, true)}</span> <br />
           
                 <span class="usd">${formatNumber.new(10 * valorUC, `USD `, true)}</span>
             </div>
@@ -1541,11 +1422,7 @@ function getConfDIhtml() {
         <div class="box-info">
             <div><span class="subtitle-table">Estudiantes</span></div>
             <div>
-                <span class="bs">${formatNumber.new(
-					2.5 * getUCMes(4) * valorBCV,
-					`Bs `,
-					true
-				)}</span> <br />
+                <span class="bs">${formatNumber.new(2.5 * getUCMes(4) * valorBCV, `Bs `, true)}</span> <br />
             
                 <span class="usd">${formatNumber.new(2.5 * getUCMes(4), `USD `, true)}</span>
             </div>

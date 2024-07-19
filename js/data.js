@@ -6,13 +6,13 @@ let ucByPeriodo = {
 	},
 	/** Monto UC*/
 	semestre: {
-		base: 16,
+		base: 17,
 		variacion: [
-			16, //Mes 1
-			16,
-			16,
-			16,
-			16, //Mes 5
+			17, //Mes 1
+			17,
+			17,
+			17,
+			17, //Mes 5
 		],
 	},
 };
@@ -24,7 +24,7 @@ let monthMapping = {
 	4: 1,
 	5: 2,
 	6: 3,
-	7: 4,
+	7: 1,
 	8: 1,
 	9: 1,
 	10: 2,
@@ -343,16 +343,10 @@ let templateTabla = {
 		["MINOR - Modalidad pago de contado <br> (1era Parte)"],
 		["SOLO SE PAGA MINORS DE CONTADO"],
 		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `,true) ")'],
-		[
-			"SubTotal <br> (Minor)",
-			'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `,true) ")',
-		],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `,true) ")'],
 		["MINOR - Modalidad pago de total <br> (100%)"],
 		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `,true) ")'],
-		[
-			"SubTotal <br> (Minor)",
-			'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `,true) ")',
-		],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `,true) ")'],
 	],
 	"2doMinor": [
 		3,
@@ -369,10 +363,7 @@ let templateTabla = {
 		["** COMPROBAR MONTO CON CAJA"],
 		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
 		["MINOR - Pago único"],
-		[
-			"Total <br> (100%)",
-			'eval(" formatNumber.new((totalbsMinor * 5) * valorBCV, `USD `,true) ")',
-		],
+		["Total <br> (100%)", 'eval(" formatNumber.new((totalbsMinor * 5) * valorBCV, `USD `,true) ")'],
 	],
 	"1erPar": [
 		3,
@@ -427,10 +418,7 @@ let templateTabla = {
 		["Modalidad pago FINANCIADO (Abr-Jun) "],
 		["** COMPROBAR MONTO CON CAJA"],
 		["Abril <br> (1er Mes)", 'eval("formatNumber.new(((totalbs * 1)), `USD `, true)")'],
-		[
-			'<span class="ugreen">Total <br> Abril</span>',
-			'eval("formatNumber.new((((totalbs * 1)) * valorBCV), `Bs.S `, true)")',
-		],
+		['<span class="ugreen">Total <br> Abril</span>', 'eval("formatNumber.new((((totalbs * 1)) * valorBCV), `Bs.S `, true)")'],
 		[
 			'Mayo <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
 			'<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(11,5))), `USD `, true)")',
@@ -480,10 +468,7 @@ let templateTabla = {
 		["Pago único verano"],
 		["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
 		["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
-		[
-			"Total <br> Bs.S",
-			'(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `,true) ")',
-		],
+		["Total <br> Bs.S", '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `,true) ")'],
 	],
 	"1erImpar": [
 		3,
