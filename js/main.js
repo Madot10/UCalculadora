@@ -1057,7 +1057,7 @@ function SetStyle(elemt, long, ind) {
 */
 
 const DESCUENTO_TOTAL = 0.96;
-const DESCUENTO_PARCIAL = 1;
+const DESCUENTO_PARCIAL = 0.96;
 
 function generarPagos() {
 	const divMain = document.getElementById("pagos");
