@@ -15,8 +15,7 @@ var derecho = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Lógica I", UC: 3, Tax: "TA‐5" },
 	{
 		Semestre: "PRIMER SEMESTRE",
-		Asignatura:
-			"Derecho Constitucional General I: Teoría de la Constitución y Teoría del Estado",
+		Asignatura: "Derecho Constitucional General I: Teoría de la Constitución y Teoría del Estado",
 		UC: 4,
 		Tax: "TA‐1",
 	},
@@ -60,8 +59,7 @@ var derecho = [
 	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "(Virtual) Lógica II", UC: 3, Tax: "(V) TA‐5" },
 	{
 		Semestre: "SEGUNDO SEMESTRE",
-		Asignatura:
-			"Derecho Constitucional General II: Sistema Político, Sistema de Gobierno y Forma de Estado",
+		Asignatura: "Derecho Constitucional General II: Sistema Político, Sistema de Gobierno y Forma de Estado",
 		UC: 4,
 		Tax: "TA‐1",
 	},
@@ -315,4 +313,77 @@ var derecho = [
 	{ Semestre: "DECIMO SEMESTRE", Asignatura: "Derecho Concursal", UC: 4, Tax: "TA‐1" },
 	{ Semestre: "DECIMO SEMESTRE", Asignatura: "Derecho de Sucesiones", UC: 4, Tax: "TA‐1" },
 	{ Semestre: "DECIMO SEMESTRE", Asignatura: "Clínica Jurídica II", UC: 2, Tax: "TA‐9" },
+];
+
+var derechonuevopensum = [
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Competencia Textual en Español", UC: 5, Tax: "TA‐6" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Derecho Civil Personas", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso I", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Lógica Jurídica", UC: 4, Tax: "TA‐5" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Teoría General del Derecho Constitucional", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Teoría General del Derecho I", UC: 6, Tax: "TA‐1" },
+
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Derecho Constitucional Venezolano I: Historia y Parte Dogmática", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Derecho de Familia", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Historia y Codificación del Derecho", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso II", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Teoría General del Derecho II", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Teoría General del Proceso", UC: 7, Tax: "TA‐1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Teoría Política", UC: 3, Tax: "TA‐1" },
+
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Derecho Constitucional Venezolano II: Parte Orgánica y Garantías", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Derecho de Bienes y Derechos Reales", UC: 7, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Derecho Internacional Público", UC: 5, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Fundamentos del Derecho Penal y de la Pena", UC: 5, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Instituciones Jurídicas Romanas", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Seminario de Investigación Jurídica", UC: 3, Tax: "TA‐8" },
+
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Derecho Procesal Civil I", UC: 4, Tax: "TA‐3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Derechos Humanos", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Ecología, Ambiente y Sustentabilidad", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Fundamentos de Derecho Administrativo", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Fundamentos de las Obligaciones Jurídicas", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Sociología Jurídica", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Teoría del Delito", UC: 5, Tax: "TA‐3" },
+
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Argumentación Jurídica", UC: 3, Tax: "TA‐4" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Derecho Penal Especial", UC: 5, Tax: "TA‐1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Derecho Procesal Civil II", UC: 4, Tax: "TA‐3" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Fundamentos de Derecho Mercantil", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Fundamentos y Sujetos del Derecho del Trabajo", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Las Fuentes de las Obligaciones Jurídicas", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Teoría del Acto y del Procedimiento Administrativo", UC: 4, Tax: "TA‐1" },
+
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Contenido de la Actividad Administrativa", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Contratos y Derecho de Garantías", UC: 7, Tax: "TA‐1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Derecho Individual del Trabajo", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva I", UC: 3, Tax: "TA‐6" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Títulos Valores, Contratos Mercantiles y Crisis Patrimoniales", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Pruebas en el Proceso", UC: 6, Tax: "TA‐1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Resolución Alternativa de Conflictos", UC: 3, Tax: "TA‐4" },
+
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Arbitraje", UC: 3, Tax: "TA‐3" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Clínica Jurídica I", UC: 2, Tax: "TA‐9" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Derecho Colectivo del Trabajo", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Derecho Procesal Civil Internacional", UC: 4, Tax: "TA‐3" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva II", UC: 3, Tax: "TA‐6" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Filosofía del Derecho", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Sociedades y Obligaciones Mercantiles", UC: 4, Tax: "TA‐1" },
+
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Clínica Jurídica II", UC: 2, Tax: "TA‐9" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Derecho de Sucesiones", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Derecho Internacional Privado", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Derecho Procesal Penal", UC: 6, Tax: "TA‐3" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Derecho Tributario: Parte General", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Electiva III", UC: 3, Tax: "TA‐6" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Prácticas", UC: 2, Tax: "TA‐8" },
+
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Derecho Procesal Constitucional y Administrativo", UC: 5, Tax: "TA‐3" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Derecho Tributario: Parte Especial", UC: 4, Tax: "TA‐1" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva: Materia de Postgrado (Programa de Derecho)", UC: 4, Tax: "TA‐6" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva: Materia de Postgrado (Programa de Derecho)", UC: 4, Tax: "TA‐6" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Electiva: Materia de Postgrado (Programa de Derecho)", UC: 4, Tax: "TA‐6" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA‐1" },
+	{ Semestre: "NOVENO SEMESTRE", Asignatura: "Taller por Área del Derecho", UC: 3, Tax: "TA‐8" },
 ];
