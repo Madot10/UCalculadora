@@ -38,11 +38,38 @@ let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modali
 
 // UC Edit Functionality - Global variables and helper function
 let customUCValue = null;
+let monthlyUCValues = {}; // Store UC values for specific months
 
 function getCustomUCValue() {
     // Check if there's a custom UC value stored in localStorage
     const stored = localStorage.getItem('customUCValue');
     return stored ? parseFloat(stored) : null;
+}
+
+function getMonthlyUCValues() {
+    // Get monthly UC values from localStorage
+    const stored = localStorage.getItem('monthlyUCValues');
+    return stored ? JSON.parse(stored) : {};
+}
+
+function setMonthlyUCValues(values) {
+    // Save monthly UC values to localStorage
+    if (values && Object.keys(values).length > 0) {
+        localStorage.setItem('monthlyUCValues', JSON.stringify(values));
+    } else {
+        localStorage.removeItem('monthlyUCValues');
+    }
+    monthlyUCValues = values || {};
+}
+
+function getUCForMonth(month) {
+    // Get UC value for a specific month (1-12)
+    const monthlyValues = getMonthlyUCValues();
+    if (monthlyValues[month]) {
+        return parseFloat(monthlyValues[month]);
+    }
+    // Fall back to custom or default value
+    return getCustomUCValue() || getUCfecha(new Date(), perioact, false);
 }
 
 //FUNCIONES
@@ -733,12 +760,19 @@ function getUCfecha(fecha, force_periodo = null, useCustom = true) {
 function getUCMes(mes) {
 	let month = mes;
 
-	// Check if there's a custom UC value
+	// Check if there's a custom UC value for this specific month
+	const monthlyValues = getMonthlyUCValues();
+	if (monthlyValues[month]) {
+		return Number(monthlyValues[month]).toFixed(2);
+	}
+
+	// Fall back to general custom UC value
 	const customValue = getCustomUCValue();
 	if (customValue) {
 		return Number(customValue).toFixed(2);
 	}
 
+	// Use default calculation
 	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
 	let uc = dataux.base;
 
@@ -1475,22 +1509,101 @@ function setCustomUCValue(value) {
 }
 
 function enableUCEdit() {
-    const ucValueSpan = document.getElementById('ucvalue');
-    const ucEditInput = document.getElementById('ucEditInput');
-    const ucEditControls = document.getElementById('ucEditControls');
+    // Populate the modal with current values
+    populateUCEditModal();
     
-    // Get current UC value (either custom or default)
-    const currentValue = getCustomUCValue() || getUCfecha(hoy, perioact);
+    // Open the modal
+    openModal('ucEditModal');
+}
+
+function populateUCEditModal() {
+    const currentInput = document.getElementById('currentUCInput');
+    const defaultValueSpan = document.getElementById('defaultUCValue');
+    const monthlyInputsContainer = document.getElementById('monthlyUCInputs');
     
-    // Hide the span and show the input
-    ucValueSpan.style.display = 'none';
-    ucEditInput.style.display = 'inline-block';
-    ucEditControls.style.display = 'block';
+    // Set current UC value
+    const currentValue = getCustomUCValue() || getUCfecha(hoy, perioact, false);
+    currentInput.value = parseFloat(currentValue).toFixed(2);
     
-    // Set the input value and focus
-    ucEditInput.value = parseFloat(currentValue).toFixed(2);
-    ucEditInput.focus();
-    ucEditInput.select();
+    // Set default value display
+    const defaultValue = getUCfecha(hoy, perioact, false);
+    defaultValueSpan.textContent = parseFloat(defaultValue).toFixed(2);
+    
+    // Create monthly inputs
+    monthlyInputsContainer.innerHTML = '';
+    const monthlyValues = getMonthlyUCValues();
+    const currentMonth = new Date().getMonth() + 1;
+    const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+                       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    
+    for (let i = 1; i <= 5; i++) {
+        const monthIndex = ((currentMonth + i - 1) % 12);
+        const monthName = monthNames[monthIndex];
+        const monthNumber = monthIndex + 1;
+        
+        const inputDiv = document.createElement('div');
+        inputDiv.style.cssText = 'display: flex; align-items: center; gap: 10px;';
+        
+        inputDiv.innerHTML = `
+            <label style="min-width: 120px;">${monthName}:</label>
+            <input type="number" step="0.01" min="0.01" 
+                   id="monthUC_${monthNumber}" 
+                   data-month="${monthNumber}"
+                   style="padding: 6px; border: 1px solid #ccc; border-radius: 4px; width: 120px;" 
+                   placeholder="Usar valor actual"
+                   value="${monthlyValues[monthNumber] ? parseFloat(monthlyValues[monthNumber]).toFixed(2) : ''}">
+            <span>USD</span>
+        `;
+        
+        monthlyInputsContainer.appendChild(inputDiv);
+    }
+}
+
+function saveUCModalEdit() {
+    const currentInput = document.getElementById('currentUCInput');
+    const newValue = parseFloat(currentInput.value);
+    
+    // Validate the input
+    if (isNaN(newValue) || newValue <= 0) {
+        alert('Por favor ingresa un valor válido mayor a 0');
+        currentInput.focus();
+        return;
+    }
+    
+    if (newValue > 1000) {
+        if (!confirm('El valor ingresado es muy alto (más de 1000 USD). ¿Estás seguro?')) {
+            currentInput.focus();
+            return;
+        }
+    }
+    
+    // Save the custom value
+    setCustomUCValue(newValue);
+    
+    // Save monthly values
+    const monthlyValues = {};
+    const monthlyInputs = document.querySelectorAll('#monthlyUCInputs input[data-month]');
+    
+    monthlyInputs.forEach(input => {
+        const month = input.getAttribute('data-month');
+        const value = parseFloat(input.value);
+        if (!isNaN(value) && value > 0) {
+            monthlyValues[month] = value;
+        }
+    });
+    
+    setMonthlyUCValues(monthlyValues);
+    
+    // Update the display
+    updateUCDisplay();
+    
+    // Close the modal
+    closeModal();
+    
+    // Recalculate if there are materials selected
+    if (uctotal > 0) {
+        calcularMatricula();
+    }
 }
 
 function saveUCEdit() {
@@ -1523,7 +1636,7 @@ function saveUCEdit() {
     // Hide input and show span
     ucEditInput.style.display = 'none';
     ucEditControls.style.display = 'none';
-    ucValueSpan.style.display = 'inline';
+    ucValueSpan.style.display = 'inline-flex';
     
     // Recalculate if there are materials selected
     if (uctotal > 0) {
@@ -1532,17 +1645,27 @@ function saveUCEdit() {
 }
 
 function resetUCToDefault() {
-    if (confirm('¿Deseas restablecer el valor UC al valor por defecto?')) {
+    if (confirm('¿Deseas restablecer todos los valores UC a los valores por defecto?')) {
         setCustomUCValue(null);
+        setMonthlyUCValues({});
         updateUCDisplay();
         
-        const ucValueSpan = document.getElementById('ucvalue');
-        const ucEditInput = document.getElementById('ucEditInput');
-        const ucEditControls = document.getElementById('ucEditControls');
-        
-        ucEditInput.style.display = 'none';
-        ucEditControls.style.display = 'none';
-        ucValueSpan.style.display = 'inline';
+        // If we're in the modal, close it
+        const modal = document.getElementById('ucEditModal');
+        if (modal && modal.style.display !== 'none') {
+            closeModal();
+        } else {
+            // Handle inline editing case
+            const ucValueSpan = document.getElementById('ucvalue');
+            const ucEditInput = document.getElementById('ucEditInput');
+            const ucEditControls = document.getElementById('ucEditControls');
+            
+            if (ucEditInput && ucEditInput.style.display !== 'none') {
+                ucEditInput.style.display = 'none';
+                ucEditControls.style.display = 'none';
+                ucValueSpan.style.display = 'inline-flex';
+            }
+        }
         
         // Recalculate if there are materials selected
         if (uctotal > 0) {
@@ -1566,11 +1689,14 @@ function cancelUCEdit() {
     
     ucEditInput.style.display = 'none';
     ucEditControls.style.display = 'none';
-    ucValueSpan.style.display = 'inline';
+    ucValueSpan.style.display = 'inline-flex';
 }
 
 function updateUCDisplay() {
+    const ucValueText = document.getElementById('ucValueText');
+    const ucCustomIcon = document.getElementById('ucCustomIcon');
     const ucValueSpan = document.getElementById('ucvalue');
+    
     if (!ucValueSpan) {
         // Element not ready yet, try again after a short delay
         setTimeout(updateUCDisplay, 100);
@@ -1578,15 +1704,41 @@ function updateUCDisplay() {
     }
     
     const customValue = getCustomUCValue();
+    const monthlyValues = getMonthlyUCValues();
     const defaultValue = getUCfecha(hoy, perioact, false); // Don't use custom when getting default
     const displayValue = customValue || defaultValue;
     
-    let displayText = `${formatNumber.new(displayValue)} USD`;
+    const hasCustomValues = customValue || Object.keys(monthlyValues).length > 0;
     
-    // Add indicator if using custom value
-    if (customValue) {
-        displayText += ' <span style="font-size: 10px; color: #ff9800;">(personalizado)</span>';
+    // Check if we have the new HTML structure
+    if (ucValueText) {
+        // Use new structure with separate text and icon elements
+        ucValueText.textContent = `${formatNumber.new(displayValue)} USD`;
+        
+        // Show/hide custom indicator icon
+        if (ucCustomIcon) {
+            ucCustomIcon.style.display = hasCustomValues ? 'inline' : 'none';
+        }
+    } else {
+        // Fall back to old structure - update the entire span content
+        let displayText = `${formatNumber.new(displayValue)} USD`;
+        
+        // Add edit icon
+        displayText += ' <i class="fas fa-edit" style="font-size: 12px; color: #666; margin-left: 5px;"></i>';
+        
+        // Add indicator if using custom value
+        if (hasCustomValues) {
+            displayText += ' <i class="fas fa-user-edit" style="font-size: 12px; color: #ff9800; margin-left: 2px;" title="Valor personalizado"></i>';
+        }
+        
+        ucValueSpan.innerHTML = displayText;
+        
+        // Ensure the span has the proper styling and click handler
+        ucValueSpan.style.cursor = 'pointer';
+        ucValueSpan.style.display = 'inline-flex';
+        ucValueSpan.style.alignItems = 'center';
+        ucValueSpan.style.gap = '5px';
+        ucValueSpan.onclick = enableUCEdit;
+        ucValueSpan.title = 'Haz clic para editar el valor UC';
     }
-    
-    ucValueSpan.innerHTML = displayText;
 }
