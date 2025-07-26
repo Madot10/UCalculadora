@@ -569,8 +569,13 @@ function totalizacion() {
 	//descuento por sede
 	switch (sede) {
 		case "g":
+			//Guayana 10% descuento
+			//document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
+			vrealUC *= 0.9;
+
+			break;
 		case "tq":
-			//Guayana  /Los teques 20% descuento
+			//Los teques 20% descuento
 			//document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
 			vrealUC *= 0.8;
 
@@ -738,8 +743,13 @@ function GetMontoTarifaMes(mes) {
 	let aux = ucpagar;
 	switch (sede) {
 		case "g":
+			//Guayana 10% descuento
+			//document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
+			aux *= 0.9;
+
+			break;
 		case "tq":
-			//Guayana  /Los teques 20% descuento
+			//Los teques 20% descuento
 			//document.getElementById("info2").innerHTML = "*¡Aplicado descuento del 20% de la sede!* <br>";
 			aux *= 0.8;
 
