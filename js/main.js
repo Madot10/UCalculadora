@@ -1529,34 +1529,33 @@ function populateUCEditModal() {
     const defaultValue = getUCfecha(hoy, perioact, false);
     defaultValueSpan.textContent = parseFloat(defaultValue).toFixed(2);
     
-    // Create monthly inputs
+    // Create monthly inputs for months 2-5 (as used in calculations)
     monthlyInputsContainer.innerHTML = '';
     const monthlyValues = getMonthlyUCValues();
-    const currentMonth = new Date().getMonth() + 1;
-    const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
-                       'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const monthConfig = [
+        { month: 2, label: 'Mes 2 (cálculos)' },
+        { month: 3, label: 'Mes 3 (cálculos)' },
+        { month: 4, label: 'Mes 4 (cálculos)' },
+        { month: 5, label: 'Mes 5 (cálculos)' }
+    ];
     
-    for (let i = 1; i <= 5; i++) {
-        const monthIndex = ((currentMonth + i - 1) % 12);
-        const monthName = monthNames[monthIndex];
-        const monthNumber = monthIndex + 1;
-        
+    monthConfig.forEach(config => {
         const inputDiv = document.createElement('div');
-        inputDiv.style.cssText = 'display: flex; align-items: center; gap: 10px;';
+        inputDiv.style.cssText = 'display: flex; align-items: center; gap: 10px; justify-content: center;';
         
         inputDiv.innerHTML = `
-            <label style="min-width: 120px;">${monthName}:</label>
+            <label style="min-width: 140px; text-align: right;">${config.label}:</label>
             <input type="number" step="0.01" min="0.01" 
-                   id="monthUC_${monthNumber}" 
-                   data-month="${monthNumber}"
+                   id="monthUC_${config.month}" 
+                   data-month="${config.month}"
                    style="padding: 6px; border: 1px solid #ccc; border-radius: 4px; width: 120px;" 
                    placeholder="Usar valor actual"
-                   value="${monthlyValues[monthNumber] ? parseFloat(monthlyValues[monthNumber]).toFixed(2) : ''}">
+                   value="${monthlyValues[config.month] ? parseFloat(monthlyValues[config.month]).toFixed(2) : ''}">
             <span>USD</span>
         `;
         
         monthlyInputsContainer.appendChild(inputDiv);
-    }
+    });
 }
 
 function saveUCModalEdit() {
@@ -1694,7 +1693,7 @@ function cancelUCEdit() {
 
 function updateUCDisplay() {
     const ucValueText = document.getElementById('ucValueText');
-    const ucCustomIcon = document.getElementById('ucCustomIcon');
+    const ucEditIcon = document.getElementById('ucEditIcon');
     const ucValueSpan = document.getElementById('ucvalue');
     
     if (!ucValueSpan) {
@@ -1711,25 +1710,27 @@ function updateUCDisplay() {
     const hasCustomValues = customValue || Object.keys(monthlyValues).length > 0;
     
     // Check if we have the new HTML structure
-    if (ucValueText) {
+    if (ucValueText && ucEditIcon) {
         // Use new structure with separate text and icon elements
         ucValueText.textContent = `${formatNumber.new(displayValue)} USD`;
         
-        // Show/hide custom indicator icon
-        if (ucCustomIcon) {
-            ucCustomIcon.style.display = hasCustomValues ? 'inline' : 'none';
+        // Change icon color based on custom values
+        if (hasCustomValues) {
+            ucEditIcon.style.color = '#ff9800'; // Orange for custom values
+            ucEditIcon.title = 'Valor personalizado - Haz clic para editar';
+        } else {
+            ucEditIcon.style.color = '#666'; // Gray for default values
+            ucEditIcon.title = 'Haz clic para editar el valor UC';
         }
     } else {
         // Fall back to old structure - update the entire span content
         let displayText = `${formatNumber.new(displayValue)} USD`;
         
-        // Add edit icon
-        displayText += ' <i class="fas fa-edit" style="font-size: 12px; color: #666; margin-left: 5px;"></i>';
+        // Add edit icon with appropriate color
+        const iconColor = hasCustomValues ? '#ff9800' : '#666';
+        const iconTitle = hasCustomValues ? 'Valor personalizado - Haz clic para editar' : 'Haz clic para editar el valor UC';
         
-        // Add indicator if using custom value
-        if (hasCustomValues) {
-            displayText += ' <i class="fas fa-user-edit" style="font-size: 12px; color: #ff9800; margin-left: 2px;" title="Valor personalizado"></i>';
-        }
+        displayText += ` <i class="fas fa-edit" style="font-size: 12px; color: ${iconColor}; margin-left: 5px;" title="${iconTitle}"></i>`;
         
         ucValueSpan.innerHTML = displayText;
         
@@ -1739,6 +1740,5 @@ function updateUCDisplay() {
         ucValueSpan.style.alignItems = 'center';
         ucValueSpan.style.gap = '5px';
         ucValueSpan.onclick = enableUCEdit;
-        ucValueSpan.title = 'Haz clic para editar el valor UC';
     }
 }

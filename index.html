@@ -542,12 +542,12 @@
 					<span class="close" onclick="closeModal()">&times;</span>
 					<h2>EDITAR VALOR UC</h2>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" style="text-align: center;">
 					<p style="margin-bottom: 15px;">Personaliza el valor de la Unidad de Crédito para tus cálculos:</p>
 					
 					<div style="margin-bottom: 20px;">
 						<h3 style="margin: 10px 0;">Valor UC Actual</h3>
-						<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+						<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; justify-content: center;">
 							<label for="currentUCInput" style="min-width: 120px;">Valor actual:</label>
 							<input id="currentUCInput" type="number" step="0.01" min="0.01" 
 								   style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 120px;" 
@@ -560,12 +560,12 @@
 					</div>
 
 					<div style="margin-bottom: 20px;">
-						<h3 style="margin: 10px 0;">Valores para los próximos meses (opcional)</h3>
+						<h3 style="margin: 10px 0;">Valores para meses específicos (opcional)</h3>
 						<p style="font-size: 12px; color: #666; margin-bottom: 10px;">
-							Configura valores específicos para los próximos 5 meses. Si no se especifica, se usará el valor actual.
+							Configura valores específicos para los meses 2 a 5 utilizados en los cálculos de pagos mensuales. Si no se especifica, se usará el valor actual.
 						</p>
 						
-						<div id="monthlyUCInputs" style="display: flex; flex-direction: column; gap: 8px;">
+						<div id="monthlyUCInputs" style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
 							<!-- Monthly inputs will be populated by JavaScript -->
 						</div>
 					</div>
@@ -576,7 +576,7 @@
 							<i class="fas fa-undo"></i> Restablecer
 						</button>
 						<button onclick="saveUCModalEdit()" 
-								style="padding: 8px 16px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+								style="padding: 8px 16px; background: var(--green); color: white; border: none; border-radius: 4px; cursor: pointer;">
 							<i class="fas fa-save"></i> Guardar
 						</button>
 					</div>
@@ -596,8 +596,7 @@
 				<b>
 					<span id="ucvalue" onclick="enableUCEdit()" style="cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Haz clic para editar el valor UC">
 						<span id="ucValueText"></span>
-						<i class="fas fa-edit" style="font-size: 12px; color: #666;"></i>
-						<i id="ucCustomIcon" class="fas fa-user-edit" style="font-size: 12px; color: #ff9800; display: none;" title="Valor personalizado"></i>
+						<i id="ucEditIcon" class="fas fa-edit" style="font-size: 12px; color: #666;"></i>
 					</span>
 					<input id="ucEditInput" type="number" step="0.01" min="0.01" style="display: none; width: 100px; text-align: center; font-weight: bold; background: transparent; border: 1px solid #ccc; color: inherit;" onblur="saveUCEdit()" onkeypress="handleUCEditKeypress(event)">
 				</b>
