@@ -35,6 +35,16 @@ let templateSelect = "";
 let templateSelectMinor = "";
 
 let infoTXT = `Materias Semi-Presenciales como electivas pueden variar su modalidad (TAXONOMIA) <br> Las materias de Comprensión de Contenidos en Inglés y Producción de Contenidos en Inglés aunque no aparezca el cambio en la malla curricular, el cambio de taxonomía de T6 a TA8 afecta a todos los alumnos <br> <a href="https://www.ucab.edu.ve/informacion-institucional/secretaria/servicios/plan-de-estudios/"> <br> Más información de pensums </a>`;
+
+// UC Edit Functionality - Global variables and helper function
+let customUCValue = null;
+
+function getCustomUCValue() {
+    // Check if there's a custom UC value stored in localStorage
+    const stored = localStorage.getItem('customUCValue');
+    return stored ? parseFloat(stored) : null;
+}
+
 //FUNCIONES
 
 function initVar(md) {
@@ -92,8 +102,8 @@ window.onload = () => {
 	LoadUC();
 
 	//console.warn("bannerUC");
-	let bannerUC = getUCfecha(new Date().setDate(hoy.getDate() + 15));
-	document.getElementById("ucvalue").innerHTML = `${formatNumber.new(bannerUC)} USD`;
+	// Use the new updateUCDisplay function to show UC value (with custom value support)
+	updateUCDisplay();
 	UC = visualUC;
 
 	GetValorBCV();
@@ -421,7 +431,15 @@ function LoadUC() {
 	//console.warn("LoadUC perioact: ", perioact);
 	//let dataux = perioact == 1 ? ucByPeriodo["verano"] : ucByPeriodo["semestre"];
 	//let uc = dataux.base;
-	uc = getUCfecha(hoy, perioact);
+	
+	// Check if there's a custom UC value, otherwise use default
+	const customValue = getCustomUCValue();
+	if (customValue) {
+		uc = customValue;
+	} else {
+		uc = getUCfecha(hoy, perioact);
+	}
+	
 	valorUC = uc;
 	//Recorremos si existe lista de variacion
 	/*
@@ -669,9 +687,17 @@ function totalizacion() {
 	}
 }
 
-function getUCfecha(fecha, force_periodo = null) {
+function getUCfecha(fecha, force_periodo = null, useCustom = true) {
 	let f = new Date(fecha);
 	let month = f.getMonth() + 1;
+
+	// Check if there's a custom UC value and we should use it
+	if (useCustom) {
+		const customValue = getCustomUCValue();
+		if (customValue) {
+			return Number(customValue).toFixed(2);
+		}
+	}
 
 	//console.warn("-getUCfecha: perioact / month", perioact, month);
 	//If the month is a verano, set auxiliar periodo to verano
@@ -706,6 +732,12 @@ function getUCfecha(fecha, force_periodo = null) {
 
 function getUCMes(mes) {
 	let month = mes;
+
+	// Check if there's a custom UC value
+	const customValue = getCustomUCValue();
+	if (customValue) {
+		return Number(customValue).toFixed(2);
+	}
 
 	let dataux = ucByPeriodo[perioact == 1 ? "verano" : "semestre"];
 	let uc = dataux.base;
@@ -1429,4 +1461,132 @@ function getConfDIhtml() {
         </div>
     </div>  
     `;
+}
+
+// UC Edit Functionality - Allow users to customize the UC value
+
+function setCustomUCValue(value) {
+    customUCValue = value;
+    if (value !== null) {
+        localStorage.setItem('customUCValue', value.toString());
+    } else {
+        localStorage.removeItem('customUCValue');
+    }
+}
+
+function enableUCEdit() {
+    const ucValueSpan = document.getElementById('ucvalue');
+    const ucEditInput = document.getElementById('ucEditInput');
+    const ucEditControls = document.getElementById('ucEditControls');
+    
+    // Get current UC value (either custom or default)
+    const currentValue = getCustomUCValue() || getUCfecha(hoy, perioact);
+    
+    // Hide the span and show the input
+    ucValueSpan.style.display = 'none';
+    ucEditInput.style.display = 'inline-block';
+    ucEditControls.style.display = 'block';
+    
+    // Set the input value and focus
+    ucEditInput.value = parseFloat(currentValue).toFixed(2);
+    ucEditInput.focus();
+    ucEditInput.select();
+}
+
+function saveUCEdit() {
+    const ucValueSpan = document.getElementById('ucvalue');
+    const ucEditInput = document.getElementById('ucEditInput');
+    const ucEditControls = document.getElementById('ucEditControls');
+    
+    const newValue = parseFloat(ucEditInput.value);
+    
+    // Validate the input
+    if (isNaN(newValue) || newValue <= 0) {
+        alert('Por favor ingresa un valor válido mayor a 0');
+        ucEditInput.focus();
+        return;
+    }
+    
+    if (newValue > 1000) {
+        if (!confirm('El valor ingresado es muy alto (más de 1000 USD). ¿Estás seguro?')) {
+            ucEditInput.focus();
+            return;
+        }
+    }
+    
+    // Save the custom value
+    setCustomUCValue(newValue);
+    
+    // Update the display
+    updateUCDisplay();
+    
+    // Hide input and show span
+    ucEditInput.style.display = 'none';
+    ucEditControls.style.display = 'none';
+    ucValueSpan.style.display = 'inline';
+    
+    // Recalculate if there are materials selected
+    if (uctotal > 0) {
+        calcularMatricula();
+    }
+}
+
+function resetUCToDefault() {
+    if (confirm('¿Deseas restablecer el valor UC al valor por defecto?')) {
+        setCustomUCValue(null);
+        updateUCDisplay();
+        
+        const ucValueSpan = document.getElementById('ucvalue');
+        const ucEditInput = document.getElementById('ucEditInput');
+        const ucEditControls = document.getElementById('ucEditControls');
+        
+        ucEditInput.style.display = 'none';
+        ucEditControls.style.display = 'none';
+        ucValueSpan.style.display = 'inline';
+        
+        // Recalculate if there are materials selected
+        if (uctotal > 0) {
+            calcularMatricula();
+        }
+    }
+}
+
+function handleUCEditKeypress(event) {
+    if (event.key === 'Enter') {
+        saveUCEdit();
+    } else if (event.key === 'Escape') {
+        cancelUCEdit();
+    }
+}
+
+function cancelUCEdit() {
+    const ucValueSpan = document.getElementById('ucvalue');
+    const ucEditInput = document.getElementById('ucEditInput');
+    const ucEditControls = document.getElementById('ucEditControls');
+    
+    ucEditInput.style.display = 'none';
+    ucEditControls.style.display = 'none';
+    ucValueSpan.style.display = 'inline';
+}
+
+function updateUCDisplay() {
+    const ucValueSpan = document.getElementById('ucvalue');
+    if (!ucValueSpan) {
+        // Element not ready yet, try again after a short delay
+        setTimeout(updateUCDisplay, 100);
+        return;
+    }
+    
+    const customValue = getCustomUCValue();
+    const defaultValue = getUCfecha(hoy, perioact, false); // Don't use custom when getting default
+    const displayValue = customValue || defaultValue;
+    
+    let displayText = `${formatNumber.new(displayValue)} USD`;
+    
+    // Add indicator if using custom value
+    if (customValue) {
+        displayText += ' <span style="font-size: 10px; color: #ff9800;">(personalizado)</span>';
+    }
+    
+    ucValueSpan.innerHTML = displayText;
 }

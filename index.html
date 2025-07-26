@@ -543,8 +543,13 @@
 
 			<div class="divider">
 				<b>
-					<span id="ucvalue"></span>
+					<span id="ucvalue" onclick="enableUCEdit()" style="cursor: pointer;" title="Haz clic para editar el valor UC"></span>
+					<input id="ucEditInput" type="number" step="0.01" min="0.01" style="display: none; width: 100px; text-align: center; font-weight: bold; background: transparent; border: 1px solid #ccc; color: inherit;" onblur="saveUCEdit()" onkeypress="handleUCEditKeypress(event)">
 				</b>
+				<div id="ucEditControls" style="display: none; margin-top: 5px;">
+					<button onclick="resetUCToDefault()" style="font-size: 12px; padding: 2px 8px; margin-right: 5px; background: #f44336; color: white; border: none; border-radius: 3px; cursor: pointer;">Restablecer</button>
+					<button onclick="saveUCEdit()" style="font-size: 12px; padding: 2px 8px; background: #4CAF50; color: white; border: none; border-radius: 3px; cursor: pointer;">Guardar</button>
+				</div>
 			</div>
 
 			<p>
