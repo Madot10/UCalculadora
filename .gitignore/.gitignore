@@ -49,3 +49,11 @@ fabric.properties
 
 # *.iml
 # modules.xml
+
+# Testing and build artifacts
+tests/
+coverage/
+node_modules/
+playwright-report/
+test-results/
+.env
