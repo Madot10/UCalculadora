@@ -437,7 +437,7 @@ var inginformaticanuevo = [
 		Semestre: "SÉPTIMO SEMESTRE",
 		Asignatura: "Investigación de Operaciones",
 		UC: 5,
-		Tax: "TA-9",
+		Tax: "TA-4",
 	},
 	{
 		Semestre: "SÉPTIMO SEMESTRE",
@@ -497,7 +497,7 @@ var inginformaticanuevo = [
 	{
 		Semestre: "OCTAVO SEMESTRE",
 		Asignatura: "Trabajo de Grado (TG)",
-		UC: 21,
+		UC: 5.25,
 		Tax: "TA-7",
 	},
 ];
