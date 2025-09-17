@@ -1,0 +1,48 @@
+{
+  "name": "ucalculadora",
+  "version": "3.0.0",
+  "description": "UCAB Tuition Calculator - Unofficial calculator for UCAB credit unit-based tuition system",
+  "main": "index.html",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "install:playwright": "playwright install"
+  },
+  "keywords": [
+    "ucab",
+    "calculator",
+    "tuition",
+    "credit-units",
+    "uc",
+    "venezuela"
+  ],
+  "author": "Miguel De Olim",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@testing-library/dom": "^9.3.3",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/user-event": "^14.5.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "collectCoverageFrom": [
+      "js/**/*.js",
+      "!js/**/*.min.js",
+      "!js/chartist-js.min.js"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["text", "lcov", "html"],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}
