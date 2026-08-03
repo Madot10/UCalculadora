@@ -53,6 +53,7 @@ var administraciondeempresasnuevopensum = [
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Aplicaciones de la Inteligencia Artificial (IA)", UC: 4, Tax: "TA‐4" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Ética Financiera", UC: 3, Tax: "TA‐6" },
 	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva", UC: 4, Tax: "TA‐9" },
+
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Tributos Nacionales y Municipales", UC: 4, Tax: "TA‐3" },
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Planificación Presupuestaria", UC: 5, Tax: "TA‐3" },
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Finanzas Corporativas", UC: 5, Tax: "TA‐4" },
