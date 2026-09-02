@@ -1,4 +1,26 @@
-var ingindustrial = [
+/**
+ * @file ingenieria-industrial.js
+ * @description Define la estructura académica y la malla curricular de la carrera. 
+ * Contiene un arreglo de objetos donde cada elemento representa una asignatura específica, 
+ * detallando el semestre en el que se imparte, el nombre de la asignatura, las Unidades de Crédito (UC) 
+ * correspondientes y la taxonomía asociada. Es utilizado por el motor principal para generar 
+ * dinámicamente la lista de materias disponibles al momento de la selección en la interfaz.
+ */
+
+
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
+//20.. - 20..
+var ingindustrialviejopensum = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Fundamentos de Ingeniería Industrial", UC: 5, Tax: "TA‐4" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Matemática Básica", UC: 7, Tax: "TA‐6" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Geometría Plana y Trigonometría", UC: 5, Tax: "TA‐6" },
@@ -104,7 +126,19 @@ var ingindustrial = [
 	{ Semestre: "[Anual]DÉCIMO SEMESTRE", Asignatura: "GESTIÓN DE CAPITAL HUMANO", UC: 4, Tax: "TA‐1" },
 ];
 
-var ingindustrialnuevo = [
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
+//20.. - Actual
+var ingindustrialnuevopensum = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Principios de Marketing", UC: 5, Tax: "TA-1" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Introducción a la Ingeniería", UC: 3, Tax: "TA-4" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Álgebra y Trigonometría", UC: 5, Tax: "TA-4" },

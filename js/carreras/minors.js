@@ -1,3 +1,24 @@
+/**
+ * @file minors.js
+ * @description Define la estructura académica y la malla curricular de la carrera. 
+ * Contiene un arreglo de objetos donde cada elemento representa una asignatura específica, 
+ * detallando el semestre en el que se imparte, el nombre de la asignatura, las Unidades de Crédito (UC) 
+ * correspondientes y la taxonomía asociada. Es utilizado por el motor principal para generar 
+ * dinámicamente la lista de materias disponibles al momento de la selección en la interfaz.
+ */
+
+
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, hay que modificar directamente la variable 'minors'. No es necesario crear una variable 'viejopensum'.
+ * 3. Asegurar que las propiedades 'Semestre' (que en este caso es el nombre del minor), 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
 let minors = [
 	{ Semestre: "(MINOR) DERECHO INTERNACIONAL PÚBLICO", Asignatura: "Teoría General del Derecho II", UC: 6, Tax: "TA‐1" },
 	{ Semestre: "(MINOR) DERECHO INTERNACIONAL PÚBLICO", Asignatura: "Derecho Constitucional General II: Sistema Político, Sistema de Gobierno y Forma de Estado", UC: 4, Tax: "TA‐1" },

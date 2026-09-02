@@ -1,26 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ¿Para qué sirve este archivo?
+    Este es el Sitemap (Mapa del sitio) en formato XML. Sirve como una "guía" 
+    para los rastreadores de motores de búsqueda (como Googlebot o Bingbot). 
+    
+    Al leer este archivo, los buscadores pueden descubrir qué páginas existen 
+    dentro de tu dominio, qué tan importantes son (priority), y cuándo fue 
+    la última vez que se actualizaron (lastmod). Esto mejora significativamente 
+    el SEO (Search Engine Optimization) y acelera la indexación de la calculadora 
+    en los resultados de búsqueda.
+-->
+
+
+<!-- 
+    Contenedor principal (urlset) del Mapa del Sitio.
+    Esta etiqueta envuelve todas las URLs del sitio y provee a los buscadores de Google, Bing, etc., 
+    los esquemas (schemas) estándar necesarios para validar que el formato de este documento es correcto.
+    Adentro se listarán las rutas válidas y el nivel de prioridad de rastreo para cada una.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
-    <loc>https://madot10.github.io/</loc>
-    <lastmod>2018-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-</url>  
+    <!-- 
+        Página base del repositorio en GitHub Pages. 
+        Prioridad asignada: 0.6 
+        Se le asigna prioridad media-baja (0.6) para ceder relevancia a las aplicaciones específicas. 
+    -->
+    <url>
+        <loc>https://madot10.github.io/</loc>
+        <lastmod>2018-09-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>  
 
-<url>
-    <loc>http://madot10.github.io/notificaciones/</loc>
-    <lastmod>2018-09-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-</url>  
+    <!-- 
+        Aplicación Secundaria e Inactiva: Notificaciones. 
+        Prioridad asignada: 0.7 .
+        Mantenida por razones históricas con prioridad media (0.7). 
+    -->
+    <url>
+        <loc>http://madot10.github.io/notificaciones/</loc>
+        <lastmod>2018-09-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>  
 
-<url>
-    <loc>https://madot10.github.io/UCalculadora/</loc>
-    <lastmod>2018-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-</url>  
+    <!-- 
+        Aplicación Principal y Activa: UCalculadora. 
+        Prioridad asignada: 0.9.
+        Se le asigna la máxima prioridad (0.9) para garantizar que sea el primer resultado orgánico en buscadores. 
+    -->
+    <url>
+        <loc>https://madot10.github.io/UCalculadora/</loc>
+        <lastmod>2018-09-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>  
 
 </urlset>
