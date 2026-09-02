@@ -1,37 +1,56 @@
+/**
+ * @file data.js
+ * @description Repositorio central de datos y diccionarios de UCalculadora.
+ * Define la estructura de los periodos académicos, diccionarios de meses, las tasas históricas y proyecciones del valor de la UC, 
+ * así como los montos de derechos de inscripción, confirmación e hitos de variación por mes.
+ * También almacena los arreglos con las materias de los programas tipo "Minor".
+ */
+
+/**
+ * Parametros de derecho de inscripcion
+ * Estos valores se expresan en UC y afectan directamente los bloques de pago inicial.
+ * Para mantenimiento, actualizarlos cuando una circular oficial cambie los montos de estudiante regular, nuevo o confirmacion.
+ */
+const DI_REGULAR = 6;
+const DI_NUEVO = 10;
+const DI_CONFIRM = 2.5;
+
+/**
+ * Periodo academico activo
+ * 1 representa verano y 2 representa semestre.
+ * La interfaz cambia este valor desde los botones de periodo antes de recalcular pagos.
+ */
 let perioact = 0;
 
+/**
+ * Precio de la UC en USD para cada periodo.
+ * - `base`: precio fijo de la UC.
+ * - `variacion`: precio de la UC por cada mes del semestre (5 meses).
+ * 
+ * Al salir nueva circular, cambiar los valores numéricos en base y variacion en caso de aplicar.
+ */
 let ucByPeriodo = {
 	verano: {
-		base: 20,
+		base: 21,
 	},
-	/** Monto UC*/
 	semestre: {
-		base: 20,
+		base: 21,
 		variacion: [
-			20, //Mes 1
-			20,
-			20,
-			20,
-			20, //Mes 5
+			21, // Mes 1 del semestre
+			21, // Mes 2 del semestre
+			21, // Mes 3 del semestre
+			21, // Mes 4 del semestre
+			21, // Mes 5 del semestre
 		],
 	},
 };
 
+/**
+ * Mapeo de mes calendario a cuota academica
+ * Los meses null no tienen cuota semestral directa.
+ * Este mapa permite calcular pagos de marzo a julio y septiembre a enero con la misma logica.
+ */
 let monthMapping = {
-	1: 5,
-	2: 1,
-	3: 1,
-	4: 1,
-	5: 2,
-	6: 3,
-	7: 1,
-	8: 1,
-	9: 1,
-	10: 2,
-	11: 3,
-	12: 4,
-};
-/*{
 	1: 5,
 	2: null,
 	3: 1,
@@ -44,15 +63,13 @@ let monthMapping = {
 	10: 2,
 	11: 3,
 	12: 4,
-};*/
+};
 
-//periodo guia
-// 2018191 inicia en 2018 y termina en 2019 primera mitad
-// 2018192
-// 119 intensivo 1 en 2019
-// 219
-// 2019191 inicia en 2019 y termina en 2019
-
+/**
+ * Almacena el registro histórico de periodos académicos antiguos, conservando la tarifa base y las variaciones porcentuales (aumentos) aplicadas en fechas específicas.
+ * Sirve como estructura de consulta para reconstruir el historial financiero y alimentar las tablas de periodos heredados.
+ * No se debe modificar a menos que se requiera corregir un dato histórico o reactivar una tabla de pago antigua en la calculadora.
+*/
 let periodo = {
 	2018191: {
 		base: 130.0,
@@ -157,7 +174,202 @@ let periodo = {
 		base: 13,
 	},*/
 };
+
+/**
+ * Define las estructuras matriciales que actúan como plantillas visuales para el renderizado dinámico de las tablas de pago en el frontend.
+ * Cada clave (ej. '1erPar', 'ver') representa una modalidad o periodo académico específico y contiene un arreglo de filas.
+ * Cada fila es un arreglo de cadenas de texto; si la cadena contiene código JavaScript (eval), la función generadora de la calculadora lo interpreta en tiempo real para inyectar los montos dinámicos en la interfaz.
+*/
+let templateTabla = {
+	"1erMinor": [
+		3,
+		["Tasa del BCV"],
+		["** COMPROBAR MONTO CON CAJA"],
+		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
+		["MINOR - Modalidad pago de contado <br> (1era Parte)"],
+		["SOLO SE PAGA MINORS DE CONTADO"],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `,true) ")'],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `,true) ")'],
+		["MINOR - Modalidad pago de total <br> (100%)"],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `,true) ")'],
+		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `,true) ")'],
+	],
+	"2doMinor": [
+		3,
+		["Tasa del BCV"],
+		["** COMPROBAR MONTO CON CAJA"],
+		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
+		["MINOR - Modalidad pago de contado <br> (2da Parte)"],
+		["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `,true) ")'],
+		["Total", 'eval(" formatNumber.new(((totalbsMinor * 2) * valorBCV), `Bs.S `,true) ")'],
+	],
+	verMinor: [
+		3,
+		["Tasa del BCV"],
+		["** COMPROBAR MONTO CON CAJA"],
+		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
+		["MINOR - Pago único"],
+		["Total <br> (100%)", 'eval(" formatNumber.new((totalbsMinor * 5) * valorBCV, `USD `,true) ")'],
+	],
+	"1erPar": [
+		3,
+		["Tasa del BCV"],
+		["** COMPROBAR MONTO CON CAJA"],
+		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
+		["Derecho de inscripción"],
+		[
+			'Derecho de inscripción <i class="fas fa-question-circle" onclick="modalInfoOpen(`' + DI_REGULAR + ' UC - Estudiantes regulares <br> ' + DI_NUEVO + ' UC - Estudiantes nuevos`)"></i>',
+			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((DI_REGULAR * valorUC), `USD `,true)")',
+			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((DI_NUEVO * valorUC), `USD `, true)")',
+		],
+		[
+			"Derecho de inscripción <br> Bs.S.",
+			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new(((DI_REGULAR * valorUC) * valorBCV), `Bs.S `,true)")',
+			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new(((DI_NUEVO * valorUC) * valorBCV), `Bs.S `, true)")',
+		],
+		["Modalidad pago de TOTAL (5 meses) "],
+		["** COMPROBAR MONTO CON CAJA"],
+		[
+			'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 7%`)"></i>',
+			'<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((DI_REGULAR * valorUC) + (totalbs * 5 * 0.93)) , `USD `, true)")',
+			'<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((DI_NUEVO * valorUC) + (totalbs * 5 * 0.93)) , `USD `, true)")',
+		],
+		[
+			'Total regular (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Valor en Bs.S al día de hoy`)"></i> <br/> Bs.S.',
+			'eval("formatNumber.new((((DI_REGULAR * valorUC) + (totalbs * 5 * 0.93)) * valorBCV) , `Bs.S `, true)")',
+		],
+		[
+			'Total nuevo (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Valor en Bs.S al día de hoy`)"></i> <br/> Bs.S.',
+			'eval("formatNumber.new((((DI_NUEVO * valorUC) + (totalbs * 5 * 0.93)) * valorBCV) , `Bs.S `, true)")',
+		],
+		["Modalidad pago PARCIAL (Abr-Jun) "],
+		["** COMPROBAR MONTO CON CAJA"],
+		[
+			'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Abr-Jun*)',
+			'<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((DI_REGULAR * valorUC) + (totalbs * 3 * 0.95)) , `USD `, true)")',
+			'<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((DI_NUEVO * valorUC) + (totalbs * 3 * 0.95)) , `USD `, true)")',
+		],
+		[
+			'<span class="ugreen"> Total regular(+DI)* <br> Bs.S. </span>',
+			'eval("formatNumber.new((((DI_REGULAR * valorUC) + (totalbs * 3 * 0.95)) * valorBCV) , `Bs.S `, true)")',
+		],
+		[
+			'<span class="ugreen"> Total nuevo(+DI)*  <br> Bs.S.  </span>',
+			'eval("formatNumber.new((((DI_NUEVO * valorUC) + (totalbs * 3 * 0.95)) * valorBCV) , `Bs.S `, true)")',
+		],
+		[
+			'Estimado 2da parte (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Jul-Ago**)',
+			'eval("formatNumber.new(((DI_CONFIRM * valorUC) + (totalbs * 2 * 0.95)) , `USD `, true)")',
+		],
+		["Modalidad pago FINANCIADO (Abr-Jun) "],
+		["** COMPROBAR MONTO CON CAJA"],
+		["Abril <br> (1er Mes)", 'eval("formatNumber.new(((totalbs * 1)), `USD `, true)")'],
+		['<span class="ugreen">Total <br> Abril</span>', 'eval("formatNumber.new((((totalbs * 1)) * valorBCV), `Bs.S `, true)")'],
+		[
+			'Mayo <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
+			'<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(11,5))), `USD `, true)")',
+		],
+		[
+			'Junio <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+			'<span class="ugreen">Desde 3er Mes:</span> <br>eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,6))), `USD `, true)")',
+		],
+		[
+			'Julio** <br> (4to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
+			'<span class="ugreen">Desde 4to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,7))*1), `USD `, true)")',
+		],
+		[
+			'Agosto** <br> (5to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>',
+			'<span class="ugreen">Desde 5to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,8))), `USD `, true)")',
+		],
+	],
+	"2doPar": [
+		3,
+		["*CRONOGRAMA MODIFICADO"],
+		[
+			"Derecho de inscripción <br> (25% ~ Pago Julio)",
+			'<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((DI_CONFIRM * valorUC), `Bs.S `)")',
+		],
+		["Modalidad pago de contado (Jul-Ago): "],
+		["29 de junio hasta el 13 de julio"],
+		[
+			"Total <br> (Período Julio-Agosto)",
+			'<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((DI_CONFIRM * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
+		],
+		["Modalidad pago financiado <br> (50% restante) "],
+		[
+			'Junio/Julio (4to Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
+			'<span class="ugreen">Desde 29 de Junio (+DI): <br> </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 1) + (DI_CONFIRM * valorUC), `Bs.S `, true)")',
+		],
+		[
+			"Agosto (5to Mes)",
+			'<span class="ugreen">Desde 1 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,8))) *1), `Bs.S `, true)")',
+			'<span class="ugreen">Desde 11 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(11,8))) *1), `Bs.S `, true)")',
+		],
+	],
+	ver: [
+		3,
+		["Tasa del BCV"],
+		["** COMPROBAR MONTO CON CAJA"],
+		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
+		["Pago único verano"],
+		["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
+		["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
+		["Total <br> Bs.S", '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `,true) ")'],
+	],
+	"1erImpar": [
+		3,
+		[
+			"Derecho de inscripción <br> (Pago Sept/Oct)",
+			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((DI_REGULAR * valorUC), `Bs.S `,true)")',
+			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((DI_NUEVO * valorUC), `Bs.S `, true)")',
+		],
+		["Modalidad pago de contado (Sep-Dic):"],
+		[
+			"Total <br> (Período Sep-Dic)",
+			'<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((DI_REGULAR * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
+			'<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((DI_NUEVO * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
+		],
+		["Modalidad pago financiado (Sep-Dic):"],
+		[
+			"Septiembre / Octubre",
+			'<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((DI_REGULAR * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
+			'<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((DI_NUEVO * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
+		],
+		[
+			'Noviembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,11)))"></i>',
+			'<span class="ugreen">Desde el 1 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,11))), `Bs.S `, true)")',
+		],
+		[
+			'Diciembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
+			'<span class="ugreen">Desde el 1 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
+		],
+	],
+	"2doImpar": [
+		3,
+		[
+			"Derecho de inscripción <br> (25% ~ Pago Ene)",
+			'<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((DI_CONFIRM * valorUC), `Bs.S `)")',
+		],
+		["Modalidad pago de contado (Ene-Feb): <br> (50% restante)"],
+		[
+			"Total <br> (Período Ene-Feb)",
+			'<span class="ugreen">Total (+DI)*: </span> <br> eval("formatNumber.new(Math.round((DI_CONFIRM * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
+		],
+		["Modalidad pago financiado <br> (50% restante) "],
+		[
+			'Enero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,1)))"></i>',
+			'<span class="ugreen">Total (+DI)*:  </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,1)) * 1) + (DI_CONFIRM * valorUC), `Bs.S `,true)")',
+		],
+		[
+			'Febrero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1er Feb ${genMsgUc(getFechaAnoActual(1,2))}`)"></i>',
+			'<span class="ugreen"> Desde 1 de Febrero:  </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,2))) * 1), `Bs.S `, true)")',
+		],
+	],
+};
+
+
 /*
+// Plantillas historicas de tablas de pago. Mantener para compatibilidad aunque no todas se muestren actualmente.
 let tables = {
     2018191: [
         3,
@@ -333,190 +545,3 @@ let tables = {
     ],
 };
 */
-
-let templateTabla = {
-	"1erMinor": [
-		3,
-		["Tasa del BCV"],
-		["** COMPROBAR MONTO CON CAJA"],
-		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
-		["MINOR - Modalidad pago de contado <br> (1era Parte)"],
-		["SOLO SE PAGA MINORS DE CONTADO"],
-		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 3), `USD `,true) ")'],
-		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 3)* valorBCV), `Bs.S `,true) ")'],
-		["MINOR - Modalidad pago de total <br> (100%)"],
-		["SubTotal <br> (Minor)", 'eval(" formatNumber.new((totalbsMinor * 5), `USD `,true) ")'],
-		["SubTotal <br> (Minor)", 'eval(" formatNumber.new(((totalbsMinor * 5)* valorBCV), `Bs.S `,true) ")'],
-	],
-	"2doMinor": [
-		3,
-		["Tasa del BCV"],
-		["** COMPROBAR MONTO CON CAJA"],
-		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
-		["MINOR - Modalidad pago de contado <br> (2da Parte)"],
-		["Total", 'eval(" formatNumber.new((totalbsMinor * 2), `USD `,true) ")'],
-		["Total", 'eval(" formatNumber.new(((totalbsMinor * 2) * valorBCV), `Bs.S `,true) ")'],
-	],
-	verMinor: [
-		3,
-		["Tasa del BCV"],
-		["** COMPROBAR MONTO CON CAJA"],
-		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
-		["MINOR - Pago único"],
-		["Total <br> (100%)", 'eval(" formatNumber.new((totalbsMinor * 5) * valorBCV, `USD `,true) ")'],
-	],
-	"1erPar": [
-		3,
-		["Tasa del BCV"],
-		["** COMPROBAR MONTO CON CAJA"],
-		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
-		["Derecho de inscripción"],
-		[
-			'Derecho de inscripción <i class="fas fa-question-circle" onclick="modalInfoOpen(`5 UC - Estudiantes regulares <br> 7.5 UC - Estudiantes nuevos`)"></i>',
-			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `USD `,true)")',
-			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `USD `, true)")',
-		],
-		[
-			"Derecho de inscripción <br> Bs.S.",
-			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new(((5 * valorUC) * valorBCV), `Bs.S `,true)")',
-			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new(((7.5 * valorUC) * valorBCV), `Bs.S `, true)")',
-		],
-		["Modalidad pago de TOTAL (5 meses) "],
-		["** COMPROBAR MONTO CON CAJA"],
-		[
-			'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 7%`)"></i>',
-			'<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 5 * 0.93)) , `USD `, true)")',
-			'<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 5 * 0.93)) , `USD `, true)")',
-		],
-		[
-			'Total regular (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Valor en Bs.S al día de hoy`)"></i> <br/> Bs.S.',
-			'eval("formatNumber.new((((5 * valorUC) + (totalbs * 5 * 0.93)) * valorBCV) , `Bs.S `, true)")',
-		],
-		[
-			'Total nuevo (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Valor en Bs.S al día de hoy`)"></i> <br/> Bs.S.',
-			'eval("formatNumber.new((((7.5 * valorUC) + (totalbs * 5 * 0.93)) * valorBCV) , `Bs.S `, true)")',
-		],
-		["Modalidad pago PARCIAL (Abr-Jun) "],
-		["** COMPROBAR MONTO CON CAJA"],
-		[
-			'Total (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Abr-Jun*)',
-			'<span class="ugreen">Total regular:</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3 * 0.95)) , `USD `, true)")',
-			'<span class="ugreen">Total nuevo:</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3 * 0.95)) , `USD `, true)")',
-		],
-		[
-			'<span class="ugreen"> Total regular(+DI)* <br> Bs.S. </span>',
-			'eval("formatNumber.new((((5 * valorUC) + (totalbs * 3 * 0.95)) * valorBCV) , `Bs.S `, true)")',
-		],
-		[
-			'<span class="ugreen"> Total nuevo(+DI)*  <br> Bs.S.  </span>',
-			'eval("formatNumber.new((((7.5 * valorUC) + (totalbs * 3 * 0.95)) * valorBCV) , `Bs.S `, true)")',
-		],
-		[
-			'Estimado 2da parte (+DI) <i class="fas fa-question-circle" onclick="modalInfoOpen(`Aplica un descuento del 5%`)"></i> <br> (Período Jul-Ago**)',
-			'eval("formatNumber.new(((2.5 * valorUC) + (totalbs * 2 * 0.95)) , `USD `, true)")',
-		],
-		["Modalidad pago FINANCIADO (Abr-Jun) "],
-		["** COMPROBAR MONTO CON CAJA"],
-		["Abril <br> (1er Mes)", 'eval("formatNumber.new(((totalbs * 1)), `USD `, true)")'],
-		['<span class="ugreen">Total <br> Abril</span>', 'eval("formatNumber.new((((totalbs * 1)) * valorBCV), `Bs.S `, true)")'],
-		[
-			'Mayo <br> (2do Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,5)))"></i>',
-			'<span class="ugreen">Desde 2do Mes:</span> <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(11,5))), `USD `, true)")',
-		],
-		[
-			'Junio <br> (3er Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
-			'<span class="ugreen">Desde 3er Mes:</span> <br>eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,6))), `USD `, true)")',
-		],
-		[
-			'Julio** <br> (4to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,7)))"></i>',
-			'<span class="ugreen">Desde 4to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,7))*1), `USD `, true)")',
-		],
-		[
-			'Agosto** <br> (5to Mes - 2da parte) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>',
-			'<span class="ugreen">Desde 5to Mes:</span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,8))), `USD `, true)")',
-		],
-	],
-	"2doPar": [
-		3,
-		["*CRONOGRAMA MODIFICADO"],
-		[
-			"Derecho de inscripción <br> (25% ~ Pago Julio)",
-			'<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((2.5 * valorUC), `Bs.S `)")',
-		],
-		["Modalidad pago de contado (Jul-Ago): "],
-		["29 de junio hasta el 13 de julio"],
-		[
-			"Total <br> (Período Julio-Agosto)",
-			'<span class="ugreen">Total (+DI): </span> <br> eval("formatNumber.new(Math.round((2.5 * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
-		],
-		["Modalidad pago financiado <br> (50% restante) "],
-		[
-			'Junio/Julio (4to Mes) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,6)))"></i>',
-			'<span class="ugreen">Desde 29 de Junio (+DI): <br> </span> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,6)) * 1) + (2.5 * valorUC), `Bs.S `, true)")',
-		],
-		[
-			"Agosto (5to Mes)",
-			'<span class="ugreen">Desde 1 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,8))) *1), `Bs.S `, true)")',
-			'<span class="ugreen">Desde 11 de Agosto <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(11,8)))"></i>:</span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(11,8))) *1), `Bs.S `, true)")',
-		],
-	],
-	ver: [
-		3,
-		["Tasa del BCV"],
-		["** COMPROBAR MONTO CON CAJA"],
-		["TASA <br> USD", 'eval("formatNumber.new(valorBCV, `Bs.S. `, true)")'],
-		["Pago único verano"],
-		["*APLICA UC SEMESTRAL (UC mensual x5) <br/> 12,00 USD"],
-		["Total", '(100%) eval(" formatNumber.new(totalbs * 5, `USD `) ")'],
-		["Total <br> Bs.S", '(100%) eval(" formatNumber.new((totalbs * 5) * valorBCV, `Bs.S `,true) ")'],
-	],
-	"1erImpar": [
-		3,
-		[
-			"Derecho de inscripción <br> (Pago Sept/Oct)",
-			'<span class="ugreen">Est. regular: </span><br> eval("formatNumber.new((5 * valorUC), `Bs.S `,true)")',
-			'<span class="ugreen">Est. nuevo: </span> <br> eval("formatNumber.new((7.5 * valorUC), `Bs.S `, true)")',
-		],
-		["Modalidad pago de contado (Sep-Dic):"],
-		[
-			"Total <br> (Período Sep-Dic)",
-			'<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
-			'<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 3)), `Bs.S `, true)")',
-		],
-		["Modalidad pago financiado (Sep-Dic):"],
-		[
-			"Septiembre / Octubre",
-			'<span class="ugreen">Total regular (+DI):</span> <br> eval("formatNumber.new(((5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
-			'<span class="ugreen">Total nuevo (+DI):</span> <br> eval("formatNumber.new(((7.5 * valorUC) + (totalbs * 1)), `Bs.S `, true)")',
-		],
-		[
-			'Noviembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,11)))"></i>',
-			'<span class="ugreen">Desde el 1 Nov: </span>  <br> eval("formatNumber.new(Number(GetMontoTarifa(getFechaAnoActual(1,11))), `Bs.S `, true)")',
-		],
-		[
-			'Diciembre <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(10,12)))"></i>',
-			'<span class="ugreen">Desde el 1 Dic: </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(10,12))), `Bs.S `, true)")',
-		],
-	],
-	"2doImpar": [
-		3,
-		[
-			"Derecho de inscripción <br> (25% ~ Pago Ene)",
-			'<span class="ugreen">Estudiantes:</span> <br> eval("formatNumber.new((2.5 * valorUC), `Bs.S `)")',
-		],
-		["Modalidad pago de contado (Ene-Feb): <br> (50% restante)"],
-		[
-			"Total <br> (Período Ene-Feb)",
-			'<span class="ugreen">Total (+DI)*: </span> <br> eval("formatNumber.new(Math.round((2.5 * valorUC) + (totalbs * 2)), `Bs.S `, true)")',
-		],
-		["Modalidad pago financiado <br> (50% restante) "],
-		[
-			'Enero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(genMsgUc(getFechaAnoActual(1,1)))"></i>',
-			'<span class="ugreen">Total (+DI)*:  </span> <br> eval("formatNumber.new((GetMontoTarifa(getFechaAnoActual(1,1)) * 1) + (2.5 * valorUC), `Bs.S `,true)")',
-		],
-		[
-			'Febrero (25%) <i class="fas fa-question-circle" onclick="modalInfoOpen(`1er Feb ${genMsgUc(getFechaAnoActual(1,2))}`)"></i>',
-			'<span class="ugreen"> Desde 1 de Febrero:  </span> <br> eval("formatNumber.new((Number(GetMontoTarifa(getFechaAnoActual(1,2))) * 1), `Bs.S `, true)")',
-		],
-	],
-};

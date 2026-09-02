@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Offline</title>
-</head>
-<body>
-    <h1>Offline site UC</h1>
-</body>
+<html lang="es">
+
+    <head>
+        <!-- 
+            ¿Para qué sirve este archivo?
+            Esta es la página de contingencia (fallback) de la PWA. 
+            El Service Worker (uc-sw.js) redirige automáticamente al usuario a este 
+            archivo cuando el dispositivo pierde la conexión a internet (offline) 
+            y la página que intentan visitar no está guardada en la memoria caché.
+        -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>UCalculadora - Sin Conexión</title>
+    </head>
+
+    <body>
+        <h1>UCalculadora (Modo Offline)</h1>
+        <p>Parece que no tienes conexión a internet en este momento.</p>
+    </body>
+
 </html>

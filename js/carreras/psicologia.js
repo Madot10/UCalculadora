@@ -1,0 +1,157 @@
+/**
+ * @file psicologia.js
+ * @description Define la estructura académica y la malla curricular de la carrera. 
+ * Contiene un arreglo de objetos donde cada elemento representa una asignatura específica, 
+ * detallando el semestre en el que se imparte, el nombre de la asignatura, las Unidades de Crédito (UC) 
+ * correspondientes y la taxonomía asociada. Es utilizado por el motor principal para generar 
+ * dinámicamente la lista de materias disponibles al momento de la selección en la interfaz.
+ */
+
+
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
+//20.. - 20..
+var psicologiaviejopensum = [
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Competencia Textual en Español", UC: 5, Tax: "TA-6" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Fundamentos Epistemológicos y Antropológicos de la Psicología", UC: 3, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso I", UC: 3, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Introducción a la Investigación", UC: 5, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Introducción al Estudio de la Psicología", UC: 5, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Matemática y Probabilidad", UC: 8, Tax: "TA-5" },
+
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Estadística Descriptiva", UC: 8, Tax: "TA-5" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso II", UC: 3, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Investigación Documental", UC: 2, Tax: "TA-8" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Neuropsicobiología", UC: 5, Tax: "TA-3" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Psicología de la Sensopercepción y de la Atención", UC: 5, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Psicología del Desarrollo de la Niñez", UC: 5, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Teorías y Sistemas en Psicología", UC: 6, Tax: "TA-1" },
+
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Ecología, Ambiente y Sustentabilidad", UC: 3, Tax: "TA-1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Estadística Inferencial", UC: 6, Tax: "TA-5" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 3, Tax: "TA-1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Neurociencia Conductual", UC: 5, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología de la Motivación y Emoción", UC: 5, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología del Aprendizaje", UC: 5, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología del Desarrollo de la Adolescencia y de la Adultez", UC: 5, Tax: "TA-3" },
+
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Investigación Cualitativa", UC: 7, Tax: "TA-3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Investigación Cuantitativa No Experimental", UC: 5, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Neuropsicología y Neurociencias Cognitivas", UC: 5, Tax: "TA-3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología de la Memoria y de la Inteligencia", UC: 5, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología del Pensamiento y Lenguaje", UC: 5, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología Social", UC: 3, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicometría", UC: 5, Tax: "TA-3" },
+
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Evaluación Psicológica de la Niñez", UC: 7, Tax: "TA-8" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología de Grupos", UC: 5, Tax: "TA-3" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología de la Personalidad", UC: 6, Tax: "TA-1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología Experimental", UC: 5, Tax: "TA-5" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología Social Aplicada", UC: 5, Tax: "TA-8" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicopatología de la Niñez y de la Adolescencia", UC: 6, Tax: "TA-1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Electiva", UC: 3, Tax: "TA-8" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Electiva (Virtual)", UC: 3, Tax: "(V) TA-8" },
+
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Evaluación Psicológica de la Adolescencia", UC: 7, Tax: "TA-8" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Psicología Clínica de la Niñez y de la Adolescencia", UC: 3, Tax: "TA-1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Psicología del Personal y del Trabajo", UC: 5, Tax: "TA-4" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Psicología Escolar", UC: 6, Tax: "TA-1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Psicopatología de la Adultez", UC: 6, Tax: "TA-1" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva", UC: 3, Tax: "TA-8" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "(Virtual) Electiva", UC: 3, Tax: "(V)TA-8" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Trabajo de Grado I", UC: 4, Tax: "TA-9" },
+
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Asesoramiento Psicológico", UC: 6, Tax: "TA-1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Evaluación Psicológica de la Adultez", UC: 5, Tax: "TA-8" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantías de Psicología Clínica de la Niñez y de la Adolescencia", UC: 6, Tax: "TA-7" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantías de Psicología Escolar", UC: 8, Tax: "TA-7" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Psicología Clínica de la Adultez", UC: 3, Tax: "TA-1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Psicología Organizacional", UC: 5, Tax: "TA-4" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Trabajo de Grado II", UC: 4, Tax: "TA-9" },
+
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Crítica a los Sistemas Psicológicos", UC: 2, Tax: "TA-2" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Ética Profesional", UC: 2, Tax: "TA-2" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantías de Asesoramiento Psicológico Comunitario", UC: 4, Tax: "TA-7" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantías de Asesoramiento Psicológico Individual y Grupal", UC: 4, Tax: "TA-7" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantías de Psicología Clínica de la Adultez en Servicios Comunitarios", UC: 4, Tax: "TA-7" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Pasantías de Psicología Clínica de la Adultez en Servicios Hospitalarios", UC: 4, Tax: "TA-7" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Trabajo de Grado III", UC: 4, Tax: "TA-9" },
+];
+
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
+//20.. - Actual
+var psicologianuevopensum = [
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Competencia Textual en Español 1", UC: 3, Tax: "TA-6" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Fundamentos Epistemológicos y Antropológicos de la Psicología", UC: 2, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso I", UC: 1, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Introducción a la Investigación", UC: 2, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Introducción al Estudio de la Psicología", UC: 2, Tax: "TA-1" },
+	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Matemática y Probabilidad", UC: 4, Tax: "TA-5" },
+
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Estadística Descriptiva", UC: 4, Tax: "TA-5" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso II", UC: 1, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Investigación Documental", UC: 2, Tax: "TA-8" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Neuropsicobiología", UC: 2, Tax: "TA-3" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Psicología de la Sensopercepción y de la Atención", UC: 2, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Psicología del Desarrollo de la Niñez", UC: 2, Tax: "TA-1" },
+	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Teorías y Sistemas en Psicología", UC: 4, Tax: "TA-1" },
+
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Ecología, Ambiente y Sustentabilidad", UC: 1, Tax: "TA-1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Estadística Inferencial", UC: 4, Tax: "TA-5" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Innovación y Emprendimiento", UC: 1, Tax: "TA-1" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Neurociencia Conductual", UC: 2, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología de la Motivación y Emoción", UC: 2, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología del Aprendizaje", UC: 2, Tax: "TA-3" },
+	{ Semestre: "TERCER SEMESTRE", Asignatura: "Psicología del Desarrollo de la Adolescencia y de la Adultez", UC: 2, Tax: "TA-3" },
+
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Investigación Cualitativa", UC: 2, Tax: "TA-3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Investigación Cuantitativa No Experimental", UC: 2, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Neuropsicología y Neurociencias Cognitivas", UC: 2, Tax: "TA-3" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología de la Memoria y de la Inteligencia", UC: 2, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología del Pensamiento y Lenguaje", UC: 2, Tax: "TA-1" },
+	{ Semestre: "CUARTO SEMESTRE", Asignatura: "Psicología Social", UC: 2, Tax: "TA-1" },
+
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicometría", UC: 2, Tax: "TA-3" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Evaluación Psicológica de la Niñez", UC: 2, Tax: "TA-8" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología de Grupos", UC: 2, Tax: "TA-3" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología de la Personalidad", UC: 4, Tax: "TA-1" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología Experimental", UC: 2, Tax: "TA-5" },
+	{ Semestre: "QUINTO SEMESTRE", Asignatura: "Psicología Social Aplicada", UC: 2, Tax: "TA-8" },
+
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Producción y Edición de Libros", UC: 3, Tax: "TA-6" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Proyectos de Investigación", UC: 2, Tax: "TA-6" },
+	{ Semestre: "SEXTO SEMESTRE", Asignatura: "Electiva", UC: 2, Tax: "TA-4" },
+
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Corrección de Textos", UC: 3, Tax: "TA-6" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Gestión Cultural", UC: 3, Tax: "TA-5" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Literatura General: siglo XXI", UC: 4, Tax: "TA-1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Literatura Latinoamericana: Siglo XXI", UC: 4, Tax: "TA-1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Literatura Venezolana: Siglo XXI", UC: 4, Tax: "TA-1" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Seminario de Trabajo de Grado I", UC: 2, Tax: "TA-9" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantía", UC: 3, Tax: "TA-7" },
+	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva", UC: 2, Tax: "TA-4" },
+
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Investigación en Ciencias Sociales", UC: 4, Tax: "TA-8" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Prácticas Profesionales", UC: 6, Tax: "TA-7" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Seminario de Trabajo de Grado II", UC: 2, Tax: "TA-9" },
+	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Práctica en Psicología Clínica", UC: 4, Tax: "TA-8" },
+];

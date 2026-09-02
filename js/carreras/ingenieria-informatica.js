@@ -1,4 +1,26 @@
-var inginformatica = [
+/**
+ * @file ingenieria-informatica.js
+ * @description Define la estructura académica y la malla curricular de la carrera. 
+ * Contiene un arreglo de objetos donde cada elemento representa una asignatura específica, 
+ * detallando el semestre en el que se imparte, el nombre de la asignatura, las Unidades de Crédito (UC) 
+ * correspondientes y la taxonomía asociada. Es utilizado por el motor principal para generar 
+ * dinámicamente la lista de materias disponibles al momento de la selección en la interfaz.
+ */
+
+
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+
+//2023 - 2026
+var inginformaticaviejopensum = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Álgebra y Trigonometría", UC: 5, Tax: "TA-4" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Lógica", UC: 4, Tax: "TA-4" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Fundamentos de Programación", UC: 3, Tax: "TA-9" },
@@ -63,7 +85,18 @@ var inginformatica = [
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Trabajo de Grado (TG)", UC: 5.25, Tax: "TA-7" },
 ];
 
-var inginformaticanuevo = [
+/**
+ * Arreglo de objetos con el pensum de la carrera. 
+ * Para actualizar o realizar mantenimiento:
+ * 1. Mantener comentado el año o versión del pensum sobre la variable (ej. //202525 - Actual). Si no se conoce la fecha, colocar los primeros dígitos (ej. //202. - 202.).
+ * 2. Al actualizar, si no existe una variable llamada 'viejopensum' se debe crear siguiendo el flujo establecido. La variable del pensum viejo debe tomar los datos del pensum nuevo anterior, y la variable del pensum nuevo toma los datos del pensum recién aprobado.
+ * 3. Asegurar que las propiedades 'Semestre', 'Asignatura', 'UC' y 'Tax' mantengan la nomenclatura exacta.
+ * 4. Verificar que el identificador de la variable coincida exactamente con el valor esperado por la lógica de selección en la interfaz.
+ * 
+ * @type {Array<{Semestre: string, Asignatura: string, UC: number, Tax: string}>}
+ */
+//2026 - Actual
+var inginformaticanuevopensum = [
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Álgebra y Trigonometría", UC: 5, Tax: "TA-4" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Competencia Textual en Español", UC: 5, Tax: "TA-6" },
 	{ Semestre: "PRIMER SEMESTRE", Asignatura: "Inglés", UC: 3, Tax: "TA-4" },
@@ -77,7 +110,6 @@ var inginformaticanuevo = [
 	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Matemáticas Discretas", UC: 6, Tax: "TA-4" },
 	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Algoritmos y Programación", UC: 7, Tax: "TA-9" },
 	{ Semestre: "SEGUNDO SEMESTRE", Asignatura: "Identidad, Liderazgo y Compromiso II", UC: 3, Tax: "TA-1" },
-
 
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Cálculo Integral", UC: 5, Tax: "TA-4" },
 	{ Semestre: "TERCER SEMESTRE", Asignatura: "Mecánica", UC: 6, Tax: "TA-4" },
@@ -119,7 +151,6 @@ var inginformaticanuevo = [
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Pasantía", UC: 4, Tax: "TA-7" },
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva (Informática)", UC: 3, Tax: "TA-8" },
 	{ Semestre: "SÉPTIMO SEMESTRE", Asignatura: "Electiva (Complementaria)", UC: 3, Tax: "TA-8" },
-
 
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Evaluación de Sistemas Informáticos", UC: 4, Tax: "TA-4" },
 	{ Semestre: "OCTAVO SEMESTRE", Asignatura: "Ética Profesional", UC: 3, Tax: "TA-2" },
